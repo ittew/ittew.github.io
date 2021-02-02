@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="svn,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="svn全称Subversion，是代码版本管理软件，管理着随时间改变的数据。这些数据放置在一个中央资料档案库 (repository) 中。 这个档案库很像一个普通的文件服务器, 不过它会记住每一次文件的变动。这样你就可以把档案恢复到旧的版本, 或是浏览文件的变动历史。 许多人会把版本控制系統想像成某种 “时光机器”。">
+<meta name="keywords" content="svn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学会使用svn">
+<meta property="og:url" content="http://ittew.cn/学会使用svn/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="svn全称Subversion，是代码版本管理软件，管理着随时间改变的数据。这些数据放置在一个中央资料档案库 (repository) 中。 这个档案库很像一个普通的文件服务器, 不过它会记住每一次文件的变动。这样你就可以把档案恢复到旧的版本, 或是浏览文件的变动历史。 许多人会把版本控制系統想像成某种 “时光机器”。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn1.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn2.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn3.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn4.jpg">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn5.jpg">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn6.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn7.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn8.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn9.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn10.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn11.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn12.png">
+<meta property="og:image" content="http://ittew.cn/image/svn/svn13.png">
+<meta property="og:updated_time" content="2021-01-12T14:28:09.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学会使用svn">
+<meta name="twitter:description" content="svn全称Subversion，是代码版本管理软件，管理着随时间改变的数据。这些数据放置在一个中央资料档案库 (repository) 中。 这个档案库很像一个普通的文件服务器, 不过它会记住每一次文件的变动。这样你就可以把档案恢复到旧的版本, 或是浏览文件的变动历史。 许多人会把版本控制系統想像成某种 “时光机器”。">
+<meta name="twitter:image" content="http://ittew.cn/image/svn/svn.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/学会使用svn/">
+
+
+
+
+
+  <title>学会使用svn | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/学会使用svn/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">学会使用svn</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-03T14:21:14+08:00">
+                2017-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>svn</code>全称<code>Subversion</code>，是代码版本管理软件，管理着随时间改变的数据。这些数据放置在一个中央资料档案库 (<code>repository</code>) 中。 这个档案库很像一个普通的文件服务器, 不过它会记住每一次文件的变动。这样你就可以把档案恢复到旧的版本, 或是浏览文件的变动历史。 许多人会把版本控制系統想像成某种 “时光机器”。<br><a id="more"></a></p>
+<h2 id="SVN的作用"><a href="#SVN的作用" class="headerlink" title="SVN的作用"></a>SVN的作用</h2><ol>
+<li>可以很好地协调一个团队共同开发同一个项目,多人开发同一个项目不会出现代码覆盖情况。</li>
+<li>针对一个文件可以创建许多不同版本，并且可以随时查看不同版本的内容。</li>
+<li>公司领导可以通过svn查看每个人的工作情况</li>
+</ol>
+<h2 id="SVN下载"><a href="#SVN下载" class="headerlink" title="SVN下载"></a>SVN下载</h2><p><a href="https://tortoisesvn.net/downloads.html" target="_blank" rel="noopener">下载地址</a></p>
+<h2 id="SVN服务器端安装"><a href="#SVN服务器端安装" class="headerlink" title="SVN服务器端安装"></a>SVN服务器端安装</h2><p><code>注: 双击setup-subversion-1.6.5.msi然后一路next即可</code><br><img src="/image/svn/svn.png" alt="svn"></p>
+<h2 id="SVN客户端安装"><a href="#SVN客户端安装" class="headerlink" title="SVN客户端安装"></a>SVN客户端安装</h2><p><code>注: 双击安装客户端软件(安装完毕重启电脑)：(根据自己操作系统位数64/32做选择安装)</code><br><img src="/image/svn/svn1.png" alt="svn1"><br><code>客户端安装完毕，鼠标右键有对应的标志(可能需要重启生效)，即代表安装成功</code><br><img src="/image/svn/svn2.png" alt="svn2"></p>
+<h2 id="从SVN服务器检出代码"><a href="#从SVN服务器检出代码" class="headerlink" title="从SVN服务器检出代码"></a>从SVN服务器检出代码</h2><p><code>在工作目录点击右键,在右键菜单中选择 SVN Checkout</code><br><img src="/image/svn/svn3.png" alt="svn3"><br><code>点击“OK”按钮后，在弹出的对话框中输入用户名和密码，验证成功后，开始从远程服务器下载到本地工作目录中</code><br><img src="/image/svn/svn4.jpg" alt="svn4"><br><code>点击“确定”按钮后，即可获取完成，出现如下下载界面, 下载完成点击OK之后,服务器上所有内容都会下载到本地文件夹下</code><br><img src="/image/svn/svn5.jpg" alt="svn5"></p>
+<h2 id="SVN图标集含义"><a href="#SVN图标集含义" class="headerlink" title="SVN图标集含义"></a>SVN图标集含义</h2><p><img src="/image/svn/svn6.png" alt="svn6"></p>
+<h2 id="SVN更新文件"><a href="#SVN更新文件" class="headerlink" title="SVN更新文件"></a>SVN更新文件</h2><p><code>更新本地代码与SVN服务器上最新的版本一致，只要在需要更新的文件夹上点击右键或者在文件下空白处点击右键，选择”SVN Update” (获取指定版本中的内容，点击右键执行SVN菜单中的“Update to reversion“)，就可以了。</code><br><img src="/image/svn/svn7.png" alt="svn7"></p>
+<h2 id="SVN提交更新-SVN-Commit"><a href="#SVN提交更新-SVN-Commit" class="headerlink" title="SVN提交更新(SVN Commit)"></a>SVN提交更新(SVN Commit)</h2><p><code>本地文件修改后，若是需要更新到服务器上，则需要提交（Commit）最新的更新。Commit的作用是将本地最新修改的文件同步到SVN服务端，供其他人来参考或者使用，当然使用之前，要先Update一下，来确保是最新的,在修改文件上击右键，出现菜单，选择“SVN Commit…”，如下：</code><br><img src="/image/svn/svn8.png" alt="svn8"><br><code>然后填写关于本次更新的日志（log message），这是必填项，否则commit会失败</code><br><img src="/image/svn/svn9.png" alt="svn9"><br><code>点击ok之后,若没有出现错误则表明刚刚的修改已成功提交</code></p>
+<h2 id="SVN新增文件"><a href="#SVN新增文件" class="headerlink" title="SVN新增文件"></a>SVN新增文件</h2><p><code>鼠标选中本地增加的新文件,右键选择“Tortoise SVN”的“Add”项，如下图所示,然后在文件夹右键选择“SVN Commit…”，将新文件上传到svn服务器上（若只上传单个文件，只需点中单个文件上传即可）。</code><br><code>新目录内部的文件不能直接提交，必须是先提交目录本身，然后该目录的文件才可以单独进行(add/)commit提交动作。</code><br><img src="/image/svn/svn10.png" alt="svn10"></p>
+<h2 id="SVN删除文件"><a href="#SVN删除文件" class="headerlink" title="SVN删除文件"></a>SVN删除文件</h2><p><code>删除文件后，在当前文件夹右键选择“SVN Commit…”项进行提交，提交方式同增加文件的提交方式，提交之后才能将新文件从配置库中删除。</code></p>
+<h2 id="撤销更改（Revert）"><a href="#撤销更改（Revert）" class="headerlink" title="撤销更改（Revert）"></a>撤销更改（Revert）</h2><p><code>在修改了某些文件后（文件未上传到配置库），需要返回到修改前的状态，则选中文件夹右键选择“Tortoise SVN”的“Revert...”项进行撤销，本地硬盘上的文件将恢复到修改前的内容，修改的内容将被删除。</code></p>
+<h2 id="查看历史文件（Show-log）"><a href="#查看历史文件（Show-log）" class="headerlink" title="查看历史文件（Show log）"></a>查看历史文件（Show log）</h2><p><code>Show log顾名思义是显示日志的作用，主要是显示该文件或者该目录被执行的操作，是被谁修改了，以及修改的时间和日期。鼠标选中文件夹右键选择“Tortoise SVN”的“Show log”项，系统弹出此路径下的所有文件版本信息。</code></p>
+<h2 id="SVN版本回退"><a href="#SVN版本回退" class="headerlink" title="SVN版本回退"></a>SVN版本回退</h2><p><code>空白区域右键---&gt;TotoriseSVN----&gt;更新至版本(Update to revision)----&gt;根据日志回退---&gt;显示日志选择要回退到的版本</code><br><img src="/image/svn/svn11.png" alt="svn11"></p>
+<h2 id="SVN冲突解决"><a href="#SVN冲突解决" class="headerlink" title="SVN冲突解决"></a>SVN冲突解决</h2><blockquote>
+<p><code>SVN冲突: 多个程序员对同一文件,同一处代码进行修改,在他们提交的时候会产生冲突</code></p>
+</blockquote>
+<p><img src="/image/svn/svn12.png" alt="svn12"><br><code>如上图，test_conflict.py文件发生了冲突，并且多出了几个文件，其中.mine是我本地修改了还没提交的版本，.r2文件是上一个版本的文件，.r1是上上个版本的文件。</code><br><img src="/image/svn/svn13.png" alt="svn13"><br><code>Edit confilicts：</code>修改冲突，可以对冲突的行进行内容选择，后面我们详细说。<br><code>Mark as resolved：</code>直接标记为已解决，这样会删除.mine、.r1、.r2这些文件，但这只是标记，如果你直接标记为解决，实际上文件还是冲突的，只是状态修复了。<br><code>Resolve conflict using &#39;theirs&#39;：</code>使用他的提交覆盖我的修改来解决冲突。如果你的修改不需要提交，你可以方便的选择这个。<br><code>Resolve conflict using &#39;mine&#39;：</code>使用我本地的版本覆盖他的来解决冲突。如果对方提交的代码没什么用，你可以直接使用这个来解决。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://blog.csdn.net/dily3825002/article/details/6717076" target="_blank" rel="noopener">SVN使用方法，简易图解</a><br><a href="https://blog.csdn.net/clementad/article/details/45199703" target="_blank" rel="noopener">图解SVN</a><br><a href="https://tortoisesvn.net/docs/nightly/TortoiseSVN_zh_CN/" target="_blank" rel="noopener">SVN简易文档</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/svn/" rel="tag"><i class="fa fa-tag"></i> svn</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo其他常用配置/" rel="next" title="hexo其他常用配置">
+                <i class="fa fa-chevron-left"></i> hexo其他常用配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/angular1/" rel="prev" title="angular1学习">
+                angular1学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN的作用"><span class="nav-number">1.</span> <span class="nav-text">SVN的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN下载"><span class="nav-number">2.</span> <span class="nav-text">SVN下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN服务器端安装"><span class="nav-number">3.</span> <span class="nav-text">SVN服务器端安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN客户端安装"><span class="nav-number">4.</span> <span class="nav-text">SVN客户端安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从SVN服务器检出代码"><span class="nav-number">5.</span> <span class="nav-text">从SVN服务器检出代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN图标集含义"><span class="nav-number">6.</span> <span class="nav-text">SVN图标集含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN更新文件"><span class="nav-number">7.</span> <span class="nav-text">SVN更新文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN提交更新-SVN-Commit"><span class="nav-number">8.</span> <span class="nav-text">SVN提交更新(SVN Commit)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN新增文件"><span class="nav-number">9.</span> <span class="nav-text">SVN新增文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN删除文件"><span class="nav-number">10.</span> <span class="nav-text">SVN删除文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销更改（Revert）"><span class="nav-number">11.</span> <span class="nav-text">撤销更改（Revert）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看历史文件（Show-log）"><span class="nav-number">12.</span> <span class="nav-text">查看历史文件（Show log）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN版本回退"><span class="nav-number">13.</span> <span class="nav-text">SVN版本回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN冲突解决"><span class="nav-number">14.</span> <span class="nav-text">SVN冲突解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">15.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

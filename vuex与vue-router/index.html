@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Vue,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="vuex和vue-router是vue生态系统中的很重要的两个工具。vuex 是vue用来管理数据状态的一种机制，将Vue中所有的状态（数据）抽离出来进行统一管理。Vue Router 是 Vue.js 官方的路由管理器。它和Vue.js的核心深度集成，让构建单页面应用变得易如反掌，是SPA（单页应用）的路径管理器。">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuex与vue-router">
+<meta property="og:url" content="http://ittew.cn/vuex与vue-router/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="vuex和vue-router是vue生态系统中的很重要的两个工具。vuex 是vue用来管理数据状态的一种机制，将Vue中所有的状态（数据）抽离出来进行统一管理。Vue Router 是 Vue.js 官方的路由管理器。它和Vue.js的核心深度集成，让构建单页面应用变得易如反掌，是SPA（单页应用）的路径管理器。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ittew.cn/image/vue/vuex.png">
+<meta property="og:updated_time" content="2021-01-12T14:28:09.794Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vuex与vue-router">
+<meta name="twitter:description" content="vuex和vue-router是vue生态系统中的很重要的两个工具。vuex 是vue用来管理数据状态的一种机制，将Vue中所有的状态（数据）抽离出来进行统一管理。Vue Router 是 Vue.js 官方的路由管理器。它和Vue.js的核心深度集成，让构建单页面应用变得易如反掌，是SPA（单页应用）的路径管理器。">
+<meta name="twitter:image" content="http://ittew.cn/image/vue/vuex.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/vuex与vue-router/">
+
+
+
+
+
+  <title>vuex与vue-router | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/vuex与vue-router/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">vuex与vue-router</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T16:00:14+08:00">
+                2018-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.5k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>vuex</code>和<code>vue-router</code>是<code>vue</code>生态系统中的很重要的两个工具。<code>vuex</code> 是<code>vue</code>用来管理数据状态的一种机制，将Vue中所有的状态（数据）抽离出来进行统一管理。<code>Vue Router</code> 是 <code>Vue.js</code> 官方的路由管理器。它和<code>Vue.js</code>的核心深度集成，让构建单页面应用变得易如反掌，是SPA（单页应用）的路径管理器。<br><a id="more"></a></p>
+<h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><blockquote>
+<p>Vuex是一个专门为vue.js应用程序开发的状态(数据)管理模式.它采用集中式存储应用的所有组件的状态,并以相应的规则保证状态以一种可预测的方式发生变化.</p>
+</blockquote>
+<p><img src="/image/vue/vuex.png" alt="插值语法"><br>Vuex使用场景：多个视图依赖于同一状态或相同数据， 来自不同视图的行为需要</p>
+<h5 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h5><ul>
+<li><code>npm install vuex -S</code> 安装vuex模块</li>
+<li><code>import Vuex from &#39;vuex&#39;</code> 引入vuex模块</li>
+<li><code>Vue.use(Vuex)</code> 作为插件使用</li>
+<li><code>new Vuex.Store()</code> 定义store容器</li>
+<li><code>new Vue({store})</code> 注入到根实例中<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/store/index.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(Vuex) <span class="comment">// 将vuex作为插件使用</span></span><br><span class="line"><span class="keyword">let</span> store = <span class="keyword">new</span> Vuex.store(&#123;&#125;) <span class="comment">// 定义store容器</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store <span class="comment">// 将store导出</span></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  store, <span class="comment">// 将store注入到根实例中</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Vuex核心概念"><a href="#Vuex核心概念" class="headerlink" title="Vuex核心概念"></a>Vuex核心概念</h5><ul>
+<li>Store 类似容器 包含应用的大部分状态 不建议直接修改state中的状态 使用提交mutations显式修改</li>
+<li><p>State 包含所有应用级别状态的对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义store容器</span></span><br><span class="line"><span class="keyword">let</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123; <span class="attr">conut</span>: <span class="number">10</span> &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 组件内取出状态（数据） hello.vue</span></span><br><span class="line"><span class="keyword">this</span>.$store.state.count</span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Getters 对state数据进行处理 在组件内部获取store中的状态函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    shopList: [&#123;</span><br><span class="line">      id: <span class="number">123</span>, <span class="attr">count</span>: <span class="number">20</span></span><br><span class="line">    &#125;,&#123;</span><br><span class="line">      id: <span class="number">124</span>, <span class="attr">count</span>: <span class="number">30</span></span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123; <span class="comment">// gettres可以定义为一个函数</span></span><br><span class="line">    total(state)&#123;</span><br><span class="line">      <span class="keyword">return</span> state.shopList.reduce(<span class="function">(<span class="params">prev, item</span>) =&gt;</span> prev + item.count, <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//xx.vue 中使用</span></span><br><span class="line"><span class="keyword">this</span>.$store.getters.total</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Mutation vuex的state状态更新的唯一方式提交mutations<br><code>Mutation主要包含两部分 type 字符串的事件类型 handle该回调函数的第一个参数就是state</code><br><code>mutation必须是同步更新状态，不要在mutation中进行异步的操作</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">  <span class="comment">// 第一个默认参数是state 第二个参数 payload是commit传递过来的值 可以是对象</span></span><br><span class="line">  updateCount(state, payload)&#123;</span><br><span class="line">    state.count += payload.add</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">methods: &#123;</span><br><span class="line">  <span class="comment">// 修改store中state的数据  提交一个mutations</span></span><br><span class="line">  <span class="comment">// 如果不包含异步操作 可以直接在组建中 使用commit提交mutations</span></span><br><span class="line">  changeState()&#123;</span><br><span class="line">    <span class="keyword">this</span>.$store.commit(<span class="string">'updateCount'</span>, &#123;<span class="attr">add</span>: <span class="number">5</span>&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Action 包含异步操作都放在action里面 提交mutations改变状态<br>context是和store对象具有相同方法和属性的对象，在action中可以通过context进行commit一个mutations操作，也可以获取context.state等。在vue组件中调用 this.$store.dispatch(‘action’)去触发action。可以将异步操作放在一个Promise中，并且成功或者失败后，调用对应的resolve或reject</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// action 中返回一个promise</span></span><br><span class="line">actions: &#123;</span><br><span class="line">  increment(context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="comment">// 异步操作</span></span><br><span class="line">        context.commit(<span class="string">'incrementMutation'</span>)</span><br><span class="line">        resolve()</span><br><span class="line">      &#125;, <span class="number">2000</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">methods: &#123;</span><br><span class="line">  incrementHandle()&#123;</span><br><span class="line">    <span class="comment">// 派发action操作</span></span><br><span class="line">    <span class="keyword">this</span>.$store.dispatch(<span class="string">'increment'</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'完成更新操作'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Module 模块<br><code>Vuex允许我们将store分割成模块(Module), 而每个模块拥有自己的state、mutation、action、getters等</code><br><code>module下的局部状态通过state获取， 根节点(全局)的状态则通过rootState获取</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取全局的state</span></span><br><span class="line"><span class="keyword">const</span> moduleA = &#123;</span><br><span class="line">  action: &#123;</span><br><span class="line">    test(&#123;state, commit, rootState&#125;)&#123;&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    test(state, getters, rootState)&#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>vuex-persistedstate</code>实现vuex持久化<br><code>vuex 是 vue 的状态管理器，存储的数据是响应式的。但是并不会保存起来，刷新之后就回到了初始状态, 使用此插件可以将state存储到localstorage或sessionstorage中</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> createPersistedState <span class="keyword">from</span> <span class="string">"vuex-persistedstate"</span></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  plugins: [createPersistedState(&#123;</span><br><span class="line">    storage: <span class="built_in">window</span>.sessionStorage</span><br><span class="line">  &#125;)]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Vuex的工具函数-语法糖-钩子函数"><a href="#Vuex的工具函数-语法糖-钩子函数" class="headerlink" title="Vuex的工具函数/语法糖/钩子函数"></a>Vuex的工具函数/语法糖/钩子函数</h5><ul>
+<li><code>...mapState([&#39;count&#39;])</code> 取state中的数据</li>
+<li><code>...mapGetters([&#39;total&#39;])</code> 对state数据的处理</li>
+<li><code>...mapMutations([&#39;updateCount&#39;])</code> 调用mutations执行同步操作</li>
+<li><code>...mapActions([&#39;updateCountSync&#39;])</code> 调用action提交mutations执行异步操作<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.vue</span></span><br><span class="line"><span class="keyword">import</span> &#123; mapState,mapGetters,mapMutations,mapActions &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  computed()&#123; <span class="comment">// mapState 和 mapGetters 需要放在computed中</span></span><br><span class="line">    ...mapState([<span class="string">'count'</span>]), <span class="comment">// 后面还有内容时 需要加上 逗号，state数据放在字符串数组中</span></span><br><span class="line">    ...mapState(<span class="string">'goods'</span>, [<span class="string">'count'</span>]), <span class="comment">// 有modules</span></span><br><span class="line">    ...mapGetters([<span class="string">'total'</span>]),</span><br><span class="line">    ...mapGetters(<span class="string">'goods'</span>, [<span class="string">'total'</span>]), <span class="comment">// 有modules</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123; <span class="comment">// mapMutations 和 mapActions 需要放在 methods中</span></span><br><span class="line">    ...mapMutations([<span class="string">'updateCount'</span>]), <span class="comment">// 后面还有内容时 需要加上 逗号，方法放在字符串数组中</span></span><br><span class="line">    ...mapMutations(<span class="string">'goods'</span>, [<span class="string">'updateCount'</span>]), <span class="comment">// 有modules</span></span><br><span class="line">    ...mapActions([<span class="string">'updateCountSync'</span>]),</span><br><span class="line">    ...mapActions(<span class="string">'goods'</span>, [<span class="string">'updateCountSync'</span>]), <span class="comment">// 如果是某个modules下action需要加namespaced命名空间</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue Router"></a>Vue Router</h2><h5 id="vue-router实现原理"><a href="#vue-router实现原理" class="headerlink" title="vue-router实现原理"></a>vue-router实现原理</h5><ul>
+<li>SPA(single page application) 单页面应用程序  页面url改变, 但页面不进行整体的刷新</li>
+<li><p>Hash模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue-router 默认 hash 模式 hash模式会在url中自带#</span></span><br><span class="line"><span class="comment">// Hash模式通过锚点值的改变，根据不同的值，渲染指定DOM位置的不同数据。hash 模式的原理是 onhashchange 事件(监测hash值变化)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>History模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用路由的 history 模式，只需要在配置路由规则时，加入"mode: 'history'",这种模式充分利用了html5 history interface 中新增的 pushState() 和 replaceState() 方法。</span></span><br><span class="line"><span class="comment">// 对历史记录修改的功能。只是当它们执行修改时，虽然改变了当前的 URL ，但浏览器不会立即向后端发送请求</span></span><br><span class="line"><span class="comment">// 需要后台配置支持 后台没有正确的配置 就会返回 404 如nginx配置</span></span><br><span class="line"><span class="comment">/* location / &#123;</span></span><br><span class="line"><span class="comment">  try_files $uri $uri/ /index.html;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"><span class="comment">// &#123;path: "*", redirect: "/"&#125;] 前端路由设置 如果URL输入错误 路由不存在 自动跳到到首页 或设置404页面</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h5><ul>
+<li>安装  <code>npm install vue-router --save</code></li>
+<li><p>配置路由文件 <code>router/index.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// router/index.js</span></span><br><span class="line"><span class="comment">// 引入vue-router插件</span></span><br><span class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"><span class="comment">// 安装路由插件router</span></span><br><span class="line">Vue.use(Router)</span><br><span class="line"><span class="comment">// 生成路由实例</span></span><br><span class="line"><span class="comment">// Router 常用参数</span></span><br><span class="line"><span class="comment">// routes: []  路由信息  mode: 'hash' 路由模式  linkActiveClass: 'highlight' 路由高亮</span></span><br><span class="line"><span class="comment">// scrollBehavior(to,from,savedPosition) 滚动行为  fallback:true 对于不支持history路由时, 自动跳转到hash模式下</span></span><br><span class="line"><span class="keyword">let</span> router = <span class="keyword">new</span> Router(&#123; <span class="comment">// 配置组件和路由的映射关系</span></span><br><span class="line">  <span class="comment">// 定义路由模式 默认为 hash</span></span><br><span class="line">  mode: <span class="string">'history'</span>, <span class="comment">// 需要后端配合</span></span><br><span class="line">  <span class="comment">// 设置当前路由高亮样式</span></span><br><span class="line">  linkActiveClass: <span class="string">'is-active'</span>,</span><br><span class="line">  <span class="comment">// 配置组件和路径的映射关系 routes 常见参数</span></span><br><span class="line">  <span class="comment">// path: '/home'  redirect: '/app' 重定向  name: 路由名称  component: 'todo' 路由组件</span></span><br><span class="line">  <span class="comment">// meta:  元信息  设置meta信息 children: [&#123;&#125;]  子路由  嵌套路由</span></span><br><span class="line">  routes: [&#123;</span><br><span class="line">    path: <span class="string">'/'</span>,</span><br><span class="line">    redirect: <span class="string">'/index'</span> <span class="comment">// 将根路径重定向到首页</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    path: <span class="string">'/index'</span>,</span><br><span class="line">    name: Home,</span><br><span class="line">    component: Home</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    path: <span class="string">'/Management'</span>,</span><br><span class="line">    name: <span class="string">'Management'</span>,</span><br><span class="line">    component: Layout,</span><br><span class="line">    children:[&#123;</span><br><span class="line">      path: <span class="string">'/project'</span>,</span><br><span class="line">      name: <span class="string">'Project'</span>,</span><br><span class="line">      component: Project,</span><br><span class="line">      meta: &#123;</span><br><span class="line">        login: <span class="literal">true</span>,</span><br><span class="line">        title: <span class="string">'标题'</span>,</span><br><span class="line">        auth: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router, <span class="comment">// 将路由挂载到Vue实例中</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// app.vue 中</span></span><br><span class="line">&lt;router-view&gt;路由对应组件显示的位置&lt;<span class="regexp">/router-view&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过<code>&lt;router-link&gt;</code>和<code>&lt;router-view&gt;</code>使用声明式路由<br><code>&lt;router-view /&gt;</code> 组件显示的位置<br><code>&lt;router-link to=&quot;/index&quot; tag=&quot;li&quot;&gt;主页&lt;/router-link&gt;</code> 跳转链接<br><code>tag可以指定&lt;router-link&gt;之后渲染成什么标签,默认是a</code></p>
+</li>
+</ul>
+<h5 id="编程式导航跳转"><a href="#编程式导航跳转" class="headerlink" title="编程式导航跳转"></a>编程式导航跳转</h5><p><code>this.$router.push()</code> 会向history栈添加一个新的记录并导航到改URL下</p>
+<ul>
+<li><code>this.$router.push(&#39;index&#39;)</code> 字符串</li>
+<li><code>this.$router.push({ name: &#39;user&#39;, params: { userId: &#39;123&#39; }})</code> 命名的路由 <code>使用的是name和params</code> 如果使用path则params无效</li>
+<li><code>this.$router.push({ path: &#39;register&#39;, query: { plan: &#39;private&#39; }})</code> 带查询参数 <code>使用的是path和query</code><br><code>this.$router.replace()</code> 它不会向 history 添加新记录, 替换掉当前的 history 记录。<br><code>this.$router.go(n)</code> 在 history 记录中向前或者后退多少步</li>
+<li><code>this.$router.go(1)</code> 在 history 记录中前进一步，等同于 history.forward()</li>
+<li><code>this.$router.go(-1)</code> 在 history 后退一步记录，等同于 history.back()</li>
+</ul>
+<h5 id="router与-route"><a href="#router与-route" class="headerlink" title="$router与$route"></a>$router与$route</h5><ul>
+<li>$router 路由实例对象 使用new VueRouter创建的实例，包括了路由的跳转方法，钩子函数等。常用于编程式导航</li>
+<li><p>$route 当前路由信息对象 在组件内部可以通过 this.$route 的方式进行调用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. $route.fullPath 为当前路由的全路径</span></span><br><span class="line"><span class="comment">// 2. $route.path 为当前路由的绝对路径</span></span><br><span class="line"><span class="comment">// 3. $route.params 包含路由中动态片段和全匹配片段的键值对</span></span><br><span class="line"><span class="comment">// 4. $route.query 包含路由中查询参数的键值对</span></span><br><span class="line"><span class="comment">// 5. $route.name 当前路由设置的name属性。</span></span><br><span class="line"><span class="comment">// 6. $route.meta 当前路由元信息</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>$route与$router的区别<br><code>$router为VueRouter实例，想要导航到不同URL，则使用$router.push方法</code><br><code>$route为当前路由对象，里面可以获取name、path、query、params等</code></p>
+</li>
+</ul>
+<h5 id="滚动行为"><a href="#滚动行为" class="headerlink" title="滚动行为"></a>滚动行为</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//点击浏览器的前进后退或切换导航时触发</span></span><br><span class="line">scrollBehavior(to,<span class="keyword">from</span>,savePosition)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(to) <span class="comment">//要进入的目标路由对象 要到哪里去</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">from</span>) <span class="comment">//离开的路由对象 从哪里离开</span></span><br><span class="line">  <span class="built_in">console</span>.log(savaPosition) <span class="comment">//记录滚动条的坐标 点击前进后退的时候记录值</span></span><br><span class="line">  <span class="keyword">if</span>(savePosition)&#123;</span><br><span class="line">    <span class="keyword">return</span> savePosition <span class="comment">// 滚动到记录的位置</span></span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">x</span>:<span class="number">0</span>, <span class="attr">y</span>:<span class="number">0</span>&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(to.hash)&#123; <span class="comment">// 滚动到某锚点</span></span><br><span class="line">    <span class="keyword">return</span>  &#123;</span><br><span class="line">      selector:to.hash</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h5><p><code>传递参数方式一: &lt;router-link&gt;</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link</span><br><span class="line">  :to=<span class="string">"&#123;</span></span><br><span class="line"><span class="string">    path: '/detial/:id' // params形式</span></span><br><span class="line"><span class="string">    query: &#123; name: 'tew', age: '28' &#125; // query模式</span></span><br><span class="line"><span class="string">  &#125;"</span></span><br><span class="line">&gt;简介&lt;<span class="regexp">/router-link&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>传递参数方式二: JavaScript代码</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(&#123;</span><br><span class="line">  path: <span class="string">'/detial/:id'</span>,</span><br><span class="line">  query: &#123; <span class="attr">name</span>: <span class="string">'tew'</span>, <span class="attr">age</span>: <span class="string">'28'</span> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>传递参数主要有两种类型: params和query<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">params的类型:</span></span><br><span class="line"><span class="comment">  配置路由格式: /router/:id</span></span><br><span class="line"><span class="comment">  传递的方式: 在path后面跟上对应的值</span></span><br><span class="line"><span class="comment">  传递后形成的路径: /router/123, /router/abc</span></span><br><span class="line"><span class="comment">  通过this.$route.params 获取params方式参数</span></span><br><span class="line"><span class="comment">query的类型:</span></span><br><span class="line"><span class="comment">  配置路由格式: /router, 也就是普通配置</span></span><br><span class="line"><span class="comment">  传递的方式: 对象中使用query的key作为传递方式</span></span><br><span class="line"><span class="comment">  传递后形成的路径: /router?id=123, /router?id=abc</span></span><br><span class="line"><span class="comment">  通过this.$route.query 获取query方式参数</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="路由导航守卫"><a href="#路由导航守卫" class="headerlink" title="路由导航守卫"></a>路由导航守卫</h5><p><code>全局路由导航守卫</code></p>
+<ul>
+<li>router.beforeEach(to, from, next) 全局前置守卫 常用beforeEach来完成页面标题的修改.</li>
+<li>router.beforeResolve(to, from, next) 全局解析守卫</li>
+<li>router.afterEach(to, from, next) 全局后置守卫</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每个守卫方法接收三个参数</span></span><br><span class="line"><span class="comment">// to: 即将要进入的目标 路由对象</span></span><br><span class="line"><span class="comment">// from: 当前导航正要离开的路由</span></span><br><span class="line"><span class="comment">// next: 同意跳转 进行下一步执行 resolve</span></span><br><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  NProgress.start() <span class="comment">// start progress bar</span></span><br><span class="line">  <span class="built_in">document</span>.title = to.meta.title  <span class="comment">// 设置页面标题</span></span><br><span class="line">&#125;)</span><br><span class="line">router.afterEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  NProgress.done() <span class="comment">// finish progress bar</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><code>路由独享的守卫</code><br>在路由配置上直接定义 <code>beforeEnter</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes: [&#123;</span><br><span class="line">    path: <span class="string">'/foo'</span>,</span><br><span class="line">    component: Foo,</span><br><span class="line">    beforeEnter: <span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;&#125;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><code>组件内的守卫</code></p>
+<ul>
+<li>beforeRouteEnter</li>
+<li>beforeRouteUpdate 路由参数更新时触发 详情页面id变化 mounted里的函数只执行一次的问题  可以代替watch</li>
+<li>beforeRouteLeave</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Foo = &#123;</span><br><span class="line">  template: <span class="string">`...`</span>,</span><br><span class="line">  beforeRouteEnter (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">    <span class="comment">// 在渲染该组件的对应路由被 confirm 前调用</span></span><br><span class="line">    <span class="comment">// 不！能！获取组件实例 `this`  因为当守卫执行前，组件实例还没被创建</span></span><br><span class="line">    <span class="comment">// 但可以使用 通过 `vm` 访问组件实例 next(vm =&gt; &#123;&#125;)</span></span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteUpdate (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">    <span class="comment">// 在当前路由改变，但是该组件被复用时调用</span></span><br><span class="line">    <span class="comment">// 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，</span></span><br><span class="line">    <span class="comment">// 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。</span></span><br><span class="line">    <span class="comment">// 可以访问组件实例 `this`</span></span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteLeave (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">    <span class="comment">// 导航离开该组件的对应路由时调用</span></span><br><span class="line">    <span class="comment">// 可以访问组件实例 `this`</span></span><br><span class="line">    <span class="comment">// 生命周期 beforeDestroy/destroyed 在beforeRouteLeave 之后</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="使用router-addRoutes动态添加路由"><a href="#使用router-addRoutes动态添加路由" class="headerlink" title="使用router.addRoutes动态添加路由"></a>使用router.addRoutes动态添加路由</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.addRoutes([&#123;</span><br><span class="line">  path: <span class="string">'/test'</span>, <span class="attr">component</span>: Test, <span class="attr">meta</span>: &#123; <span class="attr">title</span>: <span class="string">'test'</span>&#125;</span><br><span class="line">&#125;])</span><br></pre></td></tr></table></figure>
+<h5 id="路由守卫触发过程"><a href="#路由守卫触发过程" class="headerlink" title="路由守卫触发过程"></a>路由守卫触发过程</h5><ol>
+<li>导航被触发</li>
+<li>调用全局的beforeEach前置守卫</li>
+<li>在重用的组件里调用beforeRouterUpdate守卫</li>
+<li>在路由配置里面调用路由独享守卫</li>
+<li>调用被激活组件的beforeRouterEnter守卫</li>
+<li>调用全局的beforeResolve守卫</li>
+<li>调用全局的afterEach后置守卫</li>
+<li>触发DOM更新</li>
+</ol>
+<h5 id="keep-alive与-vue-router"><a href="#keep-alive与-vue-router" class="headerlink" title="keep-alive与 vue-router"></a>keep-alive与 vue-router</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// keep-alive 是 Vue 内置的组件，可以使被包含的组件保留状态，或避免重新渲染。</span></span><br><span class="line"><span class="comment">// 它们有两个非常重要的属性:</span></span><br><span class="line"><span class="comment">//    include - 字符串或正则表达，只有匹配的组件会被缓存</span></span><br><span class="line"><span class="comment">//    exclude - 字符串或正则表达式，任何匹配的组件都不会被缓存</span></span><br><span class="line"><span class="comment">// router-view 也是一个组件，如果直接被包在 keep-alive 里面，所有路径匹配到的视图组件都会被缓存：</span></span><br><span class="line"><span class="comment">// 组件使用keep-alive专有 生命周期</span></span><br><span class="line"><span class="comment">// activated: function()&#123; console.log('activated') &#125;</span></span><br><span class="line"><span class="comment">// deactivated: function()&#123; console.log('deactivated') &#125;</span></span><br><span class="line"><span class="comment">//  Detail,City 不被缓存组件name</span></span><br><span class="line">&lt;keep-alive exclude=<span class="string">"Detail, City"</span>&gt;</span><br><span class="line">  &lt;router-view/&gt;</span><br><span class="line">&lt;<span class="regexp">/keep-alive&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="vue项目实现按需加载或懒加载的3种方式"><a href="#vue项目实现按需加载或懒加载的3种方式" class="headerlink" title="vue项目实现按需加载或懒加载的3种方式"></a>vue项目实现按需加载或懒加载的3种方式</h5><ul>
+<li>路由懒加载的主要作用就是将每个路由对应的组件打包到单独的js中.只有在这个路由被访问到的时候, 才加载对应的组件</li>
+<li><p>vue异步组件 AMD</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue-router配置路由 , 使用vue的异步组件技术 , 可以实现按需加载 .</span></span><br><span class="line"><span class="comment">// 但是,这种情况下一个组件生成一个js文件</span></span><br><span class="line"><span class="comment">/* vue异步组件技术 */</span></span><br><span class="line">&#123;</span><br><span class="line">  path: <span class="string">'/home'</span>,</span><br><span class="line">  name: <span class="string">'home'</span>,</span><br><span class="line">  component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'@/components/home'</span>],resolve)</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  path: <span class="string">'/index'</span>,</span><br><span class="line">  name: <span class="string">'Index'</span>,</span><br><span class="line">  component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'@/components/index'</span>],resolve)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>路由懒加载(使用import)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 没有指定webpackChunkName，每个组件打包成一个js文件。</span></span><br><span class="line"><span class="comment">/* const Home = () =&gt; import('@/components/home')</span></span><br><span class="line"><span class="comment">const Index = () =&gt; import('@/components/index')</span></span><br><span class="line"><span class="comment">// 指定了相同的webpackChunkName，会合并打包成一个js文件。 把组件按组分块*/</span></span><br><span class="line"><span class="keyword">const</span> Home =  <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: 'ImportFuncDemo' */</span> <span class="string">'@/components/home'</span>)</span><br><span class="line"><span class="keyword">const</span> Index = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: 'ImportFuncDemo' */</span> <span class="string">'@/components/index'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>webpack的require.ensure()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用webpack的require.ensure, 多个路由指定相同的chunkName，会合并打包成一个js文件。</span></span><br><span class="line">&#123;</span><br><span class="line">  path: <span class="string">'/home'</span>,</span><br><span class="line">  name: <span class="string">'home'</span>,</span><br><span class="line">  component: <span class="function"><span class="params">r</span> =&gt;</span> <span class="built_in">require</span>.ensure([], () =&gt; r(<span class="built_in">require</span>(<span class="string">'@/components/home'</span>)), <span class="string">'demo'</span>)</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  path: <span class="string">'/index'</span>,</span><br><span class="line">  name: <span class="string">'Index'</span>,</span><br><span class="line">  component: <span class="function"><span class="params">r</span> =&gt;</span> <span class="built_in">require</span>.ensure([], () =&gt; r(<span class="built_in">require</span>(<span class="string">'@/components/index'</span>)), <span class="string">'demo'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/vue组件通信/" rel="next" title="vue组件通信的多种方式">
+                <i class="fa fa-chevron-left"></i> vue组件通信的多种方式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/element初次使用/" rel="prev" title="element初次使用">
+                element初次使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vuex"><span class="nav-number">1.</span> <span class="nav-text">Vuex</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用方式"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">使用方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Vuex核心概念"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Vuex核心概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Vuex的工具函数-语法糖-钩子函数"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Vuex的工具函数/语法糖/钩子函数</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-Router"><span class="nav-number">2.</span> <span class="nav-text">Vue Router</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#vue-router实现原理"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">vue-router实现原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基础配置"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">基础配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#编程式导航跳转"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">编程式导航跳转</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#router与-route"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">$router与$route</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#滚动行为"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">滚动行为</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#路由传参"><span class="nav-number">2.0.0.6.</span> <span class="nav-text">路由传参</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#路由导航守卫"><span class="nav-number">2.0.0.7.</span> <span class="nav-text">路由导航守卫</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用router-addRoutes动态添加路由"><span class="nav-number">2.0.0.8.</span> <span class="nav-text">使用router.addRoutes动态添加路由</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#路由守卫触发过程"><span class="nav-number">2.0.0.9.</span> <span class="nav-text">路由守卫触发过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#keep-alive与-vue-router"><span class="nav-number">2.0.0.10.</span> <span class="nav-text">keep-alive与 vue-router</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#vue项目实现按需加载或懒加载的3种方式"><span class="nav-number">2.0.0.11.</span> <span class="nav-text">vue项目实现按需加载或懒加载的3种方式</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

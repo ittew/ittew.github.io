@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="php,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="PHP语言基础 php程序结构 12345a  &amp;lt;?php   echo  &quot;标准结构&quot;;  ?&amp;gt;  //推荐写法b  &amp;lt;? echo &quot;简短风格&quot;;  ?&amp;gt;  //需修改php.ini文件 short_open_tag=onc  &amp;lt;% echo &quot;asp风格&quot; %&amp;gt;    //需修改php.ini文件 asp_tags=ond  &amp;lt;script lang">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php基础1">
+<meta property="og:url" content="http://ittew.cn/php基础1/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="PHP语言基础 php程序结构 12345a  &amp;lt;?php   echo  &quot;标准结构&quot;;  ?&amp;gt;  //推荐写法b  &amp;lt;? echo &quot;简短风格&quot;;  ?&amp;gt;  //需修改php.ini文件 short_open_tag=onc  &amp;lt;% echo &quot;asp风格&quot; %&amp;gt;    //需修改php.ini文件 asp_tags=ond  &amp;lt;script lang">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-12T14:28:09.786Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php基础1">
+<meta name="twitter:description" content="PHP语言基础 php程序结构 12345a  &amp;lt;?php   echo  &quot;标准结构&quot;;  ?&amp;gt;  //推荐写法b  &amp;lt;? echo &quot;简短风格&quot;;  ?&amp;gt;  //需修改php.ini文件 short_open_tag=onc  &amp;lt;% echo &quot;asp风格&quot; %&amp;gt;    //需修改php.ini文件 asp_tags=ond  &amp;lt;script lang">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/php基础1/">
+
+
+
+
+
+  <title>php基础1 | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/php基础1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">php基础1</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-19T14:21:14+08:00">
+                2017-01-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="PHP语言基础"><a href="#PHP语言基础" class="headerlink" title="PHP语言基础"></a>PHP语言基础</h2><ul>
+<li><p>php程序结构</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a  <span class="meta">&lt;?php</span>   <span class="keyword">echo</span>  <span class="string">"标准结构"</span>;  <span class="meta">?&gt;</span>  <span class="comment">//推荐写法</span></span><br><span class="line">b  <span class="meta">&lt;?</span> <span class="keyword">echo</span> <span class="string">"简短风格"</span>;  <span class="meta">?&gt;</span>  <span class="comment">//需修改php.ini文件 short_open_tag=on</span></span><br><span class="line">c  &lt;% <span class="keyword">echo</span> <span class="string">"asp风格"</span> %&gt;    <span class="comment">//需修改php.ini文件 asp_tags=on</span></span><br><span class="line">d  &lt;script language=<span class="string">"php"</span>&gt;&lt;/script&gt;</span><br><span class="line">php的结束符 <span class="meta">?&gt;</span>  如果后面没有其他代码 可以省略</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>程序的注释<br><code>a  /*多行注释*/  不允许嵌套</code><br><code>b  //或# 单行注释 (php代码每一行都必须以分号;结束)</code></p>
+</li>
+<li><p>变量</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>变量名以$开始</span><br><span class="line"><span class="number">2.</span>变量的名称声明时一定要有意义</span><br><span class="line"><span class="number">3.</span>以字母或下划线开头，不能以数字开头，不能有运算符号</span><br><span class="line"><span class="number">4.</span>变量的名称区分大小写（驼峰式命名方式）</span><br><span class="line">  a.  var_dump()查看变量的类型和内容(数据结构)</span><br><span class="line">  b.  <span class="keyword">isset</span>()判断变量是否存在  测试被设置为<span class="keyword">null</span>的值或<span class="keyword">unset</span>函数处理过的变量时 返回<span class="keyword">false</span></span><br><span class="line">      <span class="keyword">empty</span>()判断变量是否为空  <span class="string">""</span>  <span class="string">"0"</span> <span class="number">0</span> <span class="keyword">NULL</span> <span class="keyword">false</span> <span class="keyword">array</span>()</span><br><span class="line">尽量使用!<span class="keyword">empty</span>() 判断是否存在</span><br><span class="line">  d.  <span class="keyword">unset</span>()删除一个变量(销毁变量名) 断开变量名跟数据之间的引用关系</span><br><span class="line">  e.  gettype()获取变量类型 boolean integer double string <span class="keyword">array</span> object resouce <span class="keyword">NULL</span></span><br><span class="line">  f.  判断是否是某类型  is_int() is_bool() is_float() is_object() is_array() is_resource()</span><br><span class="line">                        is_null() is_numeric()  is_callable() 是否是有效的函数名</span><br><span class="line">常见命名法</span><br><span class="line">  <span class="number">1.</span>驼峰命名法    首单词小写 其后每个单词首字母大写 $myName</span><br><span class="line">  <span class="number">2.</span>帕斯卡命名法  每个单词首字母大写  $MyName</span><br><span class="line">  <span class="number">3.</span>下划线分割法  每个单词小写,之间用下划线分割开 $my_name</span><br><span class="line"></span><br><span class="line">变量作用域</span><br><span class="line"><span class="number">1.</span>全局变量 定义在函数之外，作用于整个PHP文件(内部使用必须用<span class="keyword">global</span>声明)</span><br><span class="line">            声明在调用之前，脚本结束(浏览器关闭)即释放</span><br><span class="line"><span class="number">2.</span>局部变量 定义在函数之内或形参，只限于内部使用，在函数外不能被使用</span><br><span class="line">            调用几次声明几次，释放(销毁)几次</span><br><span class="line"><span class="number">3.</span>静态变量 用<span class="keyword">static</span>声明，在函数第一次调用结束后仍保留变量值(存在),且不会消失</span><br><span class="line">            静态变量的初始化只是在第一次遇到时被执行，以后不再执行初始化操作</span><br><span class="line">变量的生存周期</span><br><span class="line">即从变量被声明的那一刻起，直到程序脚本运行结束，变量随之释放</span><br><span class="line">可变变量</span><br><span class="line">使用一个变量的值作为另一个变量的名称</span><br><span class="line">  $liubei=<span class="string">'河北人'</span>;</span><br><span class="line">$laoda=<span class="string">'liubei'</span>;</span><br><span class="line">$paihang=<span class="string">"laoda"</span>;</span><br><span class="line"><span class="keyword">echo</span> $laoda,$$laoda,$$$paihang;  <span class="comment">//  liubei  河北人  河北人</span></span><br><span class="line">引用变量&amp;</span><br><span class="line"><span class="number">1.</span>只有变量才有地址，只有变量才能有引用  (引用相当于快捷方式)</span><br><span class="line"><span class="number">2.</span>一个变量发生变化，另一个也跟着发生变化</span><br><span class="line"><span class="number">3.</span>在使用<span class="keyword">unset</span>()函数时，如果有引用关系，只是解除了这种引用关系，</span><br><span class="line">  只删除一个名字，另一个还在</span><br><span class="line"><span class="number">4.</span>如果两个变量是引用关系，一个变，另一个也变，但是如果给其中</span><br><span class="line">  一个引用，不是普通的值，而是一个新的引用，则改变引用关系。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>八种原始数据类型</p>
+<figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">A:四种标量类型</span><br><span class="line"><span class="number">1.</span>布尔型(<span class="keyword">boolean</span>)</span><br><span class="line">  特殊情况下的<span class="keyword">false</span>:布尔值 <span class="keyword">false</span>|整数值 <span class="number">0</span>|浮点型 <span class="number">0.0</span>|字符串 <span class="string">""</span> <span class="string">"0"</span>| 数组 <span class="keyword">array</span>[]|</span><br><span class="line">                    <span class="keyword">null</span>值  所有其他值都被认为是<span class="keyword">true</span>(包括任何资源)</span><br><span class="line"><span class="number">2.</span>整型(integer)</span><br><span class="line">  整型数可以用八进制，十进制，十六进制来表示 八进制以<span class="number">0</span>开头，十六进制以<span class="number">0</span>x开头</span><br><span class="line">  十进制 <span class="number">123</span>  <span class="number">1</span>*<span class="number">100</span>+<span class="number">2</span>*<span class="number">10</span>+<span class="number">3</span>*<span class="number">1</span>  八进制 <span class="number">0123</span> <span class="number">1</span>*<span class="number">64</span>+<span class="number">2</span>*<span class="number">8</span>+<span class="number">3</span>*<span class="number">1</span>  <span class="comment">//23</span></span><br><span class="line">  十六进制 <span class="number">0x123</span> <span class="number">1</span>*<span class="number">256</span>+<span class="number">2</span>*<span class="number">16</span>+<span class="number">3</span>*<span class="number">1</span>  <span class="comment">//291</span></span><br><span class="line">  二进制 是由<span class="number">2</span>位<span class="number">16</span>个字节表示 从右往左依次<span class="number">2</span>的倍数  <span class="number">5</span>  <span class="number">0000</span> <span class="number">0101</span></span><br><span class="line">          最高位为<span class="number">1</span>时不指定符号则为负数  ~<span class="number">5</span> <span class="comment">//-6 &lt;=(255-5-256)</span></span><br><span class="line">  如果超出<span class="keyword">int</span>所能表示的最大范围(<span class="number">-2147483648</span>~+<span class="number">2147483647</span>),将会被当做<span class="keyword">float</span>型处理</span><br><span class="line"><span class="number">3.</span>浮点型(<span class="keyword">float</span>)</span><br><span class="line">  浮点型两种格式 标准格式  <span class="number">3.1415</span>  科学计数法 <span class="number">31415e-4</span></span><br><span class="line">  浮点型的数值是一个近似值(不精确)，应尽量避免浮点型之间的比较大小</span><br><span class="line"><span class="number">4.</span>字符串(string)</span><br><span class="line">  单个字符和多个字符都是字符串，字符串没有长度限制，在单引号中不能使用单引号，</span><br><span class="line">  在双引号之间不能使用双引号(除非经过转义字符)</span><br><span class="line">B:两种复合类型</span><br><span class="line"><span class="number">1.</span>数组(<span class="keyword">Array</span>)</span><br><span class="line"><span class="number">2.</span>对象(Object)</span><br><span class="line">C:两种特殊类型</span><br><span class="line"><span class="number">1.</span>资源(Resource)</span><br><span class="line"><span class="number">2.</span><span class="keyword">Null</span>  三种情况 a.没有赋任何值 b.被赋值为<span class="keyword">null</span> c.被<span class="keyword">unset</span>()函数处理过的变量</span><br><span class="line">伪类型 mixed  $a   说明一个参数可以接受多种不同的类型</span><br><span class="line">      number $a   说明一个参数可以是<span class="keyword">int</span>或<span class="keyword">float</span></span><br><span class="line">      callback $a 说明一个参数可以是函数或一个对象的方法</span><br><span class="line">数据类型之间的转换</span><br><span class="line"><span class="number">1.</span>强制转换</span><br><span class="line">  getType(变量);获取变量的类型    强制转换时割舍小数位</span><br><span class="line">  a.setType(变量,类型)----将原变量类型给转换了</span><br><span class="line">  b.在变量使用时，前面加上类型符号(<span class="keyword">int</span>)$str---在赋值时给了新变量一个新类型，</span><br><span class="line">    原变量类型不变</span><br><span class="line">  c.intval()  floatval() strval()</span><br><span class="line"><span class="number">2.</span>自动转换</span><br><span class="line">  小类型自动转化为大类型  字符串会转换为整型或浮点型 布尔型和<span class="keyword">null</span>会转换为</span><br><span class="line">  整型或浮点型</span><br><span class="line">字符串转整型时，没有以数字开头时转为<span class="number">0</span>，有数字或科学计数法开头时转为整型数字</span><br><span class="line">  布尔型<span class="keyword">false</span>会输出为空,<span class="keyword">true</span>会输出为<span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>常量的声明和使用</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>常量一旦被声明，这个常量值就不会被改变,不能重新赋值,不能销毁 范围是全局的</span><br><span class="line">  只支持<span class="number">4</span>种标量数据类型(bool int float <span class="built_in">string</span>)  不能使用$符</span><br><span class="line"><span class="number">2.</span>使用函数<span class="class"><span class="keyword">define</span></span>(<span class="string">'常量名'</span>，常量值)声明   使用defined(<span class="string">'常量名'</span>)判断是否被定义</span><br><span class="line">  ex:   <span class="class"><span class="keyword">define</span></span>(<span class="string">"HOST"</span>,<span class="string">"www.baidu.com"</span>,<span class="literal">true</span>);   defined(<span class="string">'host'</span>)?<span class="number">1</span>:<span class="number">0</span></span><br><span class="line"><span class="number">3.</span>常量名称默认是区分大小写的，习惯上要全大写<span class="class"><span class="keyword">define</span></span>(常量名，常量值，<span class="literal">true</span> <span class="literal">or</span> <span class="literal">false</span>)</span><br><span class="line">  <span class="literal">true</span>(不区分大小写) <span class="literal">false</span>(默认区分大小写)</span><br><span class="line"><span class="number">4.</span>获取常量值 直接使用常量名(不要加$) ROOT  使用constant(<span class="string">'ROOT'</span>)函数获取</span><br><span class="line">  ex:   echo host;        echo constant(<span class="string">"host"</span>);</span><br><span class="line"><span class="number">5.</span>预定义常量  __FILE__ 获取当前文件的路径(两个下划线) __LINE__获取当前行数</span><br><span class="line">              PHP_VERSION   当前PHP服务器的版本</span><br><span class="line">引用赋值  $a=&amp;$b  把$b的地址引用赋给$a  $a改变$b也改变</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="PHP-运算符"><a href="#PHP-运算符" class="headerlink" title="PHP 运算符"></a>PHP 运算符</h2><ol>
+<li><p>算术运算符</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">+</span> <span class="literal">-</span> <span class="comment">*</span> <span class="comment">/</span> <span class="comment">%求模的时候正负值取决于被除数的正负</span></span><br><span class="line"><span class="comment"></span><span class="literal">+</span><span class="literal">+</span> <span class="literal">-</span><span class="literal">-</span>  <span class="comment">自增或自减</span> <span class="comment">对于布尔值没有效果</span> <span class="comment">对于字符串自增或自减属于升序或降序</span></span><br><span class="line"><span class="comment">$a</span><span class="literal">+</span><span class="literal">+</span><span class="comment">或$a</span><span class="literal">-</span><span class="literal">-</span>  <span class="comment">先用(赋值)再加</span> <span class="comment">结果不变</span> <span class="literal">+</span><span class="literal">+</span><span class="comment">$a或</span><span class="literal">-</span><span class="literal">-</span><span class="comment">$a</span>  <span class="comment">先加再用(赋值)</span> <span class="comment">结果加1或减1</span></span><br><span class="line"><span class="comment"></span><span class="literal">+</span><span class="literal">+</span><span class="comment">$a比$a</span><span class="literal">+</span><span class="literal">+</span> <span class="comment">效率高</span> <span class="comment">$a</span><span class="literal">+</span><span class="literal">+</span> <span class="comment">会分配临时变量来保存</span> <span class="comment">$a</span> <span class="comment">然后再</span><span class="literal">+</span><span class="literal">+</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>赋值运算符  <code>把右边的值赋给左边的变量或常量</code></p>
+</li>
+<li><p>字符串运算符</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">连接运算符      <span class="string">"."</span>,    将左右两个字符串连接在一起</span><br><span class="line">连接赋值运算符  <span class="string">".="</span>    将右边的字符串加到左边的字符串后面</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>比较运算符</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">比较运算符的结果是一个布尔型 <span class="tag">&lt;  &gt;</span>  <span class="tag">&lt;<span class="name">=</span>  &gt;</span>= ==</span><br><span class="line">不等于 !=    恒等于 === 值和类型都相同  非恒等于!== 数值不相等或类型不相同</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>逻辑运算符</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span>或&amp;&amp; 逻辑与    当两边都为<span class="literal">true</span>时，才返回<span class="literal">true</span>，否则返回<span class="literal">false</span></span><br><span class="line"><span class="keyword">or</span>或<span class="params">||</span>  逻辑或    只要有一个为<span class="literal">true</span>时，返回<span class="literal">true</span>，都为假时才返回<span class="literal">false</span></span><br><span class="line">xor     逻辑异或  当两个操作数一个为真一个为假时，才返回<span class="literal">true</span></span><br><span class="line">！      逻辑非    单一操作数为<span class="literal">true</span>，则返回<span class="literal">false</span></span><br><span class="line">逻辑运算的短路特性<span class="symbol">:defined</span>(<span class="string">"PI"</span>)<span class="params">||</span>define(<span class="string">"PI"</span>,<span class="number">3.14</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>位运算符</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">对二进制位从低位到高位对齐后进行计算</span><br><span class="line">&amp; 按位与  | 按位或 ^ 按位异或 ~ 按位取反</span><br><span class="line">&lt;&lt; 向左移n位 数字增大<span class="number">2</span>的n次方(乘以<span class="number">2</span>的n次方)  &gt;&gt;向右移位  数字减小<span class="number">2</span>倍(除以<span class="number">2</span>)</span><br><span class="line">按位运算不会出现短路</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>三元运算符(条件运算符)</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">表达式<span class="number">1</span>？表达式<span class="number">2</span>：表达式<span class="number">3</span></span><br><span class="line">如果表达式<span class="number">1</span>为真则执行表达式<span class="number">2</span>，表达式<span class="number">1</span>为假则执行表达式<span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="PHP语句"><a href="#PHP语句" class="headerlink" title="PHP语句"></a>PHP语句</h2><p>程序的3种控制结构 <code>顺序结构  分支(选择)结构  循环结构</code></p>
+<ul>
+<li><p>条件控制语句</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>语句                                  <span class="keyword">if</span>..<span class="keyword">else</span>语句</span><br><span class="line"><span class="keyword">if</span>(expr)&#123;                               <span class="keyword">if</span>(expr)&#123;</span><br><span class="line">          statement;                              statement;</span><br><span class="line">&#125;只有一条语句时，大括号可以省略          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                                                statement;</span><br><span class="line">                                        &#125;</span><br><span class="line"><span class="keyword">elseif</span>语句                              <span class="keyword">switch</span>...<span class="keyword">case</span>语句</span><br><span class="line"><span class="keyword">if</span>(expr1)&#123;                              <span class="keyword">switch</span>(变量)&#123;</span><br><span class="line">            statement1;                       <span class="keyword">case</span> 值<span class="number">1</span>:statement1;</span><br><span class="line">          &#125;<span class="keyword">elseif</span>(expr2)&#123;                              <span class="keyword">break</span>;</span><br><span class="line">            statement2;                       <span class="keyword">case</span> 值<span class="number">2</span>:statement2;</span><br><span class="line">          &#125;<span class="keyword">elseif</span>&#123;                                     <span class="keyword">break</span>;</span><br><span class="line">            statement3;                       <span class="keyword">case</span> 值<span class="number">3</span>:statement3;</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;                                       <span class="keyword">break</span>;</span><br><span class="line">            statement4;                       <span class="keyword">default</span>:statement;</span><br><span class="line">          &#125;                              &#125;</span><br><span class="line">a.<span class="keyword">switch</span>(变量) 变量的类型只能是整型或字符串</span><br><span class="line">b.<span class="keyword">switch</span> <span class="keyword">case</span> 适合单个值匹配  <span class="keyword">elseif</span> 适合判断范围时使用</span><br><span class="line">c.<span class="keyword">break</span>是退出<span class="keyword">switch</span>使用的,如果需要同时匹配多个值可以使用多个<span class="keyword">case</span>而不加<span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环控制语句</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">while</span>循环语句            <span class="keyword">do</span>...<span class="keyword">while</span>循环语句       <span class="keyword">for</span>语句</span><br><span class="line">  <span class="keyword">while</span>(<span class="built_in">expr</span>)&#123;             <span class="keyword">do</span>&#123;                      <span class="keyword">for</span>(expr1;expr2;expr3)&#123;</span><br><span class="line">      statement;               statement;             statement;</span><br><span class="line">  &#125;//条件为真假时用<span class="keyword">while</span>   &#125;<span class="keyword">while</span>(<span class="built_in">expr</span>);           &#125;expr1变量的初始赋值,expr2为循</span><br><span class="line">先执行表达式，表达式为    先执行循环体，在判断表   环条件，expr3为变量递增或递减</span><br><span class="line"><span class="literal">true</span>时，才执行循环体      达式，成立再执行循环体   用于已知循环次数多条件循环操作</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>跳转控制语句<br><code>break语句       break    n; 指定要跳出几层循环 结束循环结构</code><br><code>continue语句    continue n; 指定要跳出几层循环 只能终止本次循环</code></p>
+</li>
+<li><code>exit()</code>  die()函数是exit()函数的别名 输出一条信息 并退出当前脚本</li>
+</ul>
+<h2 id="PHP函数的使用"><a href="#PHP函数的使用" class="headerlink" title="PHP函数的使用"></a>PHP函数的使用</h2><p><code>函数是一段完成指定任务的已命名代码块</code></p>
+<ul>
+<li><p>自定义函数</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="function"><span class="keyword">function</span><span class="title">_name</span>(<span class="params">$arg1,$arg2</span>)</span>&#123;</span></span><br><span class="line"><span class="function">  <span class="title">fun_body</span></span>;</span><br><span class="line">  <span class="keyword">return</span> arg_n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span><span class="title">_name</span>(<span class="params"></span>)</span>;<span class="comment">//函数的调用可以在函数前也可以在函数后面</span></span><br><span class="line"><span class="number">1.</span>函数名要有意义,函数名不区分大小写,不能重复定义，和保留字相同的名称不能使用</span><br><span class="line"><span class="number">2.</span>被传入的参数称为实参,而函数定义的参数成为形参,参数可有可无,可以有多个<span class="string">","</span>用逗号分隔</span><br><span class="line"><span class="number">3.</span>函数返回值<span class="keyword">return</span>后面紧跟要返回的一个值 不会直接输出 如果不写<span class="keyword">return</span>则返回NULL</span><br><span class="line">  a.可以终止函数后面不执行    b.返回一个结果</span><br><span class="line"><span class="number">4.</span>判断函数是否存在 <span class="function"><span class="keyword">function</span><span class="title">_exists</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">函数的参数的传递方式</span></span><br><span class="line"><span class="function">  1.按值传递方式   实参的值不会发生改变</span></span><br><span class="line"><span class="function">  2.按引用传递方式 将实参的内存地址传递给形参,当形参在函数中有任何改变时,实参的值也</span></span><br><span class="line"><span class="function">                  会发生变化.如果形参是引用参数,调用函数时,必须传一个变量不能是数值</span></span><br><span class="line"><span class="function">  3.默认参数       默认参数必须放在非默认参数的后面 (<span class="params">实参和形参是按顺序对应传递数据的</span>)</span></span><br><span class="line"><span class="function">  4.不定参数       <span class="title">func_get_args</span>(<span class="params"></span>) 将传递给脚本函数的所有参数当作数组返回</span></span><br><span class="line"><span class="function"><span class="title">PHP</span>函数对自身的调用成为递归调用</span></span><br><span class="line"><span class="function">回调函数: 指调用函数时,将另一个函数作为参数传递给调用的函数</span></span><br><span class="line"><span class="function">变量函数：如果将一个函数名称赋给一个变量  在变量后加上(<span class="params"></span>)就会调用对应的函数</span></span><br><span class="line"><span class="function"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;   &#125;  <span class="title">$var</span>="<span class="title">add</span>"  <span class="title">$var</span>(<span class="params"></span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>系统函数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">引用文件(包含文件)</span><br><span class="line"><span class="keyword">include</span>与<span class="keyword">require</span>语句的区别</span><br><span class="line"><span class="number">1.</span><span class="keyword">include</span>调用外部文件只有程序执行到该语句才调用</span><br><span class="line"><span class="keyword">require</span>只要程序一执行,就会立刻调用文件</span><br><span class="line"><span class="number">2.</span>调用文件时,若没找到<span class="keyword">require</span>语句会输出严重错误,立即终止脚本的处理.</span><br><span class="line">而<span class="keyword">include</span>则会输出一个警告,不会终止脚本的运行,后面的可以继续执行</span><br><span class="line"><span class="keyword">include_once</span>与<span class="keyword">require_once</span>的区别</span><br><span class="line">都是确保被包含文件只能被包含一次.避免因多次包含而导致函数的重复定义而产生的错误</span><br><span class="line">不同的是在调用外部文件发生错误时,<span class="keyword">include_once</span>产生一个警告而<span class="keyword">require_once</span>则导致一个</span><br><span class="line">致命错误</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>常用数学函数</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">abs</span>()  绝对值      pow(<span class="built_in">n</span>,m) <span class="built_in">n</span>的m次方    <span class="built_in">max</span>() 求两个以上数的最大值</span><br><span class="line"><span class="built_in">min</span>()  求两个以上数的最小值   <span class="built_in">rand</span>(<span class="built_in">n</span>,m)  返回<span class="built_in">n</span>和m之间的随机数</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="PHP日期和时间"><a href="#PHP日期和时间" class="headerlink" title="PHP日期和时间"></a>PHP日期和时间</h2><ul>
+<li><p>更改PHP语言中的时区设置</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.修改php.ini文件中的设置，将date.timezone=<span class="string">"Asia/Shanghai"</span>,重启Apache服务器</span><br><span class="line"><span class="number">2</span>.在程序中添加如下函数  date_default_timezone_get()获取当前时区</span><br><span class="line"><span class="function"><span class="title">date_default_timezone_set</span><span class="params">(PRC或Asia/Chongqing或Asia/Shanghai)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取当前时间的时间戳</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="built_in">time</span>().<span class="string">"&lt;br /&gt;"</span>;          <span class="comment">//返回时间戳 1470457489</span></span><br><span class="line"><span class="built_in">echo</span> microtime().<span class="string">"&lt;br /&gt;"</span>;     <span class="comment">//0.11247900 1470457489</span></span><br><span class="line"><span class="built_in">echo</span> microtime(<span class="literal">true</span>).<span class="string">"&lt;br /&gt;"</span>; <span class="comment">//1470457661.9925微秒的时间戳 计算程序运行的时间</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将时间戳格式化</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">date</span>('Y-m-d <span class="symbol">H:i</span><span class="symbol">:s</span>',<span class="built_in">time</span>());  <span class="built_in">date</span>(<span class="string">"Y年m月d日 H:i:s"</span>,<span class="built_in">time</span>());</span><br><span class="line">Y 四位完整的年份      m 表示月份          d 月份中的第几天有前导<span class="number">0</span></span><br><span class="line">l 英文格式星期        <span class="built_in">N</span> 星期中的第几天</span><br><span class="line">H <span class="number">24</span>小时格式有前导<span class="number">0</span>   i 有前导<span class="number">0</span>的分钟数   s 有前导<span class="number">0</span>的秒数</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取指定日期的时间戳</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mktime(<span class="built_in">int</span> <span class="built_in">hour</span>,<span class="built_in">int</span> <span class="built_in">minute</span>,<span class="built_in">int</span> <span class="built_in">second</span>,<span class="built_in">int</span> mounth,<span class="built_in">int</span> <span class="built_in">day</span>,<span class="built_in">int</span> <span class="built_in">year</span>);</span><br><span class="line"><span class="comment">//取得指定日期的时间戳</span></span><br><span class="line">ex:  echo mktime(<span class="number">14</span>,<span class="number">35</span>,<span class="number">20</span>,<span class="number">11</span>,<span class="number">27</span>,<span class="number">2016</span>).<span class="string">"&lt;br /&gt;"</span>;  <span class="comment">//1470381856</span></span><br><span class="line">strtotime();获取英文格式日期时间字符串的时间戳(相对于当前时间)</span><br><span class="line"><span class="comment">//将英文文本的日期时间转化为unix时间戳</span></span><br><span class="line">ex:  strtotime(<span class="string">'now'</span>);   strtotime(<span class="string">'now -1 day'</span>) 前一天的时间戳</span><br><span class="line">checkdate(<span class="built_in">int</span> <span class="built_in">month</span>,<span class="built_in">int</span> <span class="built_in">day</span>,<span class="built_in">int</span> <span class="built_in">year</span>)检验日期的有效性</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="PHP图像与图形"><a href="#PHP图像与图形" class="headerlink" title="PHP图像与图形"></a>PHP图像与图形</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">输出图像必须加header(<span class="string">'Content-type:image/gif'</span>)，屏蔽notice错误(变量未声明导致乱码)</span><br><span class="line"><span class="number">1</span>.创建资源(画布)</span><br><span class="line">  <span class="variable">$im</span>=imagecreatetruecolor(<span class="number">300</span>,<span class="number">300</span>)</span><br><span class="line"><span class="number">2</span>.设置颜色及填充背景色</span><br><span class="line">  <span class="variable">$co</span>=imagecolorallocate(<span class="variable">$im</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>)一般为白色</span><br><span class="line">  imagefill(<span class="variable">$im</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">$co</span>)(按是否需要背景色)</span><br><span class="line"><span class="number">3</span>.设置绘制图形的颜色</span><br><span class="line">  <span class="variable">$red</span>=imagecolorallocate(<span class="variable">$im</span>,<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line"><span class="number">4</span>.绘制图像或在图像上写字</span><br><span class="line">  imageline(<span class="variable">$im</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">200</span>,<span class="number">200</span>,<span class="variable">$red</span>)</span><br><span class="line"><span class="number">5</span>.输出或保存图像(iamgegif(<span class="variable">$im</span>,<span class="string">'image/meizi.gif'</span>))</span><br><span class="line">  imagegif(<span class="variable">$im</span>)</span><br><span class="line"><span class="number">6</span>.释放资源</span><br><span class="line">  imagedestroy(<span class="variable">$im</span>)</span><br><span class="line"><span class="function"><span class="title">imagefill</span><span class="params">(<span class="variable">$im</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">$co</span>)</span></span>  区域填充    imagesetpixel(<span class="variable">$im</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="variable">$co</span>) 画一个点</span><br><span class="line"><span class="function"><span class="title">imageline</span><span class="params">(<span class="variable">$im</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">200</span>,<span class="number">200</span>,<span class="variable">$co</span>)</span></span> 画一条线段</span><br><span class="line"><span class="function"><span class="title">imagerectangle</span><span class="params">(<span class="variable">$im</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">200</span>,<span class="number">200</span>,<span class="variable">$co</span>)</span></span> 画一个矩形(填充的矩形imagerfilledectangle)</span><br><span class="line"><span class="function"><span class="title">imageellipse</span><span class="params">(<span class="variable">$im</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">150</span>,<span class="variable">$co</span>)</span></span> 画一个椭圆(填充的椭圆imagefilledellipse)</span><br><span class="line"><span class="function"><span class="title">imagearc</span><span class="params">(<span class="variable">$im</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">180</span>,<span class="number">180</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="variable">$co</span>)</span></span> 画一个弧形</span><br><span class="line"><span class="function"><span class="title">imagestring</span><span class="params">(<span class="variable">$im</span>,<span class="number">5</span>,<span class="number">50</span>,<span class="number">150</span>,<span class="string">'hello world'</span>,<span class="variable">$co</span>)</span></span> 水平画一个字符串(垂直画imagestringup)</span><br><span class="line"><span class="function"><span class="title">imagettftext</span><span class="params">(<span class="variable">$im</span>,字体大小,角度,<span class="number">80</span>,<span class="number">90</span>,<span class="variable">$co</span>,字体路径,<span class="string">'文字'</span>)</span></span> 用自定义字体输出文字</span><br></pre></td></tr></table></figure>
+<h2 id="PHP异常处理"><a href="#PHP异常处理" class="headerlink" title="PHP异常处理"></a>PHP异常处理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1.语法错误  2.运行时错误 3.逻辑错误</span><br><span class="line">错误报告及设置级别</span><br><span class="line">1.Notice注意级别  2.Warning警告级别  3.Fatal error严重错误级别</span><br><span class="line">屏蔽notice错误 error_reporting(E_ALL^E_NOTICE)</span><br><span class="line">用户自定义错误格式处理函数</span><br><span class="line">set_error_handler(<span class="string">"myerrorfun"</span>);</span><br><span class="line"><span class="variable">$mess</span>=<span class="string">""</span>;</span><br><span class="line"><span class="keyword">function</span> myerrorfun(<span class="variable">$error_type</span>,<span class="variable">$error_message</span>,<span class="variable">$error_file</span>,<span class="variable">$error_line</span>)&#123;</span><br><span class="line">    global <span class="variable">$mess</span>;</span><br><span class="line">    <span class="variable">$mess</span>.=<span class="string">"发生错误级别为&#123;<span class="variable">$error_type</span>&#125;类型,错误消息&#123;<span class="variable">$error_message</span>&#125;，在文件</span></span><br><span class="line"><span class="string">            &#123;<span class="variable">$error_file</span>&#125;中,第&#123;<span class="variable">$error_line</span>&#125;行。"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$mess</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="PHP中的会话控制"><a href="#PHP中的会话控制" class="headerlink" title="PHP中的会话控制"></a>PHP中的会话控制</h2><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">Cookie是一种由服务器端发送给客户端的片段信息,存储在客户端浏览器的内存或硬盘</span><br><span class="line">      (就好比商场的会员卡,保存在用户手中,在期限内都可以打折)</span><br><span class="line">设置cookie</span><br><span class="line">setcookie($name,[$value],[$expire],[$path],[$domain],[$source])</span><br><span class="line">setcookie(cookie名称,要存储的值,生存期限,存储路径,指定域名下有效,协议)</span><br><span class="line">         协议默认为<span class="number">0</span>(<span class="keyword">http</span>),<span class="number">1</span>(https)</span><br><span class="line">setcookie(‘username’,’Tom’,<span class="keyword">time</span>()+<span class="number">3600</span>*<span class="number">24</span>*<span class="number">7</span>)   通常只需要设置前三个参数</span><br><span class="line">设置数组形式的cookie应用</span><br><span class="line">setcookie(‘user[username]’,’Tom’,<span class="keyword">time</span>()+<span class="number">3600</span>*<span class="number">24</span>*<span class="number">7</span>)</span><br><span class="line">setcookie(‘user[userpwd]’,’Tom’,<span class="keyword">time</span>()+<span class="number">3600</span>*<span class="number">24</span>*<span class="number">7</span>)  注意数组的键不要加引号</span><br><span class="line">读取cookie</span><br><span class="line">浏览器会将所有的cookie信息存储在$_COOKIE的全局数组中,都去的时候则通过</span><br><span class="line">$_COOKIE[‘username’]或$_COOKIE[‘user’][‘username’]获取</span><br><span class="line">删除cookie</span><br><span class="line">a.将指定的cookie名称的值赋空</span><br><span class="line">setCookie(‘username’)   值为空,但名称依然存在$_COOKIE数组中</span><br><span class="line">b.将指定cookie设为过期状态</span><br><span class="line">setcookie(‘username’,’’,<span class="keyword">time</span>()<span class="number">-1</span>)  删除指定的cookie值,不会存在$_COOKIE中</span><br><span class="line">   注意:不能用<span class="keyword">unset</span>函数  删除cookie值</span><br><span class="line">session</span><br><span class="line">session是将数据存放在服务器中,在为web系统中,指用户与web系统的对话过程,即从打开浏览器登录到关闭浏览器的这段时间 (就好比会员卡的卡号由商场保存)</span><br><span class="line">在session中,在客户端保存由服务器为用户创建的sessionId,而在服务器端保存变量的值</span><br><span class="line">sessionId保存在客户端的cookie中,如果阻止cookie,则可以讲sessionID保存在地址栏url</span><br><span class="line">中,通过web请求,把sessionId发送给服务器,然后通过sessionId获取session值,由<span class="number">32</span>位</span><br><span class="line">十六进制数组成的字符串</span><br><span class="line">session的声明与使用</span><br><span class="line">开启会话   session_start()  作用  开启一个会话,返回已经存在的会话</span><br><span class="line">          在使用session_start()之前不能有任何的输出,空格或空行都不行</span><br><span class="line">session的注册与读取</span><br><span class="line">a  Session_start()    //开启session</span><br><span class="line">b  $_SESSION[‘username’] = ‘Tom’  //注册session变量并赋值</span><br><span class="line">读取同样需要先开启session_start()  然后在读取$name=$_SESSION[‘username’]</span><br><span class="line">通过session_name()获取session名称  session_id() 获取sessionId</span><br><span class="line">注销变量与销毁session</span><br><span class="line">删除session中的单个变量</span><br><span class="line">Unset($_SESSION[‘username’])  不要使用<span class="keyword">unset</span>($_SESSION)  删除整个$_SESSION数组</span><br><span class="line">销毁session  session_destroy()</span><br><span class="line">删除$_SESSION中所有的变量  $_SESSION=<span class="keyword">array</span>()</span><br><span class="line">在cookie中删除sessionId   setcookie(session_name,’’,<span class="keyword">time</span>()<span class="number">-1</span>,’/’)</span><br><span class="line">传递sessionId</span><br><span class="line">通过URL传递sessionId  &lt;a href=”index.php?&#123;session_name()&#125;=&#123;session_id()&#125;”&gt;传递&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="PHP正则表达式"><a href="#PHP正则表达式" class="headerlink" title="PHP正则表达式"></a>PHP正则表达式</h2><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">正则表达式就是一个匹配模式的字符串,必须在函数中使用</span><br><span class="line">正则表达式的组成</span><br><span class="line"><span class="number">1.</span>定界符     多种都可以常用为(<span class="string">"/../"</span>)除了字母、数字、<span class="string">\以外的字符</span></span><br><span class="line"><span class="number">2.</span>原子       最小的一个匹配单位(放在定界符内)必须有一个</span><br><span class="line"><span class="number">3.</span>元字符     不能单独使用，修饰原子，用来扩展原子功能和限定功能</span><br><span class="line"><span class="number">4.</span>模式修正符  对模式(正则)修正,作用整个表达式(写在定界符外)</span><br><span class="line"></span><br><span class="line">原子:打印字符(a-z A-Z <span class="number">0</span>-<span class="number">9</span>%)和非打印字符</span><br><span class="line">转义字符:A 可以将有意义的字符转义成普通字符     <span class="string">\^</span></span><br><span class="line">          B 可以将没有意义的字符转成有意义的原子 <span class="string">\t</span></span><br><span class="line">预定义字符集 <span class="string">\D非数字字符</span> <span class="string">\d数字</span> <span class="string">\W非单词字符</span> <span class="string">\w单词字符</span> <span class="string">\S非空白字符</span> <span class="string">\s空白字符</span></span><br><span class="line">自定义原子表 [<span class="number">13579</span>] [a-zA-Z]</span><br><span class="line"></span><br><span class="line">元字符: *   匹配前面的字符(原子)出现零次、一次或多次</span><br><span class="line">    +   匹配前面的字符出现<span class="number">1</span>次或多次,至少出现一次</span><br><span class="line">    ？  匹配前面的字符出现零次或<span class="number">1</span>次,不可出现多次</span><br><span class="line">  &#123;n&#125;  匹配前面的字符只能出现n次</span><br><span class="line">  &#123;n,&#125; 匹配前面的字符最少出现n次</span><br><span class="line">  &#123;n,m&#125;匹配前面的字符最少出现n次,最多出现m次</span><br><span class="line">    |   表示或的关系,它两边的原子只要有一个出现就可以</span><br><span class="line">  ^或<span class="string">\A</span> 表示必须以什么开始，必须写在最前面</span><br><span class="line">  $或<span class="string">\z</span> 表示必须以什么结尾，必须写在定界符最后面</span><br><span class="line">    ()    改变限定符的作用范围  子模式  反向引用</span><br><span class="line">    []    只能匹配单个字符  -  表示字符的范围</span><br><span class="line">    .    可以匹配出换行符以外的任意一个字符</span><br><span class="line">    [^]   表示排除的意思</span><br><span class="line">模式修正符</span><br><span class="line">  i 修正正则表达式不区分大小写</span><br><span class="line">  m 修正正则表达式可视为多行</span><br><span class="line">  s 可以使 . 匹配换行符</span><br><span class="line">  x 可以使正则表达式忽略空白</span><br><span class="line">  g 查找所有可能的匹配结果可以是多个</span><br><span class="line">preg_match()正则查找  preg_split()正则分割 preg_replace()正则替换</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"><i class="fa fa-tag"></i> php</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/原生ajax/" rel="next" title="原生ajax封装">
+                <i class="fa fa-chevron-left"></i> 原生ajax封装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/php基础2/" rel="prev" title="php基础2">
+                php基础2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP语言基础"><span class="nav-number">1.</span> <span class="nav-text">PHP语言基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-运算符"><span class="nav-number">2.</span> <span class="nav-text">PHP 运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP语句"><span class="nav-number">3.</span> <span class="nav-text">PHP语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP函数的使用"><span class="nav-number">4.</span> <span class="nav-text">PHP函数的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP日期和时间"><span class="nav-number">5.</span> <span class="nav-text">PHP日期和时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP图像与图形"><span class="nav-number">6.</span> <span class="nav-text">PHP图像与图形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP异常处理"><span class="nav-number">7.</span> <span class="nav-text">PHP异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP中的会话控制"><span class="nav-number">8.</span> <span class="nav-text">PHP中的会话控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP正则表达式"><span class="nav-number">9.</span> <span class="nav-text">PHP正则表达式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

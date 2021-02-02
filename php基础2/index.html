@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="php,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="PHP即“超文本预处理器”，是一种通用开源脚本语言。PHP是在服务器端执行的脚本语言，与C语言类似，是常用的网站编程语言，使用广泛，主要适用于Web开发领域， 可植入性强、拓展性强。">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php基础2">
+<meta property="og:url" content="http://ittew.cn/php基础2/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="PHP即“超文本预处理器”，是一种通用开源脚本语言。PHP是在服务器端执行的脚本语言，与C语言类似，是常用的网站编程语言，使用广泛，主要适用于Web开发领域， 可植入性强、拓展性强。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-12T14:28:09.787Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php基础2">
+<meta name="twitter:description" content="PHP即“超文本预处理器”，是一种通用开源脚本语言。PHP是在服务器端执行的脚本语言，与C语言类似，是常用的网站编程语言，使用广泛，主要适用于Web开发领域， 可植入性强、拓展性强。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/php基础2/">
+
+
+
+
+
+  <title>php基础2 | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/php基础2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">php基础2</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-27T14:21:14+08:00">
+                2017-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6.4k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>PHP</code>即“超文本预处理器”，是一种通用开源脚本语言。PHP是在服务器端执行的脚本语言，与C语言类似，是常用的网站编程语言，使用广泛，主要适用于Web开发领域， 可植入性强、拓展性强。<br><a id="more"></a></p>
+<h2 id="PHP数组"><a href="#PHP数组" class="headerlink" title="PHP数组"></a>PHP数组</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">把若干变量按有序的形式组织起来的一种集合</span><br><span class="line">数组中存的是多个内容，数组的内容叫做元素 每个元素都是由 键(key下标)和值(value)组成</span><br><span class="line">数组的分类</span><br><span class="line"><span class="number">1.</span>索引数组 下标是数字的</span><br><span class="line"><span class="number">2.</span>关联数组 下标是字符串 能体现该单元的内容</span><br><span class="line">下标默认是从<span class="number">0</span>开始 自动增长的下标都是出现过的最大值加<span class="number">1</span> 关联数组的字符串下标不会影响</span><br><span class="line">索引下标的增长规则 下标重复则后面覆盖前面的值</span><br><span class="line">如果键是浮点数 则转成整数,如果字符串的内容恰好也是整数则理解为整数</span><br><span class="line">ex:</span><br><span class="line">$arr3=<span class="keyword">array</span>(<span class="number">2</span>=&gt;<span class="string">'非'</span>,<span class="number">2.5</span>=&gt;<span class="string">'凡'</span>,<span class="string">'2.5'</span>=&gt;<span class="string">'软'</span>,<span class="string">'2'</span>=&gt;<span class="string">'件'</span>);</span><br><span class="line">    print_r($arr3);<span class="comment">//Array([2]=&gt;'件',[2.5]=&gt;'软')</span></span><br><span class="line">$arr3=<span class="keyword">array</span>(<span class="number">2</span>=&gt;<span class="string">'非'</span>,<span class="number">2.5</span>=&gt;<span class="string">'凡'</span>,<span class="string">'2.5'</span>=&gt;<span class="string">'软'</span>,<span class="string">'2'</span>=&gt;<span class="string">'件'</span>,<span class="string">'2x'</span>=&gt;<span class="string">'逗'</span>);</span><br><span class="line">    print_r($arr3);<span class="comment">//Array([2]=&gt;'件',[2.5]=&gt;'软',[2x]=&gt;'逗')</span></span><br><span class="line"><span class="number">0.</span>使用数组标识符[]声明</span><br><span class="line">$arr=[<span class="string">"aaa"</span>,<span class="number">11</span>,<span class="number">2</span>=&gt;<span class="number">22</span>,<span class="string">"bbb"</span>]  <span class="comment">//适用于php5.4以后</span></span><br><span class="line"><span class="number">2.</span>使用<span class="keyword">array</span>()函数声明</span><br><span class="line">$arr=<span class="keyword">array</span>(<span class="string">"aaa"</span>,<span class="number">2</span>=&gt;<span class="string">"bbb"</span>,<span class="string">"one"</span>=&gt;<span class="string">"ccc"</span>)</span><br><span class="line"><span class="number">3.</span>直接一个个赋值声明</span><br><span class="line">删除数组中的某个元素<span class="keyword">unset</span>()但数组不会重建索引，使用array_values()函数重建索引</span><br><span class="line">二维数组：数组元素的本身仍是数组</span><br><span class="line">访问二维数组中的某个元素 $arr[<span class="number">2</span>][<span class="string">"age"</span>]</span><br><span class="line">数组的长度或个数count($arr) count($str)如果是字符串无论是否为空都返回int <span class="number">1</span></span><br><span class="line">数组的遍历</span><br><span class="line"><span class="number">1.</span>使用<span class="keyword">for</span>循环遍历数组   只针对递增的索引数组</span><br><span class="line">  一定是下标连续的索引数组，不能遍历关联数组，操作的是数组的一个备份</span><br><span class="line"><span class="number">2.</span>使用<span class="keyword">foreach</span>遍历数组</span><br><span class="line"><span class="keyword">foreach</span>(数组 <span class="keyword">as</span> 值变量)&#123;&#125;</span><br><span class="line"><span class="keyword">foreach</span>(数组 <span class="keyword">as</span> 下标变量=&gt;值变量)&#123;&#125;</span><br><span class="line"><span class="number">3.</span>使用<span class="keyword">list</span>()函数遍历数组 用数组的值为多个变量赋值</span><br><span class="line">  <span class="keyword">list</span>($name,$age,$sex)=arr(<span class="string">"zhang"</span>,<span class="string">"25"</span>,<span class="string">"男"</span>);</span><br><span class="line">  a.<span class="keyword">list</span>右边只能是一个数组，参数必须是变量，不能是值</span><br><span class="line">  b.只能将下标是从<span class="number">0</span>开始且连续的索引数组转为变量</span><br><span class="line">  c.可以在<span class="keyword">list</span>()参数中通过空项选择性的接收数组元素</span><br><span class="line"><span class="number">4.</span>使用each()函数遍历</span><br><span class="line">  each($arr);参数是一个数组，返回的值也是一个数组固定有四个元素</span><br><span class="line">  <span class="keyword">array</span>(<span class="number">1</span>=&gt;<span class="string">"zhang"</span>,<span class="string">"value"</span>=&gt;<span class="string">"zhang"</span>,<span class="number">0</span>=&gt;<span class="string">"name"</span>,<span class="string">"key"</span>=&gt;<span class="string">"name"</span>)</span><br><span class="line">  each()只处理当前指针所在的位置， 处理完后指向下一个元素，如果</span><br><span class="line">  已经到结束为止了，则返回<span class="keyword">false</span></span><br><span class="line"><span class="number">5.</span>使用each <span class="keyword">list</span>和<span class="keyword">while</span>遍历</span><br><span class="line">  <span class="keyword">while</span>(<span class="keyword">list</span>($key,$value)=each($arr))&#123; <span class="keyword">echo</span> $key,<span class="string">"--"</span>,$value &#125;</span><br><span class="line">数组的指针</span><br><span class="line">next()将指针向后移动一个元素,prev()将指针向前移动一个元素</span><br><span class="line">key()获取当前指针位置,current()获取当前指针所对应的值</span><br><span class="line">end()将指针指向数组最后一个元素并将其取出来,reset()将指针移至第一个索引的位置</span><br><span class="line">超全局数组(变量)  页面的任何位置都可以访问</span><br><span class="line">$_SERVER   包含头信息 路径和脚本位置的数组</span><br><span class="line">$_ENV   $GLOBALS       $_FILES</span><br><span class="line">$_GET 接收用户通过URL向服务器传的参数   $_POST 接收用户通过http协议向服务器传的参数</span><br><span class="line">$_COOKIE      $_SESSION      $_REQUEST</span><br><span class="line">获取IP地址   $_SERVER[<span class="string">"REMOTE_ADDR"</span>]  获取端口号  $_SERVER[<span class="string">"REMOTE_PORT"</span>]</span><br><span class="line">操作数组的函数</span><br><span class="line">a.数组的键/值操作</span><br><span class="line"><span class="number">1.</span>array_values() 返回数组中所有元素的值</span><br><span class="line"><span class="number">1.</span> count($arr)  获取数组的长度</span><br><span class="line"><span class="number">2.</span> array_key_exists($key,$arr) 判断数组中是否存在某个键</span><br><span class="line"><span class="number">3.</span> in_array(<span class="string">"字符"</span>，$arr,<span class="keyword">true</span>) 判断数组中有没有某个元素，<span class="keyword">true</span>类型和值都必须相同，</span><br><span class="line">                              区分大小写，若是数组顺序也要相同</span><br><span class="line"><span class="number">4.</span> array_filp($arr) 交换数组中的键和值 键和值必须是整型或字符串，不能是其他类型</span><br><span class="line">                    原数组不改变</span><br><span class="line"><span class="number">5.</span> array_reverse($arr,<span class="keyword">true</span>)将数组反向 <span class="keyword">true</span>(保留原来的键名只对索引数组有效)原数组不变</span><br><span class="line">array_filter($arr,<span class="string">"函数"</span>)过滤数组中的单元，若无函数则删除所有等值为<span class="keyword">false</span>的单元</span><br><span class="line">sort()对数组按升序排列                rsort()对数组按降序排列 (不保留下标)</span><br><span class="line">ksort()对数组按照键名升序排列         krsort()对数组按照键名降序排列</span><br><span class="line">asort()对数组进行排序并保持索引关系   asort()对数组进行降序排序并保持索引关系</span><br><span class="line">natsort()按自然排序算法对数组进行排序 natsort()按自然排序算法对数组不区分大小写排序</span><br><span class="line">array_multisort()对多个数组或多维数组进行排序</span><br><span class="line">array_pop将数组最后一个单元弹出(出栈) array_push将一个或多个单元压入数组末尾(入栈)</span><br><span class="line">array_shift将数组开头的单元移除(出列) array_unshift在数组开头插入一或多个单元(入列)</span><br><span class="line">array_sum() 求所有数组元素的和  max() 返回数组的最大值  min() 返回数组的最小值</span><br><span class="line">array_product()  返回所有数组的乘积</span><br><span class="line">注:  array_push() array_unshift()  返回数组的长度 原数组改变</span><br><span class="line">数组的合并</span><br><span class="line">可以使用+或array_merge()</span><br><span class="line">使用+合并  会把最先出现的值作为最终结果返回</span><br><span class="line">当键名为数字时,array_merge()不会覆盖掉原来的值,而是附加到后面</span><br><span class="line">当键名为字符时它会覆盖前面的值</span><br><span class="line">注意:数字键形式 <span class="string">'数字'</span> 等价于 数字</span><br></pre></td></tr></table></figure>
+<h2 id="PHP字符串"><a href="#PHP字符串" class="headerlink" title="PHP字符串"></a>PHP字符串</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">单引号和双引号的区别</span><br><span class="line">a.在双引号中可以解析变量(变量被自动替换成数值),而在单引号中不能解析变量</span><br><span class="line">  (按普通字符数出)</span><br><span class="line">b.在双引号中可以使用转义字符 \<span class="keyword">n</span> \\ \$ \' \"  在单引号中不能使用转义字符除了</span><br><span class="line">(转义单引号本身  \'  转义转义符号本身 \\ )</span><br><span class="line">\<span class="keyword">n</span>  在PHP中只有在查看源代码时会看到效果 在页面中无效果</span><br><span class="line">  在使用引号输出变量时最好用&#123;&#125;包含避免变量和后面的字符连在一起</span><br><span class="line">  或者用空格隔开  echo <span class="string">"在第&#123;$a&#125;行中有&#123;$b&#125;个错误"</span>;</span><br><span class="line">c.单引号不需要分析变量.需要转义的也少,速度比双引号快</span><br><span class="line">ASCII码  36(左),37(上),38(右),39(下) 32~126  为可见字符 32为空格</span><br><span class="line">        数字0-9为 47-56   小写字母a-z 97-122 大写字母 A-Z 65-90</span><br><span class="line">符串声明或定义方式</span><br><span class="line">    a.单引号(尽量使用单引号)</span><br><span class="line">    b.双引号  双引号和定界符中的变量都会被解析</span><br><span class="line">    c.定界符&lt;&lt;&lt;  <span class="variable">$str</span>=&lt;&lt;&lt;str</span><br><span class="line">          要输出的字符串</span><br><span class="line">          str;</span><br><span class="line">    str为指定的标识符，结束标识符必须另起一行，前后不能有其他字符或空格，</span><br><span class="line">    在开始和结束标识之间不有注释  定义大段文本</span><br><span class="line">    <span class="keyword">d</span>.字符串的拼接  用.号  <span class="variable">$a</span>.<span class="variable">$b</span> =&gt; <span class="variable">$a</span><span class="variable">$b</span></span><br><span class="line">字符串处理函数可以将其他类型的数据先自动转换成字符串后再处理</span><br><span class="line">1.统计字符串的长度</span><br><span class="line">  a. <span class="built_in">strlen</span>(<span class="variable">$str</span>): 汉字在GBK编码中占2个字节 在UTF-8中占3个字节</span><br><span class="line">  b. mb_strlen(<span class="variable">$str</span>,<span class="string">"gbk"</span>)  统计汉字字符</span><br><span class="line">2.截取字符串</span><br><span class="line">  a.<span class="built_in">substr</span>(<span class="variable">$str</span>,int start,length) 从star开始截取length个字符</span><br><span class="line">    如果start为负数 则从后往前数位置 如果length为负数则代表结束位置</span><br><span class="line">3.echo <span class="variable">$str</span>; <span class="keyword">print</span> <span class="variable">$str</span>; 输出字符串 区别 echo无返回值 可以打印多个</span><br><span class="line">4.printf(%b,%c,%0,<span class="variable">$str</span>,<span class="variable">$str</span>,<span class="variable">$str</span>)格式化输出字符串</span><br><span class="line">5.<span class="built_in">trim</span>()去除字符串两边的空白字符和特殊字符</span><br><span class="line">  <span class="built_in">ltrim</span>()去除字符串左边的空白字符和特殊字符</span><br><span class="line">  <span class="built_in">rtrim</span>()去除字符串右边的空白字符和特殊字符</span><br><span class="line">6.strtolower(<span class="variable">$str</span>)将字符串<span class="variable">$str</span>全部变成小写</span><br><span class="line">  strtoupper(<span class="variable">$str</span>)将字符串<span class="variable">$str</span>全部变成大写</span><br><span class="line">  ucfirst(<span class="variable">$str</span>)将字符串<span class="variable">$str</span>第一个字符改大写</span><br><span class="line">  ucwords(<span class="variable">$str</span>)将字符串<span class="variable">$str</span>每个字的第一个字母大写</span><br><span class="line">7.htmlspecialchars(<span class="variable">$str</span>)将字符串转换成html实体</span><br><span class="line">  strip_tags(<span class="variable">$str</span>)删除html标签</span><br><span class="line">8.strrev()将字符串前后颠倒</span><br><span class="line">9.检索字符串(查询)</span><br><span class="line">  strstr();检索字符串</span><br><span class="line">  stristr()不区分大小写匹配</span><br><span class="line">  strstr(<span class="variable">$str1</span>,<span class="variable">$str2</span>)获取指定字符串<span class="variable">$str2</span>在<span class="variable">$str1</span>中首次出现的位置到末尾的子字符串，</span><br><span class="line">  成功则返回剩余字符串，没找到则返回false 如果加参数true则返回出现位置到前面的字符串</span><br><span class="line">  <span class="built_in">strpos</span>(<span class="variable">$str</span>,<span class="string">"k"</span>) 检索字符在字符串中第一次出现的位置</span><br><span class="line">10.explode(<span class="variable">$str1</span>,<span class="variable">$str</span>,limit)将字符串分割成数组</span><br><span class="line">  如果<span class="variable">$str1</span>为空，则返回false.如果<span class="variable">$str</span>在<span class="variable">$str</span>中找不到则返回包含<span class="variable">$str</span>单个元素的数组</span><br><span class="line">  implode(<span class="variable">$str</span>,<span class="variable">$arr</span>)将数组转换成字符串</span><br><span class="line">11.替换字符串</span><br><span class="line">  a.  str_replace(<span class="variable">$a</span>,<span class="variable">$b</span>,<span class="variable">$str</span>) <span class="variable">$a</span>和<span class="variable">$b</span>可以是字符串也可以是数组</span><br><span class="line">      <span class="keyword">ex</span>:  echo str_replace('死','***',<span class="variable">$str</span>);</span><br><span class="line">  b.  strtr()  替换一批字符串</span><br><span class="line">      <span class="keyword">ex</span>: <span class="variable">$str</span>=<span class="string">"男人,女人,男孩,女孩"</span>;</span><br><span class="line">    echo strtr(<span class="variable">$str</span>,array(<span class="string">"男"</span>=&gt;<span class="string">"女"</span>,<span class="string">"女"</span>=&gt;<span class="string">"男"</span>)); <span class="comment">//女人,男人,女孩,男孩</span></span><br><span class="line"><span class="built_in">strlen</span>(<span class="variable">$str</span>);    <span class="comment">//返回字符串的长度</span></span><br><span class="line">mb_strlen(<span class="variable">$str</span>)  <span class="comment">//以指定的编码格式返回字符串的长度</span></span><br><span class="line">注: <span class="keyword">count</span>(<span class="variable">$str</span>)  无论是否为空都返回1</span><br><span class="line"><span class="built_in">trim</span>(<span class="variable">$str</span>)             过滤字符串前后的空格</span><br><span class="line"><span class="built_in">trim</span>(<span class="variable">$str</span>,<span class="string">" @"</span>)        过滤字符串前后的空格和指定的字符</span><br><span class="line"><span class="built_in">trim</span>(<span class="variable">$str</span>,<span class="string">" a..z"</span>)     过滤字符串前后的空格和指定的字符</span><br><span class="line">ltrim  过滤左边的空格</span><br><span class="line">rtrim  过滤右边的空格</span><br><span class="line">chunk_split()   将字符串分割成小块</span><br><span class="line">chunk_split(<span class="variable">$str</span>,<span class="keyword">n</span>,<span class="string">"--"</span>)  <span class="comment">//ab--cd--ef--</span></span><br><span class="line">一个参数时 表示整个 <span class="keyword">n</span>分割成几块 以--连接</span><br><span class="line">chr(97)  <span class="comment">//a   返回指定字符编码所对应的字符</span></span><br><span class="line">ord('a') <span class="comment">//97  返回指定字符的字符编码</span></span><br><span class="line"><span class="built_in">substr</span>(<span class="variable">$str</span>,start,[length])</span><br><span class="line">1.如果没有length 则返回从start开始到结束所有的字符</span><br><span class="line"><span class="keyword">ex</span>: echo <span class="built_in">substr</span>(<span class="string">"abcdef"</span>,1);    <span class="comment">//bcdef</span></span><br><span class="line">2.如果start为负 则从结尾处开始截取</span><br><span class="line"><span class="keyword">ex</span>: echo <span class="built_in">substr</span>(<span class="string">"abcdef"</span>,-2,3)  <span class="comment">//ef</span></span><br><span class="line">3.如果length为负 则表示结束位置</span><br><span class="line"><span class="keyword">ex</span>: echo <span class="built_in">substr</span>(<span class="string">"abcdef"</span>,-4,-1) <span class="comment">//cde</span></span><br><span class="line">4.如果start大于字符串的长度  则返回false</span><br><span class="line"><span class="keyword">ex</span>: var_dump(<span class="built_in">substr</span>(<span class="string">"abcdef"</span>,7)) <span class="comment">//bool(false)</span></span><br><span class="line">5.如果start和length都为负数时 无交集则返回空字符串</span><br><span class="line"><span class="keyword">ex</span>: var_dump(<span class="built_in">substr</span>(<span class="string">"abcdef"</span>,-5,-6));  <span class="comment">//string(0) ""</span></span><br><span class="line">ucfirst(<span class="variable">$str</span>)  将第一个单词的首字母大写</span><br><span class="line">lcfirst(<span class="variable">$str</span>)  将第一个单词的首字母小写</span><br><span class="line">ucwords(<span class="variable">$str</span>)  将每个单词的首字母大写</span><br><span class="line">strtoupper(<span class="variable">$str</span>) 将字符串转化为大写</span><br><span class="line">strtolower(<span class="variable">$str</span>) 将字符串转化为小写</span><br><span class="line">strstr(<span class="variable">$str</span>,<span class="string">"a"</span>)       返回a第一次出现的位置到结尾的所有字符(包括a)</span><br><span class="line"><span class="keyword">ex</span>:  echo strstr(<span class="variable">$str6</span>,<span class="string">"s"</span>); <span class="comment">//sdias</span></span><br><span class="line">strstr(<span class="variable">$str</span>,<span class="string">"a"</span>,true)  返回a第一次出现的位置之前的字符(不包括a)</span><br><span class="line"><span class="keyword">ex</span>:  echo strstr(<span class="variable">$str6</span>,<span class="string">"s"</span>,true); <span class="comment">//a</span></span><br><span class="line">strrchr(<span class="variable">$str1</span>,<span class="variable">$str2</span>) 返回字符串<span class="variable">$str1</span>中<span class="variable">$str2</span>最后一次出现的位置以后的所有字符</span><br><span class="line"><span class="built_in">strpos</span>(<span class="variable">$str</span>,<span class="string">"a"</span>)   返回指定字符第一次出现的位置(索引) 找不到返回false</span><br><span class="line"><span class="keyword">ex</span>:  echo <span class="built_in">strpos</span>(<span class="variable">$str6</span>,<span class="string">"s"</span>);  <span class="comment">//1</span></span><br><span class="line">strrpos(<span class="variable">$str</span>,<span class="string">"a"</span>)  返回指定字符最后一次出现的位置(索引) 找不到返回false</span><br><span class="line"><span class="keyword">ex</span>:  echo strrpos(<span class="variable">$str6</span>, <span class="string">"s"</span>); <span class="comment">//5</span></span><br><span class="line">explode(<span class="string">"."</span>,<span class="variable">$str</span>);  将字符串以指定字符分割成数组 参数顺序不能改变</span><br><span class="line"><span class="keyword">ex</span>:  print_r(explode(<span class="string">","</span>,<span class="string">"asb,jk"</span>)); <span class="comment">//Array ( [0] =&gt; asb [1] =&gt; jk )</span></span><br><span class="line">implode(<span class="variable">$arr</span>,[<span class="string">"--"</span>]); 将数组以指定字符拼接成字符串</span><br><span class="line"><span class="keyword">ex</span>:  echo implode(array(<span class="string">"asb"</span>,<span class="string">"jk"</span>),<span class="string">"-"</span>); <span class="comment">//asb-jk</span></span><br></pre></td></tr></table></figure>
+<h2 id="PHP文件操作"><a href="#PHP文件操作" class="headerlink" title="PHP文件操作"></a>PHP文件操作</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">文件类型 在windows中只能是<span class="string">'file(文件)'</span>或<span class="string">'dir(目录)'</span></span><br><span class="line">获取文件类型 filetype(<span class="string">'../jsq.php'</span>)</span><br><span class="line">常用文件属性处理函数</span><br><span class="line"><span class="function"><span class="title">file_exists</span><span class="params">()</span></span>    判断文件或目录是否存在</span><br><span class="line"><span class="function"><span class="title">filesize</span><span class="params">()</span></span>       取得文件的大小</span><br><span class="line"><span class="function"><span class="title">is_readable</span><span class="params">()</span></span>   判断文件是否可读</span><br><span class="line"><span class="function"><span class="title">is_writable</span><span class="params">()</span></span>   判断文件是否可写</span><br><span class="line"><span class="function"><span class="title">is_executable</span><span class="params">()</span></span> 判断文件是否可执行</span><br><span class="line"><span class="function"><span class="title">filectime</span><span class="params">()</span></span>     获取文件的创建时间(时间戳)</span><br><span class="line"><span class="function"><span class="title">filemtime</span><span class="params">()</span></span>    获取文件的修改时间(时间戳)</span><br><span class="line"><span class="function"><span class="title">fileatime</span><span class="params">()</span></span>     获取文件的访问时间(时间戳)</span><br><span class="line"><span class="function"><span class="title">stat</span><span class="params">()</span></span>         获取文件的大部分属性</span><br><span class="line"><span class="function"><span class="title">disk_total_space</span><span class="params">(“c:”)</span></span>   磁盘总大小</span><br><span class="line"><span class="function"><span class="title">disk_free_space</span><span class="params">(“D:”)</span></span>   磁盘可用空间</span><br><span class="line"><span class="function"><span class="title">is_dir</span><span class="params">()</span></span> 判断文件名是否是一个目录</span><br><span class="line"><span class="function"><span class="title">is_file</span><span class="params">()</span></span> 判断文件名是否是正常文件</span><br><span class="line">目录的基本操作</span><br><span class="line">  解析目录路径</span><br><span class="line">    不同的跟路径</span><br><span class="line">    A:PHP操作的根路径是操作系统的根</span><br><span class="line">    B:文档的根目录（在浏览器中使用）</span><br><span class="line">    路径相关函数</span><br><span class="line">    basename  返回路径中的文件名部分  dirname 返回路径中的目录部分</span><br><span class="line">    pathinfo  返回文件路径的信息(数组)包括dirname basename extension</span><br><span class="line">  遍历目录</span><br><span class="line">    A:foreach(glob() as <span class="variable">$filename</span>)使用glob函数遍历目录</span><br><span class="line">    B:打开目录opendir() 读取文件readdir() closedir()关闭目录 rewiddir()倒回目录</span><br><span class="line">    在读取目录后在对文件操作时不要操作.和..</span><br><span class="line">  统计目录大小</span><br><span class="line">    disk_total_space()磁盘总大小 disk_free_space()磁盘可用空间</span><br><span class="line">    filesize()文件大小  dir()目录大小</span><br><span class="line">  建立与删除目录</span><br><span class="line">    mkdir()新建目录  rmdir()删除目录(目录必须为空) unlink(删除文件)</span><br><span class="line">  复制目录</span><br><span class="line">文件的基本操作</span><br><span class="line">  touch()创建一个文件  copy()复制文件 rename()重新命名或移动</span><br><span class="line">  unlink()删除一个文件</span><br><span class="line">  对文件内容整体的操作</span><br><span class="line">    不打开文件进行读取</span><br><span class="line">    file_get_contents()读取文件的内容   readfile()读取整个文件</span><br><span class="line">    <span class="variable">$arr</span>=file()一行一行的读取文件返回一个数组 <span class="variable">$arr</span>[n]读取第n行</span><br><span class="line">    file_put_contents()整个写入文件内容</span><br><span class="line">  文件的打开与关闭</span><br><span class="line">    <span class="variable">$fp</span>=fopen(<span class="string">"文件位置URL"</span>,<span class="string">"模式"</span>)资源 打开文件 模式 r只读 指针指向文件开头</span><br><span class="line">    w写入 清空文件 不存在则创建 a追加写入 指针指向文件末尾 不存在则创建</span><br><span class="line">    fclose(<span class="variable">$fp</span>)关闭文件</span><br><span class="line">  文件某一部分进行操作</span><br><span class="line">    fwrite(<span class="variable">$fp</span>,<span class="string">'写入文字'</span>) 写入文字</span><br><span class="line">    打开文件以后读取</span><br><span class="line">    fgets从打开的文件中读取一行 fgetc从打开的文件中读取一个字符</span><br><span class="line">文件的上传设置</span><br><span class="line">    方法必须为POST 编码方式必须为enctype=<span class="string">'multipart/from-data'</span></span><br><span class="line">    move_upload_file()文件上传函数</span><br></pre></td></tr></table></figure>
+<h2 id="PHP面向对象"><a href="#PHP面向对象" class="headerlink" title="PHP面向对象"></a>PHP面向对象</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">类是对象的抽象，对象是类的实例</span><br><span class="line">类的基本元素:成员属性和成员方法 在成员属性和方法前面一定要有修饰词public,<span class="keyword">private</span></span><br><span class="line">对类进行实例化 $bf1=new BoyFriend()创建对象</span><br><span class="line">访问对象中的成员属性或成员方法</span><br><span class="line">$引用名 = new 类名()  $引用名-&gt;成员属性=赋值 为对象属性赋值</span><br><span class="line"><span class="built_in">echo</span> $引用名-&gt;成员属性 输出对象的属性  <span class="built_in">echo</span> $引用名-&gt;成员方法() 调用对象的方法</span><br><span class="line">构造方法 <span class="variable">__construct</span>();</span><br><span class="line">  <span class="number">1</span>.是对象创建完成以后，第一个自动调用的方法(特殊)</span><br><span class="line">  <span class="number">2</span>.方法名称比较特殊，可以和类名相同的方法名</span><br><span class="line">  <span class="number">3</span>.给对象的成员赋初值</span><br><span class="line">析构方法 <span class="variable">__destruct</span>();  对象被注销(释放)之前自动调用的方法，不能带任何参数</span><br><span class="line">面向对象编程的三大特点:</span><br><span class="line">  <span class="number">1</span>.封装性</span><br><span class="line">    就是把对象中的成员属性和成员方法加上访问修饰符使其尽可能隐藏对象的内部细节以达到</span><br><span class="line">    对成员的访问控制</span><br><span class="line">    <span class="number">3</span>种访问修饰符</span><br><span class="line">      public(公有的 默认的) 在类的内部和子类中，在类体外都可以使用，</span><br><span class="line">      <span class="keyword">private</span>(私有的)       只能在所属类的内部使用和修改，不能在类体外和类的子类中访问</span><br><span class="line">        对于私有成员属性，不能在类外直接获取，需要在类的里面添加一方法通过方法来获取只</span><br><span class="line">        能在大括号内调用</span><br><span class="line">      protected(受保护的)   可以在本类和子类中被调用，其他地方则不能使用</span><br><span class="line">  <span class="number">2</span>.继承性</span><br><span class="line">    子类使用extends继承父类</span><br><span class="line">        子类可以将父类中所有的内容都继承过来(私有的可继承过来但无法操作)可以修改或添加</span><br><span class="line">    继承中的重载(覆盖)  在子类可以用和父类相同的方法名</span><br><span class="line">    使用 类::成员 parent::成员 访问父类中被覆盖的方法</span><br><span class="line">    parent::<span class="variable">__construct</span>()只要是子类去覆盖父类的构造方法，一定要在子类的最上面调用一下</span><br><span class="line">    父类被覆盖的构造方法</span><br><span class="line">    权限的问题:子类只能大于或等于父类的权限，不能小于</span><br><span class="line">  <span class="number">3</span>.多态性</span><br><span class="line"></span><br><span class="line">  魔术方法</span><br><span class="line">  <span class="variable">__set</span>() 在直接设置私有属性值时，自动调用，两个参数属性名和属性值</span><br><span class="line">  <span class="variable">__get</span>() 自动调用,是在直接访问私有成员时自动调用不是私有不调用一个参数</span><br><span class="line">  <span class="variable">__isset</span>()</span><br><span class="line">  <span class="variable">__unset</span>()</span><br><span class="line">  <span class="variable">__tostring</span>()是在直接使用 <span class="built_in">echo</span> print输出一个对象时，自动调用这个方法，将对象的基本</span><br><span class="line">  信息放在<span class="variable">__tostring</span>()内部形成字符串返回，不能有参数</span><br><span class="line">  <span class="variable">__clone</span>()  克隆对象时，自动调用的方法，是对新克隆对象的初始化，在这个方法中$this代</span><br><span class="line">            表的是克隆后的副本，所以可以对其成员进行初始化</span><br><span class="line">  <span class="variable">__call</span>()   在调用一个对象中不存在的方法时自动调用</span><br><span class="line">            有两个参数<span class="variable">__call</span>(不存在的方法名，参数列表(数组))</span><br><span class="line">            可以写提示，还可以将功能相似方法名不同的用它来完成</span><br><span class="line">  关键字</span><br><span class="line">  instanceof $p instanceof Student用于检测当前对象实例是否属于某一个类</span><br><span class="line">  final      用final修饰的类不能被继承，用final修饰的方法不能被覆盖(不让别人去扩展)</span><br><span class="line">  static 可以修饰属性和方法，不能修饰类，可以被同一个对象共用，不需要实例化，静态成员</span><br><span class="line">        一旦被加载，脚本结束后才释放，静态方法中只能调用静态变量，不能调用非静态成员</span><br><span class="line">  调用静态成员的方式 A:在内部调用时使用               self::静态成员</span><br><span class="line">                    B:在类外调用内部的静态成员时使用  类名::静态成员</span><br><span class="line">  const  修饰的成员属性为常量，只能修饰成员属性 访问方式和static相同</span><br><span class="line">  clone  使用clone复制一份对象 $obj1 = clone $obj</span><br><span class="line">对象串行化(序列化)</span><br><span class="line">  <span class="number">1</span>.将对象转成字符串--串行化    应用 ①将对象在网络中传输 ②将对象持久保存</span><br><span class="line">    $<span class="built_in">str</span> = serialize（对象）  file_put_contents(<span class="string">"objstr.txt"</span>,$<span class="built_in">str</span>)</span><br><span class="line">    <span class="variable">__sleep</span>()  在串行化时自动调用的方法</span><br><span class="line">    作用: 可以设置需要串行化的对象的属性 在这个方法中返回一个数组，在数组中声明的属性</span><br><span class="line">          被串行化，默认是全部串行化</span><br><span class="line">  <span class="number">2</span>.将字符串转回对象--返串行化</span><br><span class="line">    $<span class="built_in">str</span>=file_get_contnets(<span class="string">"objstr.txt"</span>)      $p=unserialize($<span class="built_in">str</span>)</span><br><span class="line">    <span class="variable">__wakeup</span>()  在反串行化时自动调用的方法</span><br><span class="line">    作用: 对串行化回来的对象进行初始化</span><br><span class="line">自动加载类</span><br><span class="line">  function <span class="variable">__autoload</span>($<span class="built_in">classname</span>)&#123; inculude strtolower($<span class="built_in">classname</span>).<span class="string">"class.php"</span>&#125;</span><br><span class="line">抽象方法和抽象类</span><br><span class="line">  抽象方法 用abstract来修饰,没有方法体,不使用&#123;&#125;,直接使用分号结束功能只能在子类中实现</span><br><span class="line">  抽象类   不能被实例化的类,只能作为其他类的父类来使用,用abstract来声明抽象类,普通类</span><br><span class="line">          中不能有抽象方法,子类必须把全部的抽象方法覆盖(重写),才能创建对象</span><br><span class="line"></span><br><span class="line">  接口     使用interface声明接口,特殊的抽象类，接口中的方法必须全部是抽象方法，不能</span><br><span class="line">          使用public以外的关键字修饰接口中的成员 成员属性必须是常量不能是变量</span><br><span class="line">          子类使用implements来实现接口的，要实现多个接口每个接口之间用逗号连接</span><br><span class="line">命名空间(名字空间)</span><br><span class="line">  使用namespace来声明 必须放在第一行</span><br></pre></td></tr></table></figure>
+<h2 id="PHP中操作MySQL"><a href="#PHP中操作MySQL" class="headerlink" title="PHP中操作MySQL"></a>PHP中操作MySQL</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>连接数据库      mysql_connect(<span class="string">"数据库服务器地址"</span>,<span class="string">"用户名"</span>,<span class="string">"密码"</span>)</span><br><span class="line">                <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">'连接失败'</span>.mysql_error())</span><br><span class="line"><span class="number">2.</span>设定连接编码   a. mysql_query(<span class="string">"set names 网页文件编码名"</span>)</span><br><span class="line">              b. mysql_set_charset(<span class="string">"网页文件编码名"</span>)</span><br><span class="line"><span class="number">3.</span>选择数据库     a. mysql_query(<span class="string">"use 数据库名"</span>);</span><br><span class="line">                b. mysql_select_db(<span class="string">"数据库名"</span>)</span><br><span class="line"><span class="number">4.</span>执行sql语句     mysql_query(sql语句)</span><br><span class="line">对于mysql_query()函数 可以执行几乎所有的sql语句 分为两种情况</span><br><span class="line">情况<span class="number">1</span>  执行没有数据返回的语句  比如:insert update delete create drop</span><br><span class="line">        返回布尔值 <span class="keyword">true</span>执行成功 <span class="keyword">false</span> 执行失败</span><br><span class="line">情况<span class="number">2</span>  执行有数据返回的语句 比如: select show desc</span><br><span class="line">        返回<span class="keyword">false</span> 执行失败   执行成功 返回 结果集(数据集)</span><br><span class="line"></span><br><span class="line">$res=mysql_query(<span class="string">"select....."</span>)  <span class="comment">//执行又返回的数据的语句</span></span><br><span class="line"><span class="keyword">while</span>($arr = mysql_fetch_array($res))&#123;</span><br><span class="line">    <span class="comment">//mysql_fetch_array()  会出现该结果集中的一行数据并赋值给$arr</span></span><br><span class="line">      返回的是关联数组和索引数组的结合 其下标是字段名</span><br><span class="line">    <span class="comment">//mysql_fetch_assoc()  返回的是关联数组 下标时列名 值对应列值</span></span><br><span class="line">    <span class="comment">//mysql_fetch_row()   返回的是只含值得索引数组</span></span><br><span class="line">    <span class="comment">//mysql_fetch_object() 返回的是对象,一条记录就是一个对象</span></span><br><span class="line">    <span class="comment">//                     一个字段就是一个属性 $rwo-&gt;name 访问</span></span><br><span class="line">    <span class="comment">//while循环中 会依次取出结果集中的所有数据 直到返回false</span></span><br><span class="line">    <span class="keyword">foreach</span>($arr <span class="keyword">as</span> $val)&#123;</span><br><span class="line">  <span class="keyword">echo</span> $val;  <span class="comment">//使用foreach循环遍历出每一列的值</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="number">5.</span>释放资源    mysql_free_result($res)</span><br><span class="line"><span class="number">6.</span>关闭数据库连接   mysql_close($link)</span><br><span class="line">扩展php中操作mysql数据的几个函数</span><br><span class="line">a. mysql_num_rows(<span class="string">"结果集"</span>)      <span class="comment">//获取该结果集的行数</span></span><br><span class="line">b. mysql_num_fields(<span class="string">"结果集"</span>)    <span class="comment">//获取该结果集的列数</span></span><br><span class="line">c. mysql_field_name(<span class="string">"结果集"</span>,$i) <span class="comment">//获取该结果集的第i个字段名字(i从0开始)</span></span><br><span class="line">其他:  mysql_error  获取mysql执行失败时的错误信息</span><br></pre></td></tr></table></figure>
+<h2 id="Mysqli"><a href="#Mysqli" class="headerlink" title="Mysqli"></a>Mysqli</h2><p>mysqli优势</p>
+<ul>
+<li>基于面向过程和面向对象的使用</li>
+<li>支持预处理语句</li>
+<li>支持事务</li>
+<li>支持mysql的新功能,新特性,速度更快<br>查看是否开启mysqli</li>
+<li>phpinfo()</li>
+<li>extension_loaded(“mysqli”)</li>
+<li>function_exists(“mysqli_connect”)</li>
+<li>get_loaded_extensions()  数组</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.连接并选择数据库</span></span><br><span class="line">$mi = @<span class="keyword">new</span> mysqli(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"root"</span>,<span class="string">"stu"</span>);</span><br><span class="line"><span class="comment">//2.如果有错误显示错误信息</span></span><br><span class="line"><span class="keyword">if</span>($mi-&gt;connect_errno)&#123;   <span class="comment">//错误编号</span></span><br><span class="line"><span class="keyword">die</span>(<span class="string">"Connect Error"</span>.$mi-&gt;connect_error);  <span class="comment">//错误信息</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//3.设置字符编码</span></span><br><span class="line">$mi-&gt;set_charset(<span class="string">'utf8'</span>);</span><br><span class="line"><span class="comment">//4.执行单条sql语句</span></span><br><span class="line">$mi-&gt;query($sql)</span><br><span class="line"><span class="comment">//5.获得新插入操作产生的Auto_increment的值 如果没有  返回0</span></span><br><span class="line">$mi-&gt;insert_id;</span><br><span class="line"><span class="comment">//6.获得上一次操作产生的受影响的记录条数</span></span><br><span class="line">a.受影响的行数  b.  <span class="number">-1</span>(sql出错,执行失败)   c.  受影响为<span class="number">0</span>行</span><br><span class="line">$mi-&gt;affected_rows;</span><br><span class="line"><span class="comment">//7.结果集对象的操作</span></span><br><span class="line">a.$res-&gt;num_rows  结果集行数</span><br><span class="line">b.$res-&gt;fetch_all();  默认返回的  索引+索引数组形式 MYSQL_NUM</span><br><span class="line">$res-&gt;fetch_all(MYSQLI_ASSOC)  返回的是 索引+关联数组形式</span><br><span class="line">$res-&gt;fetch_all(MYSQLI_BOTH)   返回的是 索引+索引和关联都有的形式</span><br><span class="line">$res-&gt;fetch_array()  默认返回结果集中的一条数据(数组和关联方式) MYSQLI_BOTH</span><br><span class="line">$res-&gt;fetch_array(MYSQLI_ASSOC)</span><br><span class="line">$res-&gt;fetch_assoc()           结果集中取出一条 以关联数组显示</span><br><span class="line">$res-&gt;fetch_array(MYSQLI_NUM)</span><br><span class="line">$res-&gt;fetch_row()            结果集中取出一条 以索引数组显示</span><br><span class="line">c.$res-&gt;data_seek(<span class="number">0</span>)   移动结果中指针到具体位置</span><br><span class="line"></span><br><span class="line"><span class="comment">//8.释放结果集资源</span></span><br><span class="line">$mi-&gt;free_result</span><br><span class="line"><span class="comment">//9.关闭连接</span></span><br><span class="line">$mi-&gt;close()</span><br><span class="line"><span class="comment">//10.过滤字符串中的特殊字符  防止sql注入</span></span><br><span class="line">$mi-&gt;escape_string()</span><br><span class="line"><span class="comment">//11.执行多条sql语句  每条语句以分号结束  前一条语句如果失败后面的不会执行</span></span><br><span class="line">$mi-&gt;multi_query($sql)</span><br><span class="line"><span class="comment">//12.针对多条SQL语句的查询</span></span><br><span class="line">$sql = “select id,username,age from user;”;</span><br><span class="line">$sql.=”select current_user();”;</span><br><span class="line">$sql.=”select now();”;</span><br><span class="line"><span class="comment">//use_result()/store_result()  获取第一条查询语句产生的结果集</span></span><br><span class="line"><span class="comment">//more_results()  检测是否有更多的结果集</span></span><br><span class="line"><span class="comment">//next_result()   将结果集指针向下移动一位</span></span><br><span class="line"><span class="keyword">If</span>($mi-&gt;multi_query($sql))&#123;</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>($res=$mi-&gt;store_result())&#123;</span><br><span class="line">	$row[]=$mi-&gt;fetch_all(MYSQLI_ASSOC);</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="keyword">while</span>($mi-&gt;more_results()&amp;&amp;$mi-&gt;next_result());</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="keyword">echo</span> $mi-&gt;error;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//13.预处理语句</span></span><br><span class="line">a 准备预处理语句  防止sql注入  ‘ <span class="keyword">or</span> <span class="number">1</span>=<span class="number">1</span> <span class="comment">#</span></span><br><span class="line">$sql = “insert user(uname,upwd,uage) values(?,?,?)”;</span><br><span class="line">$mysqli_stmt = $mi-&gt;prepare($sql);</span><br><span class="line">$uname = “张三”  $upwd = “<span class="number">123</span>”  $uage = <span class="number">18</span></span><br><span class="line">b 绑定参数</span><br><span class="line">$mysqli_stmt = $mi-&gt;bind_param(“ssi”,$uname,$upwd,$uage);</span><br><span class="line">c 执行预处理语句</span><br><span class="line">$mysqli_stmt -&gt;execute()</span><br><span class="line">d 预处理查询语句</span><br><span class="line">$mysqli_stmt-&gt;bind_result($id,$uname,$age)  <span class="comment">//绑定结果集的值到变量</span></span><br><span class="line">$mysqli_stmt-&gt;fetch()  遍历结果集</span><br><span class="line"><span class="comment">//14.事务处理</span></span><br><span class="line">  a 先关闭自动提交功能</span><br><span class="line">  $mi-&gt;autocommit(<span class="keyword">FALSE</span>);</span><br><span class="line">  $sql = “update account set money=money<span class="number">-200</span> where uname = ‘king’”;</span><br><span class="line">  $res = $mi-&gt;query($sql);</span><br><span class="line">  $affect =$mi-&gt;affected_rows;</span><br><span class="line">  $sql1 = “update account set money=money+<span class="number">200</span> where uname = ‘queen’”;</span><br><span class="line">  $res = $mi-&gt;query($sql1);</span><br><span class="line">  $affect <span class="number">1</span>=$mi-&gt;affected_rows;</span><br><span class="line">  <span class="keyword">If</span>($res &amp;&amp; $affect&gt;<span class="number">0</span> &amp;&amp; $res1 &amp;&amp; $affect1&gt;<span class="number">0</span>)&#123;</span><br><span class="line">	 $mi-&gt;commit();  <span class="comment">//提交事务</span></span><br><span class="line">	 <span class="keyword">echo</span> “转账成功”;</span><br><span class="line">	 $mi-&gt;autocommit(<span class="keyword">TRUE</span>);  <span class="comment">//开启自动提交</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	 $mi-&gt;rollback()  <span class="comment">//事务回滚</span></span><br><span class="line">   <span class="keyword">echo</span> “转账失败”;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span><span class="keyword">echo</span>     主要用来打印输出字符串和数字(数组和布尔值不适合) 无返回值</span><br><span class="line">  <span class="keyword">true</span>输出<span class="number">1</span> <span class="keyword">false</span>无任何输出 <span class="keyword">null</span>也无任何输出 可以打印多个 速度比<span class="keyword">print</span>快</span><br><span class="line">  <span class="keyword">print</span>()  和<span class="keyword">echo</span>差不多   只能打印一个 有返回值<span class="number">1</span>和<span class="number">0</span></span><br><span class="line">  print_r()  print_r常用来输出数组 输出的内容包括键和值 不包括数据类型</span><br><span class="line">  var_dump() 输出变量的类型和值类型(查看数据结构)值类型和长度  适用于数组和布尔值</span><br><span class="line">  printf()   格式化输出字符串</span><br><span class="line">  都可以做打印输出用</span><br><span class="line">parse_str($str) 将ulr传递的值(字符串)解析成变量</span><br><span class="line">ex:   $str  =  <span class="string">"first=value&amp;arr[]=foo+bar&amp;arr[]=baz"</span> ;</span><br><span class="line">      parse_str($str);</span><br><span class="line">      <span class="keyword">echo</span> $first; <span class="comment">//value</span></span><br><span class="line">parse_str($str,$arr) 将ulr传递的值(字符串)解析成变量用数组存起来</span><br><span class="line">ex:   $str  =  <span class="string">"first=value&amp;arr[]=foo+bar&amp;arr[]=baz"</span> ;</span><br><span class="line">      parse_str($str,$arr);</span><br><span class="line">      <span class="keyword">echo</span> $arr[<span class="string">"first"</span>];  <span class="comment">//value</span></span><br><span class="line">      <span class="keyword">echo</span> $arr[<span class="string">'arr'</span>][<span class="number">1</span>]; <span class="comment">//baz</span></span><br><span class="line"></span><br><span class="line">htmlspecialchars($str)  将字符串转为实体</span><br><span class="line">stripslashes($str)      删除斜线</span><br><span class="line"></span><br><span class="line">strip_tags($str) 从字符串中去除指定的HTML和PHP标记</span><br><span class="line"></span><br><span class="line">PHP 实现页面跳转</span><br><span class="line">    <span class="number">1.</span>header(<span class="string">"location:XXX.php"</span>)</span><br><span class="line">    <span class="number">2.</span><span class="keyword">echo</span> <span class="string">"&lt;meta http-equiv='refresh' content='0;url=XXX.php'&gt;"</span>;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"><i class="fa fa-tag"></i> php</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/php基础1/" rel="next" title="php基础1">
+                <i class="fa fa-chevron-left"></i> php基础1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/bootstrap学习/" rel="prev" title="bootstrap学习">
+                bootstrap学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP数组"><span class="nav-number">1.</span> <span class="nav-text">PHP数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP字符串"><span class="nav-number">2.</span> <span class="nav-text">PHP字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP文件操作"><span class="nav-number">3.</span> <span class="nav-text">PHP文件操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP面向对象"><span class="nav-number">4.</span> <span class="nav-text">PHP面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP中操作MySQL"><span class="nav-number">5.</span> <span class="nav-text">PHP中操作MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysqli"><span class="nav-number">6.</span> <span class="nav-text">Mysqli</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">7.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

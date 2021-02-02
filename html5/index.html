@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html5,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Html5特点:代码更加简洁,标签具有语义化,新增了一些属性,代码更加宽松,是互联网的下一代标准,新增了更加丰富且实用的规范, 如: 语义化标签、废除标签、丰富表单控件、拖拽事件、Canvas、SVG矢量图、Video、Audio、触屏touch事件、本地存储、应用缓存等.">
+<meta name="keywords" content="html5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5学习">
+<meta property="og:url" content="http://ittew.cn/html5/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="Html5特点:代码更加简洁,标签具有语义化,新增了一些属性,代码更加宽松,是互联网的下一代标准,新增了更加丰富且实用的规范, 如: 语义化标签、废除标签、丰富表单控件、拖拽事件、Canvas、SVG矢量图、Video、Audio、触屏touch事件、本地存储、应用缓存等.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-12T14:28:09.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5学习">
+<meta name="twitter:description" content="Html5特点:代码更加简洁,标签具有语义化,新增了一些属性,代码更加宽松,是互联网的下一代标准,新增了更加丰富且实用的规范, 如: 语义化标签、废除标签、丰富表单控件、拖拽事件、Canvas、SVG矢量图、Video、Audio、触屏touch事件、本地存储、应用缓存等.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/html5/">
+
+
+
+
+
+  <title>html5学习 | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/html5/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">html5学习</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-19T14:21:14+08:00">
+                2017-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.1k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>Html5</code>特点:代码更加简洁,标签具有语义化,新增了一些属性,代码更加宽松,是互联网的下一代标准,新增了更加丰富且实用的规范, 如: 语义化标签、废除标签、丰富表单控件、拖拽事件、<code>Canvas</code>、<code>SVG矢量图</code>、<code>Video</code>、<code>Audio</code>、<code>触屏touch事件</code>、本地存储、应用缓存等.<br><a id="more"></a></p>
+<h2 id="HTML5新增标签"><a href="#HTML5新增标签" class="headerlink" title="HTML5新增标签"></a>HTML5新增标签</h2><ul>
+<li><p>结构标签:块级元素(<code>有语义的div</code>)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span>    标记定义一个页面或一个区域的头部</span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span>       标记定义导航链接</span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span>   标记定义一个区域(类似div)</span><br><span class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span>     标记定义页面部分的侧边栏</span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span>    标记定义一个页面或一个区域的底部</span><br><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span>   标记定义一篇文章</span><br><span class="line"><span class="tag">&lt;<span class="name">dialog</span>&gt;</span>    标记定义一个会话框</span><br><span class="line"><span class="tag">&lt;<span class="name">hgroup</span>&gt;</span>    标记定义文件中一个区块的相关信息</span><br><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span>    标记定义一组媒体内容以及他们的解释说明</span><br><span class="line"><span class="tag">&lt;<span class="name">figcaption</span>&gt;</span> 标记定义figure元素的解释说明</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多媒体标签</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span>&gt;</span>     页面中插入视频内容</span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span>&gt;</span>	    页面中插入音频内容</span><br><span class="line"><span class="tag">&lt;<span class="name">source</span>&gt;</span>    可定义多个媒体资源</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绘图标签</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span>&gt;</span>    绘制图片</span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span>	    矢量图</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注释标签</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">&lt;ruby&gt;</span>      标记定义注释或音标</span><br><span class="line"><span class="symbol">&lt;rp&gt;</span>	    告诉那些不支持Ruby元素的浏览器如何去显示</span><br><span class="line"><span class="symbol">&lt;rt&gt;</span>	    标记定义对<span class="keyword">ruby</span>的注释内容文本</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他标签</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">&lt;menu&gt;</span>     标记重新定义用户界面的菜单配合commond或者menuitem使用</span><br><span class="line"><span class="symbol">&lt;keygen&gt;</span>   标记定义表单里公钥</span><br><span class="line"><span class="symbol">&lt;mark&gt;</span>	   标记定义有<span class="keyword">mark</span>标记的文本(默认为黄色背景)</span><br><span class="line"><span class="symbol">&lt;output&gt;</span>   标记定义一些输出类型,计算表单结果,配合表单事件</span><br><span class="line"><span class="symbol">&lt;time&gt;</span>     标记定义一个日期/时间  没什么用便于seo</span><br><span class="line"><span class="symbol">&lt;address&gt;</span>  标记定义文章或作者的详细信息 默认斜体显示</span><br><span class="line"><span class="symbol">&lt;meter&gt;</span>    状态标签,温度等 &lt;meter <span class="built_in">min</span>=<span class="string">'0'</span> <span class="built_in">max</span>=<span class="string">'45'</span> low=<span class="string">'36'</span> high=<span class="string">'38'</span> value=<span class="string">'35'</span> &gt;&lt;/meter&gt;</span><br><span class="line"><span class="symbol">&lt;progress&gt;</span> 进度条 &lt;progress  <span class="built_in">max</span>=<span class="string">"100"</span>  value=<span class="string">"30"</span>&gt;</span><br><span class="line"><span class="symbol">&lt;datalist&gt;</span> 为<span class="built_in">input</span>定义下拉列表仅在chrome中有效</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>废除元素</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">纯表现 basefont,big,<span class="built_in">center</span>,<span class="built_in">font</span>,s,strike,tt,u</span><br><span class="line">会产生负面影响 frame,frameset,noframes</span><br><span class="line">产生混淆 acronym,applet,isindex,dir</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Html5新增表单"><a href="#Html5新增表单" class="headerlink" title="Html5新增表单"></a>Html5新增表单</h2><ul>
+<li><p><code>input</code>表单<code>type</code>属性值</p>
+<figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"email"</span>     限制用户输入的必须为Email类型</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"url"</span>       限制用户输入的必须为url类型</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"date"</span>      限制用户输入的必须为日期类型</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"datetime"</span>  显示完整日期 含时区</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"datetime-local"</span>  显示完整日期  不含时区</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"time"</span>      限制用户输入必须为时间类型</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"month"</span>     限制用户输入的必须为月类型</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"week"</span>      限制用户输入的必须为周类型</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"number"</span>    限制用户输入的必须为数字类型</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"range"</span>     生成一个滑动条 其他属性</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"search"</span>    具有搜索意义的表单result=n的属性</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"color"</span>     生成一个颜色选择表单</span><br><span class="line"><span class="class"><span class="keyword">type</span></span>=<span class="string">"tel"</span>       显示电话号码</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增表单属性</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">required:</span>        内容不能为空</span><br><span class="line"><span class="symbol">placeholder:</span>     表单提示文字（占位符），输入文字后消失</span><br><span class="line"><span class="symbol">autofocus:</span>       自动聚焦 页面加载之后</span><br><span class="line">pattern          正则表达式</span><br><span class="line">autocomplete     是否保存或提示用户输入值 默认为on 关闭off</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表单验证反馈</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">invalid 事件  validity对象(valid查看验证是否通过)</span><br><span class="line">input.addEventListener(“invalid”,fn,false)  验证失败时执行函数</span><br><span class="line"><span class="section">阻止默认验证:    ev.preventDefault()</span></span><br><span class="line"><span class="section">关闭验证:        formnovalidate</span></span><br><span class="line"><span class="section">输入值为空时:    valueMissing</span></span><br><span class="line"><span class="section">值与设定类型不匹配:typeMismatch</span></span><br><span class="line"><span class="section">输入值不满足正则: patternMismatch</span></span><br><span class="line"><span class="section">不符合自定义验证: customError</span></span><br><span class="line"><span class="section">自定义验证:      setCustomValidity()</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Html5拖拽事件"><a href="#Html5拖拽事件" class="headerlink" title="Html5拖拽事件"></a>Html5拖拽事件</h2><ul>
+<li>图片自带拖拽功能, 其他元素可设置<code>draggable</code>属性<code>draggable:true</code></li>
+<li>拖拽元素(被拖拽的元素对象)事件:<br><code>ondragstart</code>  拖拽前触发<br><code>ondrag</code>       拖拽过程中,连续触发<br><code>ondragend</code>    拖拽结束触发</li>
+<li>目标元素(拖拽元素被拖到的对象)事件:<br><code>ondragenter</code>  进入目标元素触发<br><code>ondragover</code>   进入目标,离开目标之间,连续触发<br><code>ondragleave</code>  离开目标元素触发<br><code>ondrop</code>       在目标元素上释放鼠标触发,需要在<code>ondragover</code>里添加阻止默认行为,才可以实现</li>
+<li><p>拖放事件的执行顺序</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Drop不触发  dragstart&gt;drag&gt;dragenter&gt;dragover&gt;dragleave&gt;dragend</span></span><br><span class="line"><span class="comment">// Drop触发时  dragstart&gt;drag&gt;dragenter&gt;dragover&gt;drop&gt;dragend</span></span><br><span class="line"><span class="comment">// (需要在dragover的时候阻止默认行为)</span></span><br><span class="line"><span class="comment">// 拖拽的兼容问题 在火狐浏览器中需设置dataTransfer对象才可以拖拽除图片外的标签</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>dataTransfer</code>对象下的属性有:<br><code>setData()</code> 设置数据key和value(必须是字符串)<br><code>getData()</code> 获取数据 根据key获取对应的value<br><code>effectAllowed(none,copy,copyLink,copyMove,link,linkMove,move,all,uninitialized)</code>  设置光标样式<br><code>files</code> 获取外部拖拽的文件,返回filesList列表,在filesList下有个type属性,返回文件的类型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">odiv1.ondragstart = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> ev = ev || <span class="built_in">window</span>.event</span><br><span class="line">  ev.dataTransfer.setData(<span class="string">'data'</span>, <span class="string">'odiv1'</span>)</span><br><span class="line">&#125;</span><br><span class="line">odiv2.ondrop = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> ev = ev || <span class="built_in">window</span>.event</span><br><span class="line">  ev.dataTransfer.getData(<span class="string">'data'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图片上传与拖拽</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1.获取外部的拖拽的文件  file=ev.dataTransfer.files</span></span><br><span class="line"><span class="comment">2.新建一个文件读取对象  re=new FileReader()</span></span><br><span class="line"><span class="comment">3.读取拖拽进来的文件    re.readAsDataURL(file[0])</span></span><br><span class="line"><span class="comment">4.读取文件完成触发函数  re.onload=function()&#123;&#125;</span></span><br><span class="line"><span class="comment">5.取得读取到的数据      this.result</span></span><br><span class="line"><span class="comment">6.创建img标签 将取得数据赋值给img的src属性</span></span><br><span class="line"><span class="comment">7.将img对象添加到目标对象中</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">odiv3.ondrop = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> ev = ev||<span class="built_in">window</span>.event</span><br><span class="line">  ev.preventDefault()</span><br><span class="line">  <span class="keyword">this</span>.indexHTML = <span class="string">''</span></span><br><span class="line">  <span class="keyword">var</span> file = ev.dataTransfer.files <span class="comment">// 获取外部拖拽的文件</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;file.length;i++) &#123; <span class="comment">// 遍历上传的文件</span></span><br><span class="line">    <span class="keyword">if</span>(file[i].type.indexOf(<span class="string">'image'</span>) &gt; <span class="number">-1</span>)&#123;<span class="comment">// 判断是否是图片类型</span></span><br><span class="line">      <span class="keyword">var</span> re = <span class="keyword">new</span> FileReader() <span class="comment">// 新建文件读取对象</span></span><br><span class="line">      re.readAsDataUrl(file[i]) <span class="comment">// 读取文件</span></span><br><span class="line">      re.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.result)</span><br><span class="line">        <span class="keyword">var</span> img = doucment.createElement(<span class="string">'img'</span>) <span class="comment">// 创建图片对象</span></span><br><span class="line">        img.src = <span class="keyword">this</span>.result <span class="comment">// 将读取到的文件数据赋值给img对象</span></span><br><span class="line">        odiv3.appendchild(<span class="string">'img'</span>) <span class="comment">// 将img对象添加到拖拽的目标对象odiv3上</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      alert(<span class="string">'请上传图片类型'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Html5canvas绘图"><a href="#Html5canvas绘图" class="headerlink" title="Html5canvas绘图"></a>Html5canvas绘图</h2><ul>
+<li>canvas标签 <code>&lt;canvas id=&quot;can&quot; width=&quot;300px&quot; height=&quot;300px&quot;&gt;&lt;/canvas&gt;</code><br><code>canvas元素本身是没有绘图能力的,所有的绘制工作必须在javascript中进行完成,拥有多种绘制图形,字符,图像的方法</code></li>
+<li>canvas绘图环境设置<br><code>cxt=getContext(&quot;2d&quot;)</code> 目前只支持2d绘图环境(获取图形上下文)</li>
+<li><p>绘制路径</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cxt.beginPath()   开始路径</span><br><span class="line">cxt.closePath()   结束路径</span><br><span class="line"><span class="comment">// 注:画每个图形最好都加上beginPath()和closePath()否则,会出现所有图形都连在一起,就是因为没有结束路径</span></span><br><span class="line">cxt.rect(x,y,w,h) 矩形路径</span><br><span class="line">cxt.save()        保存路径 新开辟一个空间来绘制图形 保存之前的画布内容</span><br><span class="line">cxt.restore()     恢复路径 释放之前的画布内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置绘图样式和方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cxt.moveTo(x,y)        将触笔移动(x,y)点</span><br><span class="line">cxt.lineTo(x,y)        绘制到(x,y)点</span><br><span class="line">cxt.stroke()           用触笔方法画线</span><br><span class="line">cxt.fill()             用填充方法画线</span><br><span class="line">cxt.fillStyle=”green”  设置图形(填充)方法样式的颜色</span><br><span class="line">cxt.strokeStyle=”blue” 设置边框(触笔)方法的颜色</span><br><span class="line">cxt.lineWidth=<span class="number">10</span>       触笔的宽度(线宽)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绘制线段</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cxt.moveTo(x,y)        绘制线段的起点</span><br><span class="line">cxt.lineTo(x,y)        绘制线段的终点</span><br><span class="line">cxt.stroke()           使用触笔方法划线段</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绘制矩形</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cxt.fillRect(x,y,w,h)    填充方法绘制实心矩形 x,y起点坐标 w宽 h高</span><br><span class="line">cxt.strokeRect(x,y,w,h) 触笔方法绘制空心矩形</span><br><span class="line">cxt.clearRect(x,y,w,h)  清除画布内容</span><br><span class="line"><span class="comment">// 当同时使用这两方法时,前面绘制的内容会被后面的覆盖</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图形边界样式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// lineJoin 边界连接点的样式 miter(默认值) round(圆角) bevel(斜角)</span></span><br><span class="line"><span class="comment">// lineCap  端点样式 butt(默认值) round(圆角) square(长度多出线宽一半)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绘制圆形</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ctx.arc(x,y,r,<span class="number">0</span>,<span class="number">360</span>,<span class="literal">false</span>)</span><br><span class="line"><span class="comment">// x,y  圆心坐标位置 r 圆半径  0,360 从0度到360度绘制一个圆形</span></span><br><span class="line"><span class="comment">// true/false  顺时针/逆时针绘图</span></span><br><span class="line"><span class="comment">// 注: 0,360  这是弧度制 角度*PI/180</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绘制曲线</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ctx.arcTo(x1,y1,x2,y2,r)</span><br><span class="line"><span class="comment">// x1,y1 坐标一 x2,y2 坐标二 r圆弧半径</span></span><br><span class="line">ctx.quadraticCurveTo(dx,dy,x1,y1)</span><br><span class="line"><span class="comment">// 贝塞尔曲线dx,dy控制点x1,y1 结束点</span></span><br><span class="line">ctx.BezierCurveTo(dx1,dy1,dx2,dy2,x1,y1)</span><br><span class="line"><span class="comment">// 贝塞尔曲线: dx1,dy1 控制点一 dx2,dy2 控制点二 x1,y1 结束点</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Canvas变换</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ctx.translate(x,y)  <span class="comment">// 从起始点为基准,移动到当前位置</span></span><br><span class="line">ctx.rotate(弧度)    <span class="comment">//旋转,弧度公式 角度*PI/180</span></span><br><span class="line">ctx.scale(wb,hb)    <span class="comment">//缩放比例(缩放canvas绘制的图片)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绘制图片</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">drawImage(img,x,y,w,h)</span><br><span class="line"><span class="comment">// 绘制图片(图片,x坐标,y坐标,宽度,高度)</span></span><br><span class="line"><span class="comment">// 绘制图片时,要图片预加载之后再绘制,否则会因缓存而加载不出</span></span><br><span class="line"><span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(<span class="string">'can'</span>)</span><br><span class="line"><span class="keyword">var</span> ctx = can.getContext(<span class="string">"2d"</span>)</span><br><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> Iamge()</span><br><span class="line">img.src = <span class="string">'images/1.jpg'</span></span><br><span class="line">img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  ctx.drawImage(img, <span class="number">0</span>, <span class="number">0</span>, can.width, can.height)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 绘制背景图片</span></span><br><span class="line"><span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(<span class="string">'can'</span>)</span><br><span class="line"><span class="keyword">var</span> ctx = can.getContext(<span class="string">"2d"</span>)</span><br><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> Iamge()</span><br><span class="line">img.src = <span class="string">'images/1.jpg'</span></span><br><span class="line">img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  ctx.fillStyle(ctx.createPattern(img, <span class="string">'no-repeat'</span>))</span><br><span class="line">  ctx.fillReact(<span class="number">0</span>, <span class="number">0</span>, can.width, can.height)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>渐变</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 线性渐变</span></span><br><span class="line"><span class="comment">// createLinearGradient(x1,y1,x2,y2) // x1,y1 起始坐标点 x2,y2 结束坐标点</span></span><br><span class="line"><span class="comment">// addColorStop(位置,颜色) //渐变点: 位置:渐变点 0~1之间 可多个</span></span><br><span class="line"><span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(<span class="string">'can'</span>)</span><br><span class="line"><span class="keyword">var</span> ctx = can.getContext(<span class="string">"2d"</span>)</span><br><span class="line"><span class="keyword">var</span> color = ctx.createLinearGradient(<span class="number">50</span>, <span class="number">50</span>, <span class="number">200</span>, <span class="number">200</span>)</span><br><span class="line">color.addColorStop(<span class="number">0</span>, <span class="string">'#f3c'</span>)</span><br><span class="line">color.addColorStop(<span class="number">1</span>, <span class="string">'#03f'</span>)</span><br><span class="line">ctx.fileStyle = color</span><br><span class="line">ctx.fileReact(<span class="number">50</span>, <span class="number">50</span>, <span class="number">200</span>, <span class="number">200</span>)</span><br><span class="line"><span class="comment">// 径向渐变</span></span><br><span class="line"><span class="comment">// createRadialGradient(x1,y1,r1,x2,y2,r2)</span></span><br><span class="line"><span class="comment">// x1,y1,r1  内圆圆心坐标和半径  x2,y2,r2  外圆圆心坐标和半径</span></span><br><span class="line"><span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(<span class="string">'can'</span>)</span><br><span class="line"><span class="keyword">var</span> ctx = can.getContext(<span class="string">"2d"</span>)</span><br><span class="line"><span class="keyword">var</span> color = ctx.createLinearGradient(<span class="number">150</span>, <span class="number">150</span>, <span class="number">50</span>, <span class="number">150</span>, <span class="number">150</span>, <span class="number">100</span>)</span><br><span class="line">color.addColorStop(<span class="number">0</span>, <span class="string">'blue'</span>)</span><br><span class="line">color.addColorStop(<span class="number">0.5</span>, <span class="string">'red'</span>)</span><br><span class="line">color.addColorStop(<span class="number">1</span>, <span class="string">'yellow'</span>)</span><br><span class="line">ctx.fileStyle = color</span><br><span class="line">ctx.beginPath()</span><br><span class="line">ctx.arc(<span class="number">150</span>, <span class="number">150</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">360</span>, <span class="literal">false</span>)</span><br><span class="line">ctx.closePath()</span><br><span class="line">ctx.fill()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导出<code>canvas</code>图片</p>
+<ol>
+<li>火狐,谷歌浏览器右键菜单可直接导出为图片</li>
+<li><code>img.src=can.toDataURL()</code>  //导出图片</li>
+</ol>
+</li>
+<li><p>绘制文本</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// strokeText(文本,x,y)    绘制空心文本</span></span><br><span class="line"><span class="comment">// fillText(文本,x,y)       绘制实心文本</span></span><br><span class="line"><span class="comment">// font="font-size font-family"  注 尺寸字体缺一不可</span></span><br><span class="line"><span class="comment">// textAlign=""  文本左右对齐方式 // start center end left right</span></span><br><span class="line"><span class="comment">// textBaseline="" 文本上下对齐方式</span></span><br><span class="line">    <span class="comment">// alphabetic 默认 文本基线时普通字母的字母基线</span></span><br><span class="line">    <span class="comment">// top 文本基线是em方框的顶端</span></span><br><span class="line">    <span class="comment">// hanging 文本基线是悬挂基线</span></span><br><span class="line">    <span class="comment">// middle  文本基线是em方框的正中</span></span><br><span class="line">    <span class="comment">// ideographic 文本基线是表意基线</span></span><br><span class="line">    <span class="comment">// bottom  文本基线是em方框的底端</span></span><br><span class="line"><span class="comment">// measureText(文本).width  文本的实际宽度(只有宽度值)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绘制阴影</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// shadowOffsetX,shadowOffsetY  x轴,y轴偏移</span></span><br><span class="line"><span class="comment">// shadowBlur   阴影模糊度</span></span><br><span class="line"><span class="comment">// shadowColor  阴影颜色  默认颜色 rgba(0,0,0,0)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="HTML5-SVG矢量图"><a href="#HTML5-SVG矢量图" class="headerlink" title="HTML5 SVG矢量图"></a>HTML5 SVG矢量图</h2><ul>
+<li><code>SVG</code>指可伸缩矢量图形,图像在放大和缩小时,图形质量不会损失,是使用<code>XML</code>来描述二维图形和绘图程序的语言</li>
+<li><code>&lt;svg xmlns=”http://www.w3.org/2000/svg” version=”1.1”&gt;&lt;/svg&gt;</code></li>
+<li><p>svg圆形</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;circle cx=<span class="string">"50"</span> cy=<span class="string">"50"</span> r=<span class="string">"30"</span> stroke=<span class="string">"red"</span> stroke-wodth=<span class="string">""</span></span><br><span class="line">  fill=<span class="string">"none/transparent"</span>  style=<span class="string">""</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span></span><br><span class="line"><span class="comment">// 圆心坐标 cx,cy  半径 r  fill stroke stroke-width style 样式</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>svg矩形</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;rect width=<span class="string">"90"</span> height=<span class="string">"90"</span> x=<span class="string">"200"</span> y=<span class="string">"10"</span> stroke=<span class="string">"red"</span></span><br><span class="line">stroke-width=<span class="string">"5"</span> fill=<span class="string">"transparent"</span> rx=<span class="string">"20"</span></span><br><span class="line">ry=<span class="string">"20"</span> stroke-opacity=<span class="string">"0.7"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">rect</span>&gt;</span></span></span><br><span class="line"><span class="comment">// 宽/高 width/height  起始点 x,y  圆角 rx,ry  透明stroke-opacity</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>svg线段</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;line x1=<span class="string">"50"</span> y1=<span class="string">"50"</span> x2=<span class="string">"150"</span> y2=<span class="string">"150"</span></span><br><span class="line">stroke=<span class="string">"red"</span> stroke-opacity=<span class="string">"0.7"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">line</span>&gt;</span></span></span><br><span class="line"><span class="comment">// 起始坐标 x1,y1  终止坐标 x2,y2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>svg折线</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;polyline points=<span class="string">"50 50 50 150 150 50 150 150"</span></span><br><span class="line">stroke=<span class="string">"red"</span> fill=<span class="string">"none"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">polyline</span>&gt;</span></span></span><br><span class="line"><span class="comment">// 空格或逗号隔开多个点</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>svg多边形</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;polygon points=<span class="string">"50 50 50 150 150 50 150 150"</span></span><br><span class="line">stroke=<span class="string">"red"</span> fill=<span class="string">"none"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">polygon</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Text标签</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;text x=<span class="string">"150"</span> y=<span class="string">"150"</span> font-size=<span class="string">"40px"</span> text-anchor=<span class="string">"middle"</span>&gt;文字&lt;<span class="regexp">/text&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 起始位置 x,y  对齐方式 text-anchor:start/</span>end/middle</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Path路径</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;path d=<span class="string">"M50 50L150 30L200 100"</span> stroke=<span class="string">"red"</span></span><br><span class="line">stroke-width=<span class="string">"5"</span> fill=<span class="string">"none"</span>&gt; <span class="xml"><span class="tag">&lt;/<span class="name">path</span>&gt;</span></span></span><br><span class="line"><span class="comment">// M(起始坐标)   L(结束坐标)  H(水平线)  V(垂直线)  Z(闭合路劲)</span></span><br><span class="line"><span class="comment">// C,S,Q,T(贝塞尔曲线)   A(圆弧)</span></span><br><span class="line"><span class="comment">// 大写为绝对坐标(具体的位置坐标)</span></span><br><span class="line"><span class="comment">// 小写为相对坐标(相对于起始点的具体长度)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="HTML5视频video"><a href="#HTML5视频video" class="headerlink" title="HTML5视频video"></a>HTML5视频video</h2><ul>
+<li><code>&lt;video src=&quot;xxx.mp4&quot; controls autoplay width=&quot;500&quot; height=&quot;500&quot; Preload=”preload” poster=”1.jpg”  loop=”loop”&gt;&lt;/video&gt;</code></li>
+<li><p>Video的属性</p>
+<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Autopaly  视频加载完成后自动播放</span><br><span class="line">Controls  向用户显示播放控件(必须设定)</span><br><span class="line"><span class="keyword">Width</span>     设置播放器宽度</span><br><span class="line">Height    设置播放器高度</span><br><span class="line"><span class="keyword">Loop</span>      播放完是否继续播放该视频,循环播放</span><br><span class="line">Preload   页面加载时就加载视频,并预备播放</span><br><span class="line">Src       视频url地址</span><br><span class="line">Poster    加载等待的画面图片poster=”url”</span><br><span class="line">Autobuffer 设置为浏览器缓冲方式,不设置autoplay才有效</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>video对象方法<br><code>vid.paly() 播放 vid.pause() 暂停  vid.load() 重新加载</code></p>
+</li>
+<li>video对象属性<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">currentTime:  开始到播放现在所用的时间</span><br><span class="line">duration:     媒体总时间(只读)</span><br><span class="line">volume:       0.0<span class="string">-1</span>.0de 音量相对值</span><br><span class="line">muted:        是否静音false/true</span><br><span class="line">paused:       媒体是否暂停(只读)</span><br><span class="line">ended:        媒体是否播放完毕(只读)</span><br><span class="line"><span class="keyword">error:        </span>媒体发生错误的时候,返回错误代码(只读)</span><br><span class="line">currentSrc:   以字符串的形式返回媒体地址(只读)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="HTML5音频audio"><a href="#HTML5音频audio" class="headerlink" title="HTML5音频audio"></a>HTML5音频audio</h2><ul>
+<li><code>&lt;audio src=&quot;xxx.mp4&quot; controls autoplay&gt;</code></li>
+<li>audio 属性<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">autoplay</span>=<span class="string">"autoplay"</span>  加载完自动播放</span><br><span class="line"><span class="attr">controls</span>=<span class="string">"controls"</span>  显示用户控件</span><br><span class="line"><span class="attr">preload</span>=<span class="string">"preload"</span>    页面加载时加载音频,并预备播放</span><br><span class="line"><span class="attr">src</span>=<span class="string">"url"</span>            要播放的音频的URL</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="HTML新增touch事件"><a href="#HTML新增touch事件" class="headerlink" title="HTML新增touch事件"></a>HTML新增touch事件</h2><ul>
+<li><p>触屏事件<code>touch</code></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">touchstart</span>   当手指触摸到屏幕时触发</span><br><span class="line">touchmove  手指在屏幕上移动时触发</span><br><span class="line">touchend   手指离开屏幕时触发</span><br><span class="line">touchenter  当触点进入某个元素时触发</span><br><span class="line">touchleaver  当触点离开某个元素时触发</span><br><span class="line">touchcancel  当触点由于某些原因被中断时触发</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>触屏事件对象<code>touchEvent</code></p>
+<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">touches  当前位于手机屏幕上的所有手指列表  最多<span class="number">5</span>个手指</span><br><span class="line">targetTouches  位于当前的元素上的手指的列表</span><br><span class="line">changeTouches 涉及当前事件的手指列表</span><br><span class="line">clientX  触摸目标在视窗中的<span class="keyword">X</span>坐标</span><br><span class="line">clientY  触摸目标在视窗中的<span class="keyword">Y</span>坐标</span><br><span class="line">identifier  标识触摸的唯一ID</span><br><span class="line">pageX  触摸目标在页面中的<span class="keyword">X</span>坐标</span><br><span class="line">pageY  触摸目标在页面中的<span class="keyword">Y</span>坐标</span><br><span class="line">screenX 触目目标在屏幕中的<span class="keyword">X</span>坐标</span><br><span class="line">screenY 触摸目标在屏幕中的<span class="keyword">Y</span> 坐标</span><br><span class="line">target  触摸的DOM节点目标</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Html5-新增JS特性"><a href="#Html5-新增JS特性" class="headerlink" title="Html5 新增JS特性"></a>Html5 新增JS特性</h2><ul>
+<li><p>获取<code>class</code>列表属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &lt;div class=”div1 div2 div3”&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="keyword">var</span> odiv = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)</span><br><span class="line">odiv.classlist   <span class="comment">//div1 div2 div3</span></span><br><span class="line">odiv.classlist.length    <span class="comment">//3</span></span><br><span class="line">odiv.classlist.add(<span class="string">"div4"</span>)  <span class="comment">// 添加class类</span></span><br><span class="line">odiv.classlist.item(<span class="number">2</span>)  <span class="comment">// 返回类名在元素中的索引值从0开始</span></span><br><span class="line">odiv.classlist.remove(<span class="string">"div2"</span>,<span class="string">"div4"</span>)  <span class="comment">//移除多个class类</span></span><br><span class="line">odiv.classlist.toggle(<span class="string">"div5"</span>)   <span class="comment">// 有class类则移除没有则添加</span></span><br><span class="line">odiv.classList.contains(<span class="string">"div2"</span>) <span class="comment">// 是否包含某个类名</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增选择器</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#div|.cnt|div|css选择器"</span>) <span class="comment">//只能返回一组中的第一个元素</span></span><br><span class="line"><span class="built_in">document</span>.querySelectorAll(“css选择器”) <span class="comment">// 可以获取一组元素</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByClassName(<span class="string">"box"</span>)  <span class="comment">// IE9以下不兼容</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取自定义属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&lt;div id="div1" data-tew='自定义属性' data-tew-all='多节自定义属性'&gt;自定义属性获取&lt;/div&gt;</span></span><br><span class="line"><span class="keyword">var</span> oDiv = <span class="built_in">document</span>.querySelector(<span class="string">'#div1'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(oDiv.dataset.tew)</span><br><span class="line"><span class="built_in">console</span>.log(oDiv.dataset.tewAll)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Html5本地存储"><a href="#Html5本地存储" class="headerlink" title="Html5本地存储"></a>Html5本地存储</h2><ul>
+<li><p><code>sessionStorage</code> 会话存储</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 生命周期为关闭浏览器窗口  关闭窗口数据销毁 在同一个窗口下数据可以共享</span></span><br><span class="line">sessionStorage.getItem(key)  <span class="comment">// 获取存储数据</span></span><br><span class="line">sessionStorage.setItem(key,value) <span class="comment">// 设置存储数据</span></span><br><span class="line">sessionStorage.removeItem(key)  <span class="comment">// 删除存储数据</span></span><br><span class="line">sessionStorage.clear()  <span class="comment">// 清除存储数据</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>localStorage</code> 本地存储</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 永久生效，除非手动删除，清理垃圾，存储在磁盘上,可以在多窗口共享</span></span><br><span class="line"><span class="comment">// 只能存储字符串，可以将对象JSON.stringify()之后在存储,可能存储在浏览器内存和硬盘上</span></span><br><span class="line">localStorage.setItem(key, walue) <span class="comment">// 设置储存内容</span></span><br><span class="line">localStorage.getItem(key) <span class="comment">// 获取存储数据</span></span><br><span class="line">localStorage.removeItem(key) <span class="comment">// 删除key</span></span><br><span class="line">localStorage.clear() <span class="comment">// 清除所有数据</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="HTML5-历史管理history"><a href="#HTML5-历史管理history" class="headerlink" title="HTML5 历史管理history"></a>HTML5 历史管理history</h2><ul>
+<li><p><code>history.pushState()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location.href <span class="comment">// http://192.168.5.16:8000</span></span><br><span class="line">history.pushState(&#123;&#125;, <span class="string">''</span>, <span class="string">'/foo'</span>) <span class="comment">// http://192.168.5.16:8000/foo</span></span><br><span class="line">history.pushState(&#123;&#125;, <span class="string">''</span>, <span class="string">'/'</span>) <span class="comment">// http://192.168.5.16:8000</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>history.replaceState()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location.href <span class="comment">// http://192.168.5.16:8000</span></span><br><span class="line">history.replaceState(&#123;&#125;, <span class="string">''</span>, <span class="string">'/foo'</span>) <span class="comment">// http://192.168.5.16:8000/foo</span></span><br><span class="line">history.pushState(&#123;&#125;, <span class="string">''</span>, <span class="string">'/'</span>) <span class="comment">// http://192.168.5.16:8000</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>history.go(number)</code> 回退到指定历史记录</p>
+</li>
+<li><code>history.back()</code> 等价于 history.go(-1)</li>
+<li><code>history.forward()</code> 则等价于 history.go(1)</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5/" rel="tag"><i class="fa fa-tag"></i> html5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/bootstrap学习/" rel="next" title="bootstrap学习">
+                <i class="fa fa-chevron-left"></i> bootstrap学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/CSS3/" rel="prev" title="CSS3学习">
+                CSS3学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增标签"><span class="nav-number">1.</span> <span class="nav-text">HTML5新增标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5新增表单"><span class="nav-number">2.</span> <span class="nav-text">Html5新增表单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5拖拽事件"><span class="nav-number">3.</span> <span class="nav-text">Html5拖拽事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5canvas绘图"><span class="nav-number">4.</span> <span class="nav-text">Html5canvas绘图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-SVG矢量图"><span class="nav-number">5.</span> <span class="nav-text">HTML5 SVG矢量图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5视频video"><span class="nav-number">6.</span> <span class="nav-text">HTML5视频video</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5音频audio"><span class="nav-number">7.</span> <span class="nav-text">HTML5音频audio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML新增touch事件"><span class="nav-number">8.</span> <span class="nav-text">HTML新增touch事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5-新增JS特性"><span class="nav-number">9.</span> <span class="nav-text">Html5 新增JS特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5本地存储"><span class="nav-number">10.</span> <span class="nav-text">Html5本地存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-历史管理history"><span class="nav-number">11.</span> <span class="nav-text">HTML5 历史管理history</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

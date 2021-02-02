@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="angular,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Angularjs是一个javascript框架,通过&amp;lt;script&amp;gt;标签添加到HTML页面,通过指令扩展了HTML,通过表达式绑定数据到HTML主要是通过ng-directives扩展.AngularJS使得开发现代的单页面应用程序(Single Page Applications)更加容易.Angular更适合复杂的大型项目,通常是企业级的项目.">
+<meta name="keywords" content="angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular1学习">
+<meta property="og:url" content="http://ittew.cn/angular1/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="Angularjs是一个javascript框架,通过&amp;lt;script&amp;gt;标签添加到HTML页面,通过指令扩展了HTML,通过表达式绑定数据到HTML主要是通过ng-directives扩展.AngularJS使得开发现代的单页面应用程序(Single Page Applications)更加容易.Angular更适合复杂的大型项目,通常是企业级的项目.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ittew.cn/image/ng1/control.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/变量.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/表达式.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/filter1.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/filter2.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/filter3.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/filter4.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/验证.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/ngclass.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/ngstyle.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/ngswitch.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/ngrepeat.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/nginclude.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/nginclude1.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/nginclude2.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/mydirective.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/ECMA.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/scope1.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/scope2.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/scope3.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/scope4.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/scope5.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/scope6.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/link.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/link2.png">
+<meta property="og:image" content="http://ittew.cn/image/ng1/compile.png">
+<meta property="og:updated_time" content="2021-01-12T14:28:09.749Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular1学习">
+<meta name="twitter:description" content="Angularjs是一个javascript框架,通过&amp;lt;script&amp;gt;标签添加到HTML页面,通过指令扩展了HTML,通过表达式绑定数据到HTML主要是通过ng-directives扩展.AngularJS使得开发现代的单页面应用程序(Single Page Applications)更加容易.Angular更适合复杂的大型项目,通常是企业级的项目.">
+<meta name="twitter:image" content="http://ittew.cn/image/ng1/control.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/angular1/">
+
+
+
+
+
+  <title>angular1学习 | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/angular1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">angular1学习</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-12T19:50:14+08:00">
+                2017-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/angular/" itemprop="url" rel="index">
+                    <span itemprop="name">angular</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.7k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>Angularjs</code>是一个<code>javascript</code>框架,通过<code>&lt;script&gt;</code>标签添加到<code>HTML</code>页面,通过指令扩展了<code>HTML</code>,通过表达式绑定数据到<code>HTML</code>主要是通过<code>ng-directives</code>扩展.<code>AngularJS</code>使得开发现代的单页面应用程序(<code>Single Page Applications</code>)更加容易.<code>Angular</code>更适合复杂的大型项目,通常是企业级的项目.<br><a id="more"></a></p>
+<h4 id="定义模块作用域"><a href="#定义模块作用域" class="headerlink" title="定义模块作用域"></a>定义模块作用域</h4><p>通过<code>angular.module(&#39;app&#39;,[])</code>来声明模块 ,第一个参数应用<code>app</code>的名称,第二个参数依赖集合(即使没有也要传入空数组),返回的是一个<code>angular</code>模块对象</p>
+<h4 id="控制器controller"><a href="#控制器controller" class="headerlink" title="控制器controller"></a>控制器controller</h4><p><code>angular</code>变量是要定义在一个作用域里面的,<code>controller</code>是专门用来定义作用域的,一个控制器就是一个作用域定义<code>angular.module(&#39;app&#39;,[]).controller(&#39;&#39;,fn)</code><br>在<code>angular</code>中有一项技术叫参数注入,想使用什么东西就注入什么东西,在<code>angular</code>中的局部作用域叫做<code>$scope</code>,要使用作用域就要将它注入进来,<code>$rootScope</code>是全局作用域<br><img src="/image/ng1/control.png" alt="控制器"></p>
+<h4 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h4><p>初始化变量<code>ng-init=&#39;age=1;class=3&#39;</code>,多个变量之间用<code>;</code>隔开<br><code>ng-model</code>:双向绑定,定义变量名.把元素值(输入框的值)绑定到应用程序变量中<br><code>ng-bind</code>:绑定变量名,获取该变量的数据,避免渲染页面看到插值符号,把应用程序数据(变量)绑定到HTML视图<br><code>ng-app</code>:定义<code>angularJS</code>的使用范围定义一个<code>AngularJS</code>应用程序<br><code>ng-cloak</code>:解决闪烁<br><img src="/image/ng1/变量.png" alt="变量"></p>
+<h4 id="显示隐藏"><a href="#显示隐藏" class="headerlink" title="显示隐藏"></a>显示隐藏</h4><p><code>ng-show</code> 用来显示元素<br><code>ng-hide</code> 用来隐藏元素<br><code>angular中ng-show是通过class设置的,通过!important来提高权重</code></p>
+<h4 id="插值表达式"><a href="#插值表达式" class="headerlink" title="插值表达式"></a>插值表达式</h4><p><code>angular,vue</code>插值表达式的语法是一样的,在插值符号中使用,不同之处,<code>angular</code>可以在<code>ng-bind</code>指令中使用插值表达式<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;表达式&#125;&#125; 将数据绑定HTML与ng-<span class="keyword">bind</span>相同</span><br><span class="line">ng-model是用于表单元素的，支持双向绑定。对普通元素无效；</span><br><span class="line">ng-<span class="keyword">bind</span>用于普通元素，不能用于表单元素，应用程序单向地渲染数据到元素；</span><br><span class="line">当ng-<span class="keyword">bind</span>和&#123;&#123;&#125;&#125;同时使用时，ng-<span class="keyword">bind</span>绑定的值覆盖该元素的内容。</span><br></pre></td></tr></table></figure></p>
+<p><img src="/image/ng1/表达式.png" alt="表达式"></p>
+<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><p><code>angular</code>中在定义过滤器语法 <code>变量|过滤器:参数1:参数2</code><br><img src="/image/ng1/filter1.png" alt="表达式"><br><code>json</code> 将对象转化成json对象  <code>date</code> 将日期格式化<br><code>currency</code> 将数字转换成一个价格的形式  <code>currency</code>:货币标识符: 保留位数<br><img src="/image/ng1/filter2.png" alt="表达式"><br>字符串过滤器 <code>uppercase</code>转大写  <code>lowercase</code>转小写 <code>limitTo</code>截取<br><img src="/image/ng1/filter3.png" alt="表达式"><br><code>number</code> 将数字转换成科学计数法 千分符,参数表示保留几位小数,会根据最后一位四舍五入<br><code>orderBy</code> 对集合进行排序 参数1表示排序的字段,是数字按大小排序,是字符串按字符串编码排序.参数2表示升序或倒序,默认是<code>false</code>正序,<code>true</code>倒序.</p>
+<h4 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h4><p>通过<code>filter()</code>方法自定义过滤器,多个过滤器用<code>|</code>隔开,前一个过滤器的输出作为后一个过滤器的输入,第一个参数表示过滤器的名称,第二个参数表示工厂函数<br><img src="/image/ng1/filter4.png" alt="表达式"><br>验证指令<br>1.必填项验证 <code>repuired    --&gt; ng-required=&#39;true&#39;</code><br>2.最大长度与最小长度 <code>maxlength--&gt;ng-maxlength minlength--&gt;ng-minlength</code><br>3.正则验证 <code>pattern</code>–&gt;<code>ng-pattern=&#39;/\d{11}/&#39;</code><br>当为表单元素<code>form</code>添加<code>name</code>属性的时候,会根据name在作用域中创建变量子表单元素的<code>name</code>属性会添加到<code>form</code>元素对应的变量内,每个变量都有四个属性<br><code>$dirty</code> 表示是否输入过  <code>true</code> 输入过<br><code>$pristine</code> 表示是否输入过 <code>true</code>  没有输入过<br><code>$invalid</code>  表示是否是不合法 <code>true</code>  不合法<br><code>$valid</code>   表示是否合法 <code>true</code> 合法<br><img src="/image/ng1/验证.png" alt="表达式"><br>表单相关指令<br><code>ng-disabled</code>  表单是否可以使用<br><code>ng-checked</code>  是否被选中<br><code>ng-readonly</code>  是否只读<br><code>ng-change</code>   事件 在内容发生改变时触发  依赖于ng-model指令<br><code>ng-submit</code>   表单提交事件  要绑定给form元素    由submit类型元素触发</p>
+<h4 id="其他常用指令"><a href="#其他常用指令" class="headerlink" title="其他常用指令"></a>其他常用指令</h4><p><code>AngularJS</code>指令是扩展的<code>HTML</code>属性带有前缀<code>ng-***</code>,<code>AngularJS</code>通过指令来扩展<code>HTML</code><br><code>ng-href</code> 动态的渲染a标签的href属性值,避免在渲染a标签的时候,href不存在打开错误的页面,在没有添加ng-href之前是不会由a链接的特性的<br><code>ng-src</code> 动态创建src属性 提高用户体验 否则会请求一张错误的图片地址<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意:  ng-href与ng-src指令 都是一个指令,属性值是字符串,要使用插值符号&#123;&#123;&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>ng-class</code> 指令 动态绑定类<br>值可以是字符串,变量,对象(属性值是一个布尔值<code>true</code>表示保留这个类，<code>flase</code>表示删除这个类)<br><img src="/image/ng1/ngclass.png" alt="表达式"><br><code>ng-style</code> 指令  动态创建样式<br>变量–&gt;变量的值是对象 属性名称是css样式名称 属性值是css样式值<br>对象–&gt;属性名称是css样式名称  属性值是css样式值<br><img src="/image/ng1/ngstyle.png" alt="表达式"><br><code>ng-if</code> 模板判断指令 值为true显示 值为false 隐藏<br><code>angular</code>中<code>ng-if</code>指令控制的元素显示位置是通过注释确定,当我们为一个元素添加一个<code>ng-if</code>指令的时候,会创建一个相应的注释<br><code>ng-switch</code> 多分支控制模板创建<br>根据<code>case</code>创建了一个<code>ng-switch-when</code>指令,根据<code>default</code>创建了一个<code>ng-switch-default</code>指令,<code>ng-switch</code>通过<code>on</code>属性来添加一个判断的条件<br><img src="/image/ng1/ngswitch.png" alt="表达式"><br><code>ng-repeat</code> 用来循环创建模板的 <code>ng-repeat=&#39;item in items&#39;</code><br>提供了6个临时变量<br><code>$index</code>: 索引值从0开始 <code>$first</code>: 是否是第一次循环  <code>$last</code>: 是否是最后一次循环<br><code>$middle</code>: 除了第一次和最后一次  <code>$odd</code>: 奇数次循环  <code>$even</code>: 偶数次循环后5个指令值都是布尔值<br><img src="/image/ng1/ngrepeat.png" alt="表达式"><br><code>ng-include</code> 异步加载模板指令,可以通过异步请求加载一个模板,他的值是js环境,可以使用变量,如果这个指令绑定给具有控制器的元素使用,此时作为控制器内的模板,该控制器中定义的数据可以在该模板中使用<br><img src="/image/ng1/nginclude.png" alt="表达式"><br><img src="/image/ng1/nginclude1.png" alt="表达式"><br><img src="/image/ng1/nginclude2.png" alt="表达式"></p>
+<h4 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h4><p>第一步 在<code>html</code>中使用这个指令(指令名以-分隔 如<code>my-directive</code>)<br>第二步 在<code>js</code>中通过<code>directive</code>方法来定义自定义指令<br>第一个参数是指令名称 必须是驼峰命名<br>第二个参数是一个函数,指令工厂函数,没有参数,作用域是全局作用域返回值是描述指令的对象<br><code>template</code>: 自定义指令的模板内容 ,会渲染到自定义指令中<br><code>templateUrl</code>: 引入外部模板文件<br><code>replace</code>: 是否替换原来的容器元素(默认<code>false</code>)<br><img src="/image/ng1/mydirective.png" alt="表达式"><br>在angular中一共有四种自定义指令的形式     ECMA<br><code>E</code> 表示自定义标签元素类型(<code>Element</code>) 如<code>&lt;my-title&gt;&lt;/my-title&gt;</code>(默认)<br><code>C</code> 表示类类型(<code>Class</code>) 如<code>&lt;div class=&#39;ng-hide&#39;&gt;&lt;/div&gt;</code>(必须设置)<br><code>M</code> 表示注释类型(<code>comment</code>) 如<code>&lt;!-- directive:my-title  --&gt;</code>(必须设置)<br><code>A</code> 表示属性类型(<code>Attribute</code>) 如<code>&lt;div ng-if=&#39;isShow&#39;&gt;&lt;/div&gt;</code>(默认)<br>不是默认的必须用<code>restrict:&#39;CM&#39;</code>设置 ,四种类型都是大写的,可以组合使用<br><img src="/image/ng1/ECMA.png" alt="表达式"></p>
+<h4 id="自定义指令的作用域"><a href="#自定义指令的作用域" class="headerlink" title="自定义指令的作用域"></a>自定义指令的作用域</h4><p>自定义指令的作用域是通过控制器来定义的,控制器不是定义在元素上,而是定义在返回的对象上叫controller作用域<br><code>$scope</code>  表示作用域<br><code>$elemnet</code>   表示获取的自定义指令容器元素的jqlite对象<br><code>$attrs</code>    自定义指令容器元素属性的服务,驼峰式命名法 属性名称映射关系对象<br><img src="/image/ng1/scope1.png" alt="表达式"><br><img src="/image/ng1/scope2.png" alt="表达式"><br><img src="/image/ng1/scope3.png" alt="表达式"><br>作用域关系<br>自定义指令的作用域是通过<code>scope</code>属性来约束的,可以通过这个属性来定义自定指令的作用域与父作用域的关系<br>对于一个自定义指令,他的内容有两种一种是在指令元素内的<br><img src="/image/ng1/scope4.png" alt="表达式"><br>另外一种是在指令外的,通过<code>template</code>或者<code>templateUrl</code>来设置的<br><img src="/image/ng1/scope5.png" alt="表达式"><br><code>scope</code> 有三个值  默认是<code>false</code><br><code>true</code>  子,父作用域是隔离的,两个作用域不会相互覆盖是独立的<br><code>false</code>  子,父作用域在同一个作用域,子作用域定义变量会覆盖父作用域的变量<br><code>{}</code>     子,父作用域是隔离的, 但子作用域的数据是父作用域的数据(模板使用)<br>这三个属性可以定义子作用域与父作用域的分离,子作用域是指自定义指令的作用域,父作用域是指外部控制器的作用域<br><code>scope:true或{}</code>是解决子作用域与父作用域分离的<br>自定义指令修饰符<br><code>@修饰符</code>是解决在作用域分离的时候,子作用域使用父作用域中数据的问题<br>第一步 在指令容器元素中绑定数据(插值语法)<br>第二步 在<code>scope</code>对象中定义该属性,属性值要使用<code>@</code>修饰符<br>属性名称是子作用域中使用的变量,属性值是绑定的自定义指令元素上的属性名称<br>这种绑定的作用域数据是单向的只能由父作用域传递给子作用域,此时父作用域域子作用域是独立的,子作用域中的数据会被父作用域覆盖<br><img src="/image/ng1/scope6.png" alt="表达式"><br><code>=修饰符</code> 是解决在作用域分离的时候,子作用域使用父作用域中数据的问题<br>第一步 在指令容器元素中绑定数据(不能插值语法)<br>第二步 在<code>scope</code>对象中定义该属性,属性值要使用<code>=</code>修饰符<br>属性名称是子作用域中使用的变量,属性值是绑定的自定义指令元素上的属性名称<br>这种绑定的作用域数据是双向绑定的,父作用域的修改会影响到子作用域,子作用域的修改会影响父作用域,此时父作用域域子作用域是独立的,子作用域中的数据会被父作用域覆盖</p>
+<h4 id="link方法-指令的编译方法"><a href="#link方法-指令的编译方法" class="headerlink" title="link方法 指令的编译方法"></a>link方法 指令的编译方法</h4><p>到目前为止,指令只能使用一些数据,渲染模板,替换元素,如果需要指令具备一定的功能,我们需要将指令的实现的业务逻辑定义在<code>link</code>方法中.<br><img src="/image/ng1/link.png" alt="表达式"><br><img src="/image/ng1/link2.png" alt="表达式"></p>
+<h4 id="complie-编译方法"><a href="#complie-编译方法" class="headerlink" title="complie 编译方法"></a>complie 编译方法</h4><p><code>link</code> 是编译的一个子过程  <code>compile</code> 是编译的全过程<br>属性值也是函数,函数的返回值就是<code>link</code>方法,<code>compile</code>是从指令获取到指令编译完成全部过程<br>有两个参数,第一个参数表示指令容器元素,第二个参数表示<code>attrs</code>属性对象,作用域是指令描述对象,返回值是<code>link</code>方法<br><img src="/image/ng1/compile.png" alt="表达式"></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/angular/" rel="tag"><i class="fa fa-tag"></i> angular</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/学会使用svn/" rel="next" title="学会使用svn">
+                <i class="fa fa-chevron-left"></i> 学会使用svn
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/移动端适配/" rel="prev" title="移动端适配">
+                移动端适配 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义模块作用域"><span class="nav-number">1.</span> <span class="nav-text">定义模块作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制器controller"><span class="nav-number">2.</span> <span class="nav-text">控制器controller</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义变量"><span class="nav-number">3.</span> <span class="nav-text">定义变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示隐藏"><span class="nav-number">4.</span> <span class="nav-text">显示隐藏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插值表达式"><span class="nav-number">5.</span> <span class="nav-text">插值表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器"><span class="nav-number">6.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义过滤器"><span class="nav-number">7.</span> <span class="nav-text">自定义过滤器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他常用指令"><span class="nav-number">8.</span> <span class="nav-text">其他常用指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义指令"><span class="nav-number">9.</span> <span class="nav-text">自定义指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义指令的作用域"><span class="nav-number">10.</span> <span class="nav-text">自定义指令的作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#link方法-指令的编译方法"><span class="nav-number">11.</span> <span class="nav-text">link方法 指令的编译方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#complie-编译方法"><span class="nav-number">12.</span> <span class="nav-text">complie 编译方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

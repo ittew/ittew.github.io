@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js基础,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JS  包含三部分 核心ECMASCRIPT DOM BOM  JS  注释 单行注释  // 被注释的这一行,它不会被执行 多行注释  /* 注释多行 */注 \n  在js文本中(弹框等)的换行,JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高其可读性  JS  三种弹框 alert(“弹出框”) confirm(“提示信息”) 返回值为true或false prompt(">
+<meta name="keywords" content="js基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript基础(一)--(数据类型,运算符,语句等)">
+<meta property="og:url" content="http://ittew.cn/javascript基础(1)/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="JS  包含三部分 核心ECMASCRIPT DOM BOM  JS  注释 单行注释  // 被注释的这一行,它不会被执行 多行注释  /* 注释多行 */注 \n  在js文本中(弹框等)的换行,JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高其可读性  JS  三种弹框 alert(“弹出框”) confirm(“提示信息”) 返回值为true或false prompt(">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-02-02T07:46:48.843Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript基础(一)--(数据类型,运算符,语句等)">
+<meta name="twitter:description" content="JS  包含三部分 核心ECMASCRIPT DOM BOM  JS  注释 单行注释  // 被注释的这一行,它不会被执行 多行注释  /* 注释多行 */注 \n  在js文本中(弹框等)的换行,JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高其可读性  JS  三种弹框 alert(“弹出框”) confirm(“提示信息”) 返回值为true或false prompt(">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/javascript基础(1)/">
+
+
+
+
+
+  <title>javascript基础(一)--(数据类型,运算符,语句等) | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/javascript基础(1)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">javascript基础(一)--(数据类型,运算符,语句等)</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-08T14:21:14+08:00">
+                2017-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.7k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="JS-包含三部分"><a href="#JS-包含三部分" class="headerlink" title="JS  包含三部分"></a>JS  包含三部分</h2><ol>
+<li><code>核心ECMASCRIPT</code></li>
+<li><code>DOM</code></li>
+<li><code>BOM</code></li>
+</ol>
+<h2 id="JS-注释"><a href="#JS-注释" class="headerlink" title="JS  注释"></a>JS  注释</h2><ol>
+<li>单行注释  <code>// 被注释的这一行,它不会被执行</code></li>
+<li>多行注释  <code>/* 注释多行 */</code><br><code>注 \n  在js文本中(弹框等)的换行,JavaScript 会忽略多余的空格。您可以向脚本添加空格，来提高其可读性</code></li>
+</ol>
+<h2 id="JS-三种弹框"><a href="#JS-三种弹框" class="headerlink" title="JS  三种弹框"></a>JS  三种弹框</h2><ol>
+<li><code>alert</code>(“弹出框”)</li>
+<li><code>confirm</code>(“提示信息”) 返回值为<code>true</code>或<code>false</code></li>
+<li><code>prompt</code>(“提示信息”,”默认值”) 点击确定返回输入的字符串</li>
+</ol>
+<h2 id="JS-输出"><a href="#JS-输出" class="headerlink" title="JS  输出"></a>JS  输出</h2><ol>
+<li><code>document.write() document.writeln()</code>输出之后会加空格,如果在文档已完成加载后执行 <code>document.write</code>，整个<code>HTML</code>页面将被覆盖</li>
+<li><code>consloe.log()</code> 控制台输出信息</li>
+<li><code>console.time(1)</code>  <code>code console.timeEnd(1)</code>  用来标记循环耗时</li>
+<li><code>console.table(obj)</code>  将json对象按表格输出</li>
+</ol>
+<h2 id="JS-变量"><a href="#JS-变量" class="headerlink" title="JS  变量"></a>JS  变量</h2><ol>
+<li>以字母 下划线 <code>$</code>开头 不能由数字开头 不能使用关键字</li>
+<li>对大小写敏感(<code>age</code>和<code>AGE</code>是不同的变量)<br>当给变量分配文本值时,应该用双引号或单引号包围这个值。<br>当给变量赋的值是数值时,不要使用引号.如果用引号该值会被作为文本来处理</li>
+<li>声明多个变量用逗号隔开<code>(var a,b,c)</code></li>
+<li>声明变量的时候没有给它赋值。只是声明，没有管它，没有给它赋值。<br><code>var name;</code><br><code>alert(name); //会弹出undefined;</code><br>变量存放在栈里 键盘上的字符,数字,特殊符号放在常量池  对象放在堆里面</li>
+<li>局部变量会在函数运行以后被删除 全部变量会在页面关闭后被删除</li>
+</ol>
+<h2 id="JS-数据类型-es6之前"><a href="#JS-数据类型-es6之前" class="headerlink" title="JS  数据类型 (es6之前)"></a>JS  数据类型 (es6之前)</h2><ul>
+<li>基本数据类型<br>一 <code>number</code> 数值型   <code>infinity</code> 无穷大数字   <code>10/0  infinity</code><br>二 <code>string</code> 字符串   必须用引号引起来<br>三 <code>bool</code>   布尔型   <code>true和false</code>    布尔值直接使用  千万不要加上引号<br>四 <code>function</code> 函数<br>五 <code>undefined</code> 未定义</li>
+<li>复合数据类型<br>六 <code>object</code> 对象 <code>null 对象{} 数组[]</code></li>
+<li><p>注意问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span>   没有这个对象或无值(空)  通过给一个变量赋 <span class="literal">null</span> 值来清除变量的内容</span><br><span class="line"><span class="literal">undefined</span>  有声明而未赋值的变量</span><br><span class="line"><span class="literal">null</span>==<span class="literal">undefined</span>;   <span class="comment">//true</span></span><br><span class="line"><span class="built_in">isNaN</span>()判断是否是<span class="literal">NaN</span>(判断之前先用<span class="built_in">Number</span>()转换)</span><br><span class="line"><span class="literal">NaN</span>   不是一个数字 但是它是number数字型</span><br><span class="line"><span class="literal">NaN</span> 和 <span class="literal">NaN</span>  自己不相等 是布尔值<span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显式类型转换</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">一 <span class="built_in">Number</span>()  转换成数值型</span><br><span class="line">ex:<span class="keyword">var</span> a = <span class="string">'110'</span></span><br><span class="line">   <span class="keyword">var</span> b = <span class="built_in">Number</span>(a)</span><br><span class="line">   <span class="built_in">console</span>.log(b)  <span class="comment">// 110</span></span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">typeof</span> b) <span class="comment">//number</span></span><br><span class="line">ex:<span class="keyword">var</span> a = <span class="string">'110px'</span></span><br><span class="line">   <span class="keyword">var</span> b = <span class="built_in">Number</span>(a)</span><br><span class="line">   <span class="built_in">console</span>.log(b) <span class="comment">//NaN 不是一个数字</span></span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">typeof</span> b) <span class="comment">// number</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">""</span>)--&gt;<span class="number">0</span>   <span class="built_in">Number</span>(<span class="literal">null</span>)--&gt;<span class="number">0</span>    <span class="built_in">Number</span>([])--&gt;<span class="number">0</span></span><br><span class="line">注:空字符串 空数组和<span class="literal">null</span> 进行<span class="built_in">Number</span>()转换时 返回<span class="number">0</span></span><br><span class="line">   对象 函数 undefiend 使用<span class="built_in">Number</span>()时 都为<span class="literal">NaN</span></span><br><span class="line">   当数组有且只一个元素,而这个元素是数值时 <span class="built_in">Number</span>()转换成该数值</span><br><span class="line">   数组不是一个元素时不管是什么<span class="built_in">Number</span>()转换都是<span class="literal">NaN</span></span><br><span class="line">二 <span class="built_in">parseInt</span>() 强制取整  <span class="built_in">parseFloat</span>()  转换成小数</span><br><span class="line">   <span class="built_in">parseInt</span>(b,<span class="number">10</span>)  <span class="comment">//第二个参数表示进制</span></span><br><span class="line">   对字符串或数组的第一个字符进行判断,不是数字字符将停止转换</span><br><span class="line">   除了加号/空格/减号(负数)外的任何非数字都将得到<span class="literal">NaN</span>)</span><br><span class="line">ex:<span class="keyword">var</span> a = <span class="string">'100px'</span>;</span><br><span class="line">   <span class="keyword">var</span> b = <span class="built_in">parseInt</span>(a);</span><br><span class="line">   <span class="built_in">console</span>.log(b); <span class="comment">//100</span></span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);<span class="comment">//number</span></span><br><span class="line">   当数组第一个元素是数字<span class="built_in">parseInt</span>()或<span class="built_in">parseFloat</span>()将数组第一个元素转换成数字</span><br><span class="line">ex:<span class="built_in">console</span>.log(<span class="built_in">Number</span>([<span class="string">'a'</span>]))         <span class="comment">//NaN</span></span><br><span class="line">   <span class="built_in">console</span>.log(<span class="built_in">Number</span>([<span class="number">2</span>,<span class="string">'2'</span>,<span class="number">2</span>]))   <span class="comment">//NaN</span></span><br><span class="line">   <span class="built_in">console</span>.log(<span class="built_in">Number</span>([<span class="string">'2'</span>]))         <span class="comment">//2</span></span><br><span class="line">   <span class="built_in">console</span>.log(<span class="built_in">parseInt</span>([<span class="string">"2"</span>,<span class="number">3</span>,<span class="number">4</span>]))   <span class="comment">//2</span></span><br><span class="line">   <span class="built_in">console</span>.log(<span class="built_in">parseInt</span>([<span class="string">'a'</span>,<span class="number">2</span>]))       <span class="comment">//NaN</span></span><br><span class="line">三 转换为布尔值 <span class="built_in">Boolean</span>(变量) 或  !!变量</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>隐式类型转换<br>① <code>+(拼接)   //100 + &#39;1&#39; =&gt; &#39;1001&#39;</code>    变字符串<br>② <code>- * / % ++ --  // &#39;100&#39;-2 =&gt; 98</code>   变数字<br>③ <code>&gt; &lt;     // (var a=&#39;10&#39;)&lt;(var b=4)</code>  转换成布尔值 会用number转换<br>④ <code>字符串比较大小时   比较第一个字符的ASCII码</code><br>⑤ <code>!取反</code> 把右边的数据类型转换成布尔值</p>
+</li>
+</ul>
+<h2 id="JS-运算符"><a href="#JS-运算符" class="headerlink" title="JS  运算符"></a>JS  运算符</h2><ol>
+<li>算术运算符 <code>+ - * / % ++ --</code><br><code>++ --</code>  自增或自减 不支持布尔型 对于字符串自增或自减属于升序或降序<br><code>a++或a--</code>  先用(赋值)再加 结果不变 ++a或–a  先加再用(赋值) 结果加1或减1</li>
+<li>赋值运算符 <code>= += -= *= /= %=</code><br>把右边的值赋给左边的变量或常量</li>
+<li>比较运算符 <code>&lt; &gt; &lt;= &gt;= == != === !==</code><br>比较运算符的结果都是一个布尔型<br>恒等于<code>===</code>值和类型都相同  非恒等于<code>!==</code>数值不相等或类型不相同<br><code>==</code>和<code>!=</code>在比较之前首先让双方的值做隐士类型转换<br>在简单基本比较运算符中  值和引用都要一样</li>
+<li>逻辑运算符<br><code>and</code>或<code>&amp;&amp;</code> 逻辑与 当两边都为<code>true</code>时，才返回<code>true</code>，否则返回<code>false</code><br><code>or</code>或<code>||</code>  逻辑或 只要有一个为<code>true</code>时，返回<code>true</code>，都为假时才返回<code>false</code><br><code>xor</code> 逻辑异或 当两个操作数一个为真一个为假时，才返回<code>true</code><br><code>！</code> 逻辑非 单一操作数为<code>true</code>，则返回<code>false</code></li>
+<li>位运算符<br>对二进制位从低位到高位对齐后进行计算<br><code>&amp;</code> 按位与 <code>|</code> 按位或 <code>^</code> 按位异或 <code>~</code> 按位取反 <code>&lt;&lt;</code> 向左移位 <code>&gt;&gt;</code> 向右移位<br><code>注: 按位运算不会出现短路</code></li>
+<li><p>三元运算符(条件运算符)<br>表达式1？表达式2：表达式3<br>如果表达式1为真则执行表达式2，表达式1为假则执行表达式3</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">一. 在取模%运算符中  正负号取决于被除数的正负</span><br><span class="line">ex: <span class="keyword">var</span> a = <span class="number">5</span>,b = <span class="number">-2</span></span><br><span class="line">    <span class="built_in">console</span>.log(a%b)  <span class="comment">//1</span></span><br><span class="line">ex: <span class="keyword">var</span> a = <span class="number">-5</span>,b = <span class="number">-2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a%b)  <span class="comment">//-1</span></span><br><span class="line">在js中拼接用<span class="string">"+"</span>  从左往右碰到第一个非数值之后就理解为字符串拼接</span><br><span class="line">在JS中任何类型的值都可以转换成逻辑布尔值</span><br><span class="line">假 <span class="string">""</span>(空字符串) <span class="literal">null</span> <span class="literal">undefined</span>  <span class="literal">false</span> <span class="literal">NaN</span> <span class="number">0</span>为假,其他都为真</span><br><span class="line">真 函数  对象  非空字符串  非<span class="number">0</span>的数字  数组  <span class="literal">true</span>都为真</span><br><span class="line">注:在js中逻辑运算符(短路) 返回的是最早能判断表达式结果的那个值</span><br><span class="line">二. 对于&amp;&amp;  如果第一个值是<span class="literal">false</span> 则整个表达式都是<span class="literal">false</span> 并返回第一个值。</span><br><span class="line">如果第一个值是<span class="literal">true</span>  则直接返回最后一个值不管真假</span><br><span class="line">三. 对于||  如果第一个值是<span class="literal">false</span> 则看后面的条件是否为真,找到真值就将其返回</span><br><span class="line">如果到最后也没找到真值，则返回最后一个值。</span><br><span class="line">如果第一个值是真就直接返回第一个</span><br><span class="line">ex <span class="keyword">var</span> a = <span class="literal">false</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">6</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="literal">true</span></span><br><span class="line"><span class="keyword">var</span> d = a || b &amp;&amp; c</span><br><span class="line"><span class="built_in">console</span>.log(d)  <span class="comment">//true</span></span><br><span class="line">ex <span class="keyword">var</span> a = <span class="literal">false</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">6</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="literal">null</span></span><br><span class="line"><span class="keyword">var</span> d = a &amp;&amp; b || c</span><br><span class="line"><span class="built_in">console</span>.log(d) <span class="comment">//null</span></span><br><span class="line">四. void取消返回值</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>delete</code>删除对象的属性或数组中的元素<br>删除数组元素时，并没有改变数组的长度，只是留下了一个<code>undefined</code>的值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ex: <span class="keyword">delete</span> obj.a <span class="keyword">delete</span> obj[<span class="string">"a"</span>] <span class="keyword">delete</span> array[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">delete</span> arr[<span class="number">1</span>]    <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">//[empty, 2]</span></span><br><span class="line">arr.length       <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>逗号表达式<br>一般形式是：表达式1，表达式2，表达式3……表达式n<br>逗号表达式的求解过程是：先计算表达式1的值，再计算表达式2的值，……一直计算到表达式n的值。<br>最后整个逗号表达式的值是表达式n的值。 看下面几个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">8</span> * <span class="number">2</span>, x * <span class="number">4</span> <span class="comment">/*整个表达式的值为64，x的值为16*/</span></span><br><span class="line">(x = <span class="number">8</span> * <span class="number">2</span>, x * <span class="number">4</span>), x * <span class="number">2</span> <span class="comment">/*整个表达式的值为128，x的值为16*/</span></span><br><span class="line">x = (z = <span class="number">5</span>, <span class="number">5</span> * <span class="number">2</span>) <span class="comment">/*整个表达式为赋值表达式，它的值为10，z的值为5*/</span></span><br><span class="line">x = z = <span class="number">5</span>, <span class="number">5</span> * <span class="number">2</span> <span class="comment">/*整个表达式为逗号表达式，它的值为10，x和z的值都为5*/</span></span><br><span class="line"><span class="comment">// 逗号表达式用的地方不太多，一般情况是在给循环变量赋初值时才用得到</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>in</code>运算符<br><code>in</code>运算符它的左操作符是一个字符串或可以转化为字符串，右操作符是一个对象。如果右侧的对象拥有一个  名为左操作数值的属性名，那么表达式返回true</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ex:<span class="keyword">var</span> point = &#123; <span class="attr">x</span>:<span class="number">1</span>, <span class="attr">y</span>:<span class="number">1</span> &#125;</span><br><span class="line"><span class="string">"x"</span> <span class="keyword">in</span> point <span class="comment">// true</span></span><br><span class="line"><span class="string">"z"</span> <span class="keyword">in</span> point <span class="comment">// false 对象不存在z属性</span></span><br><span class="line"><span class="string">"toString"</span> <span class="keyword">in</span> point <span class="comment">// true 对象继承了toString方法</span></span><br><span class="line"><span class="keyword">var</span> data = [ <span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span> ]</span><br><span class="line"><span class="string">"0"</span> <span class="keyword">in</span> data <span class="comment">// true  数组包含"0"属性</span></span><br><span class="line"><span class="number">1</span> <span class="keyword">in</span> data   <span class="comment">// true  数字转换为字符串</span></span><br><span class="line"><span class="number">3</span> <span class="keyword">in</span> data   <span class="comment">// false 没有索引为3的元素</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>typeof</code>运算符(es6之前)<br>返回表示操作数类型的字符串  <code>typeof(xx)</code> <code>typeof xx</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span>(<span class="literal">undefined</span>) <span class="comment">// "undefined"</span></span><br><span class="line"><span class="keyword">typeof</span>(<span class="literal">null</span>) <span class="comment">// "object"</span></span><br><span class="line"><span class="keyword">typeof</span>(<span class="number">1.2</span>) <span class="comment">// "number"</span></span><br><span class="line"><span class="keyword">typeof</span>(<span class="literal">NaN</span>) <span class="comment">// "number"</span></span><br><span class="line"><span class="keyword">typeof</span>(<span class="string">'字符串'</span>) <span class="comment">// "string"</span></span><br><span class="line"><span class="keyword">typeof</span>(<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;) <span class="comment">// "function"</span></span><br><span class="line"><span class="keyword">typeof</span>(&#123;&#125;) <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="JS-语句"><a href="#JS-语句" class="headerlink" title="JS  语句"></a>JS  语句</h2><ul>
+<li><p>条件控制语句</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// if语句</span></span><br><span class="line"><span class="keyword">if</span> (expr(真或假)) &#123;</span><br><span class="line">  statement</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 只有一条语句时，大括号可以省略</span></span><br><span class="line"><span class="keyword">if</span>(expr) statement</span><br><span class="line"><span class="comment">// if...else语句</span></span><br><span class="line"><span class="keyword">if</span> (expr) &#123;</span><br><span class="line">  statement</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  statement</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// if...elseif语句</span></span><br><span class="line"><span class="keyword">if</span> (expr1) &#123;</span><br><span class="line">  statement1</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (expr2) &#123;</span><br><span class="line">  statement2</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  statement3</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// switch...case语句</span></span><br><span class="line"><span class="keyword">switch</span>(变量)&#123;</span><br><span class="line">  <span class="keyword">case</span> 值<span class="number">1</span>:</span><br><span class="line">    statement1</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> 值<span class="number">2</span>:</span><br><span class="line">    statement2</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> 值<span class="number">3</span>:</span><br><span class="line">    statement3</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    statement</span><br><span class="line">&#125;</span><br><span class="line">a. switch(变量)  变量的类型只能是数字或字符串</span><br><span class="line">b. case中值的判断必须是 === 类型和数值都得相等</span><br><span class="line">c. switch <span class="keyword">case</span> 适合单个值匹配  elseif 适合判断范围时使用</span><br><span class="line">d. break是退出<span class="keyword">switch</span>使用的,如果需要同时匹配多个值可以使用多个<span class="keyword">case</span>而不加<span class="keyword">break</span></span><br><span class="line">e. default无论放在开始还是结束,不会影响程序执行,先执行<span class="keyword">case</span> 在执行 <span class="keyword">default</span> 放在末尾可以不加<span class="keyword">break</span>  放在开头必须加<span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环控制语句 用于遍历对象或数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// while循环语句</span></span><br><span class="line"><span class="comment">// 表达式为true时  才执行循环体</span></span><br><span class="line"><span class="keyword">while</span>(expr)&#123;</span><br><span class="line">  statement;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//  for语句</span></span><br><span class="line"><span class="keyword">for</span>(expr1;expr2;expr3)&#123;</span><br><span class="line">  statement;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// expr1变量的初始赋值,expr2为循环条件,expr3为变量递增或递减</span></span><br><span class="line"><span class="comment">// 用于已知循环次数多条件循环操作</span></span><br><span class="line"><span class="comment">// do...while循环语句</span></span><br><span class="line"><span class="comment">// 先执行循环体,在判断表达式,成立再执行循环体</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  statement</span><br><span class="line">&#125; <span class="keyword">while</span>(expr)</span><br><span class="line"><span class="comment">// for...in 循环语句  遍历对象所以可枚举的属性（enumerable）</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> json)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key+<span class="string">'--&gt;'</span>+json[key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>跳转控制语句 常用于跳出<code>for</code>循环或<code>foreach</code>循环<br><code>break</code>语句 <code>break n</code> 指定要跳出几层循环 结束整个循环结构<br><code>continue</code>语句 <code>continue n</code> 指定要跳出几层循环 只能终止本次循环 继续下一层循环</p>
+</li>
+</ul>
+<h2 id="JS中的保留字"><a href="#JS中的保留字" class="headerlink" title="JS中的保留字"></a>JS中的保留字</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">break</span>    <span class="keyword">catch</span>   <span class="keyword">case</span>    <span class="keyword">continue</span>   <span class="keyword">do</span>   <span class="keyword">default</span>  <span class="keyword">delete</span>  <span class="keyword">debugger</span>  <span class="keyword">else</span>    <span class="literal">false</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">for</span>     <span class="title">finally</span> <span class="title">instanceof</span> <span class="title">in</span>   <span class="title">if</span>       <span class="title">new</span>     <span class="title">null</span>      <span class="title">return</span>  <span class="title">switch</span></span></span><br><span class="line"><span class="function"><span class="title">this</span>     <span class="title">typeof</span>  <span class="title">true</span>    <span class="title">throw</span>      <span class="title">try</span>  <span class="title">var</span>      <span class="title">void</span>    <span class="title">with</span>      <span class="title">while</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="JS运算符优先级"><a href="#JS运算符优先级" class="headerlink" title="JS运算符优先级"></a>JS运算符优先级</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 优先级 由高到底</span></span><br><span class="line"><span class="comment">//运算符         //描述</span></span><br><span class="line">. [] ()         字段访问、数组下标、函数调用以及表达式分组</span><br><span class="line">++ -- - ~ ! <span class="keyword">delete</span> <span class="keyword">new</span> <span class="keyword">typeof</span> <span class="keyword">void</span> 一元运算符、返回数据类型、对象创建</span><br><span class="line">* <span class="regexp">/ %           乘法、除法、取模</span></span><br><span class="line"><span class="regexp">+ - +           加法、减法、字符串连接</span></span><br><span class="line"><span class="regexp">&lt;&lt; &gt;&gt; &gt;&gt;&gt;       移位</span></span><br><span class="line"><span class="regexp">&lt; &lt;= &gt; &gt;= instanceof 	小于、小于等于、大于、大于等于、instanceof</span></span><br><span class="line"><span class="regexp">== != === !==   等于、不等于、严格相等、非严格相等</span></span><br><span class="line"><span class="regexp">&amp;               按位与</span></span><br><span class="line"><span class="regexp">^               按位异或</span></span><br><span class="line"><span class="regexp">|               按位或</span></span><br><span class="line"><span class="regexp">&amp;&amp;              逻辑与</span></span><br><span class="line"><span class="regexp">||              逻辑或</span></span><br><span class="line"><span class="regexp">?:              条件</span></span><br><span class="line"><span class="regexp">= oP=           赋值、运算赋值</span></span><br><span class="line"><span class="regexp">,               多重求值</span></span><br></pre></td></tr></table></figure>
+<h2 id="JS-定时器"><a href="#JS-定时器" class="headerlink" title="JS 定时器"></a>JS 定时器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置定时器 (目前最小时间14毫秒)</span></span><br><span class="line"><span class="number">1.</span>setInterval  <span class="comment">//每隔多少秒执行一次 不清除会一直执行下去</span></span><br><span class="line">ex: setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="string">'定时器例子'</span>)&#125;, <span class="number">3000</span>)</span><br><span class="line"><span class="number">2.</span>setTimeout   <span class="comment">//隔多少秒后执行(只执行一次)</span></span><br><span class="line">ex: setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="string">'定时器例子'</span>)&#125;, <span class="number">3000</span>)</span><br><span class="line"><span class="comment">// 清除定时器  最好在使用定时器的时候先清除上一次的定时器</span></span><br><span class="line">clearInterval(t) / clearTimeout(t)</span><br><span class="line">ex:<span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> t = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  num++</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'123'</span>)</span><br><span class="line">  <span class="keyword">if</span>(num == <span class="number">2</span>)&#123;</span><br><span class="line">    clearInterval(t)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,<span class="number">3000</span>)</span><br><span class="line"><span class="comment">//问题:  在点击事件中执行多次停不下来   在每次开启时,先清除定时器</span></span><br><span class="line"><span class="number">3.</span>定时器有n个参数 setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123; <span class="built_in">console</span>.log(num)&#125;, <span class="number">1000</span>, <span class="number">123</span>)   <span class="comment">//123</span></span><br></pre></td></tr></table></figure>
+<h2 id="JS-小知识"><a href="#JS-小知识" class="headerlink" title="JS 小知识"></a>JS 小知识</h2><ol>
+<li><p>定时器有多个参数, 返回值<code>timer</code>是整数数字</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(num) <span class="comment">// 123</span></span><br><span class="line">&#125;, <span class="number">1000</span>, <span class="number">123</span>)</span><br><span class="line"><span class="built_in">console</span>.log(timer) <span class="comment">// 61834</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用<code>\</code>进行多行字符串的拼接</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj.innerHTML=<span class="string">'&lt;div&gt;这行&lt;/div&gt;\</span></span><br><span class="line"><span class="string">              &lt;span&gt;文字&lt;/span&gt;\</span></span><br><span class="line"><span class="string">              &lt;p&gt;标签&lt;/p&gt;'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>console.log(&#39;%c&#39;+带样式得输出,&#39;font-size:50px;color:red&#39;)</code>  可以输出样式,图片等</p>
+</li>
+<li><code>typeof写法  typeof arr等价于typeof(arr)  还有instanceof和in</code></li>
+<li><p>嵌套for循环跳出循环</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;            <span class="attr">a</span>:<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>;j &lt; <span class="number">1</span>; j++)&#123;               <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">1</span>; j++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">3</span>)&#123;                              <span class="keyword">if</span>(i == <span class="number">3</span>)&#123;</span><br><span class="line">      <span class="keyword">break</span>;                                   <span class="keyword">break</span> a</span><br><span class="line">    &#125;                                        &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(i)                           <span class="built_in">console</span>.log(i)</span><br><span class="line">    <span class="comment">//0 1 2 4                                //0 1 2</span></span><br><span class="line">  &#125;                                        &#125;</span><br><span class="line">&#125;                                        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>call(obj) 改变this指向  不写参数  默认指向window</code></p>
+</li>
+<li><code>obj.getBoundingClientRect()   获取元素上下左右宽高6个值</code></li>
+<li>元素尺寸：对应<code>jQuery</code>中的<code>$(xx).outerWidth()</code>和<code>$(xx).outerHeight()</code>方法，包括<code>padding</code>和<code>border</code>，也就是元素的<code>border-box</code>的尺寸。在原生<code>DOMAPI</code>中对应的是<code>offsetWidth</code>和<code>offsetHeight</code>,所以,有时候也称为<code>元素偏移尺寸</code>。</li>
+<li>元素内部尺寸：对应<code>jQuery</code>中的<code>$(xx).innerWidth()</code>和<code>$(xx).innerHeight()</code>方法，表示元素的内部区域尺寸，包括<code>padding</code>但不包括<code>border</code>，也就是元素的<code>padding-box</code>尺寸。在原生的<code>DOM API</code>中<br>对应<code>clientWidth</code>和<code>clientHeight</code>，所以，有时候也称为<code>元素可视尺寸</code>。</li>
+<li>元素外部尺寸：对应<code>jQuery</code>中的<code>$(xx).outerWidth(true)</code>和<code>$(xx).outerHeight(true)</code>方法， 表示元素的外部尺寸，不仅包括<code>padding</code>和<code>border</code>，还包括<code>margin</code>，也就是元素的<code>margin-box</code>尺寸。<br>没有相对应的原生的<code>DOMAPI</code></li>
+</ol>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
+<li><code>json</code> 是存储和传输数据的格式用于服务器端向网页传递数据</li>
+<li><code>json</code> 英文全称<code>JavaScript Object Notation</code></li>
+<li><code>json</code> 格式仅仅是一个文本,文本可以被任何编程语言读取及作为数据格式传递</li>
+</ul>
+<ol>
+<li><p><code>json</code>语法规则</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a.数据为键/值对      <span class="string">"firstName"</span>:<span class="string">"John"</span>  <span class="comment">// 键和值最好加上双引号</span></span><br><span class="line">b.并列数据由逗号分隔  <span class="string">"firstName"</span>:<span class="string">"John"</span>, <span class="string">"lastName"</span>:<span class="string">"Doe"</span></span><br><span class="line">c.大括号保存对象      &#123;<span class="string">"firstName"</span>:<span class="string">"John"</span>, <span class="string">"lastName"</span>:<span class="string">"Doe"</span>&#125;</span><br><span class="line">d.方括号保存数组      <span class="string">"employees"</span>:[&#123;<span class="string">"firstName"</span>:<span class="string">"John"</span>, <span class="string">"lastName"</span>:<span class="string">"Doe"</span>&#125;]</span><br><span class="line"><span class="keyword">var</span> arr=&#123;<span class="string">"employees"</span>:[</span><br><span class="line">  &#123;<span class="string">"firstName"</span>:<span class="string">"John"</span>, <span class="string">"lastName"</span>:<span class="string">"Doe"</span>&#125;,</span><br><span class="line">  &#123;<span class="string">"firstName"</span>:<span class="string">"Anna"</span>, <span class="string">"lastName"</span>:<span class="string">"Smith"</span>&#125;,</span><br><span class="line">  &#123;<span class="string">"firstName"</span>:<span class="string">"Peter"</span>, <span class="string">"lastName"</span>:<span class="string">"Jones"</span>&#125;</span><br><span class="line">]&#125;</span><br><span class="line"><span class="comment">// JSON取值</span></span><br><span class="line">arr.employees[<span class="number">0</span>].firstName  <span class="comment">//John</span></span><br><span class="line">arr[<span class="string">"employees"</span>][<span class="number">0</span>].firstName  <span class="comment">//John</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Json</code>遍历<code>for in</code>(不能使用for循环),<code>json</code>是没有长度的,<code>json.length</code>会得到<code>undefined</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json1 =&#123;</span><br><span class="line">  <span class="string">'url'</span>:[<span class="string">'img/1.jpg'</span>,<span class="string">'img/2.jpg'</span>,<span class="string">'img/3.jpg'</span>,<span class="string">'img/4.jpg'</span>],</span><br><span class="line">  <span class="string">'text'</span>:[<span class="string">'这是第一张图片'</span>,<span class="string">'这是第二张图片'</span>,<span class="string">'这是第三张图片'</span>,<span class="string">'这是第四张图片'</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> json1)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;json1[attr].length;i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(json1[attr][i])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>json</code>字符串转换为<code>javascript</code>对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建javascript字符串字符传为JSON格式的数据</span></span><br><span class="line"><span class="keyword">var</span> txt=<span class="string">'&#123;"employees":['</span>+</span><br><span class="line">  <span class="string">'&#123;"firstName":"John", "lastName":"Doe"&#125;,'</span>+</span><br><span class="line">  <span class="string">'&#123;"firstName":"John", "lastName":"Doe"&#125;,'</span>+</span><br><span class="line">  <span class="string">'&#123;"firstName":"John", "lastName":"Doe"&#125;]&#125;'</span>;</span><br><span class="line"><span class="comment">// 使用JSON.parse() 将json字符串转换为javascript对象</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(txt)</span><br><span class="line"><span class="comment">// 获取值并输出</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.employees[<span class="number">1</span>].firstName+<span class="string">"--"</span>+obj.employees[<span class="number">1</span>].lastName)</span><br><span class="line"><span class="built_in">console</span>.log(obj[<span class="string">"employees"</span>][<span class="number">2</span>].firstName+<span class="string">"--"</span>+obj[<span class="string">"employees"</span>][<span class="number">2</span>].lastName)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js基础/" rel="tag"><i class="fa fa-tag"></i> js基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/移动端适配/" rel="next" title="移动端适配">
+                <i class="fa fa-chevron-left"></i> 移动端适配
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/javascript基础(2)/" rel="prev" title="javascript基础(二)--(函数,作用域)">
+                javascript基础(二)--(函数,作用域) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-包含三部分"><span class="nav-number">1.</span> <span class="nav-text">JS  包含三部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-注释"><span class="nav-number">2.</span> <span class="nav-text">JS  注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-三种弹框"><span class="nav-number">3.</span> <span class="nav-text">JS  三种弹框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-输出"><span class="nav-number">4.</span> <span class="nav-text">JS  输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-变量"><span class="nav-number">5.</span> <span class="nav-text">JS  变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-数据类型-es6之前"><span class="nav-number">6.</span> <span class="nav-text">JS  数据类型 (es6之前)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-运算符"><span class="nav-number">7.</span> <span class="nav-text">JS  运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-语句"><span class="nav-number">8.</span> <span class="nav-text">JS  语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS中的保留字"><span class="nav-number">9.</span> <span class="nav-text">JS中的保留字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS运算符优先级"><span class="nav-number">10.</span> <span class="nav-text">JS运算符优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-定时器"><span class="nav-number">11.</span> <span class="nav-text">JS 定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-小知识"><span class="nav-number">12.</span> <span class="nav-text">JS 小知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">13.</span> <span class="nav-text">JSON</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

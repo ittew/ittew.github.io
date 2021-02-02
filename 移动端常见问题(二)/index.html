@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="移动端,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="WEB前端开发中，除了对PC端浏览器进行各浏览器兼容，移动端页面中android端和ios端的页面兼容也是有很多问题，特此整理一下遇到过的或者可能遇到的常见问题。">
+<meta name="keywords" content="移动端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端常见问题(二)">
+<meta property="og:url" content="http://ittew.cn/移动端常见问题(二)/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="WEB前端开发中，除了对PC端浏览器进行各浏览器兼容，移动端页面中android端和ios端的页面兼容也是有很多问题，特此整理一下遇到过的或者可能遇到的常见问题。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-12T14:28:09.815Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端常见问题(二)">
+<meta name="twitter:description" content="WEB前端开发中，除了对PC端浏览器进行各浏览器兼容，移动端页面中android端和ios端的页面兼容也是有很多问题，特此整理一下遇到过的或者可能遇到的常见问题。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/移动端常见问题(二)/">
+
+
+
+
+
+  <title>移动端常见问题(二) | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/移动端常见问题(二)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">移动端常见问题(二)</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-01T19:21:14+08:00">
+                2018-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  935 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>WEB前端开发中，除了对PC端浏览器进行各浏览器兼容，移动端页面中<code>android</code>端和<code>ios</code>端的页面兼容也是有很多问题，特此整理一下遇到过的或者可能遇到的常见问题。<br><a id="more"></a></p>
+<h2 id="1-解决页面使用overflow-scroll在iOS上滑动卡顿的问题"><a href="#1-解决页面使用overflow-scroll在iOS上滑动卡顿的问题" class="headerlink" title="1. 解决页面使用overflow: scroll在iOS上滑动卡顿的问题"></a>1. 解决页面使用overflow: scroll在iOS上滑动卡顿的问题</h2><p><code>在滚动的容器中增加:  -webkit-overflow-scrolling: touch</code></p>
+<h2 id="2-input输入框ios的光标问题"><a href="#2-input输入框ios的光标问题" class="headerlink" title="2. input输入框ios的光标问题"></a>2. input输入框ios的光标问题</h2><p>在ios上有时候看到光标和输入的文字错位比较明显  是因为设置了<code>line-height</code>导致的<br><code>解决办法: 使用padding去撑开需要的高度,不使用line-height</code></p>
+<h2 id="3-移动端click事件300ms的延迟"><a href="#3-移动端click事件300ms的延迟" class="headerlink" title="3. 移动端click事件300ms的延迟"></a>3. 移动端click事件300ms的延迟</h2><p>移动设备上的web网页是有300ms延迟的，往往会造成按钮点击延迟甚至是点击失效<br><code>解决方案:</code></p>
+<ul>
+<li><code>fastclick</code>插件可以解决在手机上点击事件的300ms延迟</li>
+<li>使用<code>zepto</code>的tap事件也是为了解决在click的延迟问题</li>
+<li>通过绑定<code>ontouchstart事件,touchstart --&gt; touchmove --&gt; touchend --&gt; click</code></li>
+</ul>
+<h2 id="4-在ios和andriod中-audio元素和video元素在无法自动播放"><a href="#4-在ios和andriod中-audio元素和video元素在无法自动播放" class="headerlink" title="4. 在ios和andriod中,audio元素和video元素在无法自动播放"></a>4. 在ios和andriod中,audio元素和video元素在无法自动播放</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'html'</span>).one(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    audio.play()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="5-如何在手机上实现弹出框弹出时，弹出框内可以上下滚动，背后的页面锁定不能滚动？"><a href="#5-如何在手机上实现弹出框弹出时，弹出框内可以上下滚动，背后的页面锁定不能滚动？" class="headerlink" title="5. 如何在手机上实现弹出框弹出时，弹出框内可以上下滚动，背后的页面锁定不能滚动？"></a>5. 如何在手机上实现弹出框弹出时，弹出框内可以上下滚动，背后的页面锁定不能滚动？</h2><p><code>弹出模态框 html,body{ height:100%; overflow:hidden }</code><br><code>关闭模态框 html,body{ overflow: visble }</code></p>
+<h2 id="6-flex：固定宽度-flex：1-之后单行或多行省略不生效-在父级加-min-width：0"><a href="#6-flex：固定宽度-flex：1-之后单行或多行省略不生效-在父级加-min-width：0" class="headerlink" title="6. flex：固定宽度+flex：1 之后单行或多行省略不生效  在父级加 min-width：0"></a>6. flex：固定宽度+flex：1 之后单行或多行省略不生效  在父级加 min-width：0</h2><h2 id="7-ios的input设置disabled属性后默认样式问题"><a href="#7-ios的input设置disabled属性后默认样式问题" class="headerlink" title="7. ios的input设置disabled属性后默认样式问题"></a>7. ios的input设置disabled属性后默认样式问题</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span>:disabled, <span class="selector-tag">input</span><span class="selector-attr">[disabled]</span>&#123;</span><br><span class="line">  <span class="attribute">background-color</span> : <span class="number">#fff</span>;   <span class="comment">//修改默认灰色样式</span></span><br><span class="line">  <span class="attribute">filter</span>: alpha(opacity=<span class="number">100</span>);</span><br><span class="line">  -webkit-text-fill-<span class="attribute">color</span>:<span class="number">#bbb</span>; <span class="comment">//字体颜色安卓与IOS适配</span></span><br><span class="line">  -webkit-<span class="attribute">opacity</span>:<span class="number">1</span>;   <span class="comment">// 不透明级别安卓与IOS适配</span></span><br><span class="line">  <span class="attribute">opacity</span>:<span class="number">1</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#bbb</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="8-ios-input自动填充后出现黄色背景问题"><a href="#8-ios-input自动填充后出现黄色背景问题" class="headerlink" title="8. ios input自动填充后出现黄色背景问题"></a>8. ios input自动填充后出现黄色背景问题</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 解决ios浏览器中 input自动填充黄色背景问题</span></span><br><span class="line"><span class="selector-tag">input</span>:-webkit-autofill,<span class="selector-tag">input</span>:-webkit-autofill:focus&#123;</span><br><span class="line">  <span class="comment">// -webkit-text-fill-color: #fff !important;</span></span><br><span class="line">  <span class="attribute">transition</span>: background-color <span class="number">55000s</span> ease-in-out <span class="number">0s</span>;<span class="comment">//设置5000s后改变填充密码框的背景色，使背景透明</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="9-flex-多列布局中-将最后一列居右显示"><a href="#9-flex-多列布局中-将最后一列居右显示" class="headerlink" title="9. flex 多列布局中 将最后一列居右显示"></a>9. flex 多列布局中 将最后一列居右显示</h2><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// flex 垂直方向 单独设置某一列对象方式时 可以使用 align-self:flex-<span class="keyword">end</span></span><br><span class="line">// 但水平方向是没有这样的属性  但可以使用 margin-<span class="built_in">left</span>: <span class="built_in">auto</span> 来达到单独居右的效果</span><br><span class="line">.btn &#123; margin-<span class="built_in">left</span>: <span class="built_in">auto</span>; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="10-鉴于clip裁切隐藏是最佳可访问隐藏"><a href="#10-鉴于clip裁切隐藏是最佳可访问隐藏" class="headerlink" title="10. 鉴于clip裁切隐藏是最佳可访问隐藏"></a>10. 鉴于clip裁切隐藏是最佳可访问隐藏</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clip</span>&#123;</span><br><span class="line">   <span class="attribute">position</span>:absolute;</span><br><span class="line">   <span class="attribute">clip</span>:<span class="built_in">rect</span>(0,0,0,0)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="11-ios机型margin属性无效问题？"><a href="#11-ios机型margin属性无效问题？" class="headerlink" title="11. ios机型margin属性无效问题？"></a>11. ios机型margin属性无效问题？</h2><p><code>margin-bottom在safari里失效,直接padding代替margin</code></p>
+<h2 id="12-ios绑定点击事件不执行？-ios手机-事件委托失效"><a href="#12-ios绑定点击事件不执行？-ios手机-事件委托失效" class="headerlink" title="12. ios绑定点击事件不执行？ ios手机,事件委托失效"></a>12. ios绑定点击事件不执行？ ios手机,事件委托失效</h2><p><code>添加样式cursor:pointer 消除背景的css -webkit-tap-highlight-color:transparent</code><br><code>$(&#39;body&#39;).on(&#39;click&#39;,selector,function(){})</code> 点击无效时,只需要css设置 <code>selector { cursor: pointer; }</code>即可</p>
+<h2 id="13-h5底部输入框被键盘遮挡问题"><a href="#13-h5底部输入框被键盘遮挡问题" class="headerlink" title="13. h5底部输入框被键盘遮挡问题"></a>13. h5底部输入框被键盘遮挡问题</h2><ul>
+<li>让dom元素出现在可见视图的顶部或底部<br><code>document.querySelector(&#39;#inputId&#39;).scrollIntoView();</code></li>
+</ul>
+<h2 id="14-ios页面橡皮弹回效果遮挡页面选项卡？"><a href="#14-ios页面橡皮弹回效果遮挡页面选项卡？" class="headerlink" title="14 .ios页面橡皮弹回效果遮挡页面选项卡？"></a>14 .ios页面橡皮弹回效果遮挡页面选项卡？</h2><p>(1) 有时body和html的height: 100%去除掉问题可能就没有了。<br>(2) 到达临界值的时候在阻止事件默认行为<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> startY,endY;</span><br><span class="line"><span class="comment">//记录手指触摸的起点坐标</span></span><br><span class="line">$(<span class="string">'body'</span>).on(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  startY = e.touches[<span class="number">0</span>].pageY;</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'body'</span>).on(<span class="string">'touchmove'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  endY = e.touches[<span class="number">0</span>].pageY;  <span class="comment">//记录手指触摸的移动中的坐标</span></span><br><span class="line">  <span class="comment">//手指下滑，页面到达顶端不能继续下滑</span></span><br><span class="line">  <span class="keyword">if</span>(endY&gt;startY&amp;&amp; $(<span class="built_in">window</span>).scrollTop()&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//手指上滑，页面到达底部能继续上滑</span></span><br><span class="line">  <span class="keyword">if</span>(endY&lt;startY&amp;&amp; $(<span class="built_in">window</span>).scrollTop()+</span><br><span class="line">    $(<span class="built_in">window</span>).height()&gt;=$(<span class="string">'body'</span>)[<span class="number">0</span>].scrollHeight)&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="15-Chrome-中文界面下默认会将小于-12px-的文本强制按照-12px-显示"><a href="#15-Chrome-中文界面下默认会将小于-12px-的文本强制按照-12px-显示" class="headerlink" title="15. Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示"></a>15. Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示</h2><p><code>可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决</code></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/移动端/" rel="tag"><i class="fa fa-tag"></i> 移动端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/移动端常见问题(一)/" rel="next" title="移动端常见问题(一)">
+                <i class="fa fa-chevron-left"></i> 移动端常见问题(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/node基础(二)/" rel="prev" title="node基础(二)">
+                node基础(二) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-解决页面使用overflow-scroll在iOS上滑动卡顿的问题"><span class="nav-number">1.</span> <span class="nav-text">1. 解决页面使用overflow: scroll在iOS上滑动卡顿的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-input输入框ios的光标问题"><span class="nav-number">2.</span> <span class="nav-text">2. input输入框ios的光标问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-移动端click事件300ms的延迟"><span class="nav-number">3.</span> <span class="nav-text">3. 移动端click事件300ms的延迟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-在ios和andriod中-audio元素和video元素在无法自动播放"><span class="nav-number">4.</span> <span class="nav-text">4. 在ios和andriod中,audio元素和video元素在无法自动播放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-如何在手机上实现弹出框弹出时，弹出框内可以上下滚动，背后的页面锁定不能滚动？"><span class="nav-number">5.</span> <span class="nav-text">5. 如何在手机上实现弹出框弹出时，弹出框内可以上下滚动，背后的页面锁定不能滚动？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-flex：固定宽度-flex：1-之后单行或多行省略不生效-在父级加-min-width：0"><span class="nav-number">6.</span> <span class="nav-text">6. flex：固定宽度+flex：1 之后单行或多行省略不生效  在父级加 min-width：0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-ios的input设置disabled属性后默认样式问题"><span class="nav-number">7.</span> <span class="nav-text">7. ios的input设置disabled属性后默认样式问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-ios-input自动填充后出现黄色背景问题"><span class="nav-number">8.</span> <span class="nav-text">8. ios input自动填充后出现黄色背景问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-flex-多列布局中-将最后一列居右显示"><span class="nav-number">9.</span> <span class="nav-text">9. flex 多列布局中 将最后一列居右显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-鉴于clip裁切隐藏是最佳可访问隐藏"><span class="nav-number">10.</span> <span class="nav-text">10. 鉴于clip裁切隐藏是最佳可访问隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-ios机型margin属性无效问题？"><span class="nav-number">11.</span> <span class="nav-text">11. ios机型margin属性无效问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-ios绑定点击事件不执行？-ios手机-事件委托失效"><span class="nav-number">12.</span> <span class="nav-text">12. ios绑定点击事件不执行？ ios手机,事件委托失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-h5底部输入框被键盘遮挡问题"><span class="nav-number">13.</span> <span class="nav-text">13. h5底部输入框被键盘遮挡问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-ios页面橡皮弹回效果遮挡页面选项卡？"><span class="nav-number">14.</span> <span class="nav-text">14 .ios页面橡皮弹回效果遮挡页面选项卡？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Chrome-中文界面下默认会将小于-12px-的文本强制按照-12px-显示"><span class="nav-number">15.</span> <span class="nav-text">15. Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

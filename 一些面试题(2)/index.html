@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="面试,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第1题 作用域1234567891011121314151617//// (1) 变量提升 var num1， num2， function f1()&amp;#123;&amp;#125;var num1 = 55var num2 = 66function f1(num, num1)&amp;#123;  // 有参数先声明形参的临时作用域 var num， num1 形参赋值 num=55， num1=66  num">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些面试题(2)">
+<meta property="og:url" content="http://ittew.cn/一些面试题(2)/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="第1题 作用域1234567891011121314151617//// (1) 变量提升 var num1， num2， function f1()&amp;#123;&amp;#125;var num1 = 55var num2 = 66function f1(num, num1)&amp;#123;  // 有参数先声明形参的临时作用域 var num， num1 形参赋值 num=55， num1=66  num">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ittew.cn/image/interview/getName.png">
+<meta property="og:updated_time" content="2021-01-12T14:28:09.803Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一些面试题(2)">
+<meta name="twitter:description" content="第1题 作用域1234567891011121314151617//// (1) 变量提升 var num1， num2， function f1()&amp;#123;&amp;#125;var num1 = 55var num2 = 66function f1(num, num1)&amp;#123;  // 有参数先声明形参的临时作用域 var num， num1 形参赋值 num=55， num1=66  num">
+<meta name="twitter:image" content="http://ittew.cn/image/interview/getName.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/一些面试题(2)/">
+
+
+
+
+
+  <title>一些面试题(2) | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/一些面试题(2)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">一些面试题(2)</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-17T15:21:14+08:00">
+                2020-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.4k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="第1题-作用域"><a href="#第1题-作用域" class="headerlink" title="第1题 作用域"></a>第1题 作用域</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// (1) 变量提升 var num1， num2， function f1()&#123;&#125;</span></span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">55</span></span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">66</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">num, num1</span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 有参数先声明形参的临时作用域 var num， num1 形参赋值 num=55， num1=66</span></span><br><span class="line">  num = <span class="number">100</span> <span class="comment">// 修改num</span></span><br><span class="line">  num1 = <span class="number">100</span> <span class="comment">// 修改num1</span></span><br><span class="line">  num2 = <span class="number">100</span> <span class="comment">// 查找当前作用域 没有上一层作用域查找 找到全局 num2并修改为100</span></span><br><span class="line">  <span class="built_in">console</span>.log(num) <span class="comment">// 100</span></span><br><span class="line">  <span class="built_in">console</span>.log(num1) <span class="comment">// 100</span></span><br><span class="line">  <span class="built_in">console</span>.log(num2) <span class="comment">// 100</span></span><br><span class="line">&#125;</span><br><span class="line">f1(num1, num2)</span><br><span class="line"><span class="built_in">console</span>.log(num2) <span class="comment">// 100 全局num2在函数内部被修改为100</span></span><br><span class="line"><span class="built_in">console</span>.log(num1) <span class="comment">// 55 全局num1</span></span><br><span class="line"><span class="built_in">console</span>.log(num) <span class="comment">// 全局未找到num声明则报错 num is not defiend</span></span><br></pre></td></tr></table></figure>
+<h2 id="第2题-值类型和引用类型的传递"><a href="#第2题-值类型和引用类型的传递" class="headerlink" title="第2题 值类型和引用类型的传递"></a>第2题 值类型和引用类型的传递</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name =  name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">person</span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 形参临时作用域  var person 形参声明 person = p (0x111) 赋值</span></span><br><span class="line">  person.name = <span class="string">'ls'</span> <span class="comment">// 将 0x1111 地址中的name修改为 &#123; name: 'ls', age: 16 &#125;</span></span><br><span class="line">  person = <span class="keyword">new</span> Person(<span class="string">'ww'</span>, <span class="number">18</span>) <span class="comment">// 重新开辟空间 Ox2222 &#123;name: 'ww', age: 18&#125; 局部变量person指向新地址Ox2222</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">'zs'</span>, <span class="number">16</span>) <span class="comment">// 创建对象地址 Ox1111</span></span><br><span class="line"><span class="built_in">console</span>.log(p.name) <span class="comment">// zs</span></span><br><span class="line">f1(p)</span><br><span class="line"><span class="built_in">console</span>.log(p.name) <span class="comment">// ls 输出 Ox1111 地址中的 name: ls</span></span><br></pre></td></tr></table></figure>
+<h2 id="第3题-字符串转驼峰命名"><a href="#第3题-字符串转驼峰命名" class="headerlink" title="第3题 字符串转驼峰命名"></a>第3题 字符串转驼峰命名</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将 'get-element-by-id' 转化为 'getElementById'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toHump</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> arr = str.split(<span class="string">'-'</span>)</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">    arr[i] = arr[i].charAt(<span class="number">0</span>).toUpperCase() + arr[i].substring(<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr.join(<span class="string">''</span>)</span><br><span class="line">&#125;</span><br><span class="line">toHump(<span class="string">'get-element-by-id'</span>) <span class="comment">// getElementById</span></span><br></pre></td></tr></table></figure>
+<h2 id="第4题-冒泡排序"><a href="#第4题-冒泡排序" class="headerlink" title="第4题 冒泡排序"></a>第4题 冒泡排序</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="keyword">var</span> len = arr.length<span class="number">-1</span></span><br><span class="line"><span class="comment">// 轮数</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">  <span class="comment">// 次数</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;len-i;j++)&#123;</span><br><span class="line">    <span class="comment">// 交换位置</span></span><br><span class="line">    <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">      <span class="keyword">var</span> temp = arr[j]</span><br><span class="line">      arr[j] = arr[j+<span class="number">1</span>]</span><br><span class="line">      arr[j+<span class="number">1</span>] = temp</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr)</span><br></pre></td></tr></table></figure>
+<h2 id="第5题-不使用reverse反转数组"><a href="#第5题-不使用reverse反转数组" class="headerlink" title="第5题 不使用reverse反转数组"></a>第5题 不使用reverse反转数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 交换位置 反转数组</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length/<span class="number">2</span>;i++) &#123;</span><br><span class="line">  <span class="comment">// arr[0] 和 arr[arr.length-1-0] 交换</span></span><br><span class="line">  <span class="comment">// arr[1] 和 arr[arr.length-1-1] 交换</span></span><br><span class="line">  <span class="comment">// arr[2] 和 arr[arr.length-1-2] 交换</span></span><br><span class="line">  <span class="comment">// 利用第三方变量交换两个变量的值</span></span><br><span class="line">  <span class="keyword">var</span> temp = arr[i]</span><br><span class="line">  arr[i] = arr[arr.length<span class="number">-1</span>-i]</span><br><span class="line">  arr[arr.length<span class="number">-1</span>-i] = temp</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr)</span><br></pre></td></tr></table></figure>
+<h2 id="第6题-js综合面试题getName"><a href="#第6题-js综合面试题getName" class="headerlink" title="第6题 js综合面试题getName"></a>第6题 js综合面试题getName</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 变量提升 函数提升</span></span><br><span class="line"><span class="comment">1 function Foo()&#123;</span></span><br><span class="line"><span class="comment">    getName = function()&#123; console.log(1) &#125;</span></span><br><span class="line"><span class="comment">    return this</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">// 2 var getName 被同名函数 getName() 覆盖</span></span><br><span class="line"><span class="comment">// 3 function getName()&#123; console.log(5) &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">// 执行代码阶段</span></span><br><span class="line"><span class="comment">Foo.getName = function()&#123; console.log(2) &#125;</span></span><br><span class="line"><span class="comment">Foo.prototype.getName = function()&#123; console.log(3) &#125;</span></span><br><span class="line"><span class="comment">getName = function()&#123; console.log(4) &#125;</span></span><br><span class="line"><span class="comment">4 getName = function()&#123; console.log(4) &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">最终执行到这里时</span></span><br><span class="line"><span class="comment">function Foo()&#123;</span></span><br><span class="line"><span class="comment">  getName = function()&#123; console.log(1) &#125;</span></span><br><span class="line"><span class="comment">  return this</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">Foo.getName = function()&#123; console.log(2) &#125;</span></span><br><span class="line"><span class="comment">Foo.prototype.getName = function()&#123; console.log(3) &#125;</span></span><br><span class="line"><span class="comment">getName = function()&#123; console.log(4) &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="number">1</span>) &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">&#125;</span><br><span class="line">Foo.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="number">2</span>) &#125;  <span class="comment">// 类的静态方法</span></span><br><span class="line">Foo.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="number">3</span>) &#125;</span><br><span class="line"><span class="keyword">var</span> getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="number">4</span>) &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="number">5</span>) &#125;</span><br><span class="line"></span><br><span class="line">Foo.getName() <span class="comment">// 2  执行 function()&#123; console.log(2) &#125;</span></span><br><span class="line">getName() <span class="comment">// 4 执行 function()&#123; console.log(4) &#125;()</span></span><br><span class="line"><span class="comment">// Foo() 将全局getName修改为 getName = function()&#123; console.log(1) &#125; 并返回this --&gt; window</span></span><br><span class="line">Foo().getName() <span class="comment">// 1  (Foo()).getName()--&gt; window.getName()</span></span><br><span class="line">getName() <span class="comment">// 1 执行 getName = function()&#123; console.log(1) &#125;</span></span><br><span class="line"><span class="comment">// . 操作符优先级高 new (Foo.getName)() --&gt; new (function()&#123; console.log(2) &#125;)()</span></span><br><span class="line"><span class="keyword">new</span> Foo.getName() <span class="comment">// 2</span></span><br><span class="line"><span class="comment">// foo.getName === Foo.prototype.getName 实例对象的隐式原型就等于构造函数的显示原型</span></span><br><span class="line"><span class="comment">// (new Foo()).getName()--&gt; foo.getName() === Foo.prototype.getName()</span></span><br><span class="line"><span class="keyword">new</span> Foo().getName() <span class="comment">// 3</span></span><br><span class="line"><span class="comment">// new ((new Foo()).getName)()--&gt; new (foo.getName)()--&gt; new (function()&#123; console.log(3) &#125;)()</span></span><br><span class="line"><span class="keyword">new</span> <span class="keyword">new</span> Foo().getName() <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p><img src="/image/interview/getName.png" alt="getName"></p>
+<h2 id="第7题-什么是函数节流？-什么是函数防抖"><a href="#第7题-什么是函数节流？-什么是函数防抖" class="headerlink" title="第7题 什么是函数节流？ 什么是函数防抖"></a>第7题 什么是函数节流？ 什么是函数防抖</h2><ul>
+<li><p>函数节流：一个函数执行一次后，只有大于设定的执行周期后才会执行第二次<br>需要频繁触发的函数，在规定时间内，只让函数触发的第一次生效，后面不生效</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 节流函数</span></span><br><span class="line"><span class="comment">* @param fn 要被节流的函数</span></span><br><span class="line"><span class="comment">* @param delay 规定的时间</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, delay</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> lastTime = <span class="number">0</span> <span class="comment">// 记录上一次函数触发的时间</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nowTime = <span class="built_in">Date</span>.now() <span class="comment">// 记录当前函数触发的时间</span></span><br><span class="line">    <span class="keyword">if</span> (nowTime - lastTime &gt; delay) &#123;</span><br><span class="line">      fn.call(<span class="keyword">this</span>) <span class="comment">// 修改this指向</span></span><br><span class="line">    &#125;</span><br><span class="line">    lastTime = nowTime <span class="comment">// 同步时间</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.onscroll = throttle(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'scroll'</span>)</span><br><span class="line">&#125;, <span class="number">60</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>防抖函数：一个需要频繁触发的函数，在规定时间内，只让函数触发的最后一次生效，前面的不生效</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 防抖函数</span></span><br><span class="line"><span class="comment">* @param fn 要被防抖的函数</span></span><br><span class="line"><span class="comment">* @param delay 规定的时间</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, delay</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> timer = <span class="literal">null</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    clearTimeout(timer) <span class="comment">// 清除上一次延时器</span></span><br><span class="line">    <span class="comment">// 重新设置新的延时器</span></span><br><span class="line">    timer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      fn.call(<span class="keyword">this</span>)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">input.oninput = debounce(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(input.value)</span><br><span class="line">&#125;, <span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="第8题-多维数组扁平化"><a href="#第8题-多维数组扁平化" class="headerlink" title="第8题 多维数组扁平化"></a>第8题 多维数组扁平化</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,[<span class="number">6</span>,<span class="number">7</span>]]]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flatten</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [].concat(</span><br><span class="line">    ...arr.map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">Array</span>.isArray(item) ? flatten(item) : item)</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(flatten(arr))</span><br></pre></td></tr></table></figure>
+<h2 id="第9题-变量隐式转换"><a href="#第9题-变量隐式转换" class="headerlink" title="第9题 变量隐式转换"></a>第9题 变量隐式转换</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123; &#125;,</span><br><span class="line">    b = &#123; <span class="attr">key</span>:<span class="string">'b'</span> &#125;,</span><br><span class="line">    c = &#123; <span class="attr">key</span>:<span class="string">'c'</span> &#125;;</span><br><span class="line">a[b] = <span class="number">123</span>;</span><br><span class="line">a[c] = <span class="number">456</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a[b]) <span class="comment">// 456</span></span><br><span class="line"><span class="comment">/* 首先a[b] 这里面b最后显示成什么？</span></span><br><span class="line"><span class="comment">  关于变量隐式转换，对象的a[]这种写法，里面添加的是属性名称--string类型</span></span><br><span class="line"><span class="comment">  所以a[b]，b的原类型是object，目标是string类型。实际上是执行了a[b.toString()]</span></span><br><span class="line"><span class="comment">  同理a[c]也一样</span></span><br><span class="line"><span class="comment">  a[b.toString()]=123;</span></span><br><span class="line"><span class="comment">  a[c.toString()]=456;</span></span><br><span class="line"><span class="comment">  Object类型的变量 执行toString() 结果都是同样的字符串。----"[object Object]"</span></span><br><span class="line"><span class="comment">  所以a["[object Object]"]=123;  a["[object Object]"]=456;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="第10题-连等号执行顺序"><a href="#第10题-连等号执行顺序" class="headerlink" title="第10题 连等号执行顺序"></a>第10题 连等号执行顺序</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> y = <span class="number">1</span>, x = y = <span class="keyword">typeof</span> x;</span><br><span class="line"><span class="built_in">console</span>.log(x) <span class="comment">// undefiend</span></span><br><span class="line"><span class="comment">/* var y; var x  // x ,y 此时都是undefiend  ---&gt; y = 1</span></span><br><span class="line"><span class="comment">  连等号从右向左执行</span></span><br><span class="line"><span class="comment">  typeof x --&gt;undefiend(字符串) --&gt;y = undefined(字符串) --&gt; x = undefied(字符串)</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="第11题-toString-特例"><a href="#第11题-toString-特例" class="headerlink" title="第11题 toString 特例"></a>第11题 toString 特例</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象.toString() ---&gt; [object Object]</span></span><br><span class="line"><span class="built_in">console</span>.log(&#123;<span class="attr">a</span>: <span class="number">1</span>&#125;.toString()==<span class="string">'[object Object]'</span>);</span><br><span class="line"><span class="comment">// 纯数字.toString()  .在前面是纯数字时会被当成 小数点</span></span><br><span class="line"><span class="comment">// 10.toString() ==&gt; (10.)toString() 报错</span></span><br><span class="line"><span class="comment">// 10..toString() ==&gt; (10.).toString() '10'</span></span><br></pre></td></tr></table></figure>
+<h2 id="第12题-对象引用"><a href="#第12题-对象引用" class="headerlink" title="第12题 对象引用"></a>第12题 对象引用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">n</span>:<span class="number">1</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">a = &#123;<span class="attr">n</span>:<span class="number">2</span>&#125;</span><br><span class="line">a.x = a</span><br><span class="line"><span class="built_in">console</span>.log(a.x) <span class="comment">// &#123;n: 2, x: &#123; n:2, x: &#123;n:2, x: ...&#125;&#125;&#125; 无限</span></span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">// &#123;n:1&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(b.x) <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// = 赋值操作 不但会将右边的值保存到左边的变量中, 而且还会返回等号右边的值 a = &#123;n:2&#125; // &#123;n:2&#125;</span></span><br><span class="line"><span class="comment">// A=B=C连等赋值真正的运算规则是 B=C; A=B 即连续赋值是从右至左永远只取等号右边的表达式结果赋值到等号左侧。</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">n</span>:<span class="number">1</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">a.x = a = &#123;<span class="attr">n</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// &#123;n: 2&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(a.x) <span class="comment">// undefiend</span></span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">// &#123;n:1, x: &#123;n:2&#125;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(b.x) <span class="comment">// &#123;n:2&#125;</span></span><br><span class="line"><span class="comment">/*解答思路：</span></span><br><span class="line"><span class="comment">1. 首先将对象&#123;n:1&#125;赋值给a变量 再将a赋值给b 这是一层浅拷贝过程 所以a和b变量都指向同一个对象&#123;n:1&#125;</span></span><br><span class="line"><span class="comment">2. 由于点运算符优先于赋值运算符所以先在&#123;n：1&#125;对象中创建了一个x属性 &#123;n:1，x:（暂时无值）&#125; 这个过程 因为运算符优先级的原因 赋值符号还未执行的时候就已经完成了</span></span><br><span class="line"><span class="comment">3. 再然后执行 a = &#123;n:2&#125; 此时a的引用地址发生了改变 从对象&#123;n:1&#125;指向了&#123;n:2&#125;</span></span><br><span class="line"><span class="comment">4. a.x此时指向的是 &#123;n:1，x:（暂时无值）&#125;对象 然后将&#123;n：2&#125; 赋值给了a.x属性 此时A对象&#123;n:1， x：&#123;n：2&#125;&#125;</span></span><br><span class="line"><span class="comment">5. 此时的a.x属性的父级对象a的初始引用地址是A对象 而A对象赋值给了b变量 所以你能在b.x中得到对象&#123;n：2&#125;</span></span><br><span class="line"><span class="comment">6. 原对象地址因无人引用他 被垃圾回收机制回收了 对象被赋值了B对象&#123;n：2&#125; 所以原有的a.x为undefined</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="第13题-var-会突破if限制"><a href="#第13题-var-会突破if限制" class="headerlink" title="第13题 var 会突破if限制"></a>第13题 <code>var 会突破if限制</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"World!"</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  var name 变量提神  if限制不住var变量提升</span></span><br><span class="line"><span class="comment">  ...</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">"undefined"</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">"Jack"</span></span><br><span class="line">    <span class="built_in">console</span>.log(name)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"><span class="comment">// Jack</span></span><br></pre></td></tr></table></figure>
+<h2 id="第14题-原型链与对象属性查找"><a href="#第14题-原型链与对象属性查找" class="headerlink" title="第14题 原型链与对象属性查找"></a>第14题 原型链与对象属性查找</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype.n = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> A()</span><br><span class="line">A.prototype = &#123;</span><br><span class="line">  n: <span class="number">2</span>,</span><br><span class="line">  m: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> A()</span><br><span class="line"><span class="built_in">console</span>.log(b.n, b.m, c.n, c.m) <span class="comment">// 1 undefined 2 3</span></span><br></pre></td></tr></table></figure>
+<h2 id="第15题-变量提升-this-原型链"><a href="#第15题-变量提升-this-原型链" class="headerlink" title="第15题 变量提升 this 原型链"></a>第15题 变量提升 this 原型链</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  getAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">10</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">&#125;</span><br><span class="line">Person.getAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">20</span>)</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.getAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">30</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> getAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">40</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">50</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">变量提升  1. function Person &#123;getAge = function () &#123; console.log(10) &#125; return this &#125;</span></span><br><span class="line"><span class="comment">         2. var getAge;  function getAge() &#123; console.log(50) &#125;</span></span><br><span class="line"><span class="comment">执行  3. Person.getAge = function () &#123; console.log(20) &#125; 给Person添加静态属性 getAge = function () &#123; console.log(20) &#125;</span></span><br><span class="line"><span class="comment">      4. Person.prototype.getAge = function () &#123; console.log(30) &#125; 给Person原型上添加属性 getAge = function () &#123; console.log(30) &#125;</span></span><br><span class="line"><span class="comment">      5. 为全局的getAge赋值 getAge = function () &#123; console.log(40) &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">Person.getAge() <span class="comment">// 20 ===&gt; function () &#123; console.log(20) &#125;()  输出 20</span></span><br><span class="line">getAge() <span class="comment">// 40 ===&gt; 执行全局 getAge = function () &#123; console.log(40) &#125; 输出 40</span></span><br><span class="line">Person().getAge() <span class="comment">// 10 ===&gt; 执行Person()  将全局 getAge修改为 function () &#123; console.log(10) &#125; 并返回this--&gt; window 调用window.getAge 即全局getAge 输出10</span></span><br><span class="line">getAge() <span class="comment">// 10 ===&gt; 执行全局 getAge 输出10</span></span><br><span class="line"><span class="keyword">new</span> Person.getAge() <span class="comment">// 20 ==&gt; new 运算先找()才执行  执行 new Person.getAge() --&gt;Person.getAge --&gt; new function () &#123; console.log(20) &#125; 输出20</span></span><br><span class="line"><span class="keyword">new</span> Person().getAge() <span class="comment">// 30 ===&gt; new 先找()执行  var p = new Person() 创建实例对象p 调用p的方法 为找到则去构造函数的原型上查找 Person.prototype.getAge = function () &#123; console.log(30) &#125; 执行 function () &#123; console.log(30) &#125; 输出30  实例对象的 p.__proto__=== Person.prototype</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/一些面试题(1)/" rel="next" title="一些面试题(1)">
+                <i class="fa fa-chevron-left"></i> 一些面试题(1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/vue高级特性及部分原理/" rel="prev" title="vue高级特性及部分原理">
+                vue高级特性及部分原理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1题-作用域"><span class="nav-number">1.</span> <span class="nav-text">第1题 作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第2题-值类型和引用类型的传递"><span class="nav-number">2.</span> <span class="nav-text">第2题 值类型和引用类型的传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3题-字符串转驼峰命名"><span class="nav-number">3.</span> <span class="nav-text">第3题 字符串转驼峰命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第4题-冒泡排序"><span class="nav-number">4.</span> <span class="nav-text">第4题 冒泡排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5题-不使用reverse反转数组"><span class="nav-number">5.</span> <span class="nav-text">第5题 不使用reverse反转数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第6题-js综合面试题getName"><span class="nav-number">6.</span> <span class="nav-text">第6题 js综合面试题getName</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7题-什么是函数节流？-什么是函数防抖"><span class="nav-number">7.</span> <span class="nav-text">第7题 什么是函数节流？ 什么是函数防抖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第8题-多维数组扁平化"><span class="nav-number">8.</span> <span class="nav-text">第8题 多维数组扁平化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第9题-变量隐式转换"><span class="nav-number">9.</span> <span class="nav-text">第9题 变量隐式转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第10题-连等号执行顺序"><span class="nav-number">10.</span> <span class="nav-text">第10题 连等号执行顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第11题-toString-特例"><span class="nav-number">11.</span> <span class="nav-text">第11题 toString 特例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第12题-对象引用"><span class="nav-number">12.</span> <span class="nav-text">第12题 对象引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第13题-var-会突破if限制"><span class="nav-number">13.</span> <span class="nav-text">第13题 var 会突破if限制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第14题-原型链与对象属性查找"><span class="nav-number">14.</span> <span class="nav-text">第14题 原型链与对象属性查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第15题-变量提升-this-原型链"><span class="nav-number">15.</span> <span class="nav-text">第15题 变量提升 this 原型链</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

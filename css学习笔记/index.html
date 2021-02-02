@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="层叠样式表(Cascading Style Sheets，缩写为 CSS）:用于控制网页样式,实现网页表现与内容分离,布局和美化网页一个标签可以被多个css选择器选择，共同作用，这就是“层叠式”.">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css学习笔记">
+<meta property="og:url" content="http://ittew.cn/css学习笔记/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="层叠样式表(Cascading Style Sheets，缩写为 CSS）:用于控制网页样式,实现网页表现与内容分离,布局和美化网页一个标签可以被多个css选择器选择，共同作用，这就是“层叠式”.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-12T14:28:09.752Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css学习笔记">
+<meta name="twitter:description" content="层叠样式表(Cascading Style Sheets，缩写为 CSS）:用于控制网页样式,实现网页表现与内容分离,布局和美化网页一个标签可以被多个css选择器选择，共同作用，这就是“层叠式”.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/css学习笔记/">
+
+
+
+
+
+  <title>css学习笔记 | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/css学习笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">css学习笔记</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T14:21:14+08:00">
+                2016-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.3k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>层叠样式表<code>(Cascading Style Sheets，缩写为 CSS）</code>:用于控制网页样式,实现网页表现与内容分离,布局和美化网页<br>一个标签可以被多个<code>css</code>选择器选择，共同作用，这就是“层叠式”.<br><a id="more"></a></p>
+<h2 id="css引入方式"><a href="#css引入方式" class="headerlink" title="css引入方式"></a>css引入方式</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 行内样式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color:#FF0000"</span>&gt;</span>行内样式<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 内部样式(常写在head中) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="comment">/*css注释*/</span></span></span><br><span class="line"><span class="css"><span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>:red;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 外部样式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"1.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 注:rel  当前文档与被链接文档之间的关系 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 导入样式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">@<span class="keyword">import</span> <span class="string">"1.css"</span>; <span class="comment">/*最好写法  @import url(1.css)*/</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">注:link和import区别</span><br><span class="line">a.link 不仅可以加载css可以加载其他文件 而import只能加载css</span><br><span class="line">b.import页面加载完后才会加载样式</span><br><span class="line">c.link无兼容性问题 import不兼容低版本</span><br></pre></td></tr></table></figure>
+<h2 id="css语法"><a href="#css语法" class="headerlink" title="css语法"></a>css语法</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    属性  值     属性   值</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>:red;<span class="attribute">font-size</span>:<span class="number">14px</span>;&#125;</span><br><span class="line">选择器   声明1    声明2</span><br><span class="line">1<span class="selector-tag">em</span>约等于16<span class="selector-tag">px</span>    网页中默认的字体大小为16<span class="selector-tag">px</span></span><br></pre></td></tr></table></figure>
+<h2 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">1</span>. <span class="selector-tag">ID</span>选择器       <span class="selector-id">#one</span>&#123;<span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">height</span>:<span class="number">100px</span>;&#125;</span><br><span class="line"><span class="selector-tag">2</span>. <span class="selector-tag">class</span>选择器    <span class="selector-class">.one</span>&#123;<span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">height</span>:<span class="number">100px</span>;&#125;</span><br><span class="line"><span class="selector-tag">3</span>. 标签选择器     <span class="selector-tag">p</span>&#123;<span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">height</span>:<span class="number">100px</span>;&#125;</span><br><span class="line"><span class="selector-tag">4</span>. 混合选择器     把选择的元素描述的越详细越好</span><br><span class="line"><span class="selector-tag">5</span>. 属性选择器     <span class="selector-tag">div</span><span class="selector-attr">[id]</span>&#123;<span class="attribute">color</span>:red&#125;</span><br><span class="line"><span class="selector-tag">6</span>. 子元素选择器   <span class="selector-tag">h1</span>&gt;<span class="selector-tag">p</span>&#123;<span class="attribute">color</span>:red;&#125;</span><br><span class="line">注:只针对<span class="selector-tag">h1</span>下的直接子元素,第三代不影响 <span class="selector-tag">IE6</span>不兼容</span><br><span class="line"><span class="selector-tag">7</span>. 相邻兄弟选择器</span><br><span class="line">  <span class="selector-tag">h1</span>+<span class="selector-tag">p</span>&#123;<span class="attribute">color</span>:red;&#125;  只会影响相邻兄弟元素后面的不会影响前面的</span><br><span class="line">  <span class="selector-tag">h1</span>~<span class="selector-tag">p</span>&#123;<span class="attribute">color</span>:red;&#125;  选择紧随其后的所有兄弟元素</span><br><span class="line"><span class="selector-tag">8</span>. 伪类</span><br><span class="line">  <span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:black;&#125;      未访问的链接</span><br><span class="line">  <span class="attribute">a</span>:visited&#123;<span class="attribute">color</span>:pink;&#125;    已访问的链接</span><br><span class="line">  <span class="attribute">a</span>:hover&#123;<span class="attribute">color</span>:red;&#125;       鼠标移动到链接上</span><br><span class="line">  <span class="attribute">a</span>:active&#123;<span class="attribute">color</span>:yellow;&#125;   鼠标点击之后</span><br><span class="line">  注<span class="selector-pseudo">:IE6</span>不支持<span class="selector-tag">a</span>以外其他任何标签的伪类 伪类顺序 <span class="selector-tag">lvha</span></span><br><span class="line">  <span class="selector-tag">a</span><span class="selector-pseudo">:link</span>,<span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">text-decoration</span>:none;&#125;</span><br><span class="line">  <span class="attribute">a</span>:hover,<span class="attribute">a</span>:focus;<span class="attribute">a</span>:active&#123;<span class="attribute">text-decoration</span>:underline;&#125;</span><br><span class="line"><span class="selector-tag">9</span>. 伪元素</span><br><span class="line">  <span class="selector-pseudo">:before</span>/<span class="selector-pseudo">:after</span>       在元素的前面或后面添加内容 配合<span class="selector-tag">content</span></span><br><span class="line">  <span class="selector-tag">table</span><span class="selector-pseudo">:after</span> &#123; <span class="attribute">content</span>: <span class="string">"end --table"</span>; &#125;</span><br><span class="line">  <span class="selector-pseudo">:first-letter</span>        对象内的第一个字符样式</span><br><span class="line">  <span class="selector-pseudo">:first-line</span>          对象内第一行的样式</span><br><span class="line">  <span class="selector-pseudo">:not(.tew)</span>&#123;&#125;         除了<span class="selector-tag">class</span>为<span class="selector-tag">tew</span>之外</span><br></pre></td></tr></table></figure>
+<h2 id="css优先级"><a href="#css优先级" class="headerlink" title="css优先级"></a>css优先级</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!<span class="selector-tag">important</span>&gt;<span class="selector-tag">js</span>&gt;行内样式&gt;<span class="selector-tag">ID</span>&gt;<span class="selector-tag">Class</span>&gt;标签&gt;继承&gt;通配符</span><br><span class="line">行内样式&gt;内嵌样式&gt;外联样式(就近原则)</span><br><span class="line">注:宽度 高度使用数值百分比时,确保父元素有宽高度</span><br><span class="line">!<span class="selector-tag">important</span>   提升指定样式的优先级     <span class="selector-tag">p</span>&#123;<span class="attribute">color</span>:red<span class="meta">!important</span>;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="css背景属性"><a href="#css背景属性" class="headerlink" title="css背景属性"></a>css背景属性</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">background</span>  背景属性</span><br><span class="line"><span class="built_in">background</span>  背景复合样式:颜色 路径 重复 位置(用几个写几个)/大小 固定</span><br><span class="line">backgournd:#<span class="number">00ff00</span> url('images/<span class="number">1.</span>jpg') no-repeat top right;</span><br><span class="line"><span class="built_in">background</span>:url(test1.jpg) no-repeat scroll 10px 20px/50px 60px padding-<span class="built_in">box</span>,</span><br><span class="line"><span class="built_in">background</span>-<span class="built_in">color</span>:red;    背景颜色</span><br><span class="line"><span class="built_in">background</span>-<span class="built_in">image</span>:url()   背景图片</span><br><span class="line"><span class="built_in">background</span>-repeat:no-repeat   不重复</span><br><span class="line">	repeat      可以重复出现(默认)</span><br><span class="line">	repeat-x    只能水平方向平铺</span><br><span class="line">	repeat-y    只能垂直方向平铺</span><br><span class="line"><span class="built_in">background</span>-attachment:fixed   固定背景图片不随页面滚动  scroll  不固定(默认)</span><br><span class="line"><span class="built_in">background</span>-<span class="built_in">position</span>:X Y  设置背景图片位置(定位背景图片)</span><br><span class="line">	X/Y 各有五个值top bottom left <span class="built_in">center</span> right</span><br><span class="line">	只写一个第二个默认为<span class="built_in">center</span>还可以是具体数值</span><br><span class="line"><span class="built_in">background</span>-size:cover或<span class="number">100</span><span class="symbol">%</span> <span class="number">100</span><span class="symbol">%</span>  背景图片大小(不能写在复合样式里)</span><br><span class="line">	cover按一边的比例放大     缩放使背景全部占满盒子</span><br><span class="line">注:在使用<span class="built_in">background</span>-<span class="built_in">image</span>之前必须为元素添加宽高度(背景不占位置空间)</span><br></pre></td></tr></table></figure>
+<h2 id="css文本属性"><a href="#css文本属性" class="headerlink" title="css文本属性"></a>css文本属性</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">a.字体风格   <span class="built_in">font</span>-family:黑体;</span><br><span class="line">b.字体大小   <span class="built_in">font</span>-size:12px;</span><br><span class="line">c.文字颜色   <span class="built_in">font</span>-<span class="built_in">color</span>:red;</span><br><span class="line">d.文字粗细   <span class="built_in">font</span>-weight:blod/normal</span><br><span class="line">e.文字修饰   text-decoration:underline/line-through/overline/none/blink</span><br><span class="line">f.文本对齐   text-align:left/right/justify(两端对齐)/<span class="built_in">center</span>(文字水平方向居中)</span><br><span class="line">注:text-align:<span class="built_in">center</span>   只针对行间元素有效(文字和图片)</span><br><span class="line">g.首行缩进   text-indent:2em  两个字体单位  字体大小改变位置不变</span><br><span class="line">h.行间据行高 line-<span class="built_in">height</span>:n    文字一行显示的位置,和容器高相同文字垂直方向居中显示</span><br><span class="line">i.字符间距   letter-spacing:n 字符和汉字都一样 单个字符,字母间距</span><br><span class="line">j.词间距     word-spacing:n   单词,词语间距,注意以空格分割才识别</span><br><span class="line">k.转换大小写 text-<span class="built_in">transform</span>:capitalize(每个单词首字母大写)</span><br><span class="line">			uppercase(每个字母都转成大写)</span><br><span class="line">			lowercase(每个字母都转成小写)</span><br><span class="line">l.文字样式   <span class="built_in">font</span>-<span class="built_in">style</span>:normal italic  bold</span><br><span class="line">m.文本省略   overflow:hidden;white-<span class="built_in">space</span>:nowrap;text-overflow:ellipsis;</span><br><span class="line">n.文本折行   word-wrap: <span class="built_in">break</span>-word （是否保留单词换行）</span><br><span class="line">	    word-<span class="built_in">break</span>: <span class="built_in">break</span>-all 设定保留的单位是 字  句子 单词 （针对多字节文字是否换行）</span><br><span class="line">	    white-<span class="built_in">space</span>:nowrap  禁止换行 （空白处是否断行）</span><br><span class="line">o.元素垂直对齐 vertical-align: baseline(默认值) top middle bottom</span><br><span class="line">注： vertical-align只能应用于内联元以及 <span class="built_in">display</span> 值为 table-cell 的元素。</span><br><span class="line">注:  <span class="built_in">font</span>: italic bold  16px/400px  微软雅黑;</span><br><span class="line">     <span class="built_in">font</span>: <span class="built_in">font</span>-<span class="built_in">style</span>|<span class="built_in">font</span>-weight|<span class="built_in">font</span>-size/line-<span class="built_in">height</span>|<span class="built_in">font</span>-family</span><br><span class="line">     复合写法 样式  粗细  大小/行高   风格</span><br><span class="line">行高的测量方式:  先确定文字字体大小,多行文字之间的距离/<span class="number">2</span>(即上下边距) 当行高为奇数时文字上方要比下方</span><br><span class="line">少一个像素,得出文字的行高.</span><br><span class="line">哪些属性可以继承？</span><br><span class="line"><span class="built_in">color</span>、text-开头的、line-开头的、<span class="built_in">font</span>-开头的。所有关于盒子的、定位的、布局的属性都不能继承。</span><br><span class="line">CSS中可以继承的属性如下：</span><br><span class="line"><span class="number">1</span>）文本相关属性：<span class="built_in">font</span>-family、<span class="built_in">font</span>-size、<span class="built_in">font</span>-<span class="built_in">style</span>、<span class="built_in">font</span>-variant, <span class="built_in">font</span>-weight、<span class="built_in">font</span>、</span><br><span class="line">letter-spacing、line-<span class="built_in">height</span>、text-align、text-indent、text-<span class="built_in">transform</span>、word-spacing、<span class="built_in">color</span>；</span><br><span class="line"><span class="number">2</span>）列表相关属性：list-<span class="built_in">style</span>-<span class="built_in">image</span>、list-<span class="built_in">style</span>-<span class="built_in">position</span>、list-<span class="built_in">style</span>-type、list-<span class="built_in">style</span>；</span><br><span class="line"><span class="number">3</span>）表格相关属性：<span class="built_in">border</span>-<span class="built_in">collapse</span>、<span class="built_in">border</span>-spacing、caption-side、table-layoute；</span><br><span class="line"><span class="number">4</span>）其他属性：Cursor、visibility。</span><br></pre></td></tr></table></figure>
+<h2 id="css盒子模型"><a href="#css盒子模型" class="headerlink" title="css盒子模型"></a>css盒子模型</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">margin</span>  隔开元素与外面(外边距)</span><br><span class="line"><span class="attribute">padding</span> 隔开元素与边框(内边距)</span><br><span class="line">注:<span class="attribute">width</span> 和 height只能设置盒子中内容的宽度和高度,盒子实际的宽度和高度应该加上</span><br><span class="line"><span class="attribute">border</span> 和 padding</span><br><span class="line"><span class="attribute">border</span>  边框属性</span><br><span class="line"><span class="attribute">border</span>  边框复合样式  边框线粗细  边框线风格  边框线颜色</span><br><span class="line"><span class="attribute">border</span>:<span class="number">5px</span>  solid   blue;</span><br><span class="line">边框样式风格  solid 实线 dashed  虚线 dotted  点状线  double 双线  grove    <span class="number">3</span>D(相框效果)</span><br><span class="line">单独定义某个边宽度或样式或颜色</span><br><span class="line"><span class="attribute">border-top</span>:上边框 border-bottom:下边框 border-left:左边框 border-right:右边框</span><br><span class="line"><span class="attribute">border-top-color</span>:transparent;  上边框透明</span><br><span class="line"><span class="attribute">border-top-width</span>:<span class="number">10px</span>;         上边框宽度</span><br><span class="line"><span class="attribute">border-top-style</span>:dashed;       上边框为虚线</span><br><span class="line">注:<span class="attribute">border-color</span>:不是一个值时不能写在复合样式里且必须放在border-style之前先获得</span><br><span class="line">边框在设置颜色后面可以有四个颜色值 没有设置<span class="attribute">border-color</span>的时候会默认使用文字color的颜色作为边框颜色</span><br><span class="line"><span class="attribute">margin</span>  外边距   外边距的负值  可以增加元素的宽度</span><br><span class="line"><span class="attribute">margin</span>:<span class="number">0</span> auto;         <span class="comment">/*设置元素水平居中*/</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">3px</span>;            <span class="comment">/*上下左右都是3px*/</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">3px</span> <span class="number">5px</span>;        <span class="comment">/*上下3px 左右5px*/</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">3px</span> <span class="number">5px</span> <span class="number">10px</span>    <span class="comment">/*上3px 左右5px 下10px*/</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">3px</span> <span class="number">5px</span> <span class="number">2px</span> <span class="number">8px</span> <span class="comment">/*上3px 右5px 下2px 左8px*/</span></span><br><span class="line"><span class="attribute">padding</span> 内边距</span><br><span class="line">外边距的合并:当两个垂直外边距相遇时,外边距会进行合并(取最大者)</span><br><span class="line">外边距的传递(塌陷):当子元素与父元素之间没有任何间距隔开的时候子级元素的<span class="attribute">margin-top</span>会传递给父级</span><br><span class="line">加上边框则不会传递或者给父级添加上内边距<span class="attribute">padding-top</span></span><br><span class="line"><span class="attribute">outline</span>  轮廓   就是是出现在文字/图片链接,input,button元素周围的虚线边框</span><br><span class="line">注:<span class="number">1</span><span class="selector-class">.a</span>,<span class="selector-tag">input</span>,button&#123;<span class="attribute">outline</span>:none;&#125;  img&#123;<span class="attribute">border</span>:none&#125;</span><br><span class="line"><span class="number">2</span>.$&#123;<span class="selector-tag">a</span>,<span class="selector-tag">input</span>,buuton&#125;.focus(function()&#123;this.blur()&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>. 块级元素(<span class="attribute">display</span>:block)</span><br><span class="line">  <span class="number">1</span>.占据一行,后面元素换行显示    可以放任何内容</span><br><span class="line">  <span class="number">2</span>.可控制宽高 上下边距(支持所有css命令)  常见的有 <span class="selector-tag">div</span> h1-<span class="selector-tag">h6</span> <span class="selector-tag">p</span> hr <span class="selector-tag">ul</span> <span class="selector-tag">ol</span> dl</span><br><span class="line">  <span class="number">3</span>.没有宽度时,默认撑满一排</span><br><span class="line">  注: 有些块元素不可以包含另一些块元素 例如块级元素不能放在p里面 它会先结束自己将其他标签解析到外面去</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">b</span>. 行内元素(dispaly:inline)</span><br><span class="line">  <span class="number">1</span>.不会独占一行,元素并排显示    不能放块级元素(a除外)</span><br><span class="line">  <span class="number">2</span>.不支持<span class="attribute">width</span> height line-height无效  margin padding上下无效</span><br><span class="line">  <span class="number">3</span>.宽度，背景颜色由内容撑开    常见 <span class="selector-tag">b</span> <span class="selector-tag">span</span> <span class="attribute">font</span> img input a label strong em</span><br><span class="line">  <span class="number">4</span>.代码换行被解析  默认垂直位置为<span class="attribute">vertical-align</span>:baseline</span><br><span class="line">  <span class="number">5</span>.行内元素与文字的垂直居中    <span class="attribute">vertical-align</span>:middle</span><br><span class="line">  <span class="number">6</span>.高度会继承父级的字体大小会高出一部分  使用<span class="attribute">font-size</span>:<span class="number">0</span> 清除</span><br><span class="line"><span class="attribute">display</span>用来设置元素的显示方式</span><br><span class="line"><span class="attribute">display</span>:block;  块级元素显示</span><br><span class="line"><span class="attribute">display</span>:inline; 行内元素显示</span><br><span class="line"><span class="attribute">display</span>:inline-block;行间块级元素 以块级元素样式展示以行级元素样式排列</span><br><span class="line">  <span class="number">1</span>.块在一行显示</span><br><span class="line">  <span class="number">2</span>.行内属性标签支持宽高</span><br><span class="line">  <span class="number">3</span>.没有宽度时,内容撑开宽度</span><br><span class="line">  <span class="number">4</span>.标签之间换行间隙被解析(问题)</span><br><span class="line">  <span class="number">5</span><span class="selector-class">.ie6</span>,ie7不支持块标签的inline-block(问题)</span><br><span class="line">间隙问题：父级字体设为<span class="number">0</span>，自己重新设字体  无缝衔接，不换行</span><br><span class="line"><span class="attribute">display</span>:none;将隐藏指定元素及其子元素的显示 位置不保留</span><br><span class="line">c. 行内块元素</span><br></pre></td></tr></table></figure>
+<h2 id="position定位"><a href="#position定位" class="headerlink" title="position定位"></a>position定位</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. fixed  固定定位  位置固定在窗口的某个位置,不管滚动条如何拖动位置不改变,脱离文档流漂浮起来原来所占空间删除相对于浏览器窗口定位</span><br><span class="line">ex  <span class="attribute">position</span>:fixed;<span class="attribute">left</span>:<span class="number">200px</span>;<span class="attribute">top</span>:<span class="number">200px</span>;</span><br><span class="line"><span class="number">2</span>. relative  相对定位 元素相对于他的起点进行移动 仍处于文档流中,其所占位置空间依然存在  提升层级</span><br><span class="line">ex <span class="attribute">position</span>:relative;<span class="attribute">left</span>:<span class="number">200px</span>;<span class="attribute">top</span>:<span class="number">200px</span>;</span><br><span class="line"><span class="number">3</span>. absolute 绝对定位  精准定位元素在页面的位置,脱离文档流漂浮起来原来所占空间删除</span><br><span class="line">ex <span class="attribute">position</span>:absolute;<span class="attribute">left</span>:-<span class="number">20px</span>;<span class="attribute">top</span>:<span class="number">150px</span>;</span><br><span class="line">注: <span class="attribute">clip</span>:rect(上右下左)    裁剪absolute绝对定位元素框</span><br><span class="line">绝对定位元素它的参照物是离最近已定位的非static定位的祖先元素如果没有则相对于body定位</span><br><span class="line">绝对定位的元素的<span class="attribute">left</span>,top等是不包括父级的border宽度</span><br><span class="line"><span class="number">4</span>. <span class="attribute">z-index</span>  层级定位  改变层叠的先后顺序  z-index:n   值越大,越在上面(仅能在定位元素上有效)</span><br><span class="line"><span class="number">5</span>. static 静态定位(解除定位)  用JS JQ改变样式属性值或hover鼠标 把定位修改为不定位,改变为static之后 <span class="attribute">left</span> top z-index都不生效了</span><br><span class="line"><span class="number">6</span>. 盒子有两种方式存在于浏览器中</span><br><span class="line"><span class="selector-tag">a</span>.绘制在画板上(static,relative)</span><br><span class="line"><span class="selector-tag">b</span>.漂浮在画板上(absolute,fixed)</span><br><span class="line">注:在定位的时候 如果没有设置方向 默认就是<span class="attribute">top</span>:<span class="number">0px</span>;<span class="attribute">left</span>:<span class="number">0px</span>(左上优先于右下)</span><br><span class="line">    absolute绝对定位元素和fixed固定定位元素  块元素宽度不会继承父级宽度而是由内容撑开</span><br><span class="line">    绝对定位元素具有自动伸缩的特性 除非自己指定宽度</span><br><span class="line">根据第一个高级特性，我们可以衍生出第二个高级特性，由于绝对行为元素具有自动伸缩的功能，如果<span class="attribute">width</span>值为auto</span><br><span class="line">此时如果我们设置 <span class="attribute">left</span> 和 right 都为<span class="number">0</span>，则该元素会填充满其相对的元素，如果此时我们将宽度设置为固定值，这是</span><br><span class="line">绝对定位元素会优先取 <span class="attribute">left</span> 值作为定位标志（这个标准适用于从左向右读的文档流中，而在少数从右往左读的文档中，</span><br><span class="line">则优先取 <span class="attribute">right</span>）。如果这时我们将 margin 设置为auto,则绝对定位元素会呈现居中状态；其实垂直方向的作用效果是</span><br><span class="line">一样，垂直方向同样可以自动拉伸水平居中有一点不同的是，无论 <span class="attribute">top</span> 和 bottom 的值设置为多少，只要相等，就可以</span><br><span class="line">垂直居中。</span><br></pre></td></tr></table></figure>
+<h2 id="float浮动"><a href="#float浮动" class="headerlink" title="float浮动"></a>float浮动</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 浮动的框可以向左向右浮动直到它的外边缘碰到包含框或另一个浮动匡为止,设定浮动之后</span></span><br><span class="line"><span class="comment">它就不会占据原来的空间,改变正常的文档流排列,影响到周围的元素,控制元素在同层里左浮或右浮</span></span><br><span class="line"><span class="comment">特征:  1.改变元素为块级   2.脱离文档流   3.提升层级半级	 */</span></span><br><span class="line">&#123;<span class="attribute">float</span>:left/right     向左或向右浮动&#125;</span><br><span class="line"><span class="comment">/* 如果包含框太窄,无法容纳水平排列的浮动元素,那么其他浮动元素会下移直到有足够空间(宽度不够)  */</span></span><br><span class="line"><span class="comment">/* 如果浮动元素的高度不同,那么当他们向下浮动时可能被其他浮动元素卡住(高度过高) */</span></span><br><span class="line">清除浮动    不希望原来的空间被其他元素占据相当于换行</span><br><span class="line">1. 在其后面设置一个清除浮动的<span class="selector-tag">div</span> 设置<span class="selector-tag">css</span>样式 <span class="selector-tag">clear</span><span class="selector-pseudo">:both</span></span><br><span class="line">2. 给父级定义高度(只适合高度固定的布局中)拓展不好</span><br><span class="line">3. <span class="selector-tag">after</span> 伪类 清浮动方法 在需要清除浮动的父容器添加类名为<span class="selector-tag">clearfix</span></span><br><span class="line"><span class="selector-class">.clear</span><span class="selector-pseudo">:after</span>&#123;<span class="attribute">content</span>:<span class="string">""</span>;<span class="attribute">display</span>:block;<span class="attribute">clear</span>:both;&#125;</span><br><span class="line"><span class="selector-class">.clear</span>&#123;<span class="attribute">zoom</span>:<span class="number">1</span>;&#125;</span><br><span class="line">浮动的性质：脱标、贴边、字围、收缩。</span><br><span class="line">注: 盒子一旦用了flaot:left/right  position:absolute/fixed 会隐式改变display为行内块元素</span><br><span class="line">position:absolute/fixed 绝对定位/固定定位元素子级的浮动可以不用写清除浮动方法</span><br></pre></td></tr></table></figure>
+<h2 id="其他CSS属性"><a href="#其他CSS属性" class="headerlink" title="其他CSS属性"></a>其他CSS属性</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  溢出隐藏  */</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">overflow</span>:visible  内容都会显示</span><br><span class="line">	hidden   超出(溢出)隐藏</span><br><span class="line">	auto     只有超出才显示滚动条</span><br><span class="line">	scroll   无论溢出与否都显示滚动条</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*  可见属性  */</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">visiblity</span>:hidden/visible;</span><br><span class="line"><span class="attribute">display</span>:  none/block</span><br><span class="line">注:使用display设置的不可见区域所占位置也一起隐藏,而使用visiblty属性设置的不可见</span><br><span class="line">区域所占位置保留只是元素不可见</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* opacity透明 */</span></span><br><span class="line">对于IE6/7/8  使用filter:alpha(opacity=0-100)</span><br><span class="line">对于<span class="selector-tag">webkit</span>,<span class="selector-tag">opera</span>,<span class="selector-tag">firefox</span>,<span class="selector-tag">IE9</span>+,使用<span class="selector-tag">opacity</span>:值0<span class="selector-tag">-1</span></span><br><span class="line">对于早期火狐 使用<span class="selector-tag">-moz-opacity</span>:值0<span class="selector-tag">-1</span></span><br><span class="line">兼容写法</span><br><span class="line">&#123; <span class="attribute">opacity</span>:.<span class="number">5</span>;<span class="attribute">filter</span>:<span class="built_in">alpha</span>(opacity=50);<span class="attribute">-moz-opacity</span>:.<span class="number">5</span>; &#125;</span><br><span class="line"><span class="comment">/* 文本溢出 */</span></span><br><span class="line">&#123; <span class="attribute">text-overflow</span>: clip:文本被修剪    /    ellipse:显示省略号代表被修剪的文本  &#125;</span><br><span class="line"><span class="comment">/* 鼠标样式 */</span></span><br><span class="line">&#123; <span class="attribute">cursor</span>:pointer/move/help;<span class="attribute">cursor</span>:<span class="built_in">url</span>(arrow.cur),pointer; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS列表属性"><a href="#CSS列表属性" class="headerlink" title="CSS列表属性"></a>CSS列表属性</h2><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">简写<span class="built_in">list-style:none;</span>  去除列表前的小圆点</span><br><span class="line">a.<span class="built_in">list-style-image:url();</span>      //列表项前面的图像</span><br><span class="line">b.<span class="built_in">list-style-position:outside/inside;</span> //列表项目标记放置在文本以外(默认)</span><br><span class="line">c.<span class="built_in">list-style-type:none/square/circle/disc</span>  //列表修饰符类型</span><br></pre></td></tr></table></figure>
+<h2 id="CSS-hack"><a href="#CSS-hack" class="headerlink" title="CSS hack"></a>CSS hack</h2><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">针对不同浏览器写不同css样式的过程,就叫做css hack</span><br><span class="line">\<span class="number">9</span>  所有IE10及IE10之前  <span class="built_in">background</span>-<span class="built_in">color</span>:<span class="built_in">blue</span>\<span class="number">9</span>;</span><br><span class="line">*   IE7及IE7以下        *<span class="built_in">background</span>-<span class="built_in">color</span>:<span class="built_in">green</span>;</span><br><span class="line">_   IE6及IE6以下        _background-<span class="built_in">color</span>:pink;</span><br><span class="line">+   IE6及IE7            +<span class="built_in">background</span>-<span class="built_in">color</span>:pink;</span><br><span class="line">书写顺序   <span class="built_in">background</span>-<span class="built_in">color</span>:<span class="built_in">red</span>;</span><br><span class="line">	<span class="built_in">background</span>-<span class="built_in">color</span>:<span class="built_in">blue</span>\<span class="number">9</span>;</span><br><span class="line">	*<span class="built_in">background</span>-<span class="built_in">color</span>:<span class="built_in">green</span>;</span><br><span class="line">	_background-<span class="built_in">color</span>:pink;</span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>响应式设计和布局的方法   1.隐藏不重要的部分   2.折行   3.自适应空间</li>
+<li>将css放在页头在载人HTML元素之前,先载入他们的样式,可以避免HTML出现无样式状态</li>
+<li>将javascript放在页尾,先将网页呈现给用户,再来加载页面的脚本,避免javascript阻塞网页的呈现<br>减少页面空白的时间.</li>
+<li>同时执行两个点击事件的方法  采用事件监听机制</li>
+<li>自定义标签默认是行内元素   zoom  触发haslayout</li>
+<li>ico  标题栏图标  png图片 找ico转换工具即可<br><code>&lt;link rel=&quot;shortcut icon&quot; href=&quot;./img/100du.ico&quot; /&gt;</code></li>
+<li>圆角的测量方法  选择–&gt;修改–&gt;平滑–&gt;调节即可</li>
+</ul>
+<h2 id="前端常见问题"><a href="#前端常见问题" class="headerlink" title="前端常见问题"></a>前端常见问题</h2><p>1.图片做超链接时IE下蓝色边框问题   img{border:none;})<br>2.超链接在IE下被点击时出现的轮廓问题   a,input,textarea{outline:none;}<br>3.表单元素水平对齐  用定位或浮动<br>4.去除按钮默认样式 border:none<br>5.阿里图标库 <a href="http://www.iconfont.cn" target="_blank" rel="noopener">http://www.iconfont.cn</a> 找到所有要用的图标库然后把生成的文件把之前的全部覆盖<br>6.背景透明  文字不透明   采用绝对定位  把文字图层和背景透明图层叠在一起<br>7.禁用文本框的缩放  textarea{resize:none}<br>8.两端对齐 最外层套一个盒子 宽度较宽  最外层父级采用溢出隐藏<br>9.抽屉式效果最后一个元素掉下去解决办法是 给他定位<br>10.最小宽度解决pc段项目屏幕缩小浮动元素掉下去的问题</p>
+<h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.父元素高度不确定的文本,图片,块级元素的垂直居中</span><br><span class="line">   方法  通过给父容器设置相同上下边距实现的</span><br><span class="line">2.父元素高度确定的单行文本的垂直居中</span><br><span class="line">   方法  给父元素设置line-height和height高度值相同来实现</span><br><span class="line">3.父元素高度确定的多行文本,图片,块级元素的垂直居中</span><br><span class="line">   方法  使用vertical-align:middle  display:tab-cell</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/html学习笔记/" rel="next" title="html学习笔记">
+                <i class="fa fa-chevron-left"></i> html学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/浏览器兼容性问题/" rel="prev" title="浏览器兼容性问题">
+                浏览器兼容性问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#css引入方式"><span class="nav-number">1.</span> <span class="nav-text">css引入方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css语法"><span class="nav-number">2.</span> <span class="nav-text">css语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css选择器"><span class="nav-number">3.</span> <span class="nav-text">css选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css优先级"><span class="nav-number">4.</span> <span class="nav-text">css优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css背景属性"><span class="nav-number">5.</span> <span class="nav-text">css背景属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css文本属性"><span class="nav-number">6.</span> <span class="nav-text">css文本属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css盒子模型"><span class="nav-number">7.</span> <span class="nav-text">css盒子模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#display属性"><span class="nav-number">8.</span> <span class="nav-text">display属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position定位"><span class="nav-number">9.</span> <span class="nav-text">position定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#float浮动"><span class="nav-number">10.</span> <span class="nav-text">float浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他CSS属性"><span class="nav-number">11.</span> <span class="nav-text">其他CSS属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS列表属性"><span class="nav-number">12.</span> <span class="nav-text">CSS列表属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-hack"><span class="nav-number">13.</span> <span class="nav-text">CSS hack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">14.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端常见问题"><span class="nav-number">15.</span> <span class="nav-text">前端常见问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垂直居中"><span class="nav-number">16.</span> <span class="nav-text">垂直居中</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

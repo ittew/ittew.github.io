@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="mysql,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="MySQL是最流行的关系型数据库管理系统之一。有很多的高级用法包括：视图view,索引操作,数据库的备份和恢复,数据控制语言(DCL),数据事务语言(DTL),存储函数, 存储过程(procedure),触发器(trigger)等">
+<meta name="keywords" content="mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql进阶使用">
+<meta property="og:url" content="http://ittew.cn/mysql进阶使用/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="MySQL是最流行的关系型数据库管理系统之一。有很多的高级用法包括：视图view,索引操作,数据库的备份和恢复,数据控制语言(DCL),数据事务语言(DTL),存储函数, 存储过程(procedure),触发器(trigger)等">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-12T14:28:09.782Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql进阶使用">
+<meta name="twitter:description" content="MySQL是最流行的关系型数据库管理系统之一。有很多的高级用法包括：视图view,索引操作,数据库的备份和恢复,数据控制语言(DCL),数据事务语言(DTL),存储函数, 存储过程(procedure),触发器(trigger)等">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/mysql进阶使用/">
+
+
+
+
+
+  <title>mysql进阶使用 | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/mysql进阶使用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">mysql进阶使用</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-17T14:21:14+08:00">
+                2018-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>MySQL</code>是最流行的关系型数据库管理系统之一。有很多的高级用法包括：<code>视图view</code>,<code>索引操作</code>,<code>数据库的备份和恢复</code>,<code>数据控制语言(DCL)</code>,<code>数据事务语言(DTL)</code>,<code>存储函数</code>, <code>存储过程(procedure)</code>,<code>触发器(trigger)</code>等<br><a id="more"></a></p>
+<h2 id="mysql高级操作"><a href="#mysql高级操作" class="headerlink" title="mysql高级操作"></a>mysql高级操作</h2><ul>
+<li><p>视图 view</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">view是由sql的查询结果形成的一张虚拟表</span><br><span class="line">创建视图  <span class="keyword">create</span> <span class="keyword">view</span> 视图名 <span class="keyword">as</span> <span class="keyword">select</span> 语句</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> vgoods <span class="keyword">as</span> <span class="keyword">select</span> goods_id,goods_name,shop_price <span class="keyword">from</span> goods</span><br><span class="line">使用视图  基本上当成一张表用即可</span><br><span class="line">删除视图 <span class="keyword">drop</span> <span class="keyword">view</span> 视图名</span><br><span class="line"><span class="number">1.</span>权限控制时使用 通过视图开放其中的一列或几列起到权限控制的作用</span><br><span class="line"><span class="number">2.</span>简化复杂的查询</span><br><span class="line"><span class="number">3.</span>如果视图的每一行是与物理表一一对应的则可以修改,如果<span class="keyword">view</span>的行是有物理表的</span><br><span class="line">  多行经过计算得到的结果<span class="keyword">view</span>是不可以更新的</span><br><span class="line">视图的algorithm</span><br><span class="line"><span class="keyword">merge</span> 把查询视图的语句与创建时的语句<span class="keyword">where</span>子句等合并</span><br><span class="line">temptable是根据创建语句瞬间创建一张临时表</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>存储引擎</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">engine=myisam或InnoDB(默认)</span><br><span class="line">myisam 插入速度快 支持全文索引  不支持事务 表锁</span><br><span class="line">InnoDB 支持事务安全 行锁  支持外键</span><br><span class="line">myisam 方式存储的数据表 会比InnoDB 多出<span class="number">2</span>个文件 在mysql/data/</span><br><span class="line">MyISAM 对应三个文件 *.frm表信息 *<span class="selector-class">.MYD</span> 存储数据 *<span class="selector-class">.MYI</span> 存储索引信息)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>索引操作</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">主键索引 primary key</span><br><span class="line">一张表只能有一个主键只能有一列为auto_increment 主键不能为空</span><br><span class="line">唯一索引 unique       防止创建重复的值</span><br><span class="line">索引是数据的目录,能快速定位行数据的位置 不好的是降低了增删改的速度</span><br><span class="line">对大数据的范围内查找时,查找速度特别快 有索引和无索引查找速度区别很大</span><br><span class="line">创建原则 1.不要过度索引 2.在where条件最频繁的列上加 3.尽量索引散列值</span><br><span class="line">key 普通索引     unique 唯一索引   primary key 主键索引 fulltext全文索引</span><br><span class="line">查看索引 <span class="keyword">show</span> <span class="keyword">index</span> <span class="keyword">from</span> 表名</span><br><span class="line">增加索引 <span class="keyword">alter</span> <span class="keyword">table</span> stu_mess <span class="keyword">add</span> 索引名(列名)</span><br><span class="line">删除索引 <span class="keyword">drop</span> <span class="keyword">index</span> 索引名 <span class="keyword">on</span> 表名或<span class="keyword">alter</span> <span class="keyword">from</span> 表名 <span class="keyword">drop</span> <span class="keyword">index</span> 索引名</span><br><span class="line">增加主键 <span class="keyword">alter</span> <span class="keyword">table</span> stu_mess <span class="keyword">add</span> primary <span class="keyword">key</span>(<span class="keyword">id</span>)</span><br><span class="line">删除主键 <span class="keyword">alter</span> <span class="keyword">table</span> stu_mess <span class="keyword">drop</span> primary <span class="keyword">key</span></span><br><span class="line">删除外键 <span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> <span class="keyword">foreign</span> <span class="keyword">key</span>(外建名)</span><br><span class="line">    添加外键时自命名的名字  或 在表结构中 查看系统命名的外建名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数据库的备份和恢复</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>.备份  将一个数据库,完整的转换为一个可以 携带和传送的文件</span><br><span class="line">mysqldump -h 服务器地址 -u 用户名 -<span class="selector-tag">p</span> 数据库名 &gt; 文件名(绝对路径)</span><br><span class="line">用于数据库的迁移 将数据库从一个服务器搬迁到另一个服务器</span><br><span class="line">用于数据的安全备份 防止数据库系统崩溃</span><br><span class="line"><span class="selector-tag">b</span>.恢复  将一个备份的的数据库文件,完整的还原为一个可以使用的数据库</span><br><span class="line">mysql -h 服务器地址 -u 用户名 -<span class="selector-tag">p</span> 数据库名 &lt; 文件名(绝对路径)</span><br><span class="line">登陆后 mysql &gt; source <span class="string">"备份数据库文件的完整路径"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="数据控制语言-DCL"><a href="#数据控制语言-DCL" class="headerlink" title="数据控制语言(DCL)"></a>数据控制语言(DCL)</h2><ul>
+<li><p>用户管理</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql中的所有用户,都存储在系统数据库mysql中的user表中</span><br><span class="line">a.创建用户  <span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'用户名'</span>@允许登录的地址/服务器 <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'密码'</span></span><br><span class="line">          允许登录的地址:指允许用户登录到mysql服务器的客户端的地址,本机localhost</span><br><span class="line">          也可是某服务器名,或某IP地址</span><br><span class="line">b.删除用户  <span class="keyword">drop</span> <span class="keyword">user</span> <span class="string">'用户名'</span>@<span class="string">'允许登录的地址'</span></span><br><span class="line">c.修改用户密码</span><br><span class="line">    修改自己的密码  <span class="keyword">set</span> <span class="keyword">password</span>=<span class="keyword">password</span>(<span class="string">'密码'</span>);</span><br><span class="line">    修改其他用户的密码(前提是有权限)</span><br><span class="line">    <span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'用户名'</span>@<span class="string">'允许登录的地址'</span>=<span class="keyword">password</span>(<span class="string">'密码'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>权限管理</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A. 授予用户权限(增加权限)</span><br><span class="line"><span class="keyword">grant</span> 权限列表 <span class="keyword">on</span> 某库.某个对象 <span class="keyword">to</span> <span class="string">"用户名"</span>@<span class="string">'允许登录的地址'</span>[<span class="keyword">identified</span> <span class="keyword">by</span><span class="string">'密码'</span>]</span><br><span class="line">a. 权限列表 各个权限之间用逗号隔开</span><br><span class="line">b. 某库 . 某对象 给指定的某个数据库中的某个下级单位</span><br><span class="line">  下级单位有 表名 视图名 存储过程名 存储函数名</span><br><span class="line">  * . *  所有数据库中的所有下级单位     某库 . *  代表指定库的所有下级单位</span><br><span class="line">c. [<span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'密码'</span>] 不写表示不修改密码 写上表示授权的同时修改密码</span><br><span class="line">B. 取消用户权限(减少权限)</span><br><span class="line"><span class="keyword">revoke</span> 权限列表 <span class="keyword">on</span> 某库.某对象 <span class="keyword">from</span> <span class="string">"用户名"</span>@<span class="string">'允许登录的地址'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="数据事务语言-DTL-汇款"><a href="#数据事务语言-DTL-汇款" class="headerlink" title="数据事务语言(DTL)  (汇款)"></a>数据事务语言(DTL)  (汇款)</h2><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">事务只针对与<span class="string">"增删改"</span>语句而言</span><br><span class="line">事务就是用来保证多条<span class="string">"增删改"</span>语句执行的<span class="string">"一致性"</span>,要么都执行完成,要么都没有执行</span><br><span class="line">事务只能使用engine=InnoDB存储引擎</span><br><span class="line">事务特性:</span><br><span class="line">原子性   指一个事务中的操作要么都执行要么都不执行</span><br><span class="line">隔离性   在所有的操作没有执行完毕之前其他会话不能够看到中间改变的过程</span><br><span class="line">一致性   事务发生前和发生后数据的总额依然匹配(数据保持逻辑上的合理性)</span><br><span class="line">持久性   事务产生的影响不能够撤销 如果发生错误只能通过补偿性事务</span><br><span class="line">事务模式</span><br><span class="line">查看事务模式 show <span class="keyword">variables</span> like <span class="comment">"%autocommit%"</span></span><br><span class="line">默认情况下,事务模式是开启的,称为自动提交模式</span><br><span class="line">开启 <span class="keyword">set</span> <span class="comment">autocommit=1</span>或<span class="comment">on</span>  每条增删改语句 都会立即生效</span><br><span class="line">可以手动关闭,非自动提交模式,则需要人为提交</span><br><span class="line">关闭<span class="keyword">set</span> <span class="comment">autocommit=0</span>或<span class="comment">off</span></span><br><span class="line">所有增删改语句 都必须使用commit之后 才能生效</span><br><span class="line">事务执行的基本流程</span><br><span class="line">1.开启一个事务</span><br><span class="line">start <span class="comment">transaction</span> //也可以写成<span class="comment">: begin</span></span><br><span class="line">2.执行多条增删改语句 <span class="comment">//相当于希望这多条语句要作为一个不可分割的整体去执行</span></span><br><span class="line">3.判断这些语句执行的结果情况</span><br><span class="line">if(没有出错)&#123;</span><br><span class="line">  commit;  <span class="comment">//提交事务,此时一次性完成</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  rollback;<span class="comment">//事务回滚,此时就是都没有做</span></span><br><span class="line">&#125;</span><br><span class="line">a.在cmd中  开启事务之后 直接看多条<span class="string">'增删改'</span>是否query ok 都ok则执行 commit;  有一条失败则rollback;</span><br><span class="line">b.在php中</span><br><span class="line">mysql_query(<span class="string">"start transaction"</span>) <span class="comment">//开启事务</span></span><br><span class="line">msyql_query(多条sql语句)</span><br><span class="line"><span class="keyword">if</span>(<span class="symbol">$</span>res1 &amp;&amp; <span class="symbol">$</span>res2 &amp;&amp;....)&#123;</span><br><span class="line">  mysql_query(<span class="string">"commit"</span>);</span><br><span class="line">  echo <span class="string">"事务执行成功!所有任务都已完成"</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  mysql_query(<span class="string">"rollback"</span>);</span><br><span class="line">  echo <span class="string">"事务执行失败!数据没有被修改"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Mysql编程"><a href="#Mysql编程" class="headerlink" title="Mysql编程"></a>Mysql编程</h2><ul>
+<li><p>语句块包含符   //相当于js或php中的大括号写法</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[标识符]</span><span class="selector-pseudo">:begin</span></span><br><span class="line">    <span class="comment">//语句.....</span></span><br><span class="line"><span class="selector-tag">end</span> <span class="selector-attr">[标识符]</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量形式</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">A:普通变量</span><br><span class="line">  定义  declare  变量名 类型名 [default 默认值]</span><br><span class="line">  赋值  <span class="keyword">set</span> 变量名 = 值      取值  直接使用变量名</span><br><span class="line">  使用场所 a. 定义函数的内部</span><br><span class="line">            b. 定义存储过程的内部</span><br><span class="line">            c.定义触发器的内部</span><br><span class="line">B:会话变量</span><br><span class="line">  <span class="keyword">set</span> <span class="comment">@</span>变量名<span class="comment"> =</span> 值   //和<span class="comment">php</span>一样 无需定义 直接赋值</span><br><span class="line">  使用场所  基本上任何环境都可以用</span><br><span class="line">C:变量赋值</span><br><span class="line">  a. <span class="keyword">set</span> 变量名<span class="comment"> =</span> 表达式  //针对普通变量 必须先<span class="comment">declare</span>声明</span><br><span class="line">  b. <span class="keyword">set</span> <span class="comment">@</span>变量名<span class="comment"> =</span> 表达式</span><br><span class="line">  c. <span class="keyword">set</span> <span class="comment">@</span>变量名<span class="comment"> :=</span> 表达式</span><br><span class="line">  d. <span class="keyword">set</span> 表达式<span class="comment"> into @</span>变量名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>存储函数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">相当于php或js中有返回值的函数 它必须在完成计算后返回单个具体数据值或变量数据</span><br><span class="line">a.  <span class="keyword">create</span> <span class="keyword">function</span> 函数名(形参<span class="number">1</span>,形参<span class="number">2</span>)</span><br><span class="line"><span class="keyword">returns</span> 返回类型</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="comment">#这里写完整的函数语句</span></span><br><span class="line">    <span class="keyword">return</span> XX值;</span><br><span class="line"><span class="keyword">end</span>      <span class="comment">#必须有return语句 返回类型必须和设定的类型一致</span></span><br><span class="line">b.调用函数</span><br><span class="line">可用于<span class="keyword">select</span>语句中  <span class="keyword">select</span> <span class="keyword">now</span>(),函数名(实参<span class="number">1</span>,实参<span class="number">2.</span>.)</span><br><span class="line"><span class="keyword">set</span> @v1 = <span class="keyword">now</span>();       <span class="keyword">set</span> @v2 = 函数名(实参<span class="number">1</span>,实参<span class="number">2.</span>..)</span><br><span class="line">c.删除函数</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">function</span> [<span class="keyword">if</span> <span class="keyword">exists</span>] 函数名;</span><br><span class="line">注: 在函数内部,可以有各种变量和流程控制的使用,也可以有各种增删改的语句</span><br><span class="line">    但不可以有<span class="keyword">select</span>或其他返回结果集的查询类语句,因为函数只返回单个数据</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>存储过程(procedure)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">相当于php或js中没有返回值的函数它只执行不返回单个数据但可以得到(<span class="keyword">select</span>结果集)</span><br><span class="line">a  形式 <span class="keyword">create</span> <span class="keyword">procedure</span> 存储过程名(<span class="keyword">in</span>|<span class="keyword">out</span>|inout 形参<span class="number">1</span> 类型,...)</span><br><span class="line">    delimiter //</span><br><span class="line">    <span class="keyword">create</span> <span class="keyword">procedure</span> insert_get(p1 <span class="built_in">varchar</span>(<span class="number">20</span>),p2 <span class="built_in">varchar</span>(<span class="number">20</span>),p3 tinyint)</span><br><span class="line">    <span class="keyword">begin</span>                   //类型必须和表中的字段一致</span><br><span class="line">    <span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">result</span> <span class="keyword">value</span>(p1,p2,p3);</span><br><span class="line">    <span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">result</span> <span class="keyword">order</span> <span class="keyword">by</span> score <span class="keyword">desc</span> <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">3</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    //</span><br><span class="line">    注: <span class="keyword">in</span> 用于设定该变量是用来<span class="string">"接受实参数据"</span>的 即传入 默认是<span class="keyword">in</span></span><br><span class="line">        <span class="keyword">out</span> 用于设定该变量是用来存储存储过程中的数据的,即传出 函数必须对它赋值</span><br><span class="line">        inout 是<span class="keyword">in</span>和<span class="keyword">out</span>的结合 具有双向作用</span><br><span class="line">        对于<span class="keyword">out</span>和inout设定,对应的参数 就必须是一个变量,要用于接受传出数据</span><br><span class="line">    <span class="keyword">create</span> <span class="keyword">procedure</span> insert_get1(<span class="keyword">in</span> p1 <span class="built_in">varchar</span>(<span class="number">20</span>),<span class="keyword">out</span> p2 <span class="built_in">varchar</span>(<span class="number">20</span>),inout p3 tinyint)</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">set</span> p2=<span class="keyword">concat</span>(<span class="string">"建"</span>,p1);</span><br><span class="line">    <span class="keyword">set</span> p3=p3+<span class="number">5</span>;</span><br><span class="line">    <span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">result</span> <span class="keyword">values</span>(p1,p2,p3);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">set</span> @s3=<span class="number">80</span>    //设定变量并赋值</span><br><span class="line">    <span class="keyword">call</span> insert_get1(<span class="string">'筑'</span>,@s2,@s3);  //调用存储过程 out和inout对应的必须是变量</span><br><span class="line">    <span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">result</span>;  //查看插入结果</span><br><span class="line">b 调用存储过程  有<span class="keyword">select</span>则返回结果集</span><br><span class="line">  <span class="keyword">call</span> insert_get(<span class="string">"周七"</span>,<span class="string">"高数"</span>,<span class="number">91</span>)</span><br><span class="line">c 删除存储过程</span><br><span class="line">  <span class="keyword">drop</span> <span class="keyword">procedure</span> 存储名</span><br><span class="line">在php中使用存储函数或存储过程</span><br><span class="line">调用存储函数</span><br><span class="line">$<span class="keyword">sql</span>=<span class="string">"insert into tab1 values(null,now(),func1($v1,$v2))"</span></span><br><span class="line">调用存储过程</span><br><span class="line">$<span class="keyword">sql</span>=<span class="string">"call insert_user($v1,$v2,$v3)"</span></span><br><span class="line">调用又返回结果集的存储过程</span><br><span class="line">$<span class="keyword">sql</span>=<span class="string">"call get_user_info($id)"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>触发器(trigger)  在数据库 对应表下可以看到</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">也是一段预先定义好的编程代码,不能调用,而是在某个表发生(增删改)</span><br><span class="line">事件的时候,会自动触发</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">trigger</span> 触发器名 触发时机 触发事件 <span class="keyword">on</span> 表名 <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    //触发器的内部语句</span><br><span class="line"><span class="keyword">end</span>    //在执行之前先要用delimiter更改语句结束符</span><br><span class="line">说明: <span class="number">1.</span>触发时机 在某个事件发生之前还是之后触发   <span class="keyword">before</span>  <span class="keyword">after</span></span><br><span class="line">      <span class="number">2.</span>触发事件 表上的什么事件发生的时候  <span class="keyword">insert</span> <span class="keyword">update</span> <span class="keyword">delete</span></span><br><span class="line">      <span class="number">3.</span>特殊的关键字</span><br><span class="line">        <span class="keyword">old</span>  代表当前正要执行<span class="keyword">delete</span>的<span class="string">"旧行数据"</span></span><br><span class="line">              old.id  //获得这一旧行数据的任意字段的值</span><br><span class="line">        <span class="keyword">new</span>  代表当前正要执行<span class="keyword">insert</span>或<span class="keyword">update</span>的<span class="string">"新行数据"</span></span><br><span class="line">              new.id  //获得该新插入或更改行的<span class="keyword">id</span>字段的值</span><br><span class="line">触发器的含义 在某个表上进行<span class="keyword">insert</span>/<span class="keyword">update</span>/<span class="keyword">delete</span>之前或之后,会去执行</span><br><span class="line">              其中写好的语句,每个表只有<span class="number">6</span>个情形可能调用该触发器,通常</span><br><span class="line">              用于在对某个表进行增删改操作的时候,需要同时去做另外一</span><br><span class="line">              件事的时候</span><br><span class="line">ex  <span class="keyword">create</span> <span class="keyword">trigger</span> <span class="keyword">max</span> <span class="keyword">after</span> <span class="keyword">insert</span> <span class="keyword">on</span> <span class="keyword">result</span> <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">delete</span> <span class="keyword">from</span> maxscore;  <span class="comment">#先删除max表中的数据</span></span><br><span class="line">    <span class="keyword">select</span> <span class="keyword">max</span>(score) <span class="keyword">into</span> @mc <span class="keyword">from</span> <span class="keyword">result</span>;</span><br><span class="line">    <span class="keyword">insert</span> <span class="keyword">into</span> maxscore <span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">result</span> <span class="keyword">where</span> score=@mc;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">删除触发器</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">trigger</span> [<span class="keyword">if</span> <span class="keyword">exists</span>] 触发器名</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><p>Mysql  常用函数</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">1</span><span class="selector-class">.concat</span>(<span class="string">'a'</span>,<span class="string">'b'</span>..)  连接多个字符串</span><br><span class="line"><span class="selector-tag">2</span><span class="selector-class">.now</span>()              获取当前时间</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何备份某个数据库的所有表<br><code>mysqldump -u 用户名 -p 数据库名 &gt; e:\\文件名.sql</code></p>
+</li>
+<li>如何备份库的表<br><code>mysqldump –u 用户名 –p密码 数据库 表1 表2 表3.. &gt; d:\\文件名.sql</code></li>
+<li><p>如何备份数据库,会多 CREATE DATABASE 语句.<br><code>mysqldump –u 用户名 –p密码 –B 数据库1 数据库2 .. &gt; d:\\文件名.sql</code></p>
+</li>
+<li><p>恢复数据库[以库为单位] <code>Source 文件名.sql</code></p>
+</li>
+<li>恢复数据库[以表为单位] <code>use 某个库 Source 文件名.sql</code></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/mysql基本用法/" rel="next" title="mysql基本用法">
+                <i class="fa fa-chevron-left"></i> mysql基本用法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/javascript面向对象/" rel="prev" title="javascript对象与面向对象">
+                javascript对象与面向对象 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql高级操作"><span class="nav-number">1.</span> <span class="nav-text">mysql高级操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据控制语言-DCL"><span class="nav-number">2.</span> <span class="nav-text">数据控制语言(DCL)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据事务语言-DTL-汇款"><span class="nav-number">3.</span> <span class="nav-text">数据事务语言(DTL)  (汇款)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql编程"><span class="nav-number">4.</span> <span class="nav-text">Mysql编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
