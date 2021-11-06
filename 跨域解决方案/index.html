@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="出于浏览器的同源策略限制会阻止一个域的javascript脚本和另外一个域的内容进行交互。所谓同源（即指在同一个域）,在出现协议（protocol），主机（host）和端口号（port）有一种不一致时，就会出现跨域。在前后台交互中，ajax请求的url不是同一个服务器下面的URI，就会出现跨域请求问题。由于安全性的问题，浏览器默认不支持跨域调用.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-14T02:51:32.629Z">
+<meta property="og:updated_time" content="2021-11-05T12:56:20.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域解决方案">
 <meta name="twitter:description" content="出于浏览器的同源策略限制会阻止一个域的javascript脚本和另外一个域的内容进行交互。所谓同源（即指在同一个域）,在出现协议（protocol），主机（host）和端口号（port）有一种不一致时，就会出现跨域。在前后台交互中，ajax请求的url不是同一个服务器下面的URI，就会出现跨域请求问题。由于安全性的问题，浏览器默认不支持跨域调用.">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.5k 字
+                  1.6k 字
                 </span>
               
 
@@ -420,7 +420,7 @@ pace-activity
 
       
         <p>出于浏览器的同源策略限制会阻止一个域的javascript脚本和另外一个域的内容进行交互。所谓同源（即指在同一个域）,在出现协议（protocol），主机（host）和端口号（port）有一种不一致时，就会出现跨域。在前后台交互中，<code>ajax</code>请求的url不是同一个服务器下面的URI，就会出现跨域请求问题。由于安全性的问题，浏览器<code>默认不支持跨域</code>调用.<br><a id="more"></a></p>
-<h2 id="同源策略仅限于浏览器-跨域请求是可以发出去的但是响应response被浏览器堵塞了"><a href="#同源策略仅限于浏览器-跨域请求是可以发出去的但是响应response被浏览器堵塞了" class="headerlink" title="同源策略仅限于浏览器 跨域请求是可以发出去的但是响应response被浏览器堵塞了"></a>同源策略仅限于浏览器 跨域请求是可以发出去的但是响应response被浏览器堵塞了</h2><p>协议  域名  端口号 一致即是 同域<br>三者有一个不同就是跨域<br>http:// www. baidu.com :  8080 /  index.html<br>协议   子域名   主域名    端口号  请求资源地址<br>当协议,子域名,主域名,端口号,中任意一个不相同时,都算作不同域<br>不同域之间的相互请求资源,就算作跨域<br>Javascript 出于安全方面的考虑,不允许跨域调用其他页面的对象<br>例如<a href="http://www.example.com/" target="_blank" rel="noopener">http://www.example.com/</a></p>
+<h2 id="同源策略仅限于浏览器-跨域请求是可以发出去的但是响应response被浏览器堵塞了"><a href="#同源策略仅限于浏览器-跨域请求是可以发出去的但是响应response被浏览器堵塞了" class="headerlink" title="同源策略仅限于浏览器 跨域请求是可以发出去的但是响应response被浏览器堵塞了"></a>同源策略仅限于浏览器 跨域请求是可以发出去的但是响应response被浏览器堵塞了</h2><p>协议  域名  端口号 一致即是 同域<br>三者有一个不同就是跨域<br>http:// www. baidu.com :  8080 /  index.html<br>协议   子域名   主域名    端口号  请求资源地址<br>当协议,子域名,主域名,端口号,中任意一个不相同时,都算作不同域<br>不同域之间的相互请求资源,就算作跨域<br>Javascript 出于安全方面的考虑,不允许跨域调用其他页面的对象。跨域并不是请求发不出去，请求能发出去，服务端能收到请求并正常返回结果，只是结果被浏览器拦截了。之所以会跨域，是因为受到了同源策略的限制，同源策略要求源相同才能正常进行通信，即协议、域名、端口号都完全一致<br>例如<a href="http://www.example.com/" target="_blank" rel="noopener">http://www.example.com/</a></p>
 <table>
 <thead>
 <tr>
@@ -462,12 +462,11 @@ pace-activity
 </tr>
 </tbody>
 </table>
-<h2 id="为什么浏览器不支持跨域"><a href="#为什么浏览器不支持跨域" class="headerlink" title="为什么浏览器不支持跨域"></a>为什么浏览器不支持跨域</h2><p>cookie localStorage 同源策略不支持跨域<br>DOM元素也有同源策略 iframe<br>ajax也不支持跨域</p>
+<h2 id="为什么浏览器不支持跨域"><a href="#为什么浏览器不支持跨域" class="headerlink" title="为什么浏览器不支持跨域"></a>为什么浏览器不支持跨域</h2><p>cookie localStorage IndexedDB 同源策略不支持跨域<br>DOM元素也有同源策略 iframe<br>ajax也不支持跨域</p>
 <h2 id="不存在跨域请求的限制"><a href="#不存在跨域请求的限制" class="headerlink" title="不存在跨域请求的限制"></a>不存在跨域请求的限制</h2><ul>
 <li>script</li>
 <li>img</li>
 <li>link</li>
-<li>iframe</li>
 </ul>
 <h2 id="实现跨域的方式"><a href="#实现跨域的方式" class="headerlink" title="实现跨域的方式"></a>实现跨域的方式</h2><ul>
 <li>jsonp</li>
@@ -488,7 +487,7 @@ pace-activity
 <p>CORS(Cross Origin Resoure Share)跨域资源共享，后端方案解决跨域，需要服务器对请求进行检查并设置对响应头做相应处理，从而允许跨域请求</p>
 <ul>
 <li>响应简单请求：method为’get/post/head’,没有自定义请求头，Content-Type是application/www-form/urlencoded,multipart/form-data或text/plain,通过添加响应头解决<br><code>res.setHeader(&#39;Access-Control-Allow-Origin&#39;,&#39;*&#39;)</code>或<code>res.setHeader(&#39;Access-Control-Allow-Origin&#39;,&#39;http://xxx:xx&#39;)</code> 允许任意网站请求数据或者允许指定的域名访问</li>
-<li>响应preflight请求，需要响应浏览器发出的options请求(预检请求)，根据情况设置响应头<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 服务器 忽略options请求</span></span><br><span class="line"><span class="keyword">if</span>(req.method ==<span class="string">'options'</span>) &#123;</span><br><span class="line">  res.writeHead(<span class="number">200</span>, &#123;</span><br><span class="line">    <span class="string">'Access-Control-Allow-Origin'</span>: <span class="string">'http://localhost:3000'</span>,</span><br><span class="line">    <span class="string">'Access-Control-Allow-Headers'</span>:<span class="string">'x-Token'</span>,</span><br><span class="line">    <span class="string">'Access-Control-Allow-Methods'</span>: <span class="string">'PUT'</span></span><br><span class="line">  &#125;)</span><br><span class="line">  res.end()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 客户端请求</span></span><br><span class="line">axios.get(<span class="string">'http://localhost:3000/user'</span>, &#123; <span class="attr">headers</span>: &#123;<span class="string">'x-token'</span>: <span class="string">'tew'</span>&#125; &#125;)</span><br></pre></td></tr></table></figure>
+<li>响应preflight请求，需要响应浏览器发出的options请求(预检请求)，根据情况设置响应头<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 服务器 忽略options请求</span></span><br><span class="line"><span class="keyword">if</span>(req.method == <span class="string">'options'</span>) &#123;</span><br><span class="line">  res.writeHead(<span class="number">200</span>, &#123;</span><br><span class="line">    <span class="string">'Access-Control-Allow-Origin'</span>: <span class="string">'http://localhost:3000'</span>,</span><br><span class="line">    <span class="string">'Access-Control-Allow-Headers'</span>:<span class="string">'x-Token'</span>,</span><br><span class="line">    <span class="string">'Access-Control-Allow-Methods'</span>: <span class="string">'PUT'</span></span><br><span class="line">  &#125;)</span><br><span class="line">  res.end()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 客户端请求</span></span><br><span class="line">axios.get(<span class="string">'http://localhost:3000/user'</span>, &#123; <span class="attr">headers</span>: &#123;<span class="string">'x-token'</span>: <span class="string">'tew'</span>&#125; &#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
@@ -642,7 +641,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -653,7 +652,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -664,7 +663,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="http三次握手URI URL URN URI 统一资源标志符 用来唯一标识互联网上的信息资源 包括URL和URN URL 统一资源定位符 如:https://www.baidu.com/s?wd=aa URN 永久统一资源定位符 在资源更换地址后还能找到  HTTP报文格式CORS cors预请求 允许方法 GET HEAD POST cors预请求 允许content-type text/p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-12T14:28:09.767Z">
+<meta property="og:updated_time" content="2021-08-30T09:51:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP协议原理与实践">
 <meta name="twitter:description" content="http三次握手URI URL URN URI 统一资源标志符 用来唯一标识互联网上的信息资源 包括URL和URN URL 统一资源定位符 如:https://www.baidu.com/s?wd=aa URN 永久统一资源定位符 在资源更换地址后还能找到  HTTP报文格式CORS cors预请求 允许方法 GET HEAD POST cors预请求 允许content-type text/p">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.5k 字
+                  1.6k 字
                 </span>
               
 
@@ -451,11 +451,12 @@ pace-activity
 <li>HTTP协议采用请求-应答模式，当使用普通模式，非keep-alive时，每个请求/应答,客户端和服务端都要新建一个连接，完成之后立即断开（HTTP为无连接的协议）</li>
 <li>当使用Keep-alive模式（又称持久连接，长链接），keep-alive功能使客户端到服务器端的连接持续有效，当客户端对服务器有后继请求时，keep-alive功能避免了重新建立连接。</li>
 </ul>
-<h3 id="Accept"><a href="#Accept" class="headerlink" title="Accept"></a>Accept</h3><ul>
+<h3 id="Accept等头部信息"><a href="#Accept等头部信息" class="headerlink" title="Accept等头部信息"></a>Accept等头部信息</h3><ul>
 <li>Accept: text/html</li>
 <li>Accept-Encoding:gzip,deflate,br</li>
 <li>Accept-Language:zh-CN,zh;q:0.9</li>
 <li>User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1</li>
+<li>referer: 发出请求的页面的URL</li>
 </ul>
 <h3 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h3><ul>
 <li>Content-Type<ul>
@@ -650,7 +651,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -661,7 +662,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -672,7 +673,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -763,7 +764,7 @@ pace-activity
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#http三次握手"><span class="nav-number">1.</span> <span class="nav-text">http三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URI-URL-URN"><span class="nav-number">2.</span> <span class="nav-text">URI URL URN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP报文格式"><span class="nav-number">3.</span> <span class="nav-text">HTTP报文格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">4.</span> <span class="nav-text">CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存头Cache-control"><span class="nav-number">5.</span> <span class="nav-text">缓存头Cache-control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie与session"><span class="nav-number">6.</span> <span class="nav-text">Cookie与session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Http长连接-Connection-39-39-keep-alive-39-（HTTP1-1才支持）"><span class="nav-number">7.</span> <span class="nav-text">Http长连接 Connection&#39;: &#39;keep-alive&#39; （HTTP1.1才支持）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Accept"><span class="nav-number">8.</span> <span class="nav-text">Accept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content"><span class="nav-number">9.</span> <span class="nav-text">Content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向-Location"><span class="nav-number">10.</span> <span class="nav-text">重定向 Location</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content-Security-Policy"><span class="nav-number">11.</span> <span class="nav-text">Content-Security-Policy</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端请求-http-request"><span class="nav-number"></span> <span class="nav-text">客户端请求 http.request</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消息头"><span class="nav-number"></span> <span class="nav-text">消息头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态码"><span class="nav-number"></span> <span class="nav-text">状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http状态码有那些？分别代表是什么意思？"><span class="nav-number"></span> <span class="nav-text">http状态码有那些？分别代表是什么意思？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS"><span class="nav-number"></span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP2"><span class="nav-number"></span> <span class="nav-text">HTTP2</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#http三次握手"><span class="nav-number">1.</span> <span class="nav-text">http三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URI-URL-URN"><span class="nav-number">2.</span> <span class="nav-text">URI URL URN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP报文格式"><span class="nav-number">3.</span> <span class="nav-text">HTTP报文格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">4.</span> <span class="nav-text">CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存头Cache-control"><span class="nav-number">5.</span> <span class="nav-text">缓存头Cache-control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie与session"><span class="nav-number">6.</span> <span class="nav-text">Cookie与session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Http长连接-Connection-39-39-keep-alive-39-（HTTP1-1才支持）"><span class="nav-number">7.</span> <span class="nav-text">Http长连接 Connection&#39;: &#39;keep-alive&#39; （HTTP1.1才支持）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Accept等头部信息"><span class="nav-number">8.</span> <span class="nav-text">Accept等头部信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content"><span class="nav-number">9.</span> <span class="nav-text">Content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向-Location"><span class="nav-number">10.</span> <span class="nav-text">重定向 Location</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content-Security-Policy"><span class="nav-number">11.</span> <span class="nav-text">Content-Security-Policy</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端请求-http-request"><span class="nav-number"></span> <span class="nav-text">客户端请求 http.request</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消息头"><span class="nav-number"></span> <span class="nav-text">消息头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态码"><span class="nav-number"></span> <span class="nav-text">状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http状态码有那些？分别代表是什么意思？"><span class="nav-number"></span> <span class="nav-text">http状态码有那些？分别代表是什么意思？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS"><span class="nav-number"></span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP2"><span class="nav-number"></span> <span class="nav-text">HTTP2</span></a></li></div>
             
 
           </div>

@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="WEB前端开发中，除了对PC端浏览器进行各浏览器兼容，移动端页面中android端和ios端的页面兼容也是有很多问题，特此整理一下遇到过的或者可能遇到的常见问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-12T14:28:09.815Z">
+<meta property="og:updated_time" content="2021-10-28T12:26:46.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端常见问题(二)">
 <meta name="twitter:description" content="WEB前端开发中，除了对PC端浏览器进行各浏览器兼容，移动端页面中android端和ios端的页面兼容也是有很多问题，特此整理一下遇到过的或者可能遇到的常见问题。">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  935 字
+                  979 字
                 </span>
               
 
@@ -441,6 +441,7 @@ pace-activity
 </ul>
 <h2 id="14-ios页面橡皮弹回效果遮挡页面选项卡？"><a href="#14-ios页面橡皮弹回效果遮挡页面选项卡？" class="headerlink" title="14 .ios页面橡皮弹回效果遮挡页面选项卡？"></a>14 .ios页面橡皮弹回效果遮挡页面选项卡？</h2><p>(1) 有时body和html的height: 100%去除掉问题可能就没有了。<br>(2) 到达临界值的时候在阻止事件默认行为<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> startY,endY;</span><br><span class="line"><span class="comment">//记录手指触摸的起点坐标</span></span><br><span class="line">$(<span class="string">'body'</span>).on(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  startY = e.touches[<span class="number">0</span>].pageY;</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'body'</span>).on(<span class="string">'touchmove'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  endY = e.touches[<span class="number">0</span>].pageY;  <span class="comment">//记录手指触摸的移动中的坐标</span></span><br><span class="line">  <span class="comment">//手指下滑，页面到达顶端不能继续下滑</span></span><br><span class="line">  <span class="keyword">if</span>(endY&gt;startY&amp;&amp; $(<span class="built_in">window</span>).scrollTop()&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//手指上滑，页面到达底部能继续上滑</span></span><br><span class="line">  <span class="keyword">if</span>(endY&lt;startY&amp;&amp; $(<span class="built_in">window</span>).scrollTop()+</span><br><span class="line">    $(<span class="built_in">window</span>).height()&gt;=$(<span class="string">'body'</span>)[<span class="number">0</span>].scrollHeight)&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <h2 id="15-Chrome-中文界面下默认会将小于-12px-的文本强制按照-12px-显示"><a href="#15-Chrome-中文界面下默认会将小于-12px-的文本强制按照-12px-显示" class="headerlink" title="15. Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示"></a>15. Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示</h2><p><code>可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决</code></p>
+<h2 id="16-屏蔽手机系统自带软键盘-用于自定义键盘"><a href="#16-屏蔽手机系统自带软键盘-用于自定义键盘" class="headerlink" title="16. 屏蔽手机系统自带软键盘(用于自定义键盘)"></a>16. 屏蔽手机系统自带软键盘(用于自定义键盘)</h2><p><code>&lt;input type=&quot;text&quot; autocomplete=&quot;off&quot; unselectable=&quot;on&quot; onpaste=&quot;return false&quot; onfoucs=&quot;this.blur()&quot; /&gt;</code></p>
 
       
     </div>
@@ -576,7 +577,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -587,7 +588,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -598,7 +599,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -689,7 +690,7 @@ pace-activity
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-解决页面使用overflow-scroll在iOS上滑动卡顿的问题"><span class="nav-number">1.</span> <span class="nav-text">1. 解决页面使用overflow: scroll在iOS上滑动卡顿的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-input输入框ios的光标问题"><span class="nav-number">2.</span> <span class="nav-text">2. input输入框ios的光标问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-移动端click事件300ms的延迟"><span class="nav-number">3.</span> <span class="nav-text">3. 移动端click事件300ms的延迟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-在ios和andriod中-audio元素和video元素在无法自动播放"><span class="nav-number">4.</span> <span class="nav-text">4. 在ios和andriod中,audio元素和video元素在无法自动播放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-如何在手机上实现弹出框弹出时，弹出框内可以上下滚动，背后的页面锁定不能滚动？"><span class="nav-number">5.</span> <span class="nav-text">5. 如何在手机上实现弹出框弹出时，弹出框内可以上下滚动，背后的页面锁定不能滚动？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-flex：固定宽度-flex：1-之后单行或多行省略不生效-在父级加-min-width：0"><span class="nav-number">6.</span> <span class="nav-text">6. flex：固定宽度+flex：1 之后单行或多行省略不生效  在父级加 min-width：0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-ios的input设置disabled属性后默认样式问题"><span class="nav-number">7.</span> <span class="nav-text">7. ios的input设置disabled属性后默认样式问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-ios-input自动填充后出现黄色背景问题"><span class="nav-number">8.</span> <span class="nav-text">8. ios input自动填充后出现黄色背景问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-flex-多列布局中-将最后一列居右显示"><span class="nav-number">9.</span> <span class="nav-text">9. flex 多列布局中 将最后一列居右显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-鉴于clip裁切隐藏是最佳可访问隐藏"><span class="nav-number">10.</span> <span class="nav-text">10. 鉴于clip裁切隐藏是最佳可访问隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-ios机型margin属性无效问题？"><span class="nav-number">11.</span> <span class="nav-text">11. ios机型margin属性无效问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-ios绑定点击事件不执行？-ios手机-事件委托失效"><span class="nav-number">12.</span> <span class="nav-text">12. ios绑定点击事件不执行？ ios手机,事件委托失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-h5底部输入框被键盘遮挡问题"><span class="nav-number">13.</span> <span class="nav-text">13. h5底部输入框被键盘遮挡问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-ios页面橡皮弹回效果遮挡页面选项卡？"><span class="nav-number">14.</span> <span class="nav-text">14 .ios页面橡皮弹回效果遮挡页面选项卡？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Chrome-中文界面下默认会将小于-12px-的文本强制按照-12px-显示"><span class="nav-number">15.</span> <span class="nav-text">15. Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-解决页面使用overflow-scroll在iOS上滑动卡顿的问题"><span class="nav-number">1.</span> <span class="nav-text">1. 解决页面使用overflow: scroll在iOS上滑动卡顿的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-input输入框ios的光标问题"><span class="nav-number">2.</span> <span class="nav-text">2. input输入框ios的光标问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-移动端click事件300ms的延迟"><span class="nav-number">3.</span> <span class="nav-text">3. 移动端click事件300ms的延迟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-在ios和andriod中-audio元素和video元素在无法自动播放"><span class="nav-number">4.</span> <span class="nav-text">4. 在ios和andriod中,audio元素和video元素在无法自动播放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-如何在手机上实现弹出框弹出时，弹出框内可以上下滚动，背后的页面锁定不能滚动？"><span class="nav-number">5.</span> <span class="nav-text">5. 如何在手机上实现弹出框弹出时，弹出框内可以上下滚动，背后的页面锁定不能滚动？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-flex：固定宽度-flex：1-之后单行或多行省略不生效-在父级加-min-width：0"><span class="nav-number">6.</span> <span class="nav-text">6. flex：固定宽度+flex：1 之后单行或多行省略不生效  在父级加 min-width：0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-ios的input设置disabled属性后默认样式问题"><span class="nav-number">7.</span> <span class="nav-text">7. ios的input设置disabled属性后默认样式问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-ios-input自动填充后出现黄色背景问题"><span class="nav-number">8.</span> <span class="nav-text">8. ios input自动填充后出现黄色背景问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-flex-多列布局中-将最后一列居右显示"><span class="nav-number">9.</span> <span class="nav-text">9. flex 多列布局中 将最后一列居右显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-鉴于clip裁切隐藏是最佳可访问隐藏"><span class="nav-number">10.</span> <span class="nav-text">10. 鉴于clip裁切隐藏是最佳可访问隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-ios机型margin属性无效问题？"><span class="nav-number">11.</span> <span class="nav-text">11. ios机型margin属性无效问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-ios绑定点击事件不执行？-ios手机-事件委托失效"><span class="nav-number">12.</span> <span class="nav-text">12. ios绑定点击事件不执行？ ios手机,事件委托失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-h5底部输入框被键盘遮挡问题"><span class="nav-number">13.</span> <span class="nav-text">13. h5底部输入框被键盘遮挡问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-ios页面橡皮弹回效果遮挡页面选项卡？"><span class="nav-number">14.</span> <span class="nav-text">14 .ios页面橡皮弹回效果遮挡页面选项卡？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Chrome-中文界面下默认会将小于-12px-的文本强制按照-12px-显示"><span class="nav-number">15.</span> <span class="nav-text">15. Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-屏蔽手机系统自带软键盘-用于自定义键盘"><span class="nav-number">16.</span> <span class="nav-text">16. 屏蔽手机系统自带软键盘(用于自定义键盘)</span></a></li></ol></div>
             
 
           </div>

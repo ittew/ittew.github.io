@@ -115,7 +115,7 @@ pace-activity
 <meta property="og:image" content="http://ittew.cn/image/es6/let2.png">
 <meta property="og:image" content="http://ittew.cn/image/es6/let4.png">
 <meta property="og:image" content="http://ittew.cn/image/es6/let3.png">
-<meta property="og:updated_time" content="2021-01-12T14:28:09.754Z">
+<meta property="og:updated_time" content="2021-10-31T05:56:49.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6基础(一)">
 <meta name="twitter:description" content="ECMAScript 6.0简称(es6) 是继ECMAScript 5之后的javascript语言的下一代标准,它的目标是使得javascript语言可以用来编写复杂的大型应用程序。es6新特性：let、const、解构赋值、Set、Map、Iterrator接口等">
@@ -512,7 +512,7 @@ pace-activity
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a.clear()</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// Set(0) &#123;&#125;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>set</code> 应用场景（去重、交集、并集、差集）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组去重</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">'a'</span>, <span class="literal">true</span>, <span class="string">'a'</span>, <span class="literal">true</span>]</span><br><span class="line"><span class="built_in">console</span>.log([...new <span class="built_in">Set</span>(arr)]) <span class="comment">// [1, "a", true]</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">1</span>]</span><br><span class="line"><span class="comment">// 合并并去重</span></span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([...arr1, ...arr2])) <span class="comment">//[4, 6, 8, 2, 1, 3, 7]</span></span><br><span class="line"><span class="comment">// 交集</span></span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([...arr1]).filter(<span class="function"><span class="params">item</span> =&gt;</span> arr2.includes(item))) <span class="comment">// [6, 8, 1]</span></span><br><span class="line"><span class="comment">// 差集</span></span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([...arr1]).filter(<span class="function"><span class="params">item</span> =&gt;</span> !arr2.includes(item))) <span class="comment">// [4, 2]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组去重</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">'a'</span>, <span class="literal">true</span>, <span class="string">'a'</span>, <span class="literal">true</span>]</span><br><span class="line"><span class="built_in">console</span>.log([...new <span class="built_in">Set</span>(arr)]) <span class="comment">// [1, "a", true]</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">1</span>]</span><br><span class="line"><span class="comment">// 合并并去重</span></span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([...arr1, ...arr2]))) <span class="comment">//[4, 6, 8, 2, 1, 3, 7]</span></span><br><span class="line"><span class="comment">// 交集</span></span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([...arr1])).filter(<span class="function"><span class="params">item</span> =&gt;</span> arr2.includes(item)) <span class="comment">// [6, 8, 1]</span></span><br><span class="line">[...new <span class="built_in">Set</span>([...arr1])].filter(<span class="function"><span class="params">item</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Set</span>(arr2).has(item)) <span class="comment">// [6, 8, 1]</span></span><br><span class="line"><span class="comment">// 差集</span></span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([...arr1])).filter(<span class="function"><span class="params">item</span> =&gt;</span> !arr2.includes(item)) <span class="comment">// [4, 2]</span></span><br><span class="line">[...new <span class="built_in">Set</span>([...arr1])].filter(<span class="function"><span class="params">item</span> =&gt;</span> !<span class="keyword">new</span> <span class="built_in">Set</span>(arr2).has(item)) <span class="comment">// [4, 2]</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="数据结构-Map"><a href="#数据结构-Map" class="headerlink" title="数据结构 Map"></a>数据结构 Map</h2><blockquote>
@@ -706,7 +706,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -717,7 +717,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -728,7 +728,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

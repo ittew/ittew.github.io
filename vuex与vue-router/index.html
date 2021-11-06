@@ -112,7 +112,7 @@ pace-activity
 <meta property="og:description" content="vuex和vue-router是vue生态系统中的很重要的两个工具。vuex 是vue用来管理数据状态的一种机制，将Vue中所有的状态（数据）抽离出来进行统一管理。Vue Router 是 Vue.js 官方的路由管理器。它和Vue.js的核心深度集成，让构建单页面应用变得易如反掌，是SPA（单页应用）的路径管理器。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ittew.cn/image/vue/vuex.png">
-<meta property="og:updated_time" content="2021-01-12T14:28:09.794Z">
+<meta property="og:updated_time" content="2021-10-30T14:22:02.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex与vue-router">
 <meta name="twitter:description" content="vuex和vue-router是vue生态系统中的很重要的两个工具。vuex 是vue用来管理数据状态的一种机制，将Vue中所有的状态（数据）抽离出来进行统一管理。Vue Router 是 Vue.js 官方的路由管理器。它和Vue.js的核心深度集成，让构建单页面应用变得易如反掌，是SPA（单页应用）的路径管理器。">
@@ -505,7 +505,7 @@ pace-activity
 <li>router.beforeResolve(to, from, next) 全局解析守卫</li>
 <li>router.afterEach(to, from, next) 全局后置守卫</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每个守卫方法接收三个参数</span></span><br><span class="line"><span class="comment">// to: 即将要进入的目标 路由对象</span></span><br><span class="line"><span class="comment">// from: 当前导航正要离开的路由</span></span><br><span class="line"><span class="comment">// next: 同意跳转 进行下一步执行 resolve</span></span><br><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  NProgress.start() <span class="comment">// start progress bar</span></span><br><span class="line">  <span class="built_in">document</span>.title = to.meta.title  <span class="comment">// 设置页面标题</span></span><br><span class="line">&#125;)</span><br><span class="line">router.afterEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  NProgress.done() <span class="comment">// finish progress bar</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每个守卫方法接收三个参数</span></span><br><span class="line"><span class="comment">// to: 即将要进入的目标 路由对象</span></span><br><span class="line"><span class="comment">// from: 当前导航正要离开的路由</span></span><br><span class="line"><span class="comment">// next: 同意跳转 进行下一步执行 resolve</span></span><br><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 路由跳转前的特定的业务逻辑 修改路由跳转、设置title等</span></span><br><span class="line">  NProgress.start() <span class="comment">// start progress bar</span></span><br><span class="line">  <span class="built_in">document</span>.title = to.meta.title  <span class="comment">// 设置页面标题</span></span><br><span class="line">&#125;)</span><br><span class="line">router.afterEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  NProgress.done() <span class="comment">// finish progress bar</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p><code>路由独享的守卫</code><br>在路由配置上直接定义 <code>beforeEnter</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes: [&#123;</span><br><span class="line">    path: <span class="string">'/foo'</span>,</span><br><span class="line">    component: Foo,</span><br><span class="line">    beforeEnter: <span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;&#125;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p><code>组件内的守卫</code></p>
 <ul>
@@ -673,7 +673,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -684,7 +684,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -695,7 +695,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

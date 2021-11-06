@@ -116,7 +116,7 @@ pace-activity
 <meta property="og:image" content="http://ittew.cn/image/css/box-shadow.png">
 <meta property="og:image" content="http://ittew.cn/image/css/box-shadow.png">
 <meta property="og:image" content="http://ittew.cn/image/css/box-shadow.png">
-<meta property="og:updated_time" content="2021-01-12T14:28:09.742Z">
+<meta property="og:updated_time" content="2021-10-28T12:26:46.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3学习">
 <meta name="twitter:description" content="CSS3 是 CSS 的升级版本，这套新标准提供了更加丰富且实用的规范，如：盒子模型box-sizing、过渡transition、动画animation、2D或3D变换transform、阴影box-shadow、背景和边框、文字特效text-shadow、多栏布局、弹性布局flex、栅格布局grid、渐变gradient、媒体查询等等.">
@@ -448,7 +448,7 @@ pace-activity
 </ul>
 <h2 id="CSS3文本属性"><a href="#CSS3文本属性" class="headerlink" title="CSS3文本属性"></a>CSS3文本属性</h2><ul>
 <li><p>单行省略</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">white-space</span><span class="selector-pseudo">:nowrap</span>  控制文本(禁止)不换行</span><br><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>    当文本溢出时显示省略号</span><br><span class="line"><span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;       溢出隐藏</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">white-space:nowrap  控制文本(禁止)不换行</span><br><span class="line"><span class="built_in">text</span>-<span class="built_in">overflow</span>:ellipsis    当文本溢出时显示省略号</span><br><span class="line"><span class="built_in">overflow</span>:hidden;       溢出隐藏</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>文本阴影<br><code>text-shadow:x,y,blur,color</code> 文本阴影<br><code>x 横向偏移   y 纵向偏移 blur  模糊距离  color 阴影颜色</code><br><img src="/image/css/text-shadow.png" alt="文本阴影"></p>
 </li>
@@ -678,7 +678,9 @@ pace-activity
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.d1</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">background</span>:<span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*  超小屏幕 手机&gt; */</span></span><br><span class="line">@<span class="keyword">media</span> (max-width:<span class="number">768px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:skyblue; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*  小屏幕 平板 */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">768px</span>) and (max-width:<span class="number">992px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:<span class="number">#999</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  中等屏幕 桌面显示器 */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">992px</span>) and (max-width:<span class="number">1200px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:blue; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  大屏幕 大桌面显示器&gt; */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">1200px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:pink; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>移动设备<code>viewpoart</code><br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;/&gt;</code></p>
-<h2 id="CSS3-响应式设计"><a href="#CSS3-响应式设计" class="headerlink" title="CSS3  响应式设计"></a>CSS3  响应式设计</h2></li>
+</li>
+</ul>
+<h2 id="CSS3-响应式设计"><a href="#CSS3-响应式设计" class="headerlink" title="CSS3  响应式设计"></a>CSS3  响应式设计</h2><ul>
 <li><code>为什么要进行响应式设计</code> 为了在不同大小的设备上呈现同样的网页</li>
 <li><code>早期的解决方案</code> 是为不同的设备提供不同的网页,比如专门的wp版本.</li>
 <li><code>现在的解决方案</code>  让同一网页自动适应不同大小的屏幕,根据屏幕宽度,自动调整布局(layout).一次设计,普遍适用,自动识别屏幕宽度,并作出相应调整的网页设计</li>
@@ -833,7 +835,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -844,7 +846,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -855,7 +857,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

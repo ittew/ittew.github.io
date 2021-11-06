@@ -118,7 +118,7 @@ pace-activity
 <meta property="og:image" content="http://ittew.cn/image/vue/vue7.png">
 <meta property="og:image" content="http://ittew.cn/image/vue/vue8.png">
 <meta property="og:image" content="http://ittew.cn/image/vue/vue9.png">
-<meta property="og:updated_time" content="2021-01-12T14:28:09.796Z">
+<meta property="og:updated_time" content="2021-05-26T03:11:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue组件、动画、生命周期">
 <meta name="twitter:description" content="Vue.js是一个构建数据驱动的web界面的库,是一套用于构建用户界面的渐进式框架. 目标是通过尽可能简单的API实现响应的数据绑定和组合的视图组件。核心是一个响应的数据绑定系统，它让数据与DOM保持同步非常简单。">
@@ -402,7 +402,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.4k 字
+                  2.6k 字
                 </span>
               
 
@@ -428,7 +428,19 @@ pace-activity
 
       
         <p><code>Vue.js</code>是一个构建数据驱动的web界面的库,是一套用于构建用户界面的渐进式框架. 目标是通过尽可能简单的API实现响应的数据绑定和组合的视图组件。核心是一个响应的数据绑定系统，它让数据与DOM保持同步非常简单。<br><a id="more"></a></p>
-<h2 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h2><p><code>vue中组件是组件是一组可被复用的具有一定功能,独立的完整的代码片段,这个代码片段可以渲染一个完整的视图结构,每一个组件都是一个vue实例对象,都会包含vue实例的所有属性和方法</code><br>组件使用步骤 1. 引入组件 2. 注册组件 3. 使用组件<br><img src="/image/vue/vue3.png" alt="组件"></p>
+<h2 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h2><p><code>vue中组件是组件是一组可被复用的具有一定功能,独立的完整的代码片段,这个代码片段可以渲染一个完整的视图结构,每一个组件都是一个vue实例对象,都会包含vue实例的所有属性和方法</code></p>
+<p>vue组件分类：</p>
+<ul>
+<li>vue-router对应的每一个.vue页面组件</li>
+<li>不包含业务的、独立的基础功能组件如UI组件，具有通用性可以在不同项目中使用</li>
+<li>只包含某个功能的业务组件、只在当前项目中使用不具有通用性</li>
+</ul>
+<p>vue组件的三个API： prop、event、slot</p>
+<p><code>一个再复杂的组件，都是由三部分组成的：prop、event、slot，它们构成了 Vue.js 组件的 API</code></p>
+<ul>
+<li>属性<code>props</code>定义了有哪些可配置的属性，写通用组件时，props最好用对象的写法，便于设置每个属性的类型、默认值和校验属性的值<br>*</li>
+</ul>
+<p>组件使用步骤 1. 引入组件 2. 注册组件 3. 使用组件<br><img src="/image/vue/vue3.png" alt="组件"></p>
 <ul>
 <li><p>全局组件 可以在任何模板中使用,使用之前需要先注册</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注册 Vue.component(‘组件名’,选项对象)</span></span><br><span class="line"><span class="comment">// Vue.component(‘my-component’,&#123;&#125;)</span></span><br><span class="line"><span class="comment">// 使用 &lt;my-component&gt;&lt;/my-component&gt;</span></span><br><span class="line">&lt;div id=<span class="string">'app'</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">Counter</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">Vue.component(<span class="string">'Counter'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;span&gt;&#123;&#123;text&#125;&#125;&lt;/span&gt;'</span>,</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">'全局组件'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -606,7 +618,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -617,7 +629,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -628,7 +640,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

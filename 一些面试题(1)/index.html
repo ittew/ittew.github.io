@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="记录一些常见的面试题, 加深巩固下基础知识, 及时扫盲.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-12T14:28:09.802Z">
+<meta property="og:updated_time" content="2021-08-30T09:51:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些面试题(1)">
 <meta name="twitter:description" content="记录一些常见的面试题, 加深巩固下基础知识, 及时扫盲.">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.6k 字
+                  2.8k 字
                 </span>
               
 
@@ -454,8 +454,7 @@ pace-activity
 <li>安全性问题。如果cookie被拦截了，就可以取得所有的session信息。即使加密也与事无补，因为拦截者并不需要知道cookie的意义，他只要原样转发cookie就可以达到目的了。</li>
 </ul>
 <h4 id="哪些操作会造成内存泄漏？"><a href="#哪些操作会造成内存泄漏？" class="headerlink" title="哪些操作会造成内存泄漏？"></a>哪些操作会造成内存泄漏？</h4><ul>
-<li>内存泄漏: 指任何对象在您不再拥有或需要它之后仍然存在</li>
-<li>垃圾回收: 如果一个对象的引用数量为0(没有其他对象引用过该对象)，那么该对象的内存即可回收。</li>
+<li>内存泄漏: 指一块被分配的内存既不能使用又不能回收，直到浏览器进程结束。</li>
 </ul>
 <ol>
 <li>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。</li>
@@ -464,13 +463,14 @@ pace-activity
 <li>循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）</li>
 </ol>
 <h4 id="javascript-中的垃圾回收机制？"><a href="#javascript-中的垃圾回收机制？" class="headerlink" title="javascript 中的垃圾回收机制？"></a>javascript 中的垃圾回收机制？</h4><ul>
-<li>在Javascript中，如果一个对象不再被引用，那么这个对象就会被GC回收。如果两个对象互相引用，而不再  被第3者所引用，那么这两个互相引用的对象也会被回收。</li>
+<li>垃圾回收: 垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为0(没有其他对象引用过该对象)，或对该对象的惟一引用是循环的，那么该对象的内存即可回收。</li>
+<li>在Javascript中，如果一个对象不再被引用，那么这个对象就会被GC回收。如果两个对象互相引用，而不再被第3者所引用，那么这两个互相引用的对象也会被回收。</li>
 </ul>
 <h4 id="获取非行间样式"><a href="#获取非行间样式" class="headerlink" title="获取非行间样式"></a>获取非行间样式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStyle</span>(<span class="params">obj,attr,value</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> obj.currentStyle ? obj.currentStyle(attr) : obj.getComputedStyle(attr, <span class="literal">false</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="事件委托是什么"><a href="#事件委托是什么" class="headerlink" title="事件委托是什么"></a>事件委托是什么</h4><ul>
 <li>利用事件冒泡的原理，自己要触发的事件，让他的父元素代替执行！</li>
 </ul>
-<h4 id="原生ajax步骤"><a href="#原生ajax步骤" class="headerlink" title="原生ajax步骤"></a>原生ajax步骤</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr =<span class="literal">null</span>;<span class="comment">//创建对象</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</span><br><span class="line">	xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>)</span><br><span class="line">&#125;</span><br><span class="line">xhr.open(<span class="string">'方式'</span>,<span class="string">'地址'</span>,<span class="string">'标志位'</span>) <span class="comment">// 初始化请求</span></span><br><span class="line">xhr.setRequestHeader(<span class="string">''</span>, <span class="string">''</span>) <span class="comment">// 设置http头信息</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125; <span class="comment">// 指定回调函数</span></span><br><span class="line">xhr.send() <span class="comment">// 发送请求</span></span><br></pre></td></tr></table></figure>
+<h4 id="原生ajax步骤"><a href="#原生ajax步骤" class="headerlink" title="原生ajax步骤"></a>原生ajax步骤</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr =<span class="literal">null</span>;<span class="comment">//创建对象</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</span><br><span class="line">	xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>)</span><br><span class="line">&#125;</span><br><span class="line">xhr.open(<span class="string">'方式'</span>,<span class="string">'地址'</span>,<span class="string">'标志位'</span>) <span class="comment">// 初始化请求</span></span><br><span class="line">xhr.setRequestHeader(<span class="string">''</span>, <span class="string">''</span>) <span class="comment">// 设置http头信息</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125; <span class="comment">// 指定回调函数</span></span><br><span class="line">xhr.send() <span class="comment">// 发送请求</span></span><br><span class="line">xhr.abort() <span class="comment">// 在接收响应之前调用abort方法来取消异步请求</span></span><br></pre></td></tr></table></figure>
 <h4 id="请解释一下-JavaScript-的同源策略。"><a href="#请解释一下-JavaScript-的同源策略。" class="headerlink" title="请解释一下 JavaScript 的同源策略。"></a>请解释一下 JavaScript 的同源策略。</h4><ul>
 <li>同源策略是一种安全协议，指一段脚本只能读取来自同一来源的窗口和文档的属性。所谓同源指的是：协议，域名，端口三者都相同</li>
 </ul>
@@ -478,7 +478,8 @@ pace-activity
 <li>当发送一个 URL 请求时，浏览器都会开启一个线程来处理这个请求，同时在远程 DNS 服务器上启动一个 DNS 查询。这能使浏览器获得请求对应的 IP 地址。</li>
 <li>浏览器与远程 Web 服务器通过 TCP 三次握手协商来建立一个 TCP/IP 连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。</li>
 <li>一旦 TCP/IP 连接建立，浏览器会通过该连接向远程服务器发送 HTTP 的 GET 请求。远程服务器找到资源并使用 HTTP 响应返回该资源，值为 200 的 HTTP 响应状态表示一个正确的响应。</li>
-<li>此时，Web 服务器提供资源服务，客户端开始下载资源。</li>
+<li>浏览器对加载到的资源（HTML、JS、CSS等）进行语法解析，建立相应的内部数据结构（如HTML的DOM）；</li>
+<li>载入解析到的资源文件，渲染页面显示。</li>
 </ol>
 <h4 id="什么是伪数组？如何将伪数组转化为标准数组？"><a href="#什么是伪数组？如何将伪数组转化为标准数组？" class="headerlink" title="什么是伪数组？如何将伪数组转化为标准数组？"></a>什么是伪数组？如何将伪数组转化为标准数组？</h4><ul>
 <li>伪数组（类数组）：无法直接调用数组方法或期望length属性有什么特殊的行为，但仍可以对真正数组遍历方法来遍历它们.如 argument, NodeList</li>
@@ -504,6 +505,12 @@ pace-activity
 <li><code>注意: 一个函数的父级作用域是它定义时的作用域  而不是他执行时的作用域</code></li>
 </ul>
 <h4 id="描述new一个对象额过程"><a href="#描述new一个对象额过程" class="headerlink" title="描述new一个对象额过程"></a>描述new一个对象额过程</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> 1. 创建一个新对象</span></span><br><span class="line"><span class="comment"> 2. this指向这个新对象</span></span><br><span class="line"><span class="comment"> 3. 执行代码 即对this赋值</span></span><br><span class="line"><span class="comment"> 4. 返回this（默认）</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="comment">// return this 默认有着一行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h2><ul>
+<li>iframe 会阻塞主页面的onload事件</li>
+<li>搜索引擎的检索程序无法解读这种页面,不利于SEO</li>
+<li>iframe和主页面共享连接池, 浏览器对相同域的链接有限制,会影响页面的并行加载</li>
+<li>要使用iframe,最好是通过javascript动态给iframe的src属性赋值</li>
+</ul>
 
       
     </div>
@@ -639,7 +646,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -650,7 +657,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -661,7 +668,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -752,7 +759,7 @@ pace-activity
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript的数据类型都有什么？"><span class="nav-number">1.</span> <span class="nav-text">JavaScript的数据类型都有什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript的typeof返回哪些数据类型"><span class="nav-number">2.</span> <span class="nav-text">javascript的typeof返回哪些数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件绑定和普通事件有什么区别"><span class="nav-number">3.</span> <span class="nav-text">事件绑定和普通事件有什么区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call和apply的区别"><span class="nav-number">4.</span> <span class="nav-text">call和apply的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-onload和-document-ready区别"><span class="nav-number">5.</span> <span class="nav-text">window.onload和$(document).ready区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断数组方式"><span class="nav-number">6.</span> <span class="nav-text">判断数组方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Javascript中callee和caller的作用？"><span class="nav-number">7.</span> <span class="nav-text">Javascript中callee和caller的作用？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈谈Cookie的弊端？"><span class="nav-number">8.</span> <span class="nav-text">谈谈Cookie的弊端？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哪些操作会造成内存泄漏？"><span class="nav-number">9.</span> <span class="nav-text">哪些操作会造成内存泄漏？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript-中的垃圾回收机制？"><span class="nav-number">10.</span> <span class="nav-text">javascript 中的垃圾回收机制？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取非行间样式"><span class="nav-number">11.</span> <span class="nav-text">获取非行间样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件委托是什么"><span class="nav-number">12.</span> <span class="nav-text">事件委托是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原生ajax步骤"><span class="nav-number">13.</span> <span class="nav-text">原生ajax步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请解释一下-JavaScript-的同源策略。"><span class="nav-number">14.</span> <span class="nav-text">请解释一下 JavaScript 的同源策略。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？"><span class="nav-number">15.</span> <span class="nav-text">一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是伪数组？如何将伪数组转化为标准数组？"><span class="nav-number">16.</span> <span class="nav-text">什么是伪数组？如何将伪数组转化为标准数组？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于javascript中apply-和call-方法的区别？"><span class="nav-number">17.</span> <span class="nav-text">关于javascript中apply()和call()方法的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用的事件侦听器函数"><span class="nav-number">18.</span> <span class="nav-text">通用的事件侦听器函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript继承的方式？"><span class="nav-number">19.</span> <span class="nav-text">javascript继承的方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何理解闭包-闭包作用是什么、优缺点？"><span class="nav-number">20.</span> <span class="nav-text">如何理解闭包?闭包作用是什么、优缺点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用js将字符串str的所有单词的首字母大写"><span class="nav-number">21.</span> <span class="nav-text">用js将字符串str的所有单词的首字母大写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#“use-strict”-严格模式有哪些问题"><span class="nav-number">22.</span> <span class="nav-text">“use strict” 严格模式有哪些问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈和队列的区别"><span class="nav-number">23.</span> <span class="nav-text">栈和队列的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈和堆的区别"><span class="nav-number">24.</span> <span class="nav-text">栈和堆的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">25.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#描述new一个对象额过程"><span class="nav-number">26.</span> <span class="nav-text">描述new一个对象额过程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript的数据类型都有什么？"><span class="nav-number">1.</span> <span class="nav-text">JavaScript的数据类型都有什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript的typeof返回哪些数据类型"><span class="nav-number">2.</span> <span class="nav-text">javascript的typeof返回哪些数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件绑定和普通事件有什么区别"><span class="nav-number">3.</span> <span class="nav-text">事件绑定和普通事件有什么区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call和apply的区别"><span class="nav-number">4.</span> <span class="nav-text">call和apply的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-onload和-document-ready区别"><span class="nav-number">5.</span> <span class="nav-text">window.onload和$(document).ready区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断数组方式"><span class="nav-number">6.</span> <span class="nav-text">判断数组方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Javascript中callee和caller的作用？"><span class="nav-number">7.</span> <span class="nav-text">Javascript中callee和caller的作用？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谈谈Cookie的弊端？"><span class="nav-number">8.</span> <span class="nav-text">谈谈Cookie的弊端？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哪些操作会造成内存泄漏？"><span class="nav-number">9.</span> <span class="nav-text">哪些操作会造成内存泄漏？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript-中的垃圾回收机制？"><span class="nav-number">10.</span> <span class="nav-text">javascript 中的垃圾回收机制？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取非行间样式"><span class="nav-number">11.</span> <span class="nav-text">获取非行间样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件委托是什么"><span class="nav-number">12.</span> <span class="nav-text">事件委托是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原生ajax步骤"><span class="nav-number">13.</span> <span class="nav-text">原生ajax步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请解释一下-JavaScript-的同源策略。"><span class="nav-number">14.</span> <span class="nav-text">请解释一下 JavaScript 的同源策略。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？"><span class="nav-number">15.</span> <span class="nav-text">一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是伪数组？如何将伪数组转化为标准数组？"><span class="nav-number">16.</span> <span class="nav-text">什么是伪数组？如何将伪数组转化为标准数组？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于javascript中apply-和call-方法的区别？"><span class="nav-number">17.</span> <span class="nav-text">关于javascript中apply()和call()方法的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用的事件侦听器函数"><span class="nav-number">18.</span> <span class="nav-text">通用的事件侦听器函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript继承的方式？"><span class="nav-number">19.</span> <span class="nav-text">javascript继承的方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何理解闭包-闭包作用是什么、优缺点？"><span class="nav-number">20.</span> <span class="nav-text">如何理解闭包?闭包作用是什么、优缺点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用js将字符串str的所有单词的首字母大写"><span class="nav-number">21.</span> <span class="nav-text">用js将字符串str的所有单词的首字母大写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#“use-strict”-严格模式有哪些问题"><span class="nav-number">22.</span> <span class="nav-text">“use strict” 严格模式有哪些问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈和队列的区别"><span class="nav-number">23.</span> <span class="nav-text">栈和队列的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈和堆的区别"><span class="nav-number">24.</span> <span class="nav-text">栈和堆的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">25.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#描述new一个对象额过程"><span class="nav-number">26.</span> <span class="nav-text">描述new一个对象额过程</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#iframe"><span class="nav-number"></span> <span class="nav-text">iframe</span></a></li></div>
             
 
           </div>

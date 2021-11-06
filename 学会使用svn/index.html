@@ -125,7 +125,7 @@ pace-activity
 <meta property="og:image" content="http://ittew.cn/image/svn/svn11.png">
 <meta property="og:image" content="http://ittew.cn/image/svn/svn12.png">
 <meta property="og:image" content="http://ittew.cn/image/svn/svn13.png">
-<meta property="og:updated_time" content="2021-01-12T14:28:09.809Z">
+<meta property="og:updated_time" content="2021-10-28T12:26:46.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学会使用svn">
 <meta name="twitter:description" content="svn全称Subversion，是代码版本管理软件，管理着随时间改变的数据。这些数据放置在一个中央资料档案库 (repository) 中。 这个档案库很像一个普通的文件服务器, 不过它会记住每一次文件的变动。这样你就可以把档案恢复到旧的版本, 或是浏览文件的变动历史。 许多人会把版本控制系統想像成某种 “时光机器”。">
@@ -409,7 +409,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k 字
+                  1.5k 字
                 </span>
               
 
@@ -456,6 +456,14 @@ pace-activity
 <p><code>SVN冲突: 多个程序员对同一文件,同一处代码进行修改,在他们提交的时候会产生冲突</code></p>
 </blockquote>
 <p><img src="/image/svn/svn12.png" alt="svn12"><br><code>如上图，test_conflict.py文件发生了冲突，并且多出了几个文件，其中.mine是我本地修改了还没提交的版本，.r2文件是上一个版本的文件，.r1是上上个版本的文件。</code><br><img src="/image/svn/svn13.png" alt="svn13"><br><code>Edit confilicts：</code>修改冲突，可以对冲突的行进行内容选择，后面我们详细说。<br><code>Mark as resolved：</code>直接标记为已解决，这样会删除.mine、.r1、.r2这些文件，但这只是标记，如果你直接标记为解决，实际上文件还是冲突的，只是状态修复了。<br><code>Resolve conflict using &#39;theirs&#39;：</code>使用他的提交覆盖我的修改来解决冲突。如果你的修改不需要提交，你可以方便的选择这个。<br><code>Resolve conflict using &#39;mine&#39;：</code>使用我本地的版本覆盖他的来解决冲突。如果对方提交的代码没什么用，你可以直接使用这个来解决。</p>
+<h2 id="SVN-锁机制"><a href="#SVN-锁机制" class="headerlink" title="SVN 锁机制"></a>SVN 锁机制</h2><ol>
+<li><code>对于某些重要的文件不允许别人修改可以对其添加锁，防止其他人修改提交</code></li>
+<li><code>可以避免多人同时修改某文件产生冲突，添加锁后提交，修改完成提交并解锁</code></li>
+</ol>
+<ul>
+<li>添加锁 <code>svn lock xxx.html</code> 或 选中文件后在右键菜单中选择<code>Get lock</code></li>
+<li>解锁 <code>svn unlock xxx.html</code> 或 选中文件后在右键菜单中选择<code>Realease lock</code></li>
+</ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://blog.csdn.net/dily3825002/article/details/6717076" target="_blank" rel="noopener">SVN使用方法，简易图解</a><br><a href="https://blog.csdn.net/clementad/article/details/45199703" target="_blank" rel="noopener">图解SVN</a><br><a href="https://tortoisesvn.net/docs/nightly/TortoiseSVN_zh_CN/" target="_blank" rel="noopener">SVN简易文档</a></p>
 
       
@@ -592,7 +600,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -603,7 +611,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -614,7 +622,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -705,7 +713,7 @@ pace-activity
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN的作用"><span class="nav-number">1.</span> <span class="nav-text">SVN的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN下载"><span class="nav-number">2.</span> <span class="nav-text">SVN下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN服务器端安装"><span class="nav-number">3.</span> <span class="nav-text">SVN服务器端安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN客户端安装"><span class="nav-number">4.</span> <span class="nav-text">SVN客户端安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从SVN服务器检出代码"><span class="nav-number">5.</span> <span class="nav-text">从SVN服务器检出代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN图标集含义"><span class="nav-number">6.</span> <span class="nav-text">SVN图标集含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN更新文件"><span class="nav-number">7.</span> <span class="nav-text">SVN更新文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN提交更新-SVN-Commit"><span class="nav-number">8.</span> <span class="nav-text">SVN提交更新(SVN Commit)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN新增文件"><span class="nav-number">9.</span> <span class="nav-text">SVN新增文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN删除文件"><span class="nav-number">10.</span> <span class="nav-text">SVN删除文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销更改（Revert）"><span class="nav-number">11.</span> <span class="nav-text">撤销更改（Revert）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看历史文件（Show-log）"><span class="nav-number">12.</span> <span class="nav-text">查看历史文件（Show log）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN版本回退"><span class="nav-number">13.</span> <span class="nav-text">SVN版本回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN冲突解决"><span class="nav-number">14.</span> <span class="nav-text">SVN冲突解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">15.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN的作用"><span class="nav-number">1.</span> <span class="nav-text">SVN的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN下载"><span class="nav-number">2.</span> <span class="nav-text">SVN下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN服务器端安装"><span class="nav-number">3.</span> <span class="nav-text">SVN服务器端安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN客户端安装"><span class="nav-number">4.</span> <span class="nav-text">SVN客户端安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从SVN服务器检出代码"><span class="nav-number">5.</span> <span class="nav-text">从SVN服务器检出代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN图标集含义"><span class="nav-number">6.</span> <span class="nav-text">SVN图标集含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN更新文件"><span class="nav-number">7.</span> <span class="nav-text">SVN更新文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN提交更新-SVN-Commit"><span class="nav-number">8.</span> <span class="nav-text">SVN提交更新(SVN Commit)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN新增文件"><span class="nav-number">9.</span> <span class="nav-text">SVN新增文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN删除文件"><span class="nav-number">10.</span> <span class="nav-text">SVN删除文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销更改（Revert）"><span class="nav-number">11.</span> <span class="nav-text">撤销更改（Revert）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看历史文件（Show-log）"><span class="nav-number">12.</span> <span class="nav-text">查看历史文件（Show log）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN版本回退"><span class="nav-number">13.</span> <span class="nav-text">SVN版本回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN冲突解决"><span class="nav-number">14.</span> <span class="nav-text">SVN冲突解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN-锁机制"><span class="nav-number">15.</span> <span class="nav-text">SVN 锁机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">16.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>

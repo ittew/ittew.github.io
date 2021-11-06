@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="git cherry-pick可以理解为”挑拣”提交，它会获取某一个分支的单笔提交，并作为一个新的提交引入到你当前分支上。 当我们需要在master合入dev某次分支的提交时，我们不能对整个dev分支进行合并，因为可能有未开发完成的内容，而是只想将dev某一次提交合入到master分支上，那么就要使用git cherry-pick了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-12T14:28:09.757Z">
+<meta property="og:updated_time" content="2021-10-28T12:26:46.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git cherry-pick、git rebase、git revert">
 <meta name="twitter:description" content="git cherry-pick可以理解为”挑拣”提交，它会获取某一个分支的单笔提交，并作为一个新的提交引入到你当前分支上。 当我们需要在master合入dev某次分支的提交时，我们不能对整个dev分支进行合并，因为可能有未开发完成的内容，而是只想将dev某一次提交合入到master分支上，那么就要使用git cherry-pick了。">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  890 字
+                  1.2k 字
                 </span>
               
 
@@ -433,10 +433,26 @@ pace-activity
 <li>取消<code>cherry-pick</code> 当前分支恢复到cherry-pick前的状态，没有改变。</li>
 </ul>
 <h5 id="从一个分支cherry-pick多个commit"><a href="#从一个分支cherry-pick多个commit" class="headerlink" title="从一个分支cherry-pick多个commit"></a>从一个分支cherry-pick多个commit</h5><ul>
-<li>想在该分支合并多个<code>commit</code>提交时, 只需要在commitId中添加<code>两个点..</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// git cherry-pick commitId1..conmmitId5</span></span><br><span class="line"><span class="comment">// 注意 此时合并的commit 不包括第一个commitiId 只合并 conmmitId2到conmmitId5</span></span><br></pre></td></tr></table></figure>
+<li><p>想在该分支合并多个连续的<code>commit</code>提交时, 只需要在commitId中添加<code>两个点..</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// git cherry-pick commitId1..conmmitId5</span></span><br><span class="line"><span class="comment">// 注意 此时合并的commit 不包括第一个commitiId 只合并 conmmitId2到conmmitId5</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>想在该分支合并多个不连续<code>commit</code>提交时, 将commitId用空格隔开即可`</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// git cherry-pick commitId1 conmmitId3</span></span><br><span class="line"><span class="comment">// 注意 此时合并 conmmitId1 conmmitId3 到当前分支</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h2><h2 id="git-revert-撤销某个已经提交的的快照"><a href="#git-revert-撤销某个已经提交的的快照" class="headerlink" title="git revert 撤销某个已经提交的的快照"></a>git revert 撤销某个已经提交的的快照</h2><p><code>和reset 重置到某个指定版本不一样。它是在提交记录最后面加上一个撤销上次更改的新提交，而不是从项目历史中移除这个提交，这避免了 Git 丢失项目历史。</code></p>
+<h2 id="git-rebase-变基-使提交记录更简洁"><a href="#git-rebase-变基-使提交记录更简洁" class="headerlink" title="git rebase 变基(使提交记录更简洁)"></a>git rebase 变基(使提交记录更简洁)</h2><ul>
+<li><code>将本地未push到远程的多条commit提交记录合并成一条记录提交到远程</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// git rebase -i 将本地的多次提交合并为一个，以简化提交历史</span></span><br><span class="line"><span class="comment">// git rebase -i HEAD~n 将本地的n次提交合并为一个，以简化提交历史</span></span><br><span class="line"><span class="comment">// 在弹出的交互式界面中完成合并操作 将需要合并的commit选择s操作合并</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>不要通过rebase对任何已经提交到远程公共仓库中的commit进行修改（你自己一个人玩的分支除外）</code><br><a href="https://www.jianshu.com/p/4a8f4af4e803" target="_blank" rel="noopener">rebase 用法小结</a></p>
+<ul>
+<li><p>使用<code>git pull --rebase</code>可以避免无用的<code>Merge branch xxxbranch of xxx into xxxbranch</code><br><code>在你开发提交后未push到远程时，如果其他人提交了远程记录，当你在push时，需要先git pull拉取代码，如果无冲突，再push到远程后，可以在提交记录中发现有一条类似 Merge branch xxxbranch of xxx into xxxbranch的体积记录，显然不太美观，最好的操作是使用git pull --rebase进行变基拉取代码，再提交时，就不会产生Merge这种无用的提交信息，如果有冲突需要先解决冲突再push</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// git fetch + git rebase  替换 git pull 减少分支的分叉</span></span><br><span class="line">git fetch origin dev</span><br><span class="line">git rebase origin/dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>当使用git rebase产生冲突时，需要先解决冲突，然后按照操作 git rebase --continue 继续执行合并提交记录</code></p>
+</li>
+</ul>
+<h2 id="git-revert-撤销某个已经提交的的快照"><a href="#git-revert-撤销某个已经提交的的快照" class="headerlink" title="git revert 撤销某个已经提交的的快照"></a>git revert 撤销某个已经提交的的快照</h2><p><code>和reset 重置到某个指定版本不一样。它是在提交记录最后面加上一个撤销上次更改的新提交，而不是从项目历史中移除这个提交，这避免了 Git 丢失项目历史。</code></p>
 <ul>
 <li><code>git revert HEAD</code> 生成一个撤销最近的一次提交的新提交</li>
 <li><code>git revert HEAD^</code> 生成一个撤销最近一次提交的上一次提交的新提交</li>
@@ -444,20 +460,6 @@ pace-activity
 <li><code>git revert HEAD~n</code> 生成一个撤销最近一次提交的上n次提交的新提交</li>
 <li><code>git revert &lt;commit_id&gt;</code> 生成一个撤销指定提交版本的新提交<br><code>revert（撤销）是撤销公共提交的安全方式，reset（重设/回退）是重设/回退本地更改。因为两个命令的目的不同，它们的实现也不一样：重设完全地移除了一堆更改，而撤销保留了原来的更改，用一个新的提交来实现撤销。千万不要用 git reset 回退已经被推送到公共仓库上的 提交，它只适用于回退本地修改（从未提交到公共仓库中）。如果你需要修复一个公共提交，最好使用 git revert。</code></li>
 </ul>
-<h2 id="git项目关联的三种方式"><a href="#git项目关联的三种方式" class="headerlink" title="git项目关联的三种方式"></a>git项目关联的三种方式</h2><ol>
-<li>本地新建好 Git 项目，然后关联远程仓库`</li>
-</ol>
-<ul>
-<li><code>git init</code> 初始化一个Git仓库</li>
-<li><code>git add .</code> 将文件添加到暂存区</li>
-<li><code>git commit -m &quot;提交&quot;</code> 提交暂存区文件</li>
-<li><code>git remote add origin &lt;git-repo-url&gt;</code> 关联远程仓库</li>
-<li><code>git push -u origin master</code> 推送到远程仓库</li>
-</ul>
-<ol start="2">
-<li>已建好远程仓库 然后clone到本地<br><code>git clone &lt;git-repo-url&gt;</code></li>
-<li>将已使用git管理但未关联远程的项目 和指定的远程仓库关联<br><code>git remote add origin git@github.com:ittew/tetsts.git</code><br><code>git push -u origin master</code></li>
-</ol>
 
       
     </div>
@@ -593,7 +595,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -604,7 +606,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -615,7 +617,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -706,7 +708,7 @@ pace-activity
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-cherry-pick-挑拣式提交"><span class="nav-number">1.</span> <span class="nav-text">git cherry-pick 挑拣式提交</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本语法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-cherry-pick-commitid"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">git cherry-pick commitid</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-cherry-pick-–quit"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">git cherry-pick –quit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-cherry-pick-–abort"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">git cherry-pick –abort</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#从一个分支cherry-pick多个commit"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">从一个分支cherry-pick多个commit</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase"><span class="nav-number">2.</span> <span class="nav-text">git rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert-撤销某个已经提交的的快照"><span class="nav-number">3.</span> <span class="nav-text">git revert 撤销某个已经提交的的快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git项目关联的三种方式"><span class="nav-number">4.</span> <span class="nav-text">git项目关联的三种方式</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-cherry-pick-挑拣式提交"><span class="nav-number">1.</span> <span class="nav-text">git cherry-pick 挑拣式提交</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本语法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-cherry-pick-commitid"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">git cherry-pick commitid</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-cherry-pick-–quit"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">git cherry-pick –quit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-cherry-pick-–abort"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">git cherry-pick –abort</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#从一个分支cherry-pick多个commit"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">从一个分支cherry-pick多个commit</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase-变基-使提交记录更简洁"><span class="nav-number">2.</span> <span class="nav-text">git rebase 变基(使提交记录更简洁)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert-撤销某个已经提交的的快照"><span class="nav-number">3.</span> <span class="nav-text">git revert 撤销某个已经提交的的快照</span></a></li></div>
             
 
           </div>

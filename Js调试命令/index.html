@@ -118,7 +118,7 @@ pace-activity
 <meta property="og:image" content="http://ittew.cn/image/console/console10.png">
 <meta property="og:image" content="http://ittew.cn/image/console/console11.png">
 <meta property="og:image" content="http://ittew.cn/image/console/debugger1.png">
-<meta property="og:updated_time" content="2021-01-25T05:47:59.216Z">
+<meta property="og:updated_time" content="2021-10-28T12:26:46.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js调试命令">
 <meta name="twitter:description" content="Console对象提供对浏览器控制台的接入。不同浏览器上它的工作方式是不一样的。Console 对象可以在任何全局对象中访问，如 Window。它被浏览器定义为 Window.Console，也可被简单的 Console 调用。">
@@ -402,7 +402,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  815 字
+                  845 字
                 </span>
               
 
@@ -450,14 +450,14 @@ pace-activity
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.count(<span class="string">'运行次数：'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/image/console/console8.png" alt="CONSOLE1"></p>
 <h4 id="计时功能"><a href="#计时功能" class="headerlink" title="计时功能"></a>计时功能</h4><ul>
-<li>使用 <code>Console.time()</code>和 <code>Console.timeEnd()</code>包裹需要计时的代码片段，输出运行这段代码的事件。</li>
+<li>使用 <code>Console.time()</code>和 <code>Console.timeEnd()</code>包裹需要计时的代码片段，输出运行这段代码消耗的时间。</li>
 </ul>
 <ol>
-<li><code>Console.time()</code>中的参数作为计时器的标识，具有唯一性。</li>
-<li><code>Console.timeEnd()</code>中的参数来结束此标识的计时器，并以毫秒为单位返回运行时间。</li>
+<li><code>Console.time(&#39;登录用时&#39;)</code>中的参数作为计时器的标识，具有唯一性。</li>
+<li><code>Console.timeEnd(&#39;登录用时&#39;)</code>中的参数来结束此标识的计时器，并以毫秒为单位返回运行时间。</li>
 <li>最多同时运行 10000 个计时器。</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'Chrome中循环1000次的时间'</span>)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'Chrome中循环1000次的时间'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// console.time(参数标识) 必须和 console.timeEnd(参数) 一致</span></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'Chrome中循环1000次的时间'</span>)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'Chrome中循环1000次的时间'</span>)</span><br></pre></td></tr></table></figure>
 <p><img src="/image/console/console10.png" alt="CONSOLE1"></p>
 <h4 id="Console-log"><a href="#Console-log" class="headerlink" title="Console.log()"></a>Console.log()</h4><ul>
 <li>最后再来介绍一下强大的 <code>Console.log()</code>，这个方法有很多的用法（其他输出方法的用法，如<code>error()</code>等，可以参照<code>log()</code>使用）。提示输出 可以再输出的对象、变量前加上提示信息，增加辨识度。</li>
@@ -604,7 +604,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -615,7 +615,7 @@ pace-activity
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -626,7 +626,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
