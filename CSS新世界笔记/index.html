@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CSS新世界是知名博主张鑫旭CSS世界三部曲的最后一部，主要讲述CSS3及其之后很多实用的新特性，介绍了很多潜藏的特性和有用的细节。CSS世界介绍的是CSS2.1规范及其之前内容，CSS选择器世界介绍的是CSS LV1-LV4的选择器知识，CSS新世界介绍的是CSS3及其之后的知识。">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css新世界笔记">
+<meta property="og:url" content="http://ittew.cn/CSS新世界笔记/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="CSS新世界是知名博主张鑫旭CSS世界三部曲的最后一部，主要讲述CSS3及其之后很多实用的新特性，介绍了很多潜藏的特性和有用的细节。CSS世界介绍的是CSS2.1规范及其之前内容，CSS选择器世界介绍的是CSS LV1-LV4的选择器知识，CSS新世界介绍的是CSS3及其之后的知识。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2022-04-27T12:45:37.844Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css新世界笔记">
+<meta name="twitter:description" content="CSS新世界是知名博主张鑫旭CSS世界三部曲的最后一部，主要讲述CSS3及其之后很多实用的新特性，介绍了很多潜藏的特性和有用的细节。CSS世界介绍的是CSS2.1规范及其之前内容，CSS选择器世界介绍的是CSS LV1-LV4的选择器知识，CSS新世界介绍的是CSS3及其之后的知识。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/CSS新世界笔记/">
+
+
+
+
+
+  <title>css新世界笔记 | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/CSS新世界笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">css新世界笔记</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-01T14:21:14+08:00">
+                2022-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.4k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>CSS新世界是知名博主张鑫旭CSS世界三部曲的最后一部，主要讲述CSS3及其之后很多实用的新特性，介绍了很多潜藏的特性和有用的细节。CSS世界介绍的是CSS2.1规范及其之前内容，CSS选择器世界介绍的是CSS LV1-LV4的选择器知识，CSS新世界介绍的是CSS3及其之后的知识。<br><a id="more"></a></p>
+<h2 id="CSS基础知识"><a href="#CSS基础知识" class="headerlink" title="CSS基础知识"></a>CSS基础知识</h2><ul>
+<li>CSS全局关键字属性值<ul>
+<li><code>inherit 继承关键字</code> 实现属性继承，如<code>input { font-family: inherit;height:inherit }</code></li>
+<li><code>initial 初始关键字</code> 适合用在需要重置某些CSS样式，但又不记得初始值的场景，如<code>ul { font-size: 14px } ul li:last-child { font-size: initial }</code></li>
+<li><code>unset 不固定值关键字</code> 只有配合all属性使用才有意义，批量重置内置样式，如<code>dialog { all: unset }</code></li>
+<li><code>revert 恢复关键字</code> 让当前元素的样式还原成浏览器内置的样式，如<code>ol { list-style-type: repeat }</code></li>
+</ul>
+</li>
+<li><code>@supports规则用来检测当前浏览器是否支持某个CSS新特性</code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="comment">/* 支持网格布局 */</span></span></span><br><span class="line"><span class="css">@<span class="keyword">supports</span> (display:grid) &#123; <span class="selector-class">.item</span> &#123; <span class="attribute">background</span>:red &#125; &#125;</span></span><br><span class="line"><span class="css"><span class="comment">/* 不支持网格布局 */</span></span></span><br><span class="line"><span class="css">@<span class="keyword">supports</span> not (display:grid) &#123; <span class="selector-class">.item</span> &#123; <span class="attribute">background</span>:red &#125; &#125;</span></span><br><span class="line"><span class="css"><span class="comment">/* 同时支持弹性布局和网格布局 */</span></span></span><br><span class="line"><span class="css">@<span class="keyword">supports</span> (display:flex) and (display:grid) &#123; <span class="selector-class">.item</span> &#123; <span class="attribute">background</span>:red &#125; &#125;</span></span><br><span class="line"><span class="css"><span class="comment">/* 支持弹性布局或网格布局 */</span></span></span><br><span class="line"><span class="css">@<span class="keyword">supports</span> (display:flex) or (display:grid) &#123; <span class="selector-class">.item</span> &#123; <span class="attribute">background</span>:red &#125; &#125;</span></span><br><span class="line"><span class="css"><span class="comment">/* 支持弹性布局 但不支持网格布局 */</span></span></span><br><span class="line"><span class="css">@<span class="keyword">supports</span> (display:flex) and (not (display:grid)) &#123; <span class="selector-class">.item</span> &#123; <span class="attribute">background</span>:red &#125; &#125;</span></span><br><span class="line"><span class="css"><span class="comment">/* @supports规则的大括号里 可以包含其他@规则*/</span></span></span><br><span class="line"><span class="css">@<span class="keyword">supports</span> (display:flex) &#123;</span></span><br><span class="line"><span class="css">  @<span class="keyword">media</span> screen and (max-width: <span class="number">750px</span>) &#123;&#125;</span></span><br><span class="line"><span class="css">  @<span class="keyword">supports</span> (animation: none) &#123; <span class="selector-class">.box</span> &#123; <span class="attribute">animation</span>: skip &#125;&#125;</span></span><br><span class="line"><span class="css">  @<span class="keyword">keyframes</span> skip &#123;&#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 浏览器还提供了CSS.supports()方法，用来在javascript代码中检测</span></span><br><span class="line"><span class="comment">当前浏览器是否支持某个CSS特性--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript"><span class="comment">// CSS.supports(propertyName, value)</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">if</span> (<span class="built_in">window</span>.CSS || CSS.supports || CSS.supports(<span class="string">'position'</span>, <span class="string">'sticky'</span>))&#123;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>).style.position = <span class="string">'sticky'</span></span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="增强的CSS属性"><a href="#增强的CSS属性" class="headerlink" title="增强的CSS属性"></a>增强的CSS属性</h2><ul>
+<li><p><code>fit-content关键字 实现元素尺寸的自适应</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 设置元素的width或height为fit-content关键字后，元素的尺寸就是里面内容的尺寸  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 使用width:fit-content加margin:0 auto实现单行文字居中，多行文字居左对齐 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>单行文字居中，多行文字居左对齐<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123; <span class="attribute">width</span>:fit-content; <span class="attribute">margin</span>:<span class="number">0</span> auto; &#125;</span></span><br><span class="line"><span class="css"><span class="comment">/* fit-content关键字的兼容性处理 IE浏览器、Edge79之前不支持 但可以用在移动端 */</span></span></span><br><span class="line"><span class="css"><span class="selector-class">.ex</span> &#123; <span class="attribute">width</span>:-webkit-fit-content; <span class="attribute">width</span>:-moz-fit-content;<span class="attribute">width</span>:fit-content; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>position:sticky 黏性定位</code></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">黏性定位：当元素在屏幕内时，随屏幕滚动;当元素滚出屏幕时，元素变成固定定位</span><br><span class="line">黏性定位过去都是使用javascript实现，在现代浏览器可以使用<span class="built_in">position</span>: sticky实现</span><br><span class="line">在使用<span class="built_in">position</span>: sticky时，务必保证黏性定位元素的祖先元素没有可滚动元素</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>currentColor 关键字</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- currentColor 表示当前元素所使用的color属性的计算值  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>currentColor 使用当前color相同的颜色<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123; <span class="attribute">color</span>: red; <span class="attribute">border</span>: <span class="number">1px</span> solid currentColor; <span class="comment">/* 边框的颜色和文字颜色一致*/</span> &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>zoom 缩放 除Firefox外其他浏览器都支持</code></p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">语法 zoom: normal | <span class="built_in">reset</span> | &lt;number&gt; | &lt;percentage&gt;</span><br><span class="line">zoom 和 <span class="built_in">scale</span> 的区别</span><br><span class="line"><span class="number">1</span>. zoom属性缩放的中心坐标是元素的左上角，且不能修改。<span class="built_in">transform</span>中的<span class="built_in">scale</span>缩放默认的中心坐标是元素的中心点</span><br><span class="line"><span class="number">2</span>. zoom属性缩放会改变元素占据的尺寸空间，<span class="built_in">transform</span>中的<span class="built_in">scale</span>缩放不会改变元素占据的尺寸</span><br><span class="line"><span class="number">3</span>. zoom属性不会改变元素的层级，不会影响元素的fixed定位</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>backface-visiblility 元素背面是否可见</code></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">backface-visiblility: </span>visible 默认值  元素背面是可见的</span><br><span class="line"><span class="keyword">backface-visiblility: </span>hidden  元素背面是不可见的</span><br><span class="line">常用于transform变换中，是否要隐藏元素的背面，使变换效果更好</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>justify-content: space-evenly 每个flex子项空白间距相等</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>prefers-color-scheme 用来检测当前网页是否处于深色(黑暗)模式的媒体属性</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">/* 支持三个属性：</span></span><br><span class="line"><span class="undefined">dark 系统倾向于使用深色模式</span></span><br><span class="line"><span class="undefined">light 系统倾向于使用浅色模式</span></span><br><span class="line"><span class="undefined">no-perference 系统未告知用户使用的颜色方案 */</span></span><br><span class="line"><span class="css"><span class="comment">/* 深色模式 */</span></span></span><br><span class="line"><span class="css">@<span class="keyword">media</span> (prefers-color-scheme: light) &#123;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">body</span>&#123; <span class="attribute">color</span>:<span class="number">#333</span>; <span class="attribute">background-color</span>: <span class="number">#fff</span>; &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="css"><span class="comment">/* 浅色模式 */</span></span></span><br><span class="line"><span class="css">@<span class="keyword">media</span> (prefers-color-scheme: dark) &#123;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">body</span>&#123; <span class="attribute">color</span>:<span class="number">#fff</span>; <span class="attribute">background-color</span>: <span class="number">#000</span>; &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="css"><span class="comment">/* 快速对现有网页进行深色模式改造的技巧 */</span></span></span><br><span class="line"><span class="undefined">body &#123;</span></span><br><span class="line"><span class="css">  <span class="comment">/* 使用filter:invert(1)滤镜对文字颜色和背景色等进行反相 */</span></span></span><br><span class="line"><span class="undefined">  filter: invert(1) hue-rotate(180deg);</span></span><br><span class="line"><span class="css">  <span class="selector-tag">background-color</span>: <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="css"><span class="comment">/* 对图片进行再次反相将图片还原成真实颜色 避免应body反相后 图片颜色出现异常*/</span></span></span><br><span class="line"><span class="css"><span class="selector-tag">img</span>&#123; <span class="attribute">filter</span>: <span class="built_in">invert</span>(1) <span class="built_in">hue-rotate</span>(180deg); &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript"><span class="comment">// 判断当前手机浏览器是否支持深色或浅色模式</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">// 是否支持 prefers-color-scheme 属性</span></span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">window</span>.matchMedia(<span class="string">'(prefers-color-scheme)'</span>).matches) <span class="comment">// true</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">// 是否是浅色模式 prefers-color-scheme: light</span></span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">window</span>.matchMedia(<span class="string">'(prefers-color-scheme: light)'</span>).matches) <span class="comment">// true</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">// 是否是深色模式 prefers-color-scheme: dark</span></span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">window</span>.matchMedia(<span class="string">'(prefers-color-scheme: dark)'</span>).matches) <span class="comment">// false</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>touch-action: manipulation 取消移动端点击事件300ms延迟和双击行为</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* touch-action: manipulation 只允许浏览器进行滚动和持续缩放操作 */</span></span><br><span class="line"><span class="selector-tag">html</span> &#123; <span class="attribute">touch-action</span>: manipulation; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>scroll-behavior: smooth 平滑滚动 safari不支持</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">scroll-behavior</span>: smooth; &#125; <span class="comment">/* 平滑滚动 */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>overscroll-behavior: contain 滚动嵌套时，终止外层滚动 safari不支持</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 局部滚动的滚动条滚动到底部边缘时，再继续滚动时，外部容器不会再跟滚动 */</span></span><br><span class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">overscroll-behavior</span>: contain;<span class="attribute">-ms-overscroll-behavior</span>: contain; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>pointer-events: none 元素无法点击</code></p>
+</li>
+<li><code>caret-color: red 更改输入光标的颜色</code><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 设置输入光标的颜色  也可以用于设置了 contenteditable的html标签 */</span></span><br><span class="line"><span class="selector-tag">input</span>&#123; <span class="attribute">caret-color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="简单实用的css函数"><a href="#简单实用的css函数" class="headerlink" title="简单实用的css函数"></a>简单实用的css函数</h2><ul>
+<li><p><code>calc()函数的使用</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">支持“+”、“-”、“*” 和 “/”四则运算；</span><br><span class="line">可以使用百分比、px、em、rem等单位，不能使用当前CSS属性不支持的单位，可以混合使用各种单位进行计算；</span><br><span class="line">表达式中有“+”和“-”时，其前后必须要有空格，如<span class="string">"widht: calc(12%+5em)"</span>这种没有空格的写法是错误的；</span><br><span class="line">表达式中有“*”和“/”时，其前后可以没有空格，但建议留有空格。</span><br><span class="line"><span class="selector-class">.elm</span> &#123; <span class="attribute">width</span>: calc(<span class="number">100%</span> - <span class="number">20px</span> + <span class="number">5px</span>*<span class="number">2</span>)) &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>min()函数的使用</code></p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">min</span>(<span class="keyword">expression</span> [, <span class="keyword">expression</span>]) 支持一个或多个表达式，使用逗号分隔，将最小表达式的值作为返回结果</span><br><span class="line">实现网页在大于等于<span class="number">1024</span>px的PC浏览器显示宽度为<span class="number">1024</span>px，在小于<span class="number">1024</span>px时显示宽度为<span class="number">100</span>%</span><br><span class="line">el &#123; width: <span class="number">1024</span>px; <span class="keyword">max</span>-width:<span class="number">100</span>% &#125; 使用<span class="keyword">min</span>()函数 el &#123; <span class="keyword">min</span>(<span class="number">1024</span>px, <span class="number">100</span>%) &#125;</span><br><span class="line"><span class="keyword">min</span>()用来限制最大值（即最大宽度值为<span class="number">1024</span>px），IE和其他低版本浏览器不支持</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>max()函数的使用</code></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">max(expression [, expression]) 支持一个或多个表达式，使用逗号分隔，将最大表达式的值作为返回结果</span><br><span class="line">实现网页在小于等于<span class="number">1024</span>px的PC浏览器显示宽度为<span class="number">1024</span>px，在大于<span class="number">1024</span>px时显示宽度为<span class="number">100</span>%</span><br><span class="line">使用max()函数 el &#123; max(<span class="number">1024</span>px, <span class="number">100</span>%) &#125;</span><br><span class="line">max()用来限制最小值（即最小宽度值为<span class="number">1024</span>px），IE和其他低版本浏览器不支持</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>clamp()函数的使用</code></p>
+<figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">clamp</span>()函数的作用是返回一个区间范围的值，语法：<span class="built_in">clamp</span>(<span class="built_in">MIN</span>, VAL, <span class="built_in">MAX</span>),<span class="built_in">MIN</span>表示最小值，<span class="built_in">MAX</span>表示最大值，</span><br><span class="line">VAL表示首选值，如果VAL在<span class="built_in">MIN</span>~<span class="built_in">MAX</span>范围内，则将VAL作为返回值，如果VAL大于<span class="built_in">MAX</span>则将<span class="built_in">MAX</span>作为返回值，如果VAL</span><br><span class="line">小于<span class="built_in">MIN</span>，则将<span class="built_in">MIN</span>作为返回值。<span class="built_in">clamp</span>(<span class="built_in">MIN</span>, VAL, <span class="built_in">MAX</span>)等同于<span class="built_in">max</span>(<span class="built_in">MIN</span>, <span class="built_in">min</span>(VAL, <span class="built_in">MAX</span>))</span><br><span class="line">IE和其他低版本浏览器不支持</span><br><span class="line">&lt;button&gt;宽度自适应变化&lt;/button&gt;</span><br><span class="line">button&#123;</span><br><span class="line">  width: <span class="built_in">clamp</span>(<span class="number">100</span>px, <span class="number">50</span>%, <span class="number">600</span>px)</span><br><span class="line">&#125;</span><br><span class="line">不断改变浏览器视口的宽度，按钮宽度在<span class="number">100</span>px~<span class="number">600</span>px范围内变化，当屏幕宽度的一半大于<span class="number">600</span>px时，宽度为<span class="number">600</span>px</span><br><span class="line">当屏幕宽度的一半小于<span class="number">600</span>px时，宽度在<span class="number">200</span>px~<span class="number">600</span>px之间，当屏幕宽度的一半小于<span class="number">200</span>px时，宽度为<span class="number">200</span>px。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>env() 环境变量函数</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">环境变量env()规范的制定是源于解决‘刘海屏’和‘底部触摸黑条’的移动设备的出现</span><br><span class="line">在使用safe-area-inset-*等env的属性时，一定要设置meta信息&lt;meta name=<span class="string">"viewport"</span> <span class="attribute">content</span>=<span class="string">"viewport-fit="</span>cover<span class="string">""</span>&gt;</span><br><span class="line">使用<span class="number">4</span>个安全内边距值， 同时设置兜底尺寸，无法使用safe-area-inset-*时，会使用兜底的值</span><br><span class="line"><span class="function"><span class="title">env</span><span class="params">(safe-area-inset-top, <span class="number">20px</span>)</span></span> 距离顶部 设置顶部刘海区域安全距离</span><br><span class="line"><span class="function"><span class="title">env</span><span class="params">(safe-area-inset-right, <span class="number">1em</span>)</span></span> 距离右边</span><br><span class="line"><span class="function"><span class="title">env</span><span class="params">(safe-area-inset-bottom, <span class="number">20px</span>)</span></span> 距离底部</span><br><span class="line"><span class="function"><span class="title">env</span><span class="params">(safe-area-inset-left, <span class="number">20px</span>)</span></span> 距离左边 设置底部小黑条安全距离</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Css变量和自定义属性"><a href="#Css变量和自定义属性" class="headerlink" title="Css变量和自定义属性"></a>Css变量和自定义属性</h2><ul>
+<li><code>--变量名:值  声明css变量</code></li>
+<li><code>属性：var(--变量名)  使用css变量</code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>深浅色模式<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-pseudo">:root</span>&#123; <span class="attribute">--primary-color</span>: pink; &#125; <span class="comment">/* 声明css变量 */</span></span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span>&#123; <span class="attribute">color</span>: <span class="built_in">var</span>(--primary-color)&#125; <span class="comment">/* 使用css变量 */</span></span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span>&#123; <span class="attribute">color</span>: <span class="built_in">var</span>(--primary-color, red)&#125; <span class="comment">/* 使用 var(css变量, 备用值) 当css变量无效时 使用备用值 */</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript"><span class="comment">// 在js中设置和获取 css自定义属性</span></span></span><br><span class="line"><span class="actionscript"><span class="comment">// 只能借助 xx.style.setProperty 在js中设置 css变量</span></span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.documentElement.style.setProperty(<span class="string">'--myColor'</span>, <span class="string">'#0000ff'</span>)</span></span><br><span class="line"><span class="actionscript"><span class="comment">// 使用 getComputedStyle(document.querySelector('.box')).getPropertyValue('--myColor') 获取css变量</span></span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(getComputedStyle(<span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>)).getPropertyValue(<span class="string">'--myColor'</span>)) <span class="comment">// #0000ff</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Vue3配套的Vuex与VueRouter/" rel="next" title="Vue3配套的Vuex4与VueRouter4">
+                <i class="fa fa-chevron-left"></i> Vue3配套的Vuex4与VueRouter4
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS基础知识"><span class="nav-number">1.</span> <span class="nav-text">CSS基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增强的CSS属性"><span class="nav-number">2.</span> <span class="nav-text">增强的CSS属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单实用的css函数"><span class="nav-number">3.</span> <span class="nav-text">简单实用的css函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Css变量和自定义属性"><span class="nav-number">4.</span> <span class="nav-text">Css变量和自定义属性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

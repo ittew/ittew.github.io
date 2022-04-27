@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="npm 是Node.js的包管理工具（package manager）,npm 由三个独立的部分组成: 网站(开发者查找包,设置参数以及管理npm的主要途径)  注册表(保存每个包（package）的信息)  命令行工具(通过命令行或终端运行。开发者通过 CLI 与 npm 打交道)。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-11-06T01:09:52.752Z">
+<meta property="og:updated_time" content="2021-12-19T15:15:18.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm常用操作">
 <meta name="twitter:description" content="npm 是Node.js的包管理工具（package manager）,npm 由三个独立的部分组成: 网站(开发者查找包,设置参数以及管理npm的主要途径)  注册表(保存每个包（package）的信息)  命令行工具(通过命令行或终端运行。开发者通过 CLI 与 npm 打交道)。">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k 字
+                  1.5k 字
                 </span>
               
 
@@ -439,7 +439,8 @@ pace-activity
 <li>安装最新的依赖包 <code>npm i</code></li>
 <li><code>npm outdate</code> 查看安装包有没有版本更新</li>
 </ul>
-<h2 id="npm-run-查看-package-json中有哪些-npm-script命令"><a href="#npm-run-查看-package-json中有哪些-npm-script命令" class="headerlink" title="npm run 查看 package.json中有哪些 npm script命令"></a>npm run 查看 package.json中有哪些 npm script命令</h2><h2 id="npm-uninstall-卸载包"><a href="#npm-uninstall-卸载包" class="headerlink" title="npm uninstall 卸载包"></a>npm uninstall 卸载包</h2><h2 id="查看包信息"><a href="#查看包信息" class="headerlink" title="查看包信息"></a>查看包信息</h2><ul>
+<h2 id="npm-run-查看-package-json中有哪些-npm-script命令"><a href="#npm-run-查看-package-json中有哪些-npm-script命令" class="headerlink" title="npm run 查看 package.json中有哪些 npm script命令"></a>npm run 查看 package.json中有哪些 npm script命令</h2><h2 id="npm-uninstall-lt-包名-gt-或-npm-uni-lt-包名-gt-卸载包"><a href="#npm-uninstall-lt-包名-gt-或-npm-uni-lt-包名-gt-卸载包" class="headerlink" title="npm uninstall &lt;包名&gt; 或 npm uni &lt;包名&gt; 卸载包"></a>npm uninstall &lt;包名&gt; 或 npm uni &lt;包名&gt; 卸载包</h2><p><code>npm uninstall rimraf -g 或 npm uni rimraf -g</code></p>
+<h2 id="查看包信息"><a href="#查看包信息" class="headerlink" title="查看包信息"></a>查看包信息</h2><ul>
 <li><p><code>npm view vue 或 npm v vue</code> 查看安装包所有信息</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm  v vue</span><br><span class="line">vue@<span class="number">2.6</span><span class="number">.14</span> | MIT | <span class="string">deps:</span> none | <span class="string">versions:</span> <span class="number">360</span></span><br><span class="line"><span class="string">beta:</span> <span class="number">3.2</span><span class="number">.0</span>-beta<span class="number">.8</span>  <span class="string">csp:</span> <span class="number">1.0</span><span class="number">.28</span>-csp     <span class="string">latest:</span> <span class="number">2.6</span><span class="number">.14</span>      <span class="string">next:</span> <span class="number">3.2</span><span class="number">.21</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -473,6 +474,7 @@ pace-activity
 <li>rimraf node_modules</li>
 </ul>
 <h2 id="cmd中-set-可以查看所有的环境变量"><a href="#cmd中-set-可以查看所有的环境变量" class="headerlink" title="cmd中  set  可以查看所有的环境变量"></a>cmd中  set  可以查看所有的环境变量</h2><h2 id="npm-script-串行-或者-并行"><a href="#npm-script-串行-或者-并行" class="headerlink" title="npm script 串行 或者 并行"></a>npm script 串行 或者 并行</h2><p><code>{&quot;test&quot;: &quot;npm run lint:js &amp;&amp; npm run lint:css &amp;&amp; npm run lint:json &amp;&amp; npm run lint:markdown&quot;}</code><br>这也是让多个 npm script 串行的典型用例，实现方式也比较简单，只需要用 &amp;&amp; 符号把多条 npm script 按先后顺序串起来即可<br><code>{&quot;test&quot;: &quot;npm run lint:js &amp; npm run lint:css &amp; npm run lint:json &amp; npm run lint:markdown &amp; wait&quot;}</code><br>需要把子命令的运行从串行改成并行，实现方式更简单，把连接多条命令的 &amp;&amp; 符号替换成 &amp; 即可。<br><code>{&quot;test&quot;: &quot;npm-run-all lint:js lint:css lint:json lint:markdown&quot;} 或 {&quot;test&quot;: &quot;npm-run-all lint:*&quot;}</code><br>我们可以使用 npm-run-all 实现更轻量和简洁的多命令运行。需要安装 <code>npm i npm-run-all -D</code></p>
+<h2 id="使用–ignore-scripts解决npm-yarn安装依赖失败问题"><a href="#使用–ignore-scripts解决npm-yarn安装依赖失败问题" class="headerlink" title="使用–ignore-scripts解决npm/yarn安装依赖失败问题"></a>使用–ignore-scripts解决npm/yarn安装依赖失败问题</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! code ELIFECYCLE</span><br><span class="line">npm ERR! errno <span class="number">1</span></span><br><span class="line">npm ERR! plantomjs-prebuilt@<span class="number">2.1</span><span class="number">.14</span> install: <span class="string">`node ./build.js`</span></span><br><span class="line">npm ERR! Exit status <span class="number">1</span></span><br><span class="line">npm ERR!</span><br><span class="line">npm ERR! Failed at the plantomjs-prebuilt@<span class="number">2.1</span><span class="number">.14</span> install script.</span><br><span class="line"><span class="comment">// 可以加上参数 --ignore-scripts 再进行安装</span></span><br><span class="line">npm i plantomjs-prebuilt@<span class="number">2.1</span><span class="number">.14</span> --ignore-scripts</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -608,7 +610,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -630,7 +632,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -721,7 +723,7 @@ pace-activity
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-install-安装包-或-npm-i-包名"><span class="nav-number">1.</span> <span class="nav-text">npm install 安装包 或 npm i 包名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-ls-查看已经安装的依赖包"><span class="nav-number">2.</span> <span class="nav-text">npm ls 查看已经安装的依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-update-更新包"><span class="nav-number">3.</span> <span class="nav-text">npm update 更新包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新依赖包"><span class="nav-number">4.</span> <span class="nav-text">更新依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-run-查看-package-json中有哪些-npm-script命令"><span class="nav-number">5.</span> <span class="nav-text">npm run 查看 package.json中有哪些 npm script命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-uninstall-卸载包"><span class="nav-number">6.</span> <span class="nav-text">npm uninstall 卸载包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看包信息"><span class="nav-number">7.</span> <span class="nav-text">查看包信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-root-g-查看全局包的安装路径"><span class="nav-number">8.</span> <span class="nav-text">npm root -g 查看全局包的安装路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-init-快速创建-package-json-需要手动选择配置"><span class="nav-number">9.</span> <span class="nav-text">npm init 快速创建 package.json 需要手动选择配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-init-–yes或-y-直接跳过参数问答环节，快速生成package-json"><span class="nav-number">10.</span> <span class="nav-text">npm init –yes或-y 直接跳过参数问答环节，快速生成package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-config-list-查看npm基础配置"><span class="nav-number">11.</span> <span class="nav-text">npm config list 查看npm基础配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-config-get-prefix-获取全局安装的默认目录"><span class="nav-number">12.</span> <span class="nav-text">npm config get prefix 获取全局安装的默认目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-config-set-key-value-设置npm镜像和node-sass"><span class="nav-number">13.</span> <span class="nav-text">npm config set key value 设置npm镜像和node-sass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-i-g与-npm-i-S-或-npm-i-D-区别"><span class="nav-number">14.</span> <span class="nav-text">npm i -g与 npm i -S 或 npm i -D 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布自己的模块包"><span class="nav-number">15.</span> <span class="nav-text">发布自己的模块包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速删除node-modules依赖或文件"><span class="nav-number">16.</span> <span class="nav-text">快速删除node_modules依赖或文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmd中-set-可以查看所有的环境变量"><span class="nav-number">17.</span> <span class="nav-text">cmd中  set  可以查看所有的环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-script-串行-或者-并行"><span class="nav-number">18.</span> <span class="nav-text">npm script 串行 或者 并行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-install-安装包-或-npm-i-包名"><span class="nav-number">1.</span> <span class="nav-text">npm install 安装包 或 npm i 包名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-ls-查看已经安装的依赖包"><span class="nav-number">2.</span> <span class="nav-text">npm ls 查看已经安装的依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-update-更新包"><span class="nav-number">3.</span> <span class="nav-text">npm update 更新包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新依赖包"><span class="nav-number">4.</span> <span class="nav-text">更新依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-run-查看-package-json中有哪些-npm-script命令"><span class="nav-number">5.</span> <span class="nav-text">npm run 查看 package.json中有哪些 npm script命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-uninstall-lt-包名-gt-或-npm-uni-lt-包名-gt-卸载包"><span class="nav-number">6.</span> <span class="nav-text">npm uninstall &lt;包名&gt; 或 npm uni &lt;包名&gt; 卸载包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看包信息"><span class="nav-number">7.</span> <span class="nav-text">查看包信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-root-g-查看全局包的安装路径"><span class="nav-number">8.</span> <span class="nav-text">npm root -g 查看全局包的安装路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-init-快速创建-package-json-需要手动选择配置"><span class="nav-number">9.</span> <span class="nav-text">npm init 快速创建 package.json 需要手动选择配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-init-–yes或-y-直接跳过参数问答环节，快速生成package-json"><span class="nav-number">10.</span> <span class="nav-text">npm init –yes或-y 直接跳过参数问答环节，快速生成package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-config-list-查看npm基础配置"><span class="nav-number">11.</span> <span class="nav-text">npm config list 查看npm基础配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-config-get-prefix-获取全局安装的默认目录"><span class="nav-number">12.</span> <span class="nav-text">npm config get prefix 获取全局安装的默认目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-config-set-key-value-设置npm镜像和node-sass"><span class="nav-number">13.</span> <span class="nav-text">npm config set key value 设置npm镜像和node-sass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-i-g与-npm-i-S-或-npm-i-D-区别"><span class="nav-number">14.</span> <span class="nav-text">npm i -g与 npm i -S 或 npm i -D 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布自己的模块包"><span class="nav-number">15.</span> <span class="nav-text">发布自己的模块包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速删除node-modules依赖或文件"><span class="nav-number">16.</span> <span class="nav-text">快速删除node_modules依赖或文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmd中-set-可以查看所有的环境变量"><span class="nav-number">17.</span> <span class="nav-text">cmd中  set  可以查看所有的环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-script-串行-或者-并行"><span class="nav-number">18.</span> <span class="nav-text">npm script 串行 或者 并行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用–ignore-scripts解决npm-yarn安装依赖失败问题"><span class="nav-number">19.</span> <span class="nav-text">使用–ignore-scripts解决npm/yarn安装依赖失败问题</span></a></li></ol></div>
             
 
           </div>
@@ -742,7 +744,7 @@ pace-activity
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

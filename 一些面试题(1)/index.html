@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="记录一些常见的面试题, 加深巩固下基础知识, 及时扫盲.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-08-30T09:51:32.000Z">
+<meta property="og:updated_time" content="2021-12-12T06:02:58.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些面试题(1)">
 <meta name="twitter:description" content="记录一些常见的面试题, 加深巩固下基础知识, 及时扫盲.">
@@ -428,7 +428,7 @@ pace-activity
 <li><p>javascript的typeof返回那些数据类型？<br><code>object number function boolean undefined string symbol bigint</code></p>
 </li>
 <li><p>检测数组的几种方式<br><code>Array.isArray(arr)</code><br><code>arr.toString().call([]) // [Object Array]</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取数据类型 类似typeof 但比typeof强大</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getType</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">  <span class="comment">// .+?  惰匹匹配</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(v).match(<span class="regexp">/\[object (.+?)\]/</span>)[<span class="number">1</span>].toLowerCase()</span><br><span class="line">&#125;</span><br><span class="line">getType([]) <span class="comment">// "array"</span></span><br><span class="line">getType(<span class="literal">NaN</span>) <span class="comment">// "number"</span></span><br><span class="line">getType(<span class="built_in">Symbol</span>(<span class="number">1</span>)) <span class="comment">// "symbol"</span></span><br><span class="line">getType(BigInt(<span class="string">"9007199254740995"</span>)) <span class="comment">// "bigint"</span></span><br><span class="line">getType(<span class="literal">null</span>) <span class="comment">// "null"</span></span><br><span class="line">getType(<span class="literal">undefined</span>) <span class="comment">// "undefined"</span></span><br><span class="line">getType(<span class="string">'0'</span>) <span class="comment">// "string"</span></span><br><span class="line">getType(&#123;&#125;) <span class="comment">// "object"</span></span><br><span class="line">getType(<span class="built_in">parseInt</span>) <span class="comment">// "function"</span></span><br><span class="line">getType(<span class="keyword">new</span> <span class="built_in">Date</span>()) <span class="comment">// "date"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取数据类型 类似typeof 但比typeof强大</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getType</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">  <span class="comment">// .+?  惰匹匹配</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(v).match(<span class="regexp">/\[object (.+?)\]/</span>)[<span class="number">1</span>].toLowerCase()</span><br><span class="line">&#125;</span><br><span class="line">getType([]) <span class="comment">// "array"</span></span><br><span class="line">getType(<span class="literal">NaN</span>) <span class="comment">// "number"</span></span><br><span class="line">getType(<span class="built_in">Symbol</span>(<span class="number">1</span>)) <span class="comment">// "symbol"</span></span><br><span class="line">getType(BigInt(<span class="string">"9007199254740995"</span>)) <span class="comment">// "bigint"</span></span><br><span class="line">getType(<span class="literal">null</span>) <span class="comment">// "null"</span></span><br><span class="line">getType(<span class="literal">undefined</span>) <span class="comment">// "undefined"</span></span><br><span class="line">getType(<span class="string">'0'</span>) <span class="comment">// "string"</span></span><br><span class="line">getType(&#123;&#125;) <span class="comment">// "object"</span></span><br><span class="line">getType(<span class="built_in">parseInt</span>) <span class="comment">// "function"</span></span><br><span class="line">getType(<span class="keyword">new</span> <span class="built_in">Date</span>()) <span class="comment">// "date"</span></span><br><span class="line">getType(<span class="regexp">/^$/</span>) <span class="comment">// "regexp"</span></span><br><span class="line">getType(<span class="literal">false</span>) <span class="comment">// "boolean"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h4 id="事件绑定和普通事件有什么区别"><a href="#事件绑定和普通事件有什么区别" class="headerlink" title="事件绑定和普通事件有什么区别"></a>事件绑定和普通事件有什么区别</h4><ul>
@@ -646,7 +646,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -668,7 +668,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -780,7 +780,7 @@ pace-activity
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

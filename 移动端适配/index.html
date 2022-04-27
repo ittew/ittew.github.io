@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="为了适应各种移动端设备，完美呈现现应有的布局效果,各个移动端设备，分辨率大小不一致，网页想铺满整个屏幕，并在各种分辨下等比缩放。常见适配方案如: 固定高度宽度自适应、固定宽度，viewport等比缩放、Rem适配、像素比适配、vw适配、媒体查询等。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-08-14T06:21:10.000Z">
+<meta property="og:updated_time" content="2022-01-03T08:29:20.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端适配">
 <meta name="twitter:description" content="为了适应各种移动端设备，完美呈现现应有的布局效果,各个移动端设备，分辨率大小不一致，网页想铺满整个屏幕，并在各种分辨下等比缩放。常见适配方案如: 固定高度宽度自适应、固定宽度，viewport等比缩放、Rem适配、像素比适配、vw适配、媒体查询等。">
@@ -421,10 +421,12 @@ pace-activity
       
         <p>为了适应各种移动端设备，完美呈现现应有的布局效果,各个移动端设备，分辨率大小不一致，网页想铺满整个屏幕，并在各种分辨下等比缩放。常见适配方案如: <code>固定高度宽度自适应</code>、<code>固定宽度，viewport等比缩放</code>、<code>Rem适配</code>、<code>像素比适配</code>、<code>vw适配</code>、<code>媒体查询</code>等。<br><a id="more"></a></p>
 <h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><ul>
+<li><code>px像素</code> px是固定单位,不会随着视口大的大小而变化</li>
 <li><code>em</code> 相对于当前元素字体大小,当前元素未设置字体大小则继承父级字体大小 默认 1em=16px em作为font-size使用时,相对于父元素字体大小 em作为宽高等使用时 相对于自身字体大小 例如默认 <code>font-size:2em;width:2em; // width为64px</code></li>
-<li><code>rem</code> R -&gt; root 根节点(html)根据 <code>html</code> 的字体大小计算其他元素尺寸</li>
+<li><code>rem</code> 相对于根元素(html)字体大小的单位,会随着根元素字体大小的变化而变化,默认1rem为16px</li>
 <li><code>vw</code> 和 <code>vh</code> 相对于屏幕(可视窗口宽度) <code>宽度100vw</code>和<code>高度100vh</code></li>
 <li><code>vmin</code>是指vw和vh中最小的那个,<code>vmax</code>是vw和vh中最大的那个</li>
+<li><code>百分比</code> 动态单位,以当前元素的父元素作为参考进行计算</li>
 </ul>
 <h4 id="适配方案"><a href="#适配方案" class="headerlink" title="适配方案"></a>适配方案</h4><ol>
 <li>固定高度，宽度自适应（百分比，flex布局）或者响应式<br><code>高度固定(单位可以是px 百分比 auto) 常用flex布局或百分比宽度</code></li>
@@ -453,8 +455,7 @@ pace-activity
 </li>
 <li><p><code>link标签</code><br><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen and (max-width:767px)&quot;  href=&quot;phone.css&quot; /&gt;</code><br>如果屏幕宽度小于767像素(<code>max-width:767px</code>)就加载<code>phone.css</code>文件<br><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen and (min-width:768px)&quot;   href=&quot;phone.css&quot; /&gt;</code><br>如果屏幕宽度大于768像素(<code>min-width:768px</code>)就加载<code>pc.css</code>文件</p>
 </li>
-<li><code>css @media</code></li>
-<li>媒体查询(不同屏幕大小使用不同的样式)<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.d1</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">background</span>:<span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*  超小屏幕 手机&gt; */</span></span><br><span class="line">@<span class="keyword">media</span> (max-width:<span class="number">768px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:skyblue; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*  小屏幕 平板 */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">768px</span>) and (max-width:<span class="number">992px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:<span class="number">#999</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  中等屏幕 桌面显示器 */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">992px</span>) and (max-width:<span class="number">1200px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:blue; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  大屏幕 大桌面显示器&gt; */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">1200px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:pink; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><code>css @media</code> 媒体查询(不同屏幕大小使用不同的样式)<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.d1</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">background</span>:<span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*  超小屏幕 手机&gt; */</span></span><br><span class="line">@<span class="keyword">media</span> (max-width:<span class="number">768px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:skyblue; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*  小屏幕 平板 */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">768px</span>) and (max-width:<span class="number">992px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:<span class="number">#999</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  中等屏幕 桌面显示器 */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">992px</span>) and (max-width:<span class="number">1200px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:blue; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  大屏幕 大桌面显示器&gt; */</span></span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">1200px</span>)&#123;</span><br><span class="line">  <span class="selector-class">.d1</span>&#123; <span class="attribute">background</span>:pink; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -592,7 +593,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -614,7 +615,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -726,7 +727,7 @@ pace-activity
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

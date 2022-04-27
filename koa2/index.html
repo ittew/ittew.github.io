@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="Koa是一个新的web框架，由Express幕后的原班人马打造，致力于成为web应用和API开发领域中的一个更小、更富有表现力、更健壮的基石。通过利用async函数，Koa帮你丢弃回调函数，并有力地增强错误处理。Koa并没有捆绑任何中间件，而是提供了一套优雅的方法，帮助您快速而愉快地编写服务端应用程序。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-08-14T06:21:10.000Z">
+<meta property="og:updated_time" content="2021-12-07T13:36:33.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="koa2简单使用">
 <meta name="twitter:description" content="Koa是一个新的web框架，由Express幕后的原班人马打造，致力于成为web应用和API开发领域中的一个更小、更富有表现力、更健壮的基石。通过利用async函数，Koa帮你丢弃回调函数，并有力地增强错误处理。Koa并没有捆绑任何中间件，而是提供了一套优雅的方法，帮助您快速而愉快地编写服务端应用程序。">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  884 字
+                  1.1k 字
                 </span>
               
 
@@ -421,15 +421,18 @@ pace-activity
       
         <p><code>Koa</code>是一个新的web框架，由<code>Express</code>幕后的原班人马打造，致力于成为<code>web</code>应用和<code>API</code>开发领域中的一个更小、更富有表现力、更健壮的基石。通过利用<code>async</code>函数，<code>Koa</code>帮你丢弃回调函数，并有力地增强错误处理。<code>Koa</code>并没有捆绑任何中间件，而是提供了一套优雅的方法，帮助您快速而愉快地编写服务端应用程序。<br><a id="more"></a></p>
 <h2 id="kao1与koa2区别"><a href="#kao1与koa2区别" class="headerlink" title="kao1与koa2区别"></a>kao1与koa2区别</h2><ul>
-<li>koa1 依赖于 generator生成器函数</li>
-<li>koa2 基于 async和await<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2></li>
-<li>安装 <code>npm i koa</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 体验koa helloworld</span></span><br><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa() <span class="comment">// 生成服务器实例</span></span><br><span class="line"><span class="comment">// ctx 是 koa的应用上下文  next 就是串联中间件的钩子函数</span></span><br><span class="line">app.use(<span class="keyword">async</span> (ctx,next) =&gt; &#123;</span><br><span class="line">  ctx.body = <span class="string">'hello world'</span></span><br><span class="line">&#125;)</span><br><span class="line">app.listen(<span class="number">3000</span>)</span><br><span class="line"><span class="comment">// 浏览器访问 localhost:3000 页面输出 hello world</span></span><br></pre></td></tr></table></figure>
+<li><code>koa1采用ES6中的Gnerator生成器函数+yield+promise来处理异步操作</code></li>
+<li><code>koa2基于ES7中的async/await+promise来处理异步操作</code><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2></li>
+<li>安装 <code>npm i koa -g</code><br><code>安装nodemon监视文件改动自动重启服务器 npm i -g nodemon 使用 nodemon xx.js</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js 体验koa helloworld</span></span><br><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa() <span class="comment">// 生成服务器实例</span></span><br><span class="line"><span class="comment">// ctx 是 koa的应用上下文  next 就是串联中间件的钩子函数</span></span><br><span class="line">app.use(<span class="keyword">async</span> (ctx,next) =&gt; &#123;</span><br><span class="line">  ctx.body = <span class="string">'hello world'</span></span><br><span class="line">&#125;)</span><br><span class="line">app.listen(<span class="number">3000</span>)</span><br><span class="line"><span class="comment">// 在命令行执行 node index.js 然后在浏览器访问 localhost:3000 页面输出 hello world</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="koa核心对象"><a href="#koa核心对象" class="headerlink" title="koa核心对象"></a>koa核心对象</h2><ul>
-<li><code>application</code> <code>web服务类</code></li>
-<li><code>context</code>     <code>http上下文</code></li>
-<li><code>request</code>     <code>http请求对象</code></li>
+<li><p><code>context</code> koa将Node.js的Request请求和Response响应对象封装到Context对象中，通过加工context对象就可以控制返回给用户的内容，koa的每一次请求都将创建一个context，并在中间件中被作为参数引用，context对象内置了一些常用属性，如context.state、context.app、context.cookie、context.throw等</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa()</span><br><span class="line"><span class="comment">// app.use(async (ctx,next) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//   console.log(ctx) // 请求的上下文对象</span></span><br><span class="line"><span class="comment">//   console.log(ctx.request) // ctx的request对象</span></span><br><span class="line"><span class="comment">//   console.log(ctx.response) // ctx的response对象</span></span><br><span class="line"><span class="comment">//   ctx.body = 'hello world'</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br><span class="line">app.use(<span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  ctx.response.body = &#123;</span><br><span class="line">    url: ctx.request.url,</span><br><span class="line">    query: ctx.request.query,</span><br><span class="line">    querystring: ctx.request.querystring</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 访问该地址 http://localhost:3000/?name=tew&amp;sex=1 页面打印如下</span></span><br><span class="line"><span class="comment">/*&#123;</span></span><br><span class="line"><span class="comment">  url: "/?name=tew&amp;sex=1",</span></span><br><span class="line"><span class="comment">  query: &#123; name: "tew", sex: "1" &#125;,</span></span><br><span class="line"><span class="comment">  querystring: "name=tew&amp;sex=1"</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line">app.listen(<span class="number">3000</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>application</code> <code>web服务类</code></p>
+</li>
+<li><code>request</code>    <code>http请求对象</code></li>
 <li><code>response</code>    <code>http响应对象</code></li>
 </ul>
 <h2 id="koa中间件"><a href="#koa中间件" class="headerlink" title="koa中间件"></a>koa中间件</h2><ul>
@@ -597,7 +600,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -619,7 +622,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -731,7 +734,7 @@ pace-activity
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

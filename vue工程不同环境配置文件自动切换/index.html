@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+pace-activity
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        display:none !important;
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="项目环境一般分为开发环境、测试环境、生产环境，每个环境的接口域名和其他配置、webpack配置可能都是不同的配置，每次打包构建不能总是手动去更改这些配置，我们应当根据打包的环境去动态判断不同环境自动切换配置，尤其是自动化构建部署如jenkins。">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue工程不同环境配置文件自动切换">
+<meta property="og:url" content="http://ittew.cn/vue工程不同环境配置文件自动切换/index.html">
+<meta property="og:site_name" content="TEW BLOG">
+<meta property="og:description" content="项目环境一般分为开发环境、测试环境、生产环境，每个环境的接口域名和其他配置、webpack配置可能都是不同的配置，每次打包构建不能总是手动去更改这些配置，我们应当根据打包的环境去动态判断不同环境自动切换配置，尤其是自动化构建部署如jenkins。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2022-04-27T12:45:37.847Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue工程不同环境配置文件自动切换">
+<meta name="twitter:description" content="项目环境一般分为开发环境、测试环境、生产环境，每个环境的接口域名和其他配置、webpack配置可能都是不同的配置，每次打包构建不能总是手动去更改这些配置，我们应当根据打包的环境去动态判断不同环境自动切换配置，尤其是自动化构建部署如jenkins。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","post_type_normal":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ittew.cn/vue工程不同环境配置文件自动切换/">
+
+
+
+
+
+  <title>vue工程不同环境配置文件自动切换 | TEW BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TEW BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">TEW's blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ittew.cn/vue工程不同环境配置文件自动切换/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TEW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TEW BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">vue工程不同环境配置文件自动切换</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-25T20:21:14+08:00">
+                2019-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>项目环境一般分为开发环境、测试环境、生产环境，每个环境的接口域名和其他配置、webpack配置可能都是不同的配置，每次打包构建不能总是手动去更改这些配置，我们应当根据打包的环境去动态判断不同环境自动切换配置，尤其是自动化构建部署如<code>jenkins</code>。<br><a id="more"></a></p>
+<h2 id="使用node的fs模块实现vue-cli2中根据打包环境动态切换配置"><a href="#使用node的fs模块实现vue-cli2中根据打包环境动态切换配置" class="headerlink" title="使用node的fs模块实现vue-cli2中根据打包环境动态切换配置"></a>使用node的fs模块实现vue-cli2中根据打包环境动态切换配置</h2><ul>
+<li>配置文件 <code>src/common/config.js</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 部署不同的环境时 需要修改 DBS_ENV 的值</span></span><br><span class="line"><span class="comment">// 0 开发环境 1为测试环境1 2为测试环境2  3为正式环境</span></span><br><span class="line"><span class="keyword">var</span> DBS_ENV = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> baseUrl = <span class="string">''</span></span><br><span class="line"><span class="keyword">var</span> clientId = <span class="string">''</span></span><br><span class="line">swicth (DBS_ENV)&#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">    baseUrl = <span class="string">'http://192.168.5.6'</span></span><br><span class="line">    clientId = <span class="string">'90'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    baseUrl = <span class="string">'http://22.11.33.44'</span></span><br><span class="line">    clientId = <span class="string">'91'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    baseUrl = <span class="string">'http://22.55.33.99'</span></span><br><span class="line">    clientId = <span class="string">'92'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    baseUrl = <span class="string">'https://xxx.cn'</span></span><br><span class="line">    clientId = <span class="string">'93'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;baseUrl, clientId&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p><code>修改package.json中的npm scripts的打包命令</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scripts: &#123;</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"node build/dev-server.js"</span>, <span class="comment">// 开发环境</span></span><br><span class="line">  <span class="string">"build-T1"</span>: <span class="string">"node build/build.js"</span>, <span class="comment">// T1测试环境1</span></span><br><span class="line">  <span class="string">"build-T2"</span>: <span class="string">"node build/build.js"</span>, <span class="comment">// T2测试环境2</span></span><br><span class="line">  <span class="string">"build-pro"</span>: <span class="string">"node build/build.js"</span> <span class="comment">// pro生产环境</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>在build.js中通过打包参数修改src/common/config.js文件中DBS_ENV值</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 读取配置文件</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">let</span> fileContent = <span class="string">''</span></span><br><span class="line"><span class="keyword">const</span> envPath = path.resolve(__dirname, <span class="string">'../src/common/config.js'</span>)</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  fileContent = fs.readFileSync(envPath, <span class="string">'utf-8'</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span>(error)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(chalk.red(error + <span class="string">'/n'</span>))</span><br><span class="line">  process.exit(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取打包命令判断打包环境参数</span></span><br><span class="line"><span class="keyword">const</span> event = process.env.npm_lifecycle_event</span><br><span class="line"><span class="keyword">let</span> env = <span class="number">1</span></span><br><span class="line"><span class="keyword">switch</span>(event)&#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'build-T1'</span>:</span><br><span class="line">    env = <span class="number">1</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="string">'build-T2'</span>:</span><br><span class="line">    env = <span class="number">2</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="string">'build-pro'</span>:</span><br><span class="line">    env = <span class="number">3</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 根据打包参数修改配置文件并写入</span></span><br><span class="line"><span class="keyword">const</span> text = fileContent.replace(<span class="regexp">/(var DBS_ENV = \d;)/</span>, <span class="string">`var DBS_ENV = <span class="subst">$&#123;env&#125;</span>;`</span>)</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  fs.writeFileSync(envPath, text, <span class="string">'utf-8'</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span>(error)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(chalk.red(error + <span class="string">'/n'</span>))</span><br><span class="line">  process.exit(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>打包完成放弃src/common.config.js修改</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> childProcess = <span class="built_in">require</span>(<span class="string">'child_process'</span>)</span><br><span class="line"><span class="comment">// 在build.js中的打包完成回调中 webpack(webpackconfig, function()&#123;xxx&#125;)</span></span><br><span class="line"><span class="comment">// svn 版本管理回退</span></span><br><span class="line"><span class="comment">// childProcess.execSync('svn revert src/common/config.js', function(err, stdout, stdin)&#123;</span></span><br><span class="line"><span class="comment">//   console.log(chalk.red(err))</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br><span class="line"><span class="comment">// git 版本管理回退</span></span><br><span class="line">childProcess.execSync(<span class="string">'git checkout -- src/common/config.js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, stdout, stdin</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(chalk.red(err))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="使用cross-env和webpack-DefinePlugin-实现vue-cli2中根据打包环境动态切换配置"><a href="#使用cross-env和webpack-DefinePlugin-实现vue-cli2中根据打包环境动态切换配置" class="headerlink" title="使用cross-env和webpack.DefinePlugin()实现vue-cli2中根据打包环境动态切换配置"></a>使用cross-env和webpack.DefinePlugin()实现vue-cli2中根据打包环境动态切换配置</h2><ul>
+<li><code>cross-env:可以跨平台设置和使用环境变量(process.env)的node模块包</code></li>
+<li><code>webpack.DefinePlugin(): webpack通过DefinePlugin内置插件将process.env注入到客户端代码中,定义的变量可以在webpack打包范围内任意javascript环境内访问</code></li>
+</ul>
+<ol>
+<li><p><code>修改package.json中的npm scripts的打包命令</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scripts: &#123;</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"node build/dev-server.js"</span>, <span class="comment">// 开发环境</span></span><br><span class="line">  <span class="string">"build-T1"</span>: <span class="string">"cross-env MODE=T1 node build/build.js"</span>, <span class="comment">// T1测试环境1</span></span><br><span class="line">  <span class="string">"build-T2"</span>: <span class="string">"cross-env MODE=T2 node build/build.js"</span>, <span class="comment">// T2测试环境2</span></span><br><span class="line">  <span class="string">"build-pro"</span>: <span class="string">"cross-env MODE=pro node build/build.js"</span> <span class="comment">// pro生产环境</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>修改config/dev.env.js和config/prod.env.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// config/dev.env.js</span></span><br><span class="line"><span class="built_in">module</span>.export = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"development"'</span>,</span><br><span class="line">  MODE: <span class="string">'"dev"'</span> <span class="comment">// 全局变量</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// config/prod.env.js</span></span><br><span class="line"><span class="built_in">module</span>.export = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line">  <span class="comment">// process.env.MODE 是通过 cross-env 设置的环境变量 即T1或T2或pro</span></span><br><span class="line">  MODE: <span class="built_in">JSON</span>.stringify(process.env.MODE) <span class="comment">// 全局变量字符串需要使用JSON.stringify()</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>在webpack.dev.conf.js和webpack.prod.conf.js</code>通过<code>new webpack.DefinePlugin()</code>注入到执行环境中使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.dev.conf.js</span></span><br><span class="line">plugins: [</span><br><span class="line">  <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">    <span class="string">'process.env'</span>: <span class="built_in">require</span>(<span class="string">'../config/dev.env'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">]</span><br><span class="line"><span class="comment">// webpack.prod.conf.js</span></span><br><span class="line">plugins: [</span><br><span class="line">  <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">    <span class="string">'process.env'</span>: <span class="built_in">require</span>(<span class="string">'../config/prod.env'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置文件动态赋值 <code>src/common/config.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过cross-env 和 webpack.DefinePlugin() 将process.env注入到执行环境(客户端代码)中使用</span></span><br><span class="line"><span class="comment">// 设置DBS_ENV 的值 0 开发环境 1为测试环境1 2为测试环境2  3为正式环境</span></span><br><span class="line"><span class="keyword">var</span> DBS_ENV = <span class="string">''</span></span><br><span class="line"><span class="keyword">var</span> baseUrl = <span class="string">''</span></span><br><span class="line"><span class="keyword">var</span> clientId = <span class="string">''</span></span><br><span class="line"><span class="keyword">const</span> envArr = [<span class="string">'dev'</span>, <span class="string">'T1'</span>, <span class="string">'T2'</span>, <span class="string">'pro'</span>]</span><br><span class="line"><span class="keyword">if</span> (envArr.indexOf(process.env.MODE) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">  DBS_ENV = envArr.indexOf(process.env.MODE)</span><br><span class="line">&#125;</span><br><span class="line">swicth (DBS_ENV)&#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">    baseUrl = <span class="string">'http://192.168.5.6'</span></span><br><span class="line">    clientId = <span class="string">'90'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    baseUrl = <span class="string">'http://22.11.33.44'</span></span><br><span class="line">    clientId = <span class="string">'91'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    baseUrl = <span class="string">'http://22.55.33.99'</span></span><br><span class="line">    clientId = <span class="string">'92'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    baseUrl = <span class="string">'https://xxx.cn'</span></span><br><span class="line">    clientId = <span class="string">'93'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;baseUrl, clientId&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>其他用处</code></p>
+</li>
+</ol>
+<ul>
+<li><p><code>可以通过process.env.MODE设置sourceMap</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// config/indx.js</span></span><br><span class="line">build: &#123;</span><br><span class="line">  <span class="comment">// 生产环境关闭sourcemap(避免暴露源码) 开发环境和测试环境开启sourcemap便于调试和定位错误</span></span><br><span class="line">  productionSourceMap: process.env.MODE === <span class="string">'pro'</span> ? <span class="literal">false</span> : <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>可以通过process.env.MODE设置仅在开发环境和测试环境引入vconsole</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js 仅在开发环境和测试环境引入vconsole</span></span><br><span class="line"><span class="keyword">if</span> (process.env.MODE!==<span class="string">'pro'</span>) &#123;</span><br><span class="line">  <span class="comment">// 不能使用 import vConsole from 'vconsole' 或 import('vconsole') 静态引入 不能放在if里面会报错</span></span><br><span class="line">  <span class="comment">// SyntaxError: xxx/main.js 'import' and 'export' may only appear at the top level</span></span><br><span class="line">  <span class="keyword">let</span> vConsole = <span class="built_in">require</span>(<span class="string">'vconsole'</span>) <span class="comment">// 使用require引入 可放在if里动态引入</span></span><br><span class="line">  <span class="keyword">new</span> vConsole()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="使用process-env-npm-config-arg-process-argv和webpack-DefinePlugin-实现vue-cli2中配置切换"><a href="#使用process-env-npm-config-arg-process-argv和webpack-DefinePlugin-实现vue-cli2中配置切换" class="headerlink" title="使用process.env.npm_config_arg|process.argv和webpack.DefinePlugin()实现vue-cli2中配置切换"></a>使用process.env.npm_config_arg|process.argv和webpack.DefinePlugin()实现vue-cli2中配置切换</h2><p><code>process.env.npm_config_argv或process.argv可以获取npm命令行的参数,动态设置MODE，然后通过DefinePlugin注入</code></p>
+<ol>
+<li><p><code>修改package.json中的npm scripts的打包命令</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">scripts: &#123;</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"node build/dev-server.js"</span>, <span class="comment">// 开发环境</span></span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"node build/build.js"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打包构建 在执行 npm run build 时多加入一个命令行参数</span></span><br><span class="line"><span class="comment">/* npm run build T1  // T1测试环境1</span></span><br><span class="line"><span class="comment">*  npm run build T2  // T2测试环境2</span></span><br><span class="line"><span class="comment">*  npm run build pro  // pro生产环境</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>修改config/dev.env.js和config/prod.env.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// config/dev.env.js</span></span><br><span class="line"><span class="built_in">module</span>.export = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"development"'</span>,</span><br><span class="line">  MODE: <span class="string">'"dev"'</span> <span class="comment">// 全局变量</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// config/prod.env.js</span></span><br><span class="line"><span class="built_in">module</span>.export = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line">  <span class="comment">// 方式1</span></span><br><span class="line">  <span class="comment">// process.env.npm_config_argv-&gt;JSON字符串 获取npm命令行的参数,动态设置MODE</span></span><br><span class="line">  <span class="comment">// npm run build pro -&gt; process.env.npm_config_argv -&gt; '&#123;"remain":["pro"], "cooked":["run", "build", "pro"],...&#125;'</span></span><br><span class="line">  <span class="comment">// 全局变量字符串需要使用JSON.stringify()</span></span><br><span class="line">  MODE: <span class="built_in">JSON</span>.stringify(<span class="built_in">JSON</span>.parse(process.env.npm_config_argv).remain[<span class="number">0</span>])</span><br><span class="line">  <span class="comment">// 方式2</span></span><br><span class="line">  <span class="comment">// npm run build pro -&gt; 使用 process.argv -&gt; ["c:\\xxx\node.exe", "D:\\project\xx\build.js", "pro"]</span></span><br><span class="line">  <span class="comment">// MODE: JSON.stringify(process.argv[2])</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>其他步骤和上个方法一致</code></p>
+</li>
+</ol>
+<h2 id="使用自定义loader实现配置环境的切换"><a href="#使用自定义loader实现配置环境的切换" class="headerlink" title="使用自定义loader实现配置环境的切换"></a>使用自定义loader实现配置环境的切换</h2><ol>
+<li><p><code>package.json中的npm scripts的打包命令</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scripts: &#123;</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"node build/dev-server.js"</span>, <span class="comment">// 开发环境</span></span><br><span class="line">  <span class="string">"build-T1"</span>: <span class="string">"node build/build.js"</span>, <span class="comment">// T1测试环境1</span></span><br><span class="line">  <span class="string">"build-T2"</span>: <span class="string">"node build/build.js"</span>, <span class="comment">// T2测试环境2</span></span><br><span class="line">  <span class="string">"build-pro"</span>: <span class="string">"node build/build.js"</span> <span class="comment">// pro生产环境</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置文件  <code>src/common/config.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> DBS_ENV = <span class="string">''</span></span><br><span class="line"><span class="keyword">var</span> baseUrl = <span class="string">''</span></span><br><span class="line"><span class="keyword">var</span> clientId = <span class="string">''</span></span><br><span class="line">swicth (DBS_ENV)&#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">    baseUrl = <span class="string">'http://192.168.5.6'</span></span><br><span class="line">    clientId = <span class="string">'90'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    baseUrl = <span class="string">'http://22.11.33.44'</span></span><br><span class="line">    clientId = <span class="string">'91'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    baseUrl = <span class="string">'http://22.55.33.99'</span></span><br><span class="line">    clientId = <span class="string">'92'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    baseUrl = <span class="string">'https://xxx.cn'</span></span><br><span class="line">    clientId = <span class="string">'93'</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;baseUrl, clientId&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义loader替换环境变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  loaders/config-loader.js</span></span><br><span class="line">modules.exports = <span class="function"><span class="keyword">function</span> (<span class="params">content</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.cacheable()</span><br><span class="line">  <span class="keyword">if</span> (process.env.npm_lifesycle_event === <span class="string">'build-T1'</span>) &#123;</span><br><span class="line">    content.replace(<span class="regexp">/(var DBS_ENV = \d)/</span>, <span class="string">`var DBS_ENV = 1`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (process.env.npm_lifesycle_event === <span class="string">'build-T2'</span>)&#123;</span><br><span class="line">    content.replace(<span class="regexp">/(var DBS_ENV = \d)/</span>, <span class="string">`var DBS_ENV = 2`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (process.env.npm_lifesycle_event === <span class="string">'build-pro'</span>)&#123;</span><br><span class="line">    content.replace(<span class="regexp">/(var DBS_ENV = \d)/</span>, <span class="string">`var DBS_ENV = 3`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    content.replace(<span class="regexp">/(var DBS_ENV = \d)/</span>, <span class="string">`var DBS_ENV = 0`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> content</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用loader <code>webpack.base.conf.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/config\.js$/</span>,</span><br><span class="line">      loader: path.resolve(<span class="string">'loaders'</span>) + <span class="string">'/config-loader'</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="vue-cli3及以上使用不同的-env文件设置不同的环境配置"><a href="#vue-cli3及以上使用不同的-env文件设置不同的环境配置" class="headerlink" title="vue-cli3及以上使用不同的.env文件设置不同的环境配置"></a>vue-cli3及以上使用不同的.env文件设置不同的环境配置</h2><p><code>vue-cli3.x封装了webpack配置，.env文件中的变量都会被放入当process.env中，我们可以直接在客户端代码中使用process.env的值，该对象可以包含多个键值对，仅支持注入环境配置文件中以VUE_APP_开头的变量，也是通过webpack.DefinePlugin()实现</code></p>
+<ul>
+<li><p><code>在根目录下设置不同环境的配置文件</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .env.T1 测试环境1配置</span></span><br><span class="line">VUE_APP_baseUrl = <span class="string">'http://22.11.33.44'</span></span><br><span class="line">VUE_APP_clientId = <span class="number">91</span></span><br><span class="line"><span class="comment">// .env.T2 测试环境2配置</span></span><br><span class="line">VUE_APP_baseUrl = <span class="string">'http://22.55.33.99'</span></span><br><span class="line">VUE_APP_clientId = <span class="number">92</span></span><br><span class="line"><span class="comment">// .env.prod 生产环境</span></span><br><span class="line">VUE_APP_baseUrl = <span class="string">'http://xxx.cn'</span></span><br><span class="line">VUE_APP_clientId = <span class="number">93</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>修改package.json中的npm-script脚本的命令</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="comment">// vue-cli-service build --mode=xxx webpack会去找对应的配置文件 .env.xxx</span></span><br><span class="line">  <span class="comment">// 测试环境1 会读取对应配置文件 .env.T1</span></span><br><span class="line">  <span class="string">"build-T1"</span>: <span class="string">"vue-cli-service build --mode=T1"</span>,</span><br><span class="line">  <span class="comment">// 测试环境2 会读取对应配置文件 .env.T2</span></span><br><span class="line">  <span class="string">"build-T2"</span>: <span class="string">"vue-cli-service build --mode=T2"</span>,</span><br><span class="line">  <span class="comment">// 生产环境 会读取对应配置文件 .env.prod</span></span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"vue-cli-service build --mode=prod"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>配置变量的使用</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 客户端代码中 或 vue.config.js 中</span></span><br><span class="line"><span class="comment">// 仅支持注入环境配置文件中以 VUE_APP_ 开头的变量 客户端代码中使用时，都是字符串形式</span></span><br><span class="line"><span class="comment">// VUE_APP_XXX = xxx 都会被webpack.DefinePlugin()设置为 process.env = &#123;VUE_APP_<span class="doctag">XXX:</span> "xxx" ,...&#125;</span></span><br><span class="line">config.baseUrl = process.env.VUE_APP_baseUrl</span><br><span class="line">headers.clientId = process.env.VUE_APP_clientId <span class="comment">// process.env.VUE_APP_clientId =&gt; "93"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>如果需要在客户端代码中根据打包环境区分某些配置或功能如vconsole</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一</span></span><br><span class="line"><span class="comment">// 可以在 .env.T1 .env.T2 .env.prod 配置文件中 加VUE_APP_MODE = T1或T2或pro</span></span><br><span class="line"><span class="comment">// .env.T1 测试环境1配置</span></span><br><span class="line">VUE_APP_MODE = T1</span><br><span class="line">VUE_APP_baseUrl = <span class="string">'http://22.11.33.44'</span></span><br><span class="line"><span class="comment">// .env.T2 测试环境2配置</span></span><br><span class="line">VUE_APP_MODE = T2</span><br><span class="line">VUE_APP_baseUrl = <span class="string">'http://22.55.33.99'</span></span><br><span class="line"><span class="comment">// .env.prod 生产环境</span></span><br><span class="line">VUE_APP_MODE = pro</span><br><span class="line">VUE_APP_baseUrl = <span class="string">'http://xxx.cn'</span></span><br><span class="line"><span class="comment">// 方法二 不在 .env.xxx 配置文件中写死 可以通过配置 DefinePlugin 注入 MODE</span></span><br><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line">moudles.export = &#123;</span><br><span class="line">  chainWebpack: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    config.plugin(<span class="string">'define'</span>).tap(<span class="function"><span class="params">args</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">//args =&gt; [&#123;'process.env': &#123; NODE_ENV: 'developMent', VUE_APP_base_url: 'xx'&#125;&#125;]</span></span><br><span class="line">      <span class="comment">// 通过 process.env.npm_lifecycle_script 去获取 =&gt; vue-cli-service build --mode=T1</span></span><br><span class="line">      args[<span class="number">0</span>][<span class="string">'process.env'</span>].VUE_APP_MODE = <span class="built_in">JSON</span>.stringify(process.env.npm_lifecycle_script.match(<span class="regexp">/--mode=(.+)(?=\s)/</span>)[<span class="number">1</span>])</span><br><span class="line">      <span class="keyword">return</span> args</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用 main.js 仅在开发环境和测试环境引入vconsole</span></span><br><span class="line"><span class="keyword">if</span> (process.env.VUE_APP_MODE!==<span class="string">'pro'</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> vConsole = <span class="built_in">require</span>(<span class="string">'vconsole'</span>) <span class="comment">// 使用require引入 可放在if里动态引入</span></span><br><span class="line">  <span class="keyword">new</span> vConsole()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/javascript补漏/" rel="next" title="javascript补漏">
+                <i class="fa fa-chevron-left"></i> javascript补漏
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Vue-Cli3/" rel="prev" title="Vue-cli3常用配置">
+                Vue-cli3常用配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/headpic.jpg" alt="TEW">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">TEW</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ittew" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tew1210@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.imooc.com/u/4093465" target="_blank" title="Imooc">
+                      
+                        <i class="fa fa-fw fa-free-code-camp"></i>Imooc</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://coldplay.com/" title="Coldplay" target="_blank">Coldplay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/about/" title="关于此博客" target="_blank">关于此博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用node的fs模块实现vue-cli2中根据打包环境动态切换配置"><span class="nav-number">1.</span> <span class="nav-text">使用node的fs模块实现vue-cli2中根据打包环境动态切换配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用cross-env和webpack-DefinePlugin-实现vue-cli2中根据打包环境动态切换配置"><span class="nav-number">2.</span> <span class="nav-text">使用cross-env和webpack.DefinePlugin()实现vue-cli2中根据打包环境动态切换配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用process-env-npm-config-arg-process-argv和webpack-DefinePlugin-实现vue-cli2中配置切换"><span class="nav-number">3.</span> <span class="nav-text">使用process.env.npm_config_arg|process.argv和webpack.DefinePlugin()实现vue-cli2中配置切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用自定义loader实现配置环境的切换"><span class="nav-number">4.</span> <span class="nav-text">使用自定义loader实现配置环境的切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-cli3及以上使用不同的-env文件设置不同的环境配置"><span class="nav-number">5.</span> <span class="nav-text">vue-cli3及以上使用不同的.env文件设置不同的环境配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TEW</span>
+  <span class="post-meta-divider">|</span>
+  <span class="theme-info">你所羡慕的生活，都是有备而来。</span>
+  
+</div>
+<div id="sitetime"></div>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,01,18,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv">0</span>
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量: <span id="busuanzi_value_site_pv">0</span>次
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.6"></script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

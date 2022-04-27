@@ -116,7 +116,7 @@ pace-activity
 <meta property="og:image" content="http://ittew.cn/image/css/box-shadow.png">
 <meta property="og:image" content="http://ittew.cn/image/css/box-shadow.png">
 <meta property="og:image" content="http://ittew.cn/image/css/box-shadow.png">
-<meta property="og:updated_time" content="2021-10-28T12:26:46.030Z">
+<meta property="og:updated_time" content="2022-04-27T12:45:37.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3学习">
 <meta name="twitter:description" content="CSS3 是 CSS 的升级版本，这套新标准提供了更加丰富且实用的规范，如：盒子模型box-sizing、过渡transition、动画animation、2D或3D变换transform、阴影box-shadow、背景和边框、文字特效text-shadow、多栏布局、弹性布局flex、栅格布局grid、渐变gradient、媒体查询等等.">
@@ -400,7 +400,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.8k 字
+                  5k 字
                 </span>
               
 
@@ -545,7 +545,10 @@ pace-activity
 </li>
 <li><code>设置给子元素相关的属性: 子元素本身的显示方式</code><ul>
 <li><code>order</code>  显示顺序  数字越大显示越靠后, 支持负数</li>
-<li><code>flex</code>   伸缩性    auto|none|具体数值占比</li>
+<li><code>flex-grow</code>  伸缩项的扩充,数值越大扩充的越多 (所有子项宽度和小于父元素有效)</li>
+<li><code>flex-shrink</code>  伸缩项的缩小,数值越大缩小的越多 (所有子项宽度和大于父元素有效)</li>
+<li><code>flex-basic</code>  伸缩项的宽度, flex-basic设置的宽度优先级高于width</li>
+<li><code>flex</code>   伸缩项属性连写 默认 flex: 0 1 auto;   auto|none|具体数值占比</li>
 <li><code>align-self</code>   子元素在竖直方向上的对齐方式<ul>
 <li>flex-start:  元素在开始位置(默认)</li>
 <li>flex-end:   富裕空间在开始位置</li>
@@ -617,12 +620,13 @@ pace-activity
 <li><code>@keyframes animationname {keyframes-selector{css-style;}}</code><br><code>animationname 定义动画的名称</code><br><code>keyframes-selector  动画时长的百分比</code><br><code>0-100%  from(与0%相同)  to(与100%相同) 可以只有to</code><br><code>css-styles     一个或多个合法的CSS样式属性</code></li>
 <li>动画事件<br>动画开始时触发:<code>obj.addEventListener(&quot;webkitAnimationStart&quot;, fn) obj.addEventListener(&quot;animationstart&quot;, fn)</code><br>动画执行过程中触发：<code>obj.addEventListener(&quot;webkitAnimationIteration&quot;,fn) obj.addEventListener(&quot;animationiteration&quot;, fn)</code><br>动画结束是触发：<code>obj.addEventListener(&#39;webkitAnimationEnd&#39;,fn) obj.addEventListener(&#39;animationend&#39;,fn)</code><br><code>逐帧动画 animation-timing-function :steps(1)  去除过渡的效果（补间) 区间之间的只有一个画面</code></li>
 </ul>
-<h2 id="CSS3-2D变换"><a href="#CSS3-2D变换" class="headerlink" title="CSS3  2D变换"></a>CSS3  2D变换</h2><ul>
+<h2 id="CSS3-2D变换"><a href="#CSS3-2D变换" class="headerlink" title="CSS3  2D变换"></a>CSS3  2D变换</h2><p><code>内联元素是无法应用transform变换的，且不支持所有变换特性，transform属性会提升层级</code></p>
+<ul>
 <li><code>tansform:rorate(360deg)</code> 旋转函数(deg)</li>
 <li><code>transform:skew(45deg,45deg)</code> 倾斜函数(deg)  skewX() skewY()</li>
 <li><code>transform:scale(X,Y)</code> 缩放函数(正数,负数和小数)  scaleX()  scaleY()</li>
 <li><code>transform:translate(X,Y)</code>  位移函数(px) translateX()      translateY()</li>
-<li><code>transform  简写执行顺序(后写先执行)</code></li>
+<li><code>transform 简写执行顺序(后写先执行) 不同变换函数的顺序不同，效果也不一样</code></li>
 <li><code>transform-origin: x,y</code>  旋转的基准点(默认值center)<ul>
 <li>x: left/center/right/length/%</li>
 <li>y: top/center/bottom/length/%</li>
@@ -835,7 +839,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -857,7 +861,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -969,7 +973,7 @@ pace-activity
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

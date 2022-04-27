@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="ES6全称ECMAScript 6.0,是JavaScript的下一个版本标准，2015.06 发版。ES6 主要是为了解决 ES5 的先天不足，比如 JavaScript 里并没有类的概念。es6新特性：Symbol、class、数值的扩展、字符串的扩展、数组的扩展、对象的扩展等">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-11-03T13:14:31.588Z">
+<meta property="og:updated_time" content="2021-11-16T12:55:35.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6基础(二)">
 <meta name="twitter:description" content="ES6全称ECMAScript 6.0,是JavaScript的下一个版本标准，2015.06 发版。ES6 主要是为了解决 ES5 的先天不足，比如 JavaScript 里并没有类的概念。es6新特性：Symbol、class、数值的扩展、字符串的扩展、数组的扩展、对象的扩展等">
@@ -523,7 +523,7 @@ pace-activity
 <li><p><code>arr.fill()</code> 用固定值填充数组中从指定起始索引到指定终止索引内的全部元素,不包括终止索引。(<code>会改变原数组</code>)</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">'2'</span>, <span class="literal">true</span>]</span><br><span class="line"><span class="comment">// console.log(arr.fill('a')) // ["a", "a", "a"]</span></span><br><span class="line"><span class="comment">// console.log(arr.fill('a', 1)) // [1, "a", "a"]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.fill(<span class="string">'a'</span>, <span class="number">1</span>, <span class="number">2</span>)) <span class="comment">// [1, "a", true]</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>arr.includes()</code> 检测数组是否包含某元素,<code>可判断NAN</code></p>
+<li><p><code>arr.includes()</code> 检测数组是否包含某元素,<code>可判断NaN</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="literal">NaN</span>, <span class="string">'a'</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.includes(<span class="number">1</span>)) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.includes(<span class="literal">NaN</span>)) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.includes(<span class="string">'b'</span>)) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>扩展运算符(spread)…</code> 将类数组转为用逗号分隔的参数序列</p>
@@ -696,7 +696,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -718,7 +718,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -830,7 +830,7 @@ pace-activity
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

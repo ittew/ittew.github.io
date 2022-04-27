@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="vue常用高级特性、自定义v-model、slot插槽、mixin抽离公共代码、keep-alive缓存组件、$nextTick、动态组件、异步组件、vuex、vue-router等。vue中的响应式原理、组件渲染过程、模板渲染、虚拟DOMvdom、diff算法等。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-11-06T01:25:38.110Z">
+<meta property="og:updated_time" content="2021-12-19T15:15:18.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue高级特性及部分原理">
 <meta name="twitter:description" content="vue常用高级特性、自定义v-model、slot插槽、mixin抽离公共代码、keep-alive缓存组件、$nextTick、动态组件、异步组件、vuex、vue-router等。vue中的响应式原理、组件渲染过程、模板渲染、虚拟DOMvdom、diff算法等。">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.4k 字
+                  2.5k 字
                 </span>
               
 
@@ -432,8 +432,11 @@ pace-activity
 <li><p>keep-alive <code>缓存 频繁切换不需要重复渲染组件</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive&gt; <span class="xml"><span class="comment">&lt;!-- tab 切换 --&gt;</span></span></span><br><span class="line">  &lt;KeepAliveStageA v-if="state === 'A'"/&gt; &lt;!-- v-show --&gt;</span><br><span class="line">  &lt;KeepAliveStageB v-if="state === 'B'"/&gt;</span><br><span class="line">  &lt;KeepAliveStageC v-if="state === 'C'"/&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>$nextTick  <code>由于异步渲染 会在DOM渲染完之后被触发，以获取最新DOM节点</code></p>
+<li><p>$nextTick与异步更新  <code>由于异步渲染 会在DOM渲染完之后被触发，以获取最新DOM节点</code></p>
 </li>
+</ol>
+<p><code>Vue 在更新 DOM 时是异步执行的。只要侦听到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据变更。如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作是非常重要的。然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际 (已去重的) 工作。Vue 在内部对异步队列尝试使用原生的 Promise.then、MutationObserver 和 setImmediate，如果执行环境不支持，则会采用 setTimeout(fn, 0) 代替。</code></p>
+<ol start="6">
 <li><p>refs <code>元素设置 ref=&quot;ul&quot; 属性 获取DOM元素 this.$refs.ul</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* &lt;ul ref="ul"&gt;</span></span><br><span class="line"><span class="comment">  &lt;li v-for="(item, index) in list" :key="index"&gt;</span></span><br><span class="line"><span class="comment">      &#123;&#123;item&#125;&#125;</span></span><br><span class="line"><span class="comment">  &lt;/li&gt;</span></span><br><span class="line"><span class="comment">&lt;/ul&gt;</span></span><br><span class="line"><span class="comment">&lt;button @click="addItem"&gt;添加一项&lt;/button&gt; */</span></span><br><span class="line">addItem() &#123;</span><br><span class="line">  <span class="keyword">this</span>.list.push(<span class="string">`<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span>`</span>)</span><br><span class="line">  <span class="keyword">this</span>.list.push(<span class="string">`<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span>`</span>)</span><br><span class="line">  <span class="comment">// 1. 异步渲染，$nextTick 待 DOM 渲染完再回调</span></span><br><span class="line">  <span class="comment">// 2. 页面渲染时会将 data 的修改做整合，多次 data 修改只会渲染一次</span></span><br><span class="line">  <span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 获取 DOM 元素</span></span><br><span class="line">    <span class="keyword">const</span> ulElem = <span class="keyword">this</span>.$refs.ul</span><br><span class="line">    <span class="built_in">console</span>.log( ulElem.childNodes.length )</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -696,7 +699,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -718,7 +721,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -830,7 +833,7 @@ pace-activity
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

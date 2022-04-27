@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="js正则表达式，js中的象形文字。正则表达式（英语：Regular Expression，在代码中常简写为regex、regexp或RE）使用单个字符串来描述、匹配一系列符合某个句法规则的字符串搜索模式，可用于文本搜索和文本替换。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-08-14T06:21:10.000Z">
+<meta property="og:updated_time" content="2021-11-26T14:32:13.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js正则表达式">
 <meta name="twitter:description" content="js正则表达式，js中的象形文字。正则表达式（英语：Regular Expression，在代码中常简写为regex、regexp或RE）使用单个字符串来描述、匹配一系列符合某个句法规则的字符串搜索模式，可用于文本搜索和文本替换。">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.9k 字
+                  2k 字
                 </span>
               
 
@@ -422,12 +422,12 @@ pace-activity
         <p><code>js正则表达式，js中的象形文字</code>。正则表达式（英语：Regular Expression，在代码中常简写为regex、regexp或RE）使用单个字符串来描述、匹配一系列符合某个句法规则的字符串搜索模式，可用于文本搜索和文本替换。<br><a id="more"></a></p>
 <h2 id="JS-正则表达式-RegExp对象"><a href="#JS-正则表达式-RegExp对象" class="headerlink" title="JS 正则表达式(RegExp对象)"></a>JS 正则表达式(RegExp对象)</h2><ul>
 <li>正则定义  正则只是针对字符串 默认区分大小写<br>1.<code>patt=new Regexp(&#39;规则&#39;,&#39;g&#39;)</code>  规则必须是字符串 如有\或特殊字符需用\转义<br>2.<code>patt=/\d{6-10}/g</code>  简写 不要写引号  需要传参的时候必须用<code>new</code></li>
-<li><p>正则的五个方法<br>1.<code>/\d+/.test(字符串)</code>  检索字符串中的指定值 返回<code>true</code>或<code>false</code><br>2.<code>/\d+/.exec(字符串)</code>  检索字符串中的指定值 返回值是被找到的值 没有返回<code>null</code><br>3.<code>str.replace(/\d+/,&quot;hello&quot;或callback)</code> 查找并替换  匹配成功返回替换后的字符串<br>4.<code>str.match(/\d+/)</code>  正则去匹配字符串  匹配成功返回匹配成功的数组 不成功返回<code>null</code><br>5.<code>str.search(/\d+/)</code> 正则去匹配字符串  匹配成功返回位置,失败返回-1<br><code>正则默认都是匹配成功就结束了,不会继续匹配,只匹配一次 要全部匹配则要加修饰符g(全局匹配)，</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// new RegExp("e") 声明正则</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"The best things is sleeping"</span></span><br><span class="line"><span class="keyword">var</span> patt1 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(patt1.test(str))  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(patt1.exec(str))  <span class="comment">//["e", index: 2, input: "The best...", groups: undefined]</span></span><br><span class="line"><span class="keyword">var</span> patt = <span class="regexp">/e/</span></span><br><span class="line"><span class="built_in">console</span>.log(str.search(patt)) <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(patt))  <span class="comment">//["e", index: 2, input: "The best...", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(patt, <span class="string">'E'</span>)) <span class="comment">//ThE best things is sleeping</span></span><br><span class="line"><span class="comment">// 使用 /\d&#123;2&#125;/ 声明正则</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'我日西安水电费贱贵大傻逼阿达'</span></span><br><span class="line"><span class="keyword">var</span> patt = <span class="regexp">/我日|贱|大傻逼/g</span></span><br><span class="line"><span class="keyword">var</span> result  = str.replace(patt,<span class="function"><span class="keyword">function</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;s.length;i++)&#123;</span><br><span class="line">      res += <span class="string">'*'</span></span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> res</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">//**西安水电费*贵***阿达</span></span><br><span class="line"><span class="comment">// 去掉前后空格</span></span><br><span class="line"><span class="keyword">var</span> re1  = <span class="regexp">/^\s+|\s$/g</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">' as da '</span>.replace(re1, <span class="string">''</span>)) <span class="comment">//as da</span></span><br></pre></td></tr></table></figure>
+<li><p>正则的六个方法<br>1.<code>/\d+/.test(字符串)</code>  检索字符串中的指定值 返回<code>true</code>或<code>false</code><br>2.<code>/\d+/.exec(字符串)</code>  检索字符串中的指定值 返回值是被找到的值 没有返回<code>null</code><br>3.<code>str.replace(/\d+/,&quot;hello&quot;或callback)</code> 查找并替换  匹配成功返回替换后的字符串<br>4.<code>str.match(/\d+/)</code>  正则去匹配字符串  匹配成功返回匹配成功的数组 不成功返回<code>null</code><br>5.<code>str.search(/\d+/)</code> 正则去匹配字符串  匹配成功返回位置,失败返回-1<br>6.<code>str.split(/-/)</code> 用于使用字符串或正则表达式分隔字符串<br><code>正则默认都是匹配成功就结束了,不会继续匹配,只匹配一次 要全部匹配则要加修饰符g(全局匹配)，</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// new RegExp("e") 声明正则</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"The best things is sleeping"</span></span><br><span class="line"><span class="keyword">var</span> patt1 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(patt1.test(str))  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(patt1.exec(str))  <span class="comment">//["e", index: 2, input: "The best...", groups: undefined]</span></span><br><span class="line"><span class="keyword">var</span> patt = <span class="regexp">/e/</span></span><br><span class="line"><span class="built_in">console</span>.log(str.search(patt)) <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(patt))  <span class="comment">//["e", index: 2, input: "The best...", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(patt, <span class="string">'E'</span>)) <span class="comment">//ThE best things is sleeping</span></span><br><span class="line"><span class="comment">// 使用 /\d&#123;2&#125;/ 声明正则</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'我日西安水电费贱贵大傻逼阿达'</span></span><br><span class="line"><span class="keyword">var</span> patt = <span class="regexp">/我日|贱|大傻逼/g</span></span><br><span class="line"><span class="keyword">var</span> result  = str.replace(patt,<span class="function"><span class="keyword">function</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;s.length;i++)&#123;</span><br><span class="line">      res += <span class="string">'*'</span></span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> res</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">//**西安水电费*贵***阿达</span></span><br><span class="line"><span class="comment">// 去掉前后空格</span></span><br><span class="line"><span class="keyword">var</span> re1  = <span class="regexp">/^\s+|\s$/g</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">' as da '</span>.replace(re1, <span class="string">''</span>)) <span class="comment">//as da</span></span><br><span class="line"><span class="comment">// 使用split分日期隔字符串</span></span><br><span class="line"><span class="keyword">let</span> dateStr = <span class="string">'2020-09-08 16:18:22'</span></span><br><span class="line">dateStr.split(<span class="regexp">/-|:|\s/</span>) <span class="comment">// ['2020', '09', '08', '16', '18', '22']</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>修饰符<br><code>i  执行对大小写不敏感的匹配</code><br><code>g  执行全局匹配</code><br><code>m  执行多行匹配 放在/后面  /e/gi</code></p>
+<li><p>修饰符<br><code>i  不区分大小写字母的匹配</code><br><code>g  执行全局匹配</code><br><code>m  执行多行匹配 放在/后面  /e/gi</code></p>
 </li>
-<li><p>表达式<br><code>[abc]</code>  用于查找方括号之间的任意一个(字符类) <code>/[abc]/</code><br><code>[^abc]</code> 用于查找任何不在方括号之间的字符 <code>/[^abc]/</code><br><code>|</code> 或 <code>a|b</code><br><code>()</code> 匹配子项或分组操作<br><code>[a-z]</code> 范围  [a-z]<br><code>[\b]</code> 退格直接量<br><code>注: 匹配子项 把正则的整体叫做(母亲) 然后把左边第一个小括号里面的正则
+<li><p>表达式<br><code>[abc]</code>  用于查找方括号之间的任意一个(字符类) <code>/[abc]/</code><br><code>[^abc]</code> 用于查找任何不在方括号之间的字符 <code>/[^abc]/</code><br><code>|</code> 或、左右两侧有一个匹配到就可以 <code>a|b</code><br><code>()</code> 匹配子项或分组操作<br><code>[a-z]</code> 范围  [a-z]<br><code>[\b]</code> 退格直接量<br><code>注: 匹配子项 把正则的整体叫做(母亲) 然后把左边第一个小括号里面的正则
 叫做第一个子项(第一个孩子) 第二个小括号就是 第二个子项str.replace(patt,function(母亲,第一个子项,第二个子项){}</code></p>
 </li>
 <li><p>元字符 转义字符<br><code>.</code>   查找除换行符之外任意字符<br><code>\w</code>  用于查找字符 字符包括<code>[A-Za-z0-9_]</code>     <code>\W</code> 非字符 <code>[^A-Za-z0-9_]</code><br><code>\d</code>  用于查找数字 <code>0-9</code>                    <code>\D</code> 非数字<br><code>\s</code>  用于查找空白(空格 <code>tab</code> 回车 换行)     <code>\S</code> 非空白<br><code>\b</code>  独立的部分(单词边界)(起始  结束 空格)   <code>\B</code> 非独立的部分(非单词边界)<br><code>\1或\2..</code>      重复的第一个子项,第二个子项</p>
@@ -458,10 +458,10 @@ pace-activity
 </li>
 </ul>
 <h2 id="贪婪匹配与惰性匹配"><a href="#贪婪匹配与惰性匹配" class="headerlink" title="贪婪匹配与惰性匹配"></a>贪婪匹配与惰性匹配</h2><ul>
-<li><p><code>(.+) 贪婪匹配</code><br>贪婪匹配是先看整个字符串是否匹配，如果不匹配，它会去掉字符串的最后一个字符，并再次尝试。如果还不匹配，那么再去掉当前最后一个，直到发现匹配或不剩任何字符</p>
+<li><p><code>默认贪婪匹配</code><br>贪婪匹配是先看整个字符串是否匹配，如果不匹配，它会去掉字符串的最后一个字符，并再次尝试。如果还不匹配，那么再去掉当前最后一个，直到发现匹配或不剩任何字符</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'aaa&lt;div style="font-color:red;"&gt;123456&lt;/div&gt;bbb'</span></span><br><span class="line">str.match(<span class="regexp">/&lt;.+&gt;/</span>); <span class="comment">// &lt;div style="font-color:red;"&gt;123456&lt;/div&gt;</span></span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">'abcdabceba'</span></span><br><span class="line">str.match(<span class="regexp">/.+b/</span>) <span class="comment">// abcdabceb</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>(.+?) 惰性匹配</code><br>惰性匹配是从左侧第一个字符开始向右匹配, 先看第一个字符是不是一个匹配, 如果不匹配就加入下一个字符再尝式匹配, 直到发现匹配</p>
+<li><p><code>?惰性匹配 尽可能少的匹配</code><br>惰性匹配是从左侧第一个字符开始向右匹配, 先看第一个字符是不是一个匹配, 如果不匹配就加入下一个字符再尝式匹配, 直到发现匹配</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'aaa&lt;div style="font-color:red;"&gt;123456&lt;/div&gt;bbb'</span></span><br><span class="line">str.match(<span class="regexp">/&lt;.+?&gt;/</span>) <span class="comment">// &lt;div style="font-color:red;"&gt;</span></span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">'abcdabceba'</span></span><br><span class="line">str.match(<span class="regexp">/.+?b/</span>) <span class="comment">// ab</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -600,7 +600,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -622,7 +622,7 @@ pace-activity
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -734,7 +734,7 @@ pace-activity
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
