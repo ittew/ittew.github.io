@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="http三次握手URI URL URN URI 统一资源标志符 用来唯一标识互联网上的信息资源 包括URL和URN URL 统一资源定位符 如:https://www.baidu.com/s?wd=aa URN 永久统一资源定位符 在资源更换地址后还能找到  HTTP报文格式CORS cors预请求 允许方法 GET HEAD POST cors预请求 允许content-type text/p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-11-17T14:16:11.789Z">
+<meta property="og:updated_time" content="2022-09-18T11:13:53.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP协议原理与实践">
 <meta name="twitter:description" content="http三次握手URI URL URN URI 统一资源标志符 用来唯一标识互联网上的信息资源 包括URL和URN URL 统一资源定位符 如:https://www.baidu.com/s?wd=aa URN 永久统一资源定位符 在资源更换地址后还能找到  HTTP报文格式CORS cors预请求 允许方法 GET HEAD POST cors预请求 允许content-type text/p">
@@ -441,7 +441,7 @@ pace-activity
 <li>参考文章：<a href="https://blog.csdn.net/u014465934/article/details/83796427" target="_blank" rel="noopener">Expires、Cache-Control、Last-Modified和If-Modified—Since、Etag和If-None-Match</a>  <a href="https://segmentfault.com/a/1190000019178114?utm_source=weekly&amp;utm_medium=email&amp;utm_campaign=email_weekly" target="_blank" rel="noopener">通过HTTP Header控制缓存</a></li>
 </ul>
 <h3 id="Cookie与session"><a href="#Cookie与session" class="headerlink" title="Cookie与session"></a>Cookie与session</h3><ul>
-<li><p>cookie 通过Set-Cookie设置下次请求会自动带上，键值对，可以设置多个</p>
+<li><p>cookie 通过Set-Cookie设置下次请求会自动带上，键值对，可以设置多个<br><code>cookie生成方式: http response header中的set-cookie</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. max-age和expires设置过期时间</span></span><br><span class="line"><span class="comment">// 2. secure只在https时候发送</span></span><br><span class="line"><span class="comment">// 3. HttpOnly无法通过document.cookie访问</span></span><br><span class="line"><span class="comment">// 服务端</span></span><br><span class="line">response.writeHead(<span class="number">200</span>, &#123;</span><br><span class="line">  <span class="string">'Content-Type'</span>: <span class="string">'text/html'</span>,</span><br><span class="line">  <span class="comment">// 'Set-Cookie': 'id=123' // 设置单个cookie</span></span><br><span class="line">  <span class="comment">// 'Set-Cookie': 'id=123;max-age=5' // 设置单个cookie失效时间</span></span><br><span class="line">  <span class="comment">// 'Set-Cookie': ['id=123;max-age=5','abc=456'] // 设置多个cookie</span></span><br><span class="line">  <span class="string">'Set-Cookie'</span>: [<span class="string">'id=123; max-age=2'</span>, <span class="string">'abc=456;domain=test.com'</span>] <span class="comment">// 设置多个cookie并设置domain</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 客户端 获取cookie</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.cookie)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>session</p>
@@ -651,7 +651,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">95</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

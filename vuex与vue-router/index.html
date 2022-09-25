@@ -112,7 +112,7 @@ pace-activity
 <meta property="og:description" content="vuex和vue-router是vue生态系统中的很重要的两个工具。vuex 是vue用来管理数据状态的一种机制，将Vue中所有的状态（数据）抽离出来进行统一管理。Vue Router 是 Vue.js 官方的路由管理器。它和Vue.js的核心深度集成，让构建单页面应用变得易如反掌，是SPA（单页应用）的路径管理器。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ittew.cn/image/vue/vuex.png">
-<meta property="og:updated_time" content="2021-11-16T12:30:28.332Z">
+<meta property="og:updated_time" content="2022-05-28T05:01:59.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex与vue-router">
 <meta name="twitter:description" content="vuex和vue-router是vue生态系统中的很重要的两个工具。vuex 是vue用来管理数据状态的一种机制，将Vue中所有的状态（数据）抽离出来进行统一管理。Vue Router 是 Vue.js 官方的路由管理器。它和Vue.js的核心深度集成，让构建单页面应用变得易如反掌，是SPA（单页应用）的路径管理器。">
@@ -528,7 +528,7 @@ pace-activity
 </ol>
 <h5 id="keep-alive与-vue-router"><a href="#keep-alive与-vue-router" class="headerlink" title="keep-alive与 vue-router"></a>keep-alive与 vue-router</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// keep-alive 是 Vue 内置的组件，可以使被包含的组件保留状态，或避免重新渲染。</span></span><br><span class="line"><span class="comment">// 它们有两个非常重要的属性:</span></span><br><span class="line"><span class="comment">//    include - 字符串或正则表达，只有匹配的组件会被缓存</span></span><br><span class="line"><span class="comment">//    exclude - 字符串或正则表达式，任何匹配的组件都不会被缓存</span></span><br><span class="line"><span class="comment">// router-view 也是一个组件，如果直接被包在 keep-alive 里面，所有路径匹配到的视图组件都会被缓存：</span></span><br><span class="line"><span class="comment">// 组件使用keep-alive专有 生命周期</span></span><br><span class="line"><span class="comment">// activated: function()&#123; console.log('activated') &#125;</span></span><br><span class="line"><span class="comment">// deactivated: function()&#123; console.log('deactivated') &#125;</span></span><br><span class="line"><span class="comment">//  Detail,City 不被缓存组件name</span></span><br><span class="line">&lt;keep-alive exclude=<span class="string">"Detail, City"</span>&gt;</span><br><span class="line">  &lt;router-view/&gt;</span><br><span class="line">&lt;<span class="regexp">/keep-alive&gt;</span></span><br></pre></td></tr></table></figure>
 <h5 id="vue项目实现按需加载或懒加载的3种方式"><a href="#vue项目实现按需加载或懒加载的3种方式" class="headerlink" title="vue项目实现按需加载或懒加载的3种方式"></a>vue项目实现按需加载或懒加载的3种方式</h5><ul>
-<li>路由懒加载的主要作用就是将每个路由对应的组件打包到单独的js中.只有在这个路由被访问到的时候, 才加载对应的组件</li>
+<li>路由懒加载的主要作用就是将每个路由对应的组件打包到单独的js中.只有在这个路由被访问到的时候, 才加载对应路由的js文件</li>
 <li><p>vue异步组件 AMD</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue-router配置路由 , 使用vue的异步组件技术 , 可以实现按需加载 .</span></span><br><span class="line"><span class="comment">// 但是,这种情况下一个组件生成一个js文件</span></span><br><span class="line"><span class="comment">/* vue异步组件技术 */</span></span><br><span class="line">&#123;</span><br><span class="line">  path: <span class="string">'/home'</span>,</span><br><span class="line">  name: <span class="string">'home'</span>,</span><br><span class="line">  component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'@/components/home'</span>],resolve)</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  path: <span class="string">'/index'</span>,</span><br><span class="line">  name: <span class="string">'Index'</span>,</span><br><span class="line">  component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'@/components/index'</span>],resolve)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -674,7 +674,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">95</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

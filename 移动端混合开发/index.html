@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="目前市场上主流的APP分为三种：原生APP、Web APP（即HTML5）和混合APP三种，相对应的定制开发就是原生开发、H5开发和混合开发。原生开发（Native App开发），是在Android、IOS等移动平台上利用提供的开发语言、开发类库、开发工具进行App软件开发。HTML5应用开发，是利用Web技术进行的App开发。Web技术本身需要浏览器的支持才能进行展示和用户交互，因此主要用到的技">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-12-09T15:51:44.773Z">
+<meta property="og:updated_time" content="2022-09-12T12:53:33.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端混合开发">
 <meta name="twitter:description" content="目前市场上主流的APP分为三种：原生APP、Web APP（即HTML5）和混合APP三种，相对应的定制开发就是原生开发、H5开发和混合开发。原生开发（Native App开发），是在Android、IOS等移动平台上利用提供的开发语言、开发类库、开发工具进行App软件开发。HTML5应用开发，是利用Web技术进行的App开发。Web技术本身需要浏览器的支持才能进行展示和用户交互，因此主要用到的技">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  969 字
+                  1.3k 字
                 </span>
               
 
@@ -426,8 +426,63 @@ pace-activity
 <li><code>Native App</code> 原生程序，一般依托于操作系统，有很强的交互，是一个完整的App，可拓展性强。需要用户下载安装使用，性能稳定，操作速度快，用户体验好。 但不能跨平台，维护和开发成本高，更新缓慢，上线流程较复杂。<blockquote>
 <p>混合开发: 混合了Native(原生)技术和web技术进行开发移动应用的开发模式.</p>
 </blockquote>
-<h3 id="其他移动端产品形态"><a href="#其他移动端产品形态" class="headerlink" title="其他移动端产品形态"></a>其他移动端产品形态</h3><code>ReactNative，Weex，Flutter，小程序开发，快应用，uni-app等</code></li>
+</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">Native App</th>
+<th style="text-align:center">Hybrid App</th>
+<th style="text-align:center">Web App</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">运行环境</td>
+<td style="text-align:center">操作系统(Android、ios等)</td>
+<td style="text-align:center">APP内嵌的容器(webview等)</td>
+<td style="text-align:center">浏览器</td>
+</tr>
+<tr>
+<td style="text-align:center">调用原生</td>
+<td style="text-align:center">可调用系统API</td>
+<td style="text-align:center">可通过桥间接调用部分系统API</td>
+<td style="text-align:center">通过浏览器调用有限的系统API</td>
+</tr>
+<tr>
+<td style="text-align:center">迭代周期</td>
+<td style="text-align:center">周期长、打包后需提交到应用商店审核</td>
+<td style="text-align:center">更新web部分不用打包、更新原生需打包</td>
+<td style="text-align:center">周期短、随时部署更新</td>
+</tr>
+<tr>
+<td style="text-align:center">软件更新</td>
+<td style="text-align:center">用户手动升级</td>
+<td style="text-align:center">web部分更新不需打包</td>
+<td style="text-align:center">不用升级</td>
+</tr>
+<tr>
+<td style="text-align:center">绘图特效</td>
+<td style="text-align:center">高效的渲染性能、支持复杂动画、丰富的图形应用</td>
+<td style="text-align:center">有更多方式操作图形和动画，但性能不如原生</td>
+<td style="text-align:center">H5提供canvas支持图形和动画，但功能和性能都不如原生</td>
+</tr>
+<tr>
+<td style="text-align:center">离线应用</td>
+<td style="text-align:center">支持离线应用场景</td>
+<td style="text-align:center">支持离线应用，涉及客户端、服务端及前端</td>
+<td style="text-align:center">H5也支持离线应用但浏览器支持情况不一</td>
+</tr>
+<tr>
+<td style="text-align:center">用户体验</td>
+<td style="text-align:center">可缓存、更加流畅、用户体验更高</td>
+<td style="text-align:center">可实现部分原生功能，用户体验一般</td>
+<td style="text-align:center">动画、音视频、加载等不流畅，会出现卡顿，体验较差</td>
+</tr>
+</tbody>
+</table>
+<h3 id="其他移动端产品形态"><a href="#其他移动端产品形态" class="headerlink" title="其他移动端产品形态"></a>其他移动端产品形态</h3><p><code>ReactNative，Weex，Flutter，小程序开发，快应用，uni-app等</code></p>
 <h3 id="流行的混发开发方案"><a href="#流行的混发开发方案" class="headerlink" title="流行的混发开发方案"></a>流行的混发开发方案</h3><ul>
 <li>基于JS + WebView渲染(JSBridge)<br>通过webview渲染UI,JSBridge给webview提供常用原生功能如: 摄像头、GPS、通信录等</li>
 <li>基于JS + Native UI(ReactNative、Weex)<br>开发技术仍然使用 JS 等 Web 元素，但 UI 渲染、动画、网络等都通过原生实现。JS 到原生的调用通过 JS 桥接器实现。</li>
@@ -598,7 +653,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">95</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

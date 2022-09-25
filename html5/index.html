@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="Html5特点:代码更加简洁,标签具有语义化,新增了一些属性,代码更加宽松,是互联网的下一代标准,新增了更加丰富且实用的规范, 如: 语义化标签、废除标签、丰富表单控件、拖拽事件、Canvas、SVG矢量图、Video、Audio、触屏touch事件、本地存储、应用缓存等.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-08-14T06:21:10.000Z">
+<meta property="og:updated_time" content="2022-09-25T13:18:37.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html5学习">
 <meta name="twitter:description" content="Html5特点:代码更加简洁,标签具有语义化,新增了一些属性,代码更加宽松,是互联网的下一代标准,新增了更加丰富且实用的规范, 如: 语义化标签、废除标签、丰富表单控件、拖拽事件、Canvas、SVG矢量图、Video、Audio、触屏touch事件、本地存储、应用缓存等.">
@@ -338,8 +338,8 @@ pace-activity
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-19T14:21:14+08:00">
-                2017-02-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T14:21:14+08:00">
+                2017-07-09
               </time>
             
 
@@ -465,7 +465,7 @@ pace-activity
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1.获取外部的拖拽的文件  file=ev.dataTransfer.files</span></span><br><span class="line"><span class="comment">2.新建一个文件读取对象  re=new FileReader()</span></span><br><span class="line"><span class="comment">3.读取拖拽进来的文件    re.readAsDataURL(file[0])</span></span><br><span class="line"><span class="comment">4.读取文件完成触发函数  re.onload=function()&#123;&#125;</span></span><br><span class="line"><span class="comment">5.取得读取到的数据      this.result</span></span><br><span class="line"><span class="comment">6.创建img标签 将取得数据赋值给img的src属性</span></span><br><span class="line"><span class="comment">7.将img对象添加到目标对象中</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">odiv3.ondrop = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> ev = ev||<span class="built_in">window</span>.event</span><br><span class="line">  ev.preventDefault()</span><br><span class="line">  <span class="keyword">this</span>.indexHTML = <span class="string">''</span></span><br><span class="line">  <span class="keyword">var</span> file = ev.dataTransfer.files <span class="comment">// 获取外部拖拽的文件</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;file.length;i++) &#123; <span class="comment">// 遍历上传的文件</span></span><br><span class="line">    <span class="keyword">if</span>(file[i].type.indexOf(<span class="string">'image'</span>) &gt; <span class="number">-1</span>)&#123;<span class="comment">// 判断是否是图片类型</span></span><br><span class="line">      <span class="keyword">var</span> re = <span class="keyword">new</span> FileReader() <span class="comment">// 新建文件读取对象</span></span><br><span class="line">      re.readAsDataUrl(file[i]) <span class="comment">// 读取文件</span></span><br><span class="line">      re.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.result)</span><br><span class="line">        <span class="keyword">var</span> img = doucment.createElement(<span class="string">'img'</span>) <span class="comment">// 创建图片对象</span></span><br><span class="line">        img.src = <span class="keyword">this</span>.result <span class="comment">// 将读取到的文件数据赋值给img对象</span></span><br><span class="line">        odiv3.appendchild(<span class="string">'img'</span>) <span class="comment">// 将img对象添加到拖拽的目标对象odiv3上</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      alert(<span class="string">'请上传图片类型'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="Html5canvas绘图"><a href="#Html5canvas绘图" class="headerlink" title="Html5canvas绘图"></a>Html5canvas绘图</h2><ul>
+<h2 id="Html5-canvas绘图"><a href="#Html5-canvas绘图" class="headerlink" title="Html5 canvas绘图"></a>Html5 canvas绘图</h2><ul>
 <li>canvas标签 <code>&lt;canvas id=&quot;can&quot; width=&quot;300px&quot; height=&quot;300px&quot;&gt;&lt;/canvas&gt;</code><br><code>canvas元素本身是没有绘图能力的,所有的绘制工作必须在javascript中进行完成,拥有多种绘制图形,字符,图像的方法</code></li>
 <li>canvas绘图环境设置<br><code>cxt=getContext(&quot;2d&quot;)</code> 目前只支持2d绘图环境(获取图形上下文)</li>
 <li><p>绘制路径</p>
@@ -537,9 +537,9 @@ pace-activity
 </li>
 </ul>
 <h2 id="HTML5视频video"><a href="#HTML5视频video" class="headerlink" title="HTML5视频video"></a>HTML5视频video</h2><ul>
-<li><code>&lt;video src=&quot;xxx.mp4&quot; controls autoplay width=&quot;500&quot; height=&quot;500&quot; Preload=”preload” poster=”1.jpg”  loop=”loop”&gt;&lt;/video&gt;</code></li>
+<li><code>&lt;video src=&quot;xxx.mp4&quot; controls autoplay width=&quot;500&quot; height=&quot;500&quot; preload=”metadata” poster=”1.jpg”  loop=”loop”&gt;&lt;/video&gt;</code></li>
 <li><p>Video的属性</p>
-<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Autopaly  视频加载完成后自动播放</span><br><span class="line">Controls  向用户显示播放控件(必须设定)</span><br><span class="line"><span class="keyword">Width</span>     设置播放器宽度</span><br><span class="line">Height    设置播放器高度</span><br><span class="line"><span class="keyword">Loop</span>      播放完是否继续播放该视频,循环播放</span><br><span class="line">Preload   页面加载时就加载视频,并预备播放</span><br><span class="line">Src       视频url地址</span><br><span class="line">Poster    加载等待的画面图片poster=”url”</span><br><span class="line">Autobuffer 设置为浏览器缓冲方式,不设置autoplay才有效</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">autoplay  视频加载完成后自动播放</span><br><span class="line">controls  向用户显示播放控件</span><br><span class="line"><span class="built_in">width</span>     设置播放器宽度</span><br><span class="line"><span class="built_in">height</span>    设置播放器高度</span><br><span class="line"><span class="built_in">loop</span>      播放完是否继续播放该视频,循环播放</span><br><span class="line">muted     布尔属性，将视频静音</span><br><span class="line">preload   页面加载时就加载视频,并预备播放</span><br><span class="line">src       视频url地址</span><br><span class="line">poster    视频的封面，加载等待的画面图片poster=”url”</span><br><span class="line">Autobuffer 设置为浏览器缓冲方式,不设置autoplay才有效</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>video对象方法<br><code>vid.paly() 播放 vid.pause() 暂停  vid.load() 重新加载</code></p>
 </li>
@@ -631,8 +631,8 @@ pace-activity
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/bootstrap学习/" rel="next" title="bootstrap学习">
-                <i class="fa fa-chevron-left"></i> bootstrap学习
+              <a href="/前端开发常见问题/" rel="next" title="前端开发常见问题">
+                <i class="fa fa-chevron-left"></i> 前端开发常见问题
               </a>
             
           </div>
@@ -725,7 +725,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">95</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -838,7 +838,7 @@ pace-activity
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增标签"><span class="nav-number">1.</span> <span class="nav-text">HTML5新增标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5新增表单"><span class="nav-number">2.</span> <span class="nav-text">Html5新增表单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5拖拽事件"><span class="nav-number">3.</span> <span class="nav-text">Html5拖拽事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5canvas绘图"><span class="nav-number">4.</span> <span class="nav-text">Html5canvas绘图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-SVG矢量图"><span class="nav-number">5.</span> <span class="nav-text">HTML5 SVG矢量图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5视频video"><span class="nav-number">6.</span> <span class="nav-text">HTML5视频video</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5音频audio"><span class="nav-number">7.</span> <span class="nav-text">HTML5音频audio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML新增touch事件"><span class="nav-number">8.</span> <span class="nav-text">HTML新增touch事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5-新增JS特性"><span class="nav-number">9.</span> <span class="nav-text">Html5 新增JS特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5本地存储"><span class="nav-number">10.</span> <span class="nav-text">Html5本地存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-历史管理history"><span class="nav-number">11.</span> <span class="nav-text">HTML5 历史管理history</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增标签"><span class="nav-number">1.</span> <span class="nav-text">HTML5新增标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5新增表单"><span class="nav-number">2.</span> <span class="nav-text">Html5新增表单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5拖拽事件"><span class="nav-number">3.</span> <span class="nav-text">Html5拖拽事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5-canvas绘图"><span class="nav-number">4.</span> <span class="nav-text">Html5 canvas绘图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-SVG矢量图"><span class="nav-number">5.</span> <span class="nav-text">HTML5 SVG矢量图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5视频video"><span class="nav-number">6.</span> <span class="nav-text">HTML5视频video</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5音频audio"><span class="nav-number">7.</span> <span class="nav-text">HTML5音频audio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML新增touch事件"><span class="nav-number">8.</span> <span class="nav-text">HTML新增touch事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5-新增JS特性"><span class="nav-number">9.</span> <span class="nav-text">Html5 新增JS特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html5本地存储"><span class="nav-number">10.</span> <span class="nav-text">Html5本地存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-历史管理history"><span class="nav-number">11.</span> <span class="nav-text">HTML5 历史管理history</span></a></li></ol></div>
             
 
           </div>
