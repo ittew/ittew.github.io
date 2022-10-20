@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="Git是一种版本控制器，git可以帮我们管理我们的代码保证代码不丢失，记录历史只要代码提交到git上就永久不会丢失,可以随时穿越，团队协作，强大的分支管理功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-04-27T13:05:33.727Z">
+<meta property="og:updated_time" content="2022-10-03T11:54:44.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git基本操作">
 <meta name="twitter:description" content="Git是一种版本控制器，git可以帮我们管理我们的代码保证代码不丢失，记录历史只要代码提交到git上就永久不会丢失,可以随时穿越，团队协作，强大的分支管理功能。">
@@ -551,6 +551,7 @@ pace-activity
 <li><code>git shortlog -sn</code> 统计每个作者的提交个数</li>
 <li><code>git shortlog -sn --no-merges</code> 统计每个作者的提交个数，不包含<code>merge commit</code></li>
 <li><code>git shortlog</code>  统计每个作者的提交情况</li>
+<li><code>history &gt; log.txt</code> 输出git的所有历史记录</li>
 </ul>
 <h2 id="git忽略文件"><a href="#git忽略文件" class="headerlink" title="git忽略文件`"></a>git忽略文件`</h2><p><code>.gitignore 忽略文件，让git不在管理当前项目下的某些文件</code><br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">项目根目录新建 <span class="string">.gitignore</span> 文件</span><br><span class="line"><span class="string">.idea</span> 忽略单个文件</span><br><span class="line">dist/ 忽略文件夹</span><br><span class="line">node_modules/  忽略文件夹</span><br><span class="line">*<span class="string">.h</span> 忽略以 <span class="string">.h</span> 结尾的文件</span><br><span class="line">!con.h 不忽略 con.h 文件</span><br><span class="line">*<span class="string">.h</span>[s|d] 忽略以 <span class="string">.hs</span>或<span class="string">.hd</span> 结尾文件</span><br></pre></td></tr></table></figure></p>
 <p>更多参考：<a href="https://gitub.com/github/gitignore" target="_blank" rel="noopener">不同开发语言的gitignore设置</a></p>
@@ -699,7 +700,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">97</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

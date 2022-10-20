@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象（在非严格模式情况下）, 如果函数的调用者不存在，那么它的调用者将会是全局window对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-08-14T06:21:10.000Z">
+<meta property="og:updated_time" content="2022-10-02T13:50:15.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="this指向详解">
 <meta name="twitter:description" content="this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象（在非严格模式情况下）, 如果函数的调用者不存在，那么它的调用者将会是全局window对象">
@@ -426,7 +426,7 @@ pace-activity
 <h2 id="3-函数内部"><a href="#3-函数内部" class="headerlink" title="3. 函数内部"></a>3. 函数内部</h2><ul>
 <li>函数直接执行</li>
 </ul>
-<p><code>非严格模式下 this默认指向全局对象window</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">test()  <span class="comment">// window</span></span><br><span class="line"><span class="built_in">window</span>.test()  <span class="comment">// window</span></span><br></pre></td></tr></table></figure></p>
+<p><code>非严格模式下 this默认指向全局对象window</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非严格模式下 函数执行, 如果没有明确指定执行的主体, this统一指向window</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">test()  <span class="comment">// window</span></span><br><span class="line"><span class="built_in">window</span>.test()  <span class="comment">// window</span></span><br></pre></td></tr></table></figure></p>
 <p><code>严格模式下 this为undefined</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  "use strict"</span>  <span class="comment">// 开启严格模式</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">test()  <span class="comment">// undefiend</span></span><br><span class="line"><span class="built_in">window</span>.test()  <span class="comment">// window</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>自执行函数(自调用函数表达式)，<code>this</code>默认指向<code>window</code></li>
@@ -613,7 +613,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">97</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

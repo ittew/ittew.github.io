@@ -388,7 +388,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">97</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1055,7 +1055,20 @@ pace-activity
 <!-- 代码块复制功能 -->
 <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
 <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+                return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
 
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
 
                   // highlight title and content
 

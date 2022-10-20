@@ -103,18 +103,18 @@ pace-activity
 
 
 
-<meta name="description" content="移动端的开发由于设备的不统一会造成一些兼容性问题，经常会困扰许多web前端开发者，自从接触移动端以来也遇到过很多问题，低端机性能差容易卡顿，h5和css3新的api在低版本兼容性差等。">
+<meta name="description" content="资源的合并与压缩 减少http请求数量  尽量合并css和js文件 减少请求资源的大小 进行代码压缩 html代码压缩就是压缩在这些文本文件中有意义,但是在HTML中不显示的字符,包括空格,制表符,换行符,HTML注释等.     css压缩 删除无效代码 css语义合并   Js压缩与混乱 删除无效字符的删除  删除注释 代码语义缩减和优化  使用在线网站进行压缩 使用构建工具进行压缩fis3,">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端性能优化">
 <meta property="og:url" content="http://ittew.cn/前端性能优化/index.html">
 <meta property="og:site_name" content="TEW BLOG">
-<meta property="og:description" content="移动端的开发由于设备的不统一会造成一些兼容性问题，经常会困扰许多web前端开发者，自从接触移动端以来也遇到过很多问题，低端机性能差容易卡顿，h5和css3新的api在低版本兼容性差等。">
+<meta property="og:description" content="资源的合并与压缩 减少http请求数量  尽量合并css和js文件 减少请求资源的大小 进行代码压缩 html代码压缩就是压缩在这些文本文件中有意义,但是在HTML中不显示的字符,包括空格,制表符,换行符,HTML注释等.     css压缩 删除无效代码 css语义合并   Js压缩与混乱 删除无效字符的删除  删除注释 代码语义缩减和优化  使用在线网站进行压缩 使用构建工具进行压缩fis3,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-09-18T11:18:17.725Z">
+<meta property="og:updated_time" content="2022-10-10T13:45:57.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端性能优化">
-<meta name="twitter:description" content="移动端的开发由于设备的不统一会造成一些兼容性问题，经常会困扰许多web前端开发者，自从接触移动端以来也遇到过很多问题，低端机性能差容易卡顿，h5和css3新的api在低版本兼容性差等。">
+<meta name="twitter:description" content="资源的合并与压缩 减少http请求数量  尽量合并css和js文件 减少请求资源的大小 进行代码压缩 html代码压缩就是压缩在这些文本文件中有意义,但是在HTML中不显示的字符,包括空格,制表符,换行符,HTML注释等.     css压缩 删除无效代码 css语义合并   Js压缩与混乱 删除无效字符的删除  删除注释 代码语义缩减和优化  使用在线网站进行压缩 使用构建工具进行压缩fis3,">
 
 
 
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k 字
+                  2.1k 字
                 </span>
               
 
@@ -419,10 +419,9 @@ pace-activity
       
 
       
-        <p>移动端的开发由于设备的不统一会造成一些兼容性问题，经常会困扰许多<code>web</code>前端开发者，自从接触移动端以来也遇到过很多问题，低端机性能差容易卡顿，<code>h5</code>和<code>css3</code>新的<code>api</code>在低版本兼容性差等。<br><a id="more"></a></p>
-<h2 id="资源的合并与压缩"><a href="#资源的合并与压缩" class="headerlink" title="资源的合并与压缩"></a>资源的合并与压缩</h2><ul>
-<li>减少http请求数量</li>
-<li>减少请求资源的大小<blockquote>
+        <h2 id="资源的合并与压缩"><a href="#资源的合并与压缩" class="headerlink" title="资源的合并与压缩"></a>资源的合并与压缩</h2><ul>
+<li>减少http请求数量  尽量合并css和js文件</li>
+<li>减少请求资源的大小 进行代码压缩<blockquote>
 <p>html代码压缩就是压缩在这些文本文件中有意义,但是在HTML中<code>不显示</code>的字符,包括<code>空格</code>,<code>制表符</code>,<code>换行符</code>,<code>HTML注释</code>等.</p>
 </blockquote>
 </li>
@@ -471,6 +470,7 @@ pace-activity
 <li>不要一条条地修改DOM样式,预先定义好class,然后修改DOM的className</li>
 <li>把DOM离线后修改,比如: 先把DOM给display:none 修改后再显示出来</li>
 <li>启用GPU硬件加速 <code>transform:translateZ(0)或translate3D(0,0,0)</code></li>
+<li>减少对DOM的操作,避免频繁操作DOM,使用fragment文档碎片,对DOM节点的操作统一处理后,再插入到DOM中</li>
 </ul>
 <h2 id="浏览器存储"><a href="#浏览器存储" class="headerlink" title="浏览器存储"></a>浏览器存储</h2><ul>
 <li><code>cookie</code> 作为客户端浏览器存储 大小4kb左右  需要设置过期时间expire</li>
@@ -504,6 +504,9 @@ pace-activity
 <h4 id="Vue-SSR-服务端渲染"><a href="#Vue-SSR-服务端渲染" class="headerlink" title="Vue-SSR 服务端渲染"></a>Vue-SSR 服务端渲染</h4><p><code>SSR(Server Side Readering)</code></p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li>window.performance.timing  监控页面加载速度的api</li>
+<li>在js中尽量减少闭包的使用(闭包会产生不释放的栈内存)</li>
+<li>尽可能的手动释放不被占用的内存</li>
+<li>使用CDN加速</li>
 </ul>
 <h4 id="服务器相关优化"><a href="#服务器相关优化" class="headerlink" title="服务器相关优化"></a>服务器相关优化</h4><ol>
 <li><p>开启gzip压缩</p>
@@ -555,8 +558,8 @@ pace-activity
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/跨域解决方案/" rel="next" title="跨域解决方案">
-                <i class="fa fa-chevron-left"></i> 跨域解决方案
+              <a href="/移动端适配/" rel="next" title="移动端适配">
+                <i class="fa fa-chevron-left"></i> 移动端适配
               </a>
             
           </div>
@@ -649,7 +652,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">97</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

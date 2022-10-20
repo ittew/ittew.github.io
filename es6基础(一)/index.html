@@ -115,7 +115,7 @@ pace-activity
 <meta property="og:image" content="http://ittew.cn/image/es6/let2.png">
 <meta property="og:image" content="http://ittew.cn/image/es6/let4.png">
 <meta property="og:image" content="http://ittew.cn/image/es6/let3.png">
-<meta property="og:updated_time" content="2022-09-12T12:53:33.223Z">
+<meta property="og:updated_time" content="2022-10-02T07:41:07.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6基础(一)">
 <meta name="twitter:description" content="ECMAScript 6.0简称(es6) 是继ECMAScript 5之后的javascript语言的下一代标准,它的目标是使得javascript语言可以用来编写复杂的大型应用程序。es6新特性：let、const、解构赋值、Set、Map、Iterrator接口等">
@@ -399,7 +399,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.5k 字
+                  3.6k 字
                 </span>
               
 
@@ -429,7 +429,7 @@ pace-activity
 <li>使用let声明的变量,所声明的变量只在命令所在的代码块有效. for if 等形成块级作用域</li>
 <li>为什么需要块级作用域  内层变量会覆盖外层变量 用来计数的循环变量泄漏为全局变量<br><img src="/image/es6/let1.png" alt="let1"></li>
 <li>使用let命令声明的变量在预解析的时候不会被提升  let声明的变量不允许未定义就使用<br><img src="/image/es6/let2.png" alt="let1"></li>
-<li>暂时性死区 只要块级作用域内存在let命令,它所声明的变量就绑定在这个区域内,不再受外部的影响.  当前作用域在执行之前，浏览器会做语法检测，如果语法检测不通过会直接报错，整个代码不执行<br>console.log(typeof a)  //暂时性死区<br><img src="/image/es6/let4.png" alt="let1"></li>
+<li>暂时性死区 只要块级作用域内存在let命令,它所声明的变量就绑定在这个区域内,不再受外部的影响.  当前作用域在执行之前，浏览器会做语法(重复性)检测，如果语法(重复性)检测不通过会直接报错，整个代码不执行<br>console.log(typeof a)  //暂时性死区<br><img src="/image/es6/let4.png" alt="let1"></li>
 <li>let不允许在同一个作用域下声明已经存在的变量   不能在函数内部重新声明参数<br><img src="/image/es6/let3.png" alt="let1"><br><code>var 声明的变量由函数来划分作用域</code><br><code>let  声明的变量由代码块来划分作用域   一对{ } 包括的区域被称为代码块</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">&lt;div&gt;</span></span><br><span class="line"><span class="comment">  &lt;button&gt;按钮1&lt;/button&gt;</span></span><br><span class="line"><span class="comment">  &lt;button&gt;按钮2&lt;/button&gt;</span></span><br><span class="line"><span class="comment">  &lt;button&gt;按钮3&lt;/button&gt;</span></span><br><span class="line"><span class="comment">  &lt;button&gt;按钮4&lt;/button&gt;</span></span><br><span class="line"><span class="comment">&lt;/div&gt;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 给多个button添加点击事件，并弹出对应的索引值</span></span><br><span class="line"><span class="keyword">var</span> btns = <span class="built_in">document</span>.querySelectorAll(<span class="string">'button'</span>)</span><br><span class="line"><span class="comment">/* 问题代码</span></span><br><span class="line"><span class="comment">for(var i=0;i&lt;btns.length;i++)&#123;</span></span><br><span class="line"><span class="comment">  btns[i].onclick = function() &#123;</span></span><br><span class="line"><span class="comment">    console.log(i) // 6 6 6 6</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 方法1 使用let</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;btns.length;i++)&#123;</span><br><span class="line">  btns[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i) <span class="comment">// 1 2 3 4</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 方法二 自定义属性存索引</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;btns.length;i++)&#123;</span><br><span class="line">  btns[i].index = i</span><br><span class="line">  btns[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.index) <span class="comment">// 1 2 3 4</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 方法三 闭包</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;btns.length;i++)&#123;</span><br><span class="line">  <span class="comment">// 遍历过程 仅将事件处理函数赋值给按钮的onclick属性 不调用函数</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>))</span>&#123; <span class="comment">// 形参相当于局部变量 var i</span></span><br><span class="line">    btns[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 每调用一次 就创建一个函数 并将本次传入的i值放在局部变量 被永久保存起来</span></span><br><span class="line">      <span class="built_in">console</span>.log(i) <span class="comment">// 1 2 3 4</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -614,8 +614,8 @@ pace-activity
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/http/" rel="next" title="HTTP协议原理与实践">
-                <i class="fa fa-chevron-left"></i> HTTP协议原理与实践
+              <a href="/了解http网络协议/" rel="next" title="了解http网络协议">
+                <i class="fa fa-chevron-left"></i> 了解http网络协议
               </a>
             
           </div>
@@ -708,7 +708,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">97</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

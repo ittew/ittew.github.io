@@ -111,7 +111,7 @@ pace-activity
 <meta property="og:site_name" content="TEW BLOG">
 <meta property="og:description" content="Node.js在server服务端开发常用模块，HTTP模块处理客户端的网络请求，URL模块用于处理与解析请求的URL， Query Strings模块处理客户端通过get/post请求传递过来的参数，Path模块文件路径处理服务，stream处理body提交数据，HTTPS模块 是基于TLS/SSL的HTTP协议，File System模块服务端操作文件或图片资源等，Net模块用于创建基于流的T">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-11-17T14:11:12.827Z">
+<meta property="og:updated_time" content="2022-10-04T14:57:40.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node服务端开发">
 <meta name="twitter:description" content="Node.js在server服务端开发常用模块，HTTP模块处理客户端的网络请求，URL模块用于处理与解析请求的URL， Query Strings模块处理客户端通过get/post请求传递过来的参数，Path模块文件路径处理服务，stream处理body提交数据，HTTPS模块 是基于TLS/SSL的HTTP协议，File System模块服务端操作文件或图片资源等，Net模块用于创建基于流的T">
@@ -394,7 +394,7 @@ pace-activity
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  776 字
+                  833 字
                 </span>
               
 
@@ -421,13 +421,18 @@ pace-activity
       
         <p><code>Node.js</code>在server服务端开发常用模块，<code>HTTP模块</code>处理客户端的网络请求，<code>URL模块</code>用于处理与解析请求的URL， <code>Query Strings模块</code>处理客户端通过<code>get/post</code>请求传递过来的参数，<code>Path模块</code>文件路径处理服务，<code>stream</code>处理body提交数据，<code>HTTPS模块</code> 是基于TLS/SSL的HTTP协议，<code>File System模块</code>服务端操作文件或图片资源等，<code>Net模块</code>用于创建基于流的TCP或IPC的服务器。<br><a id="more"></a></p>
 <h2 id="nodejs的真正用途"><a href="#nodejs的真正用途" class="headerlink" title="nodejs的真正用途"></a>nodejs的真正用途</h2><ul>
-<li>运行在服务器, 作为web server</li>
+<li>运行在服务器, 作为web server<ol>
+<li>基于node.js构建全栈项目 实现web服务器和数据服务器</li>
+<li>基于node.js构建中间层 实现中间层转发处理基础业务逻辑</li>
+<li>基于node.js实现服务端渲染</li>
+</ol>
+</li>
 <li>运行在本地 作为打包 构建工具</li>
 </ul>
 <p><code>nodemon 监视文件改动，自动重启 npm i -g nodemon 启动 nodemon xx.js</code></p>
 <h2 id="创建http服务器"><a href="#创建http服务器" class="headerlink" title="创建http服务器"></a>创建http服务器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入核心对象http</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="comment">// 创建服务</span></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// req IncomingMessage类的实例的对象，提供当前请求的客户端信息</span></span><br><span class="line">  <span class="comment">// res ServerResponse类的实例对象，提供响应的相关方法</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// console.log( req.httpVersion ); // 查看http版本</span></span><br><span class="line">  <span class="comment">// console.log( req.method ); // 请求方法</span></span><br><span class="line">  <span class="comment">// console.log( req.headers ); // 请求头</span></span><br><span class="line">  <span class="comment">// console.log( req.url ); // 请求地址</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 设置并写入头信息</span></span><br><span class="line">  <span class="comment">// res.writeHead(状态码, 状态码描述, 头信息)</span></span><br><span class="line">  res.writeHead(<span class="number">200</span>, http.STATUS_CODES[<span class="number">200</span>], &#123;</span><br><span class="line">    <span class="string">'Content-Type'</span>: <span class="string">'text/html;charset=utf-8'</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 设置头信息</span></span><br><span class="line">  <span class="comment">// res.setHeader(头信息名称, 值);</span></span><br><span class="line">  <span class="comment">// res.getHeader(头信息名称);  // 获取某个请求头</span></span><br><span class="line">  <span class="comment">// res.removeHeader(头信息名称); // 删除某个请求头</span></span><br><span class="line">  <span class="comment">// 头信息的写入与设置必须在res的write、end之前</span></span><br><span class="line">  res.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/html;charset=utf-8'</span>)</span><br><span class="line">  res.end()</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 监听端口及主机</span></span><br><span class="line">server.listen(<span class="number">4004</span>, () =&gt; &#123; <span class="built_in">console</span>.log(<span class="string">'listening on port 4004'</span>) &#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="server端开发注意事项"><a href="#server端开发注意事项" class="headerlink" title="server端开发注意事项"></a>server端开发注意事项</h2><ul>
-<li>服务稳定性 <code>避免恶意攻击和误操作 服务端不能随便挂掉</code> PM2进城守候</li>
+<li>服务稳定性 <code>避免恶意攻击和误操作 服务端不能随便挂掉</code> PM2进程守候</li>
 <li>考虑内存和CPU(优化,扩展) <code>服务端承载很多请求 CPU和内存都是稀缺资源</code> stream写日志 使用redis存session</li>
 <li>日志记录 <code>服务端记录日志 存储日志 分析日志</code></li>
 <li>安全 <code>服务端要防止xss攻击和sql注入</code></li>
@@ -486,8 +491,8 @@ pace-activity
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/移动端混合开发/" rel="prev" title="移动端混合开发">
-                移动端混合开发 <i class="fa fa-chevron-right"></i>
+              <a href="/koa2/" rel="prev" title="koa2简单使用">
+                koa2简单使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -570,7 +575,7 @@ pace-activity
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">97</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
