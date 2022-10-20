@@ -455,7 +455,7 @@ pace-activity
 </ul>
 <p><code>类型推断：当给一个变量赋值初始化时，如果变量类型没有给出时，TS会自动的去尝试分析变量的类型,如果TS无法分析变量类型的话，我们就需要使用类型声明</code></p>
 <ul>
-<li><code>类型适配(类型断言)</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> msg:any;</span><br><span class="line">msg = <span class="string">'ac'</span> <span class="comment">// 虽然声明为string 但类型还是any  无法自动提示字符串的方法</span></span><br><span class="line"><span class="comment">// console.log(msg.endsWith('c'))</span></span><br><span class="line"><span class="comment">// 类型适配方法1 (&lt;string&gt;msg)</span></span><br><span class="line"><span class="keyword">let</span> res = (&lt;string&gt;msg).endsWith('c')</span><br><span class="line">// 类型适配方法2 (msg as string)</span><br><span class="line">let res1 = (msg as string).endsWith('c')</span><br></pre></td></tr></table></figure>
+<li><code>类型适配(类型断言)</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> msg:any;</span><br><span class="line">msg = <span class="string">'ac'</span> <span class="comment">// 虽然声明为string 但类型还是any  无法自动提示字符串的方法</span></span><br><span class="line"><span class="comment">// console.log(msg.endsWith('c'))</span></span><br><span class="line"><span class="comment">// 类型适配方法1 (&lt;string&gt;msg)</span></span><br><span class="line"><span class="keyword">let</span> res = (<span class="xml"><span class="tag">&lt;<span class="name">string</span>&gt;</span>msg).endsWith('c')</span></span><br><span class="line"><span class="xml">// 类型适配方法2 (msg as string)</span></span><br><span class="line"><span class="xml">let res1 = (msg as string).endsWith('c')</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="函数的定义与调用"><a href="#函数的定义与调用" class="headerlink" title="函数的定义与调用"></a>函数的定义与调用</h3><ul>
@@ -531,7 +531,7 @@ pace-activity
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Typescript基础(2) /" rel="prev" title="typescript基础(2)">
+              <a href="/Typescript基础(2)/" rel="prev" title="typescript基础(2)">
                 typescript基础(2) <i class="fa fa-chevron-right"></i>
               </a>
             
